@@ -14,6 +14,10 @@ Try nwidget.
 - Specifically written for games, including 'game like' UI widgets.
 - Fully themeable, comes with built in 'light' and 'gothic' themes.
 
+#### Platform support
+
+Tested and working on: OSX 10.8.3, Windows 7, Windows 8
+
 ### Showcase
 
 ![Light Theme](https://raw.github.com/shadowmint/nwidget/master/assets/img/light.png) 
@@ -199,6 +203,11 @@ It's vile, but, it works, and it'll *always* work.
 
 This is a 'fix one day, when people figure out what the hell they're doing with
 distutils'.
+
+#### Cocos2D much?
+
+I know, I know; but it's a very nice library. You *can* use nwidget with pyglet and no cocos2d,
+it simply supports it. The tests/ folder has lots of examples of this.
 
 ### Dependencies to get started
 
