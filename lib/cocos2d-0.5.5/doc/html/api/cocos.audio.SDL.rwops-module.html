@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL.rwops</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;rwops
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.audio.SDL.rwops</h1>
+<p>General interface for SDL to read and write data sources.</p>
+<p>For files, use SDL_RWFromFile.  Other Python file-type objects can be
+used with <a href="cocos.audio.SDL.rwops-module.html#SDL_RWFromObject" class="link">SDL_RWFromObject</a>.  If another library provides a constant void
+pointer to a contiguous region of memory, SDL_RWFromMem and
+SDL_RWFromConstMem can be used.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.rwops.SDL_RWops-class.html" class="summary-name">SDL_RWops</a>
+<div class="summary-description">Read/write operations structure.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.audio.SDL.rwops.SDL_RWops-class.html" class="link">SDL_RWops</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.rwops-module.html#SDL_RWFromObject" class="summary-sig-name">SDL_RWFromObject</a>(<span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description">Construct an SDL_RWops structure from a Python file-like object.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos.audio.SDL'"><code class="variable-quote">'</code><code class="variable-string">cocos.audio.SDL</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="SDL_RWFromObject"></a>
+<div class=" detail">
+  <h3>SDL_RWFromObject</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_RWFromObject</span>(<span class="sig-arg">obj</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Construct an SDL_RWops structure from a Python file-like object.</p>
+<p>The object must support the following methods in the same fashion as
+the builtin file object:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal"><span class="pre">read(len)</span> <span class="pre">-&gt;</span> <span class="pre">data</span></tt></li>
+<li><tt class="rst-docutils literal"><span class="pre">write(data)</span></tt></li>
+<li><tt class="rst-docutils literal"><span class="pre">seek(offset,</span> <span class="pre">whence)</span></tt></li>
+<li><tt class="rst-docutils literal"><span class="pre">close()</span></tt></li>
+</ul>
+</blockquote>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">obj</span></dt>
+        <dd>: Python file-like object to wrap</dd>
+    </dl></dd>
+    <dt>Returns: <a href="cocos.audio.SDL.rwops.SDL_RWops-class.html" class="link">SDL_RWops</a></dt>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;rwops
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.menu</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;menu
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.menu</h1>
+<p>A <a href="cocos.layer.base_layers.Layer-class.html" class="link">Layer</a> that implements a simple menu</p>
+<div class="rst-section" id="rst-menu">
+<h1 class="heading">Menu</h1>
+<p>This module provides a Menu class. Menus can contain regular items
+(which trigger a function when selected), toggle items (which toggle a flag when selected),
+or entry items (which lets you enter alphanumeric data).</p>
+<p>To use a menu in your code, just subclass <a href="cocos.menu.Menu-class.html" class="link">Menu</a> and add the menu to an <a href="cocos.scene.Scene-class.html" class="link">Scene</a> or
+another <a href="cocos.layer.base_layers.Layer-class.html" class="link">Layer</a>.</p>
+</div>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.menu.Menu-class.html" class="summary-name">Menu</a>
+<div class="summary-description">Abstract base class for menu layers.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.menu.MenuItem-class.html" class="summary-name">MenuItem</a>
+<div class="summary-description">A menu item that shows a label.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.menu.ImageMenuItem-class.html" class="summary-name">ImageMenuItem</a>
+<div class="summary-description">A menu item that shows a selectable Image</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.menu.MultipleMenuItem-class.html" class="summary-name">MultipleMenuItem</a>
+<div class="summary-description">A menu item for switching between multiple values.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.menu.ToggleMenuItem-class.html" class="summary-name">ToggleMenuItem</a>
+<div class="summary-description">A menu item for a boolean toggle option.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.menu.EntryMenuItem-class.html" class="summary-name">EntryMenuItem</a>
+<div class="summary-description">A menu item for entering a value.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.menu.ColorMenuItem-class.html" class="summary-name">ColorMenuItem</a>
+<div class="summary-description">A menu item for selecting a color.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="verticalMenuLayout"></a><span class="summary-sig-name">verticalMenuLayout</span>(<span class="summary-sig-arg">menu</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="fixedPositionMenuLayout"></a><span class="summary-sig-name">fixedPositionMenuLayout</span>(<span class="summary-sig-arg">positions</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="shake"></a><span class="summary-sig-name">shake</span>()</span>
+<div class="summary-description">Predefined action that performs a slight rotation and then goes back to the original rotation
+position.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="shake_back"></a><span class="summary-sig-name">shake_back</span>()</span>
+<div class="summary-description">Predefined action that rotates to 0 degrees in 0.1 seconds</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="zoom_in"></a><span class="summary-sig-name">zoom_in</span>()</span>
+<div class="summary-description">Predefined action that scales to 1.5 factor in 0.2 seconds</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="zoom_out"></a><span class="summary-sig-name">zoom_out</span>()</span>
+<div class="summary-description">Predefined action that scales to 1.0 factor in 0.2 seconds</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CONSTANTS ==================== -->
+<a name="section-Constants"></a>
+        <h2>Constants</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CENTER"></a><span class="summary-name">CENTER</span> = <code title="'center'"><code class="variable-quote">'</code><code class="variable-string">center</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="LEFT"></a><span class="summary-name">LEFT</span> = <code title="'left'"><code class="variable-quote">'</code><code class="variable-string">left</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="RIGHT"></a><span class="summary-name">RIGHT</span> = <code title="'right'"><code class="variable-quote">'</code><code class="variable-string">right</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TOP"></a><span class="summary-name">TOP</span> = <code title="'top'"><code class="variable-quote">'</code><code class="variable-string">top</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="BOTTOM"></a><span class="summary-name">BOTTOM</span> = <code title="'bottom'"><code class="variable-quote">'</code><code class="variable-string">bottom</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;menu
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:18 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

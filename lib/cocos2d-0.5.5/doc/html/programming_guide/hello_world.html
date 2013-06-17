@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Hello, World</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a></span><span class="next">Next: <a class="reference" href="hello_actions.html" title="Hello Actions">Hello Actions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a> » Hello, World</span></div>
+<h1 class="title">Hello, World</h1>
+
+<p>We'll begin with the requisite &quot;Hello, World&quot; introduction.  This program will
+open a window with some text in it and wait to be closed.  You can find the
+entire program in the <a class="reference filelink" href="hello_world.py">samples/hello_world.py</a> file.</p>
+<img alt="hello_world.py.png" src="hello_world.py.png" />
+<p>Begin by importing the cocos package:</p>
+<pre class="py-doctest">
+<span class="py-keyword">import</span> cocos</pre>
+<p>Subclass a <a class="reference apilink" href="../api/cocos.layer.base_layers.Layer-class.html " title="cocos.layer.base_layers.Layer">Layer</a>  and define the logic of you program here:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">HelloWorld</span>(cocos.layer.Layer):</pre>
+<p>Always call <tt class="docutils literal"><span class="pre">super</span></tt> in the constructor:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    super( HelloWorld, self ).__init__()</pre>
+<p>To display the text, we'll create a <cite>Label</cite>.  Keyword arguments are used
+to set the font, position and alignment of the label:</p>
+<pre class="py-doctest">
+label = cocos.text.Label(<span class="py-string">'Hello, world'</span>,
+                          font_name=<span class="py-string">'Times New Roman'</span>,
+                          font_size=32,
+                          anchor_x=<span class="py-string">'center'</span>, anchor_y=<span class="py-string">'center'</span>)</pre>
+<p>The label position will be the center of the screen:</p>
+<pre class="py-doctest">
+label.position = 320,240</pre>
+<p>Since <cite>Label</cite> is a subclass of <a class="reference apilink" href="../api/cocos.cocosnode.CocosNode-class.html " title="cocos.cocosnode.CocosNode">CocosNode</a> it can be added
+as a child. All <cite>CocosNode</cite> objects know how to render itself, perform actions
+and transformations.
+To add it as a layer's child, use the <a class="reference apilink" href="../api/cocos.cocosnode.CocosNode-class.html#add " title="cocos.cocosnode.CocosNode.add">CocosNode.add</a> method:</p>
+<pre class="py-doctest">
+self.add( label )</pre>
+<p>After defining the <tt class="docutils literal"><span class="pre">HelloWorld</span></tt> class, we need to initialize and create a window.
+To do this, we initialize the <a class="reference apilink" href="../api/cocos.director.Director-class.html " title="cocos.director.Director">Director</a>:</p>
+<pre class="py-doctest">
+cocos.director.director.init()</pre>
+<p>Then we create a <tt class="docutils literal"><span class="pre">HelloWorld</span></tt> instance:</p>
+<pre class="py-doctest">
+hello_layer = HelloWorld ()</pre>
+<p>Then we create an <a class="reference apilink" href="../api/cocos.scene.Scene-class.html " title="cocos.scene.Scene">Scene</a> that contains the <tt class="docutils literal"><span class="pre">HelloWorld</span></tt> layer as a child:</p>
+<pre class="py-doctest">
+main_scene = cocos.scene.Scene (hello_layer)</pre>
+<p>And finally we run the scene:</p>
+<pre class="py-doctest">
+cocos.director.director.run (main_scene)</pre>
+<p>A shorter way to write the last 3 statements is this:</p>
+<pre class="py-doctest">
+<span class="py-comment">#cocos.director.director.run( cocos.scene.Scene( HelloWorld() ) )</span></pre>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a></span><span class="next">Next: <a class="reference" href="hello_actions.html" title="Hello Actions">Hello Actions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a> » Hello, World</span></div>
+</div>
+</body>
+</html>

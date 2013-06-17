@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.custom_clocks.ScreenReaderClock_12dev</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.custom_clocks-module.html">custom_clocks</a>&nbsp;.&nbsp;ScreenReaderClock_12dev
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.custom_clocks.ScreenReaderClock_12dev</h1>
+<pre class="base-tree">
+pyglet.clock._ClockBase --+    
+                          |    
+         pyglet.clock.Clock --+
+                              |
+                             <strong class="uidshort">ScreenReaderClock_12dev</strong>
+</pre>
+
+<p>Make frames happen every 1/framerate and takes screenshots</p>
+<p>This class is compatible with pyglet 1.2dev, it is not compatible
+with pyglet 1.1.4release</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.custom_clocks.ScreenReaderClock_12dev-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">framerate</span>,
+        <span class="summary-sig-arg">template</span>,
+        <span class="summary-sig-arg">duration</span>)</span>
+<div class="summary-description">Initialise a Clock, with optional framerate limit and custom
+time function.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.custom_clocks.ScreenReaderClock_12dev-class.html#update_time" class="summary-sig-name">update_time</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Additionally, take snapshots.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.custom_clocks.ScreenReaderClock_12dev-class.html#get_sleep_time" class="summary-sig-name">get_sleep_time</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sleep_idle</span>)</span>
+<div class="summary-description">sleep time between frames; 0.0 as as we want to run as fast as possible</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code>pyglet.clock.Clock</code></b>:
+      <code>call_scheduled_functions</code>,
+      <code>get_fps</code>,
+      <code>get_fps_limit</code>,
+      <code>schedule</code>,
+      <code>schedule_interval</code>,
+      <code>schedule_interval_soft</code>,
+      <code>schedule_once</code>,
+      <code>set_fps_limit</code>,
+      <code>tick</code>,
+      <code>unschedule</code>
+<b>Inherited from <code>pyglet.clock._ClockBase</code></b>:
+      <code>sleep</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CONSTANTS ==================== -->
+<a name="section-Constants"></a>
+        <h2>Constants</h2>
+<table class="summary">
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code>pyglet.clock.Clock</code></b>:
+      <code>MIN_SLEEP</code>,
+      <code>SLEEP_UNDERSHOOT</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="__init__"></a>
+<div class=" detail">
+  <h3>__init__</h3>
+  <div class="detail-signature">
+    <span class="fspecial">(Constructor)</span>
+    <span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">framerate</span>,
+        <span class="sig-arg">template</span>,
+        <span class="sig-arg">duration</span>)</span>
+    </div>
+  <div class="detail-description">
+  Initialise a Clock, with optional framerate limit and custom
+time function.
+  <dl class="fields">
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      pyglet.clock.Clock.__init__
+    </dd>
+  </dl>
+  </div>
+</div>
+<a name="update_time"></a>
+<div class=" detail">
+  <h3>update_time</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">update_time</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <dl class="rst-docutils">
+<dt>Get the (fake) elapsed time since the last call to <a href="cocos.custom_clocks.ScreenReaderClock_12dev-class.html#update_time" class="link">update_time</a></dt>
+<dd>Additionally, take snapshots.</dd>
+</dl>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">float</span>: The number of seconds since the last <a href="cocos.custom_clocks.ScreenReaderClock_12dev-class.html#update_time" class="link">update_time</a>, or 0
+if this was the first time it was called.</dd>
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      pyglet.clock.Clock.update_time
+    </dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        pyglet 1.2
+      </p>
+</div>  </div>
+</div>
+<a name="get_sleep_time"></a>
+<div class=" detail">
+  <h3>get_sleep_time</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_sleep_time</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">sleep_idle</span>)</span>
+    </div>
+  <div class="detail-description">
+  sleep time between frames; 0.0 as as we want to run as fast as possible
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">float</span>: Time until the next scheduled event in seconds, or <tt class="rst-rst-rst-docutils literal rst-rst-docutils literal rst-docutils literal"><span class="pre">None</span></tt>
+if there is no event scheduled.</dd>
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      pyglet.clock.Clock.get_sleep_time
+    </dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        pyglet 1.1
+      </p>
+</div>  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.custom_clocks-module.html">custom_clocks</a>&nbsp;.&nbsp;ScreenReaderClock_12dev
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.tiles.RectMap</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.tiles-module.html">tiles</a>&nbsp;.&nbsp;RectMap
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.tiles.RectMap</h1>
+<pre class="base-tree">
+<a href="cocos.tiles.RegularTesselationMap-class.html">RegularTesselationMap</a> --+
+                        |
+                       <strong class="uidshort">RectMap</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+    <a href="cocos.tiles.RectMapLayer-class.html">RectMapLayer</a>
+</dd></dl>
+
+<p>Rectangular map.</p>
+<p>Cells are stored in column-major order with y increasing up,
+allowing [i][j] addressing:</p>
+<pre class="py-doctest">
++---+---+---+
+| d | e | f |
++---+---+---+
+| a | b | c |
++---+---+---+</pre>
+<p>Thus cells = [['a', 'd'], ['b', 'e'], ['c', 'f']]</p>
+<p>(and thus the cell at (0, 0) is 'a' and (0, 1) is 'd')</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectMap-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>,
+        <span class="summary-sig-arg">tw</span>,
+        <span class="summary-sig-arg">th</span>,
+        <span class="summary-sig-arg">cells</span>,
+        <span class="summary-sig-arg">origin</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">properties</span>=<span class="summary-sig-default">None</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectMap-class.html#get_in_region" class="summary-sig-name">get_in_region</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x1</span>,
+        <span class="summary-sig-arg">y1</span>,
+        <span class="summary-sig-arg">x2</span>,
+        <span class="summary-sig-arg">y2</span>)</span>
+<div class="summary-description">Return cells (in [column][row]) that are within the map-space
+pixel bounds specified by the bottom-left (x1, y1) and top-right
+(x2, y2) corners.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectMap-class.html#get_at_pixel" class="summary-sig-name">get_at_pixel</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+<div class="summary-description">Return Cell at pixel px=(x,y) on the map.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectMap-class.html#get_neighbor" class="summary-sig-name">get_neighbor</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cell</span>,
+        <span class="summary-sig-arg">direction</span>)</span>
+<div class="summary-description">Get the neighbor Cell in the given direction (dx, dy) which
+is one of self.UP, self.DOWN, self.LEFT or self.RIGHT.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectMap-class.html#get_neighbors" class="summary-sig-name">get_neighbors</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cell</span>,
+        <span class="summary-sig-arg">diagonals</span>=<span class="summary-sig-default">False</span>)</span>
+<div class="summary-description">Get all cells touching the sides of the nominated cell.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RegularTesselationMap-class.html#get_cell" class="summary-sig-name">get_cell</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">i</span>,
+        <span class="summary-sig-arg">j</span>)</span>
+<div class="summary-description">Return Cell at cell pos=(i, j).</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.tiles.RegularTesselationMap-class.html">cocos.tiles.RegularTesselationMap</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CONSTANTS ==================== -->
+<a name="section-Constants"></a>
+        <h2>Constants</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="UP"></a><span class="summary-name">UP</span> = <code title="(0, 1)"><code class="variable-group">(</code>0<code class="variable-op">, </code>1<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="DOWN"></a><span class="summary-name">DOWN</span> = <code title="(0, -1)"><code class="variable-group">(</code>0<code class="variable-op">, </code>-1<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="LEFT"></a><span class="summary-name">LEFT</span> = <code title="(-1, 0)"><code class="variable-group">(</code>-1<code class="variable-op">, </code>0<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="RIGHT"></a><span class="summary-name">RIGHT</span> = <code title="(1, 0)"><code class="variable-group">(</code>1<code class="variable-op">, </code>0<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="__init__"></a>
+<div class=" detail">
+  <h3>__init__</h3>
+  <div class="detail-signature">
+    <span class="fspecial">(Constructor)</span>
+    <span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>,
+        <span class="sig-arg">tw</span>,
+        <span class="sig-arg">th</span>,
+        <span class="sig-arg">cells</span>,
+        <span class="sig-arg">origin</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">properties</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">id</span> : <span class='ptype'>xml id</span></dt>
+        <dd>node id</dd>
+        <dt><span class="pname">tw</span> : <span class='ptype'>int</span></dt>
+        <dd>number of colums in cells</dd>
+        <dt><span class="pname">th</span> : <span class='ptype'>int</span></dt>
+        <dd>number of rows in cells</dd>
+        <dt><span class="pname">cells</span> : <span class='ptype'>container that supports cells[i][j]</span></dt>
+        <dd>elements are stored in column-major order with y increasing up</dd>
+        <dt><span class="pname">origin</span> : <span class='ptype'>(int, int, int)</span></dt>
+        <dd>cell block offset x,y,z ; default is (0,0,0)</dd>
+        <dt><span class="pname">properties</span> : <span class='ptype'>dict</span></dt>
+        <dd>arbitrary properties
+if saving to XML, keys must be unicode or 8-bit ASCII strings</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="get_in_region"></a>
+<div class=" detail">
+  <h3>get_in_region</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_in_region</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x1</span>,
+        <span class="sig-arg">y1</span>,
+        <span class="sig-arg">x2</span>,
+        <span class="sig-arg">y2</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Return cells (in [column][row]) that are within the map-space
+pixel bounds specified by the bottom-left (x1, y1) and top-right
+(x2, y2) corners.</p>
+<p>Return a list of Cell instances.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="get_at_pixel"></a>
+<div class=" detail">
+  <h3>get_at_pixel</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_at_pixel</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Return Cell at pixel px=(x,y) on the map.</p>
+<p>The pixel coordinate passed in is in the map's coordinate space,
+unmodified by screen, layer or view transformations.</p>
+<p>Return None if out of bounds.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="get_neighbor"></a>
+<div class=" detail">
+  <h3>get_neighbor</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_neighbor</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cell</span>,
+        <span class="sig-arg">direction</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Get the neighbor Cell in the given direction (dx, dy) which
+is one of self.UP, self.DOWN, self.LEFT or self.RIGHT.</p>
+<p>Returns None if out of bounds.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="get_neighbors"></a>
+<div class=" detail">
+  <h3>get_neighbors</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_neighbors</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cell</span>,
+        <span class="sig-arg">diagonals</span>=<span class="sig-default">False</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Get all cells touching the sides of the nominated cell.</p>
+<p>If &quot;diagonals&quot; is True then return the cells touching the corners
+of this cell too.</p>
+<p>Return a dict with the directions (self.UP, self.DOWN, etc) as keys
+and neighbor cells as values.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.tiles-module.html">tiles</a>&nbsp;.&nbsp;RectMap
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:22 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

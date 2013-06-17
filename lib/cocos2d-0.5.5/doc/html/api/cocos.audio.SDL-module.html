@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;SDL
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package cocos.audio.SDL</h1>
+<p>Main module for importing SDL-ctypes.</p>
+<dl class="rst-docutils">
+<dt>This module defines the intialization and cleanup functions:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><a href="cocos.audio.SDL-module.html#SDL_Init" class="link">SDL_Init</a></li>
+<li><a href="cocos.audio.SDL-module.html#SDL_InitSubSystem" class="link">SDL_InitSubSystem</a></li>
+<li>SDL_WasInit</li>
+<li>SDL_QuitSubSystem</li>
+<li>SDL_Quit</li>
+</ul>
+</dd>
+</dl>
+<p>It also imports all functions, constants and classes from the package
+submodules.  Typical usage, then, is to just import this module directly
+into your namespace:</p>
+<pre class="py-doctest">
+<span class="py-keyword">from</span> SDL <span class="py-keyword">import</span> *</pre>
+<p>This gives you access to all SDL names exactly as they appear in the C
+header files.</p>
+
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+        <h2>Submodules</h2>
+<table class="summary">
+<tr><td width="15%"></td><td><a href="cocos.audio.SDL.array-module.html" class="summary-name">cocos.audio.SDL.array</a></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.audio-module.html" class="summary-name">cocos.audio.SDL.audio</a><div class="summary-description">Access to the raw audio mixing buffer.</div></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.constants-module.html" class="summary-name">cocos.audio.SDL.constants</a><div class="summary-description">Constants and enums for all SDL submodules.</div></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.dll-module.html" class="summary-name">cocos.audio.SDL.dll</a></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.endian-module.html" class="summary-name">cocos.audio.SDL.endian</a><div class="summary-description">Functions for converting to native byte order</div></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.error-module.html" class="summary-name">cocos.audio.SDL.error</a><div class="summary-description">Error detection and error handling functions.</div></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.rwops-module.html" class="summary-name">cocos.audio.SDL.rwops</a><div class="summary-description">General interface for SDL to read and write data sources.</div></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.timer-module.html" class="summary-name">cocos.audio.SDL.timer</a><div class="summary-description">Time management routines.</div></td></tr><tr><td width="15%"></td><td><a href="cocos.audio.SDL.version-module.html" class="summary-name">cocos.audio.SDL.version</a><div class="summary-description">Functions related to the SDL shared library version.</div></td></tr><tr >
+  <th colspan="2" class="group-header"
+    >Non-core modules</th></tr>
+<tr><td width="15%"></td><td><a href="cocos.audio.SDL.mixer-module.html" class="summary-name">cocos.audio.SDL.mixer</a><div class="summary-description">A simple multi-channel audio mixer.</div></td></tr></table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL-module.html#SDL_Init" class="summary-sig-name">SDL_Init</a>(<span class="summary-sig-arg">flags</span>)</span>
+<div class="summary-description">Initialise the SDL library.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL-module.html#SDL_InitSubSystem" class="summary-sig-name">SDL_InitSubSystem</a>(<span class="summary-sig-arg">flags</span>)</span>
+<div class="summary-description">Initialize specific SDL subsystems.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CONSTANTS ==================== -->
+<a name="section-Constants"></a>
+        <h2>Constants</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CD_PAUSED"></a><span class="summary-name">CD_PAUSED</span> = <code title="3">3</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CD_PLAYING"></a><span class="summary-name">CD_PLAYING</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CD_STOPPED"></a><span class="summary-name">CD_STOPPED</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CD_TRAYEMPTY"></a><span class="summary-name">CD_TRAYEMPTY</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MIX_FADING_IN"></a><span class="summary-name">MIX_FADING_IN</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MIX_FADING_OUT"></a><span class="summary-name">MIX_FADING_OUT</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MIX_NO_FADING"></a><span class="summary-name">MIX_NO_FADING</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MUS_CMD"></a><span class="summary-name">MUS_CMD</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MUS_MID"></a><span class="summary-name">MUS_MID</span> = <code title="4">4</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MUS_MOD"></a><span class="summary-name">MUS_MOD</span> = <code title="3">3</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MUS_MP3"></a><span class="summary-name">MUS_MP3</span> = <code title="6">6</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MUS_NONE"></a><span class="summary-name">MUS_NONE</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MUS_OGG"></a><span class="summary-name">MUS_OGG</span> = <code title="5">5</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MUS_WAV"></a><span class="summary-name">MUS_WAV</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_ACTIVEEVENT"></a><span class="summary-name">SDL_ACTIVEEVENT</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_ADDEVENT"></a><span class="summary-name">SDL_ADDEVENT</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_AUDIO_PAUSED"></a><span class="summary-name">SDL_AUDIO_PAUSED</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_AUDIO_PLAYING"></a><span class="summary-name">SDL_AUDIO_PLAYING</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_AUDIO_STOPPED"></a><span class="summary-name">SDL_AUDIO_STOPPED</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVED2"></a><span class="summary-name">SDL_EVENT_RESERVED2</span> = <code title="18">18</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVED3"></a><span class="summary-name">SDL_EVENT_RESERVED3</span> = <code title="19">19</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVED4"></a><span class="summary-name">SDL_EVENT_RESERVED4</span> = <code title="20">20</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVED5"></a><span class="summary-name">SDL_EVENT_RESERVED5</span> = <code title="21">21</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVED6"></a><span class="summary-name">SDL_EVENT_RESERVED6</span> = <code title="22">22</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVED7"></a><span class="summary-name">SDL_EVENT_RESERVED7</span> = <code title="23">23</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVEDA"></a><span class="summary-name">SDL_EVENT_RESERVEDA</span> = <code title="14">14</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_EVENT_RESERVEDB"></a><span class="summary-name">SDL_EVENT_RESERVEDB</span> = <code title="15">15</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GETEVENT"></a><span class="summary-name">SDL_GETEVENT</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_ACCELERATED_VISUAL"></a><span class="summary-name">SDL_GL_ACCELERATED_VISUAL</span> = <code title="15">15</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_ACCUM_ALPHA_SIZE"></a><span class="summary-name">SDL_GL_ACCUM_ALPHA_SIZE</span> = <code title="11">11</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_ACCUM_BLUE_SIZE"></a><span class="summary-name">SDL_GL_ACCUM_BLUE_SIZE</span> = <code title="10">10</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_ACCUM_GREEN_SIZE"></a><span class="summary-name">SDL_GL_ACCUM_GREEN_SIZE</span> = <code title="9">9</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_ACCUM_RED_SIZE"></a><span class="summary-name">SDL_GL_ACCUM_RED_SIZE</span> = <code title="8">8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_ALPHA_SIZE"></a><span class="summary-name">SDL_GL_ALPHA_SIZE</span> = <code title="3">3</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_BLUE_SIZE"></a><span class="summary-name">SDL_GL_BLUE_SIZE</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_BUFFER_SIZE"></a><span class="summary-name">SDL_GL_BUFFER_SIZE</span> = <code title="4">4</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_DEPTH_SIZE"></a><span class="summary-name">SDL_GL_DEPTH_SIZE</span> = <code title="6">6</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_DOUBLEBUFFER"></a><span class="summary-name">SDL_GL_DOUBLEBUFFER</span> = <code title="5">5</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_GREEN_SIZE"></a><span class="summary-name">SDL_GL_GREEN_SIZE</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_MULTISAMPLEBUFFERS"></a><span class="summary-name">SDL_GL_MULTISAMPLEBUFFERS</span> = <code title="13">13</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_MULTISAMPLESAMPLES"></a><span class="summary-name">SDL_GL_MULTISAMPLESAMPLES</span> = <code title="14">14</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_RED_SIZE"></a><span class="summary-name">SDL_GL_RED_SIZE</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_STENCIL_SIZE"></a><span class="summary-name">SDL_GL_STENCIL_SIZE</span> = <code title="7">7</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_STEREO"></a><span class="summary-name">SDL_GL_STEREO</span> = <code title="12">12</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GL_SWAP_CONTROL"></a><span class="summary-name">SDL_GL_SWAP_CONTROL</span> = <code title="16">16</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GRAB_OFF"></a><span class="summary-name">SDL_GRAB_OFF</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GRAB_ON"></a><span class="summary-name">SDL_GRAB_ON</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_GRAB_QUERY"></a><span class="summary-name">SDL_GRAB_QUERY</span> = <code title="-1">-1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_JOYAXISMOTION"></a><span class="summary-name">SDL_JOYAXISMOTION</span> = <code title="7">7</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_JOYBALLMOTION"></a><span class="summary-name">SDL_JOYBALLMOTION</span> = <code title="8">8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_JOYBUTTONDOWN"></a><span class="summary-name">SDL_JOYBUTTONDOWN</span> = <code title="10">10</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_JOYBUTTONUP"></a><span class="summary-name">SDL_JOYBUTTONUP</span> = <code title="11">11</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_JOYHATMOTION"></a><span class="summary-name">SDL_JOYHATMOTION</span> = <code title="9">9</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_KEYDOWN"></a><span class="summary-name">SDL_KEYDOWN</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_KEYUP"></a><span class="summary-name">SDL_KEYUP</span> = <code title="3">3</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_MOUSEBUTTONDOWN"></a><span class="summary-name">SDL_MOUSEBUTTONDOWN</span> = <code title="5">5</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_MOUSEBUTTONUP"></a><span class="summary-name">SDL_MOUSEBUTTONUP</span> = <code title="6">6</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_MOUSEMOTION"></a><span class="summary-name">SDL_MOUSEMOTION</span> = <code title="4">4</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_NOEVENT"></a><span class="summary-name">SDL_NOEVENT</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_PEEKEVENT"></a><span class="summary-name">SDL_PEEKEVENT</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_QUIT"></a><span class="summary-name">SDL_QUIT</span> = <code title="12">12</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_SYSWMEVENT"></a><span class="summary-name">SDL_SYSWMEVENT</span> = <code title="13">13</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_VIDEOEXPOSE"></a><span class="summary-name">SDL_VIDEOEXPOSE</span> = <code title="17">17</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SDL_VIDEORESIZE"></a><span class="summary-name">SDL_VIDEORESIZE</span> = <code title="16">16</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos.audio.SDL'"><code class="variable-quote">'</code><code class="variable-string">cocos.audio.SDL</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="SDL_Init"></a>
+<div class=" detail">
+  <h3>SDL_Init</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_Init</span>(<span class="sig-arg">flags</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Initialise the SDL library.</p>
+<p>This function loads the SDL dynamically linked library and initializes
+the subsystems specified by <code class="link">flags</code> (and those satisfying dependencies)
+Unless the SDL_INIT_NOPARACHUTE flag is set, it will install cleanup
+signal handlers for some commonly ignored fatal signals (like SIGSEGV).</p>
+<p>The following flags are recognised:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>SDL_INIT_TIMER</li>
+<li>SDL_INIT_AUDIO</li>
+<li>SDL_INIT_VIDEO</li>
+<li>SDL_INIT_CDROM</li>
+<li>SDL_INIT_JOYSTICK</li>
+<li>SDL_INIT_NOPARACHUTE</li>
+<li>SDL_INIT_EVENTTHREAD</li>
+<li>SDL_INIT_EVERYTHING</li>
+</ul>
+</blockquote>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">flags</span></dt>
+        <dd>: int</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype">int</span>: undocumented (FIXME)</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        SDL_Quit
+      </p>
+</div>  </div>
+</div>
+<a name="SDL_InitSubSystem"></a>
+<div class=" detail">
+  <h3>SDL_InitSubSystem</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_InitSubSystem</span>(<span class="sig-arg">flags</span>)</span>
+    </div>
+  <div class="detail-description">
+  Initialize specific SDL subsystems.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">flags</span></dt>
+        <dd>: int</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype">int</span>: undocumented (FIXME)</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a href="cocos.audio.SDL-module.html#SDL_Init" class="link">SDL_Init</a>, SDL_QuitSubSystem
+      </p>
+</div>  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;SDL
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

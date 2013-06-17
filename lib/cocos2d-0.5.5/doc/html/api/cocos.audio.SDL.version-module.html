@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL.version</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;version
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.audio.SDL.version</h1>
+Functions related to the SDL shared library version.
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.version.SDL_version-class.html" class="summary-name">SDL_version</a>
+<div class="summary-description">Version structure.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.version-module.html#SDL_VERSIONNUM" class="summary-sig-name">SDL_VERSIONNUM</a>(<span class="summary-sig-arg">major</span>,
+        <span class="summary-sig-arg">minor</span>,
+        <span class="summary-sig-arg">patch</span>)</span>
+<div class="summary-description">Turn the version numbers into a numeric value.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.version-module.html#SDL_VERSION_ATLEAST" class="summary-sig-name">SDL_VERSION_ATLEAST</a>(<span class="summary-sig-arg">major</span>,
+        <span class="summary-sig-arg">minor</span>,
+        <span class="summary-sig-arg">patch</span>)</span>
+<div class="summary-description">Determine if the SDL library is at least the given version.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos.audio.SDL'"><code class="variable-quote">'</code><code class="variable-string">cocos.audio.SDL</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="SDL_VERSIONNUM"></a>
+<div class=" detail">
+  <h3>SDL_VERSIONNUM</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_VERSIONNUM</span>(<span class="sig-arg">major</span>,
+        <span class="sig-arg">minor</span>,
+        <span class="sig-arg">patch</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Turn the version numbers into a numeric value.</p>
+<p>For example:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>SDL_VERSIONNUM(1, 2, 3)
+1203</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">major</span></dt>
+        <dd>: int</dd>
+        <dt><span class="pname">minor</span></dt>
+        <dd>: int</dd>
+        <dt><span class="pname">patch</span></dt>
+        <dd>: int</dd>
+    </dl></dd>
+    <dt>Returns: int</dt>
+  </dl>
+  </div>
+</div>
+<a name="SDL_VERSION_ATLEAST"></a>
+<div class=" detail">
+  <h3>SDL_VERSION_ATLEAST</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_VERSION_ATLEAST</span>(<span class="sig-arg">major</span>,
+        <span class="sig-arg">minor</span>,
+        <span class="sig-arg">patch</span>)</span>
+    </div>
+  <div class="detail-description">
+  Determine if the SDL library is at least the given version.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">major</span></dt>
+        <dd>: int</dd>
+        <dt><span class="pname">minor</span></dt>
+        <dd>: int</dd>
+        <dt><span class="pname">patch</span></dt>
+        <dd>: int</dd>
+    </dl></dd>
+    <dt>Returns: bool</dt>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;version
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

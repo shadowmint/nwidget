@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.actions.interval_actions.FadeOut</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;<a href="cocos.actions.interval_actions-module.html">interval_actions</a>&nbsp;.&nbsp;FadeOut
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.actions.interval_actions.FadeOut</h1>
+<pre class="base-tree">
+    <a href="cocos.actions.base_actions.Action-class.html">base_actions.Action</a> --+    
+                          |    
+<a href="cocos.actions.base_actions.IntervalAction-class.html">base_actions.IntervalAction</a> --+
+                              |
+                             <strong class="uidshort">FadeOut</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+    <a href="cocos.actions.interval_actions.FadeIn-class.html">FadeIn</a>
+</dd></dl>
+
+<p>Fades out a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object by modifying it's opacity attribute.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+action = FadeOut( 2 )
+sprite.do( action )</pre>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.interval_actions.FadeOut-class.html#init" class="summary-sig-name">init</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">duration</span>)</span>
+<div class="summary-description">Init method.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.interval_actions.FadeOut-class.html#update" class="summary-sig-name">update</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">t</span>)</span>
+<div class="summary-description">Gets called on every frame
+'t' is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <code class="link">t</code> will be equal to 0
+at 0 seconds.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.interval_actions.FadeOut-class.html#__reversed__" class="summary-sig-name">__reversed__</a>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__add__"></a><span class="summary-sig-name">__add__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>)</span>
+<div class="summary-description">sequence operator - concatenates actions
+action1 + action2 -&gt; action_result
+where action_result performs as:
+first do all that action1 would do; then
+perform all that action2 would do</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.Action-class.html">cocos.actions.base_actions.Action</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span>
+<div class="summary-description">dont override - use init</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.Action-class.html">cocos.actions.base_actions.Action</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.base_actions.IntervalAction-class.html#__mul__" class="summary-sig-name">__mul__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">repeats ntimes the action
+action * n -&gt; action_result
+where action result performs as:
+repeat n times the changes that action would do</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.IntervalAction-class.html">cocos.actions.base_actions.IntervalAction</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__or__"></a><span class="summary-sig-name">__or__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>)</span>
+<div class="summary-description">spawn operator -  runs two actions in parallel
+action1 | action2 -&gt; action_result</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.Action-class.html">cocos.actions.base_actions.Action</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.base_actions.IntervalAction-class.html#done" class="summary-sig-name">done</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">When in the worker role, this method is reliable.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.IntervalAction-class.html">cocos.actions.base_actions.IntervalAction</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.base_actions.Action-class.html#start" class="summary-sig-name">start</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">External code sets self.target and then calls this method.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.Action-class.html">cocos.actions.base_actions.Action</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.base_actions.IntervalAction-class.html#step" class="summary-sig-name">step</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dt</span>)</span>
+<div class="summary-description">Dont customize this method: it will not be called when in the component
+role for certain composite actions (like Sequence_IntervalAction).</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.IntervalAction-class.html">cocos.actions.base_actions.IntervalAction</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="stop"></a><span class="summary-sig-name">stop</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">When the action must cease to perform this function is called by
+external code; after this call no other method should be called.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.Action-class.html">cocos.actions.base_actions.Action</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="target"></a><span class="summary-name">target</span>
+<div class="summary-description"><a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object that is the target of the action</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.actions.base_actions.Action-class.html">cocos.actions.base_actions.Action</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="init"></a>
+<div class=" detail">
+  <h3>init</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">init</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">duration</span>)</span>
+    </div>
+  <div class="detail-description">
+  Init method.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">duration</span> : <span class='ptype'>float</span></dt>
+        <dd>Seconds that it will take to fade</dd>
+    </dl></dd>
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      <a href="cocos.actions.base_actions.Action-class.html#init">base_actions.Action.init</a>
+    </dd>
+  </dl>
+  </div>
+</div>
+<a name="update"></a>
+<div class=" detail">
+  <h3>update</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">update</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">t</span>)</span>
+    </div>
+  <div class="detail-description">
+  Gets called on every frame
+'t' is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <code class="link">t</code> will be equal to 0
+at 0 seconds. <code class="link">t</code> will be 0.5 at 2.5 seconds and <code class="link">t</code> will be 1 at 5sec.
+This method must not use self._elapsed, which is not guaranted to be
+updated.
+  <dl class="fields">
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      <a href="cocos.actions.base_actions.IntervalAction-class.html#update">base_actions.IntervalAction.update</a>
+    </dd>
+  </dl>
+  </div>
+</div>
+<a name="__reversed__"></a>
+<div class=" detail">
+  <h3>__reversed__</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">__reversed__</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      <a href="cocos.actions.base_actions.Action-class.html#__reversed__">base_actions.Action.__reversed__</a>
+    </dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;<a href="cocos.actions.interval_actions-module.html">interval_actions</a>&nbsp;.&nbsp;FadeOut
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

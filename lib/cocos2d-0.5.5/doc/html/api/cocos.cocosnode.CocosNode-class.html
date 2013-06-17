@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.cocosnode.CocosNode</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.cocosnode-module.html">cocosnode</a>&nbsp;.&nbsp;CocosNode
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.cocosnode.CocosNode</h1>
+<dl><dt>Known Subclasses:</dt>
+<dd>
+    <a href="cocos.particle.ParticleSystem-class.html">particle.ParticleSystem</a>,
+    <a href="cocos.layer.base_layers.Layer-class.html">layer.base_layers.Layer</a>,
+    <a href="cocos.batch.BatchNode-class.html">batch.BatchNode</a>,
+    <a href="cocos.batch.BatchableNode-class.html">batch.BatchableNode</a>,
+    <a href="cocos.text.TextElement-class.html">text.TextElement</a>,
+    <a href="cocos.draw.Canvas-class.html">draw.Canvas</a>,
+    <a href="cocos.scene.Scene-class.html">scene.Scene</a>,
+    menu.BaseMenuItem,
+    <a href="cocos.skeleton.Skin-class.html">skeleton.Skin</a>
+</dd></dl>
+
+<p>Cocosnode is the main element. Anything thats gets drawn or contains things that get drawn is a cocosnode.
+The most popular cocosnodes are scenes, layers and sprites.</p>
+<dl class="rst-docutils">
+<dt>The main features of a cocosnode are:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>They can contain other cocos nodes (add, get, remove, etc)</li>
+<li>They can schedule periodic callback (schedule, schedule_interval, etc)</li>
+<li>They can execute actions (do, pause, stop, etc)</li>
+</ul>
+</dd>
+</dl>
+<p>Some cocosnodes provide extra functionality for them or their children.</p>
+<dl class="rst-docutils">
+<dt>Subclassing a cocosnode usually means (one/all) of:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>overriding __init__ to initialize resources and schedule calbacks</li>
+<li>create callbacks to handle the advancement of time</li>
+<li>overriding draw to render the node</li>
+</ul>
+</dd>
+</dl>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__contains__"></a><span class="summary-sig-name">__contains__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">child</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> instance</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#add" class="summary-sig-name">add</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">child</span>,
+        <span class="summary-sig-arg">z</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Adds a child and if it becomes part of the active scene calls its on_enter method</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="are_actions_running"></a><span class="summary-sig-name">are_actions_running</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Determine whether any actions are running.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> instance</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#do" class="summary-sig-name">do</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>,
+        <span class="summary-sig-arg">target</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Executes an <em>action</em>.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#draw" class="summary-sig-name">draw</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span>
+<div class="summary-description">This is the function you will have to override if you want your
+subclassed to draw something on screen.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">CocosNode</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#get" class="summary-sig-name">get</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span>
+<div class="summary-description">Gets a child given its name</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> or None</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_ancestor"></a><span class="summary-sig-name">get_ancestor</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">klass</span>)</span>
+<div class="summary-description">Walks the nodes tree upwards until it finds a node of the class <code class="link">klass</code>
+or returns None</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of CocosNode</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#get_children" class="summary-sig-name">get_children</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Return a list with the node's childs, order is back to front</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_local_inverse"></a><span class="summary-sig-name">get_local_inverse</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the local inverse transformation matrix</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_local_transform"></a><span class="summary-sig-name">get_local_transform</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the local transformation matrix</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_world_inverse"></a><span class="summary-sig-name">get_world_inverse</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the world inverse transformation matrix</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_world_transform"></a><span class="summary-sig-name">get_world_transform</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the world transformation matrix</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="kill"></a><span class="summary-sig-name">kill</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Remove this object from its parent, and thus most likely from
+everything.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#on_enter" class="summary-sig-name">on_enter</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Called every time just before the node enters the stage.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#on_exit" class="summary-sig-name">on_exit</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Called every time just before the node leaves the stage</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="pause"></a><span class="summary-sig-name">pause</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Suspends the execution of actions.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="pause_scheduler"></a><span class="summary-sig-name">pause_scheduler</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Time will stop passing for this node: scheduled callbacks will
+not be called, worker actions will not be called</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Vector2</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="point_to_local"></a><span class="summary-sig-name">point_to_local</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">p</span>)</span>
+<div class="summary-description">returns an euclid.Vector2 converted to local space</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Vector2</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="point_to_world"></a><span class="summary-sig-name">point_to_world</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">p</span>)</span>
+<div class="summary-description">returns an euclid.Vector2 converted to world space</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#remove" class="summary-sig-name">remove</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description">Removes a child given its name or object</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#remove_action" class="summary-sig-name">remove_action</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>)</span>
+<div class="summary-description">Removes an action from the node actions container, potentially calling action.stop()</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="resume"></a><span class="summary-sig-name">resume</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Resumes the execution of actions.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="resume_scheduler"></a><span class="summary-sig-name">resume_scheduler</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Time will continue/start passing for this node and callbacks
+will be called, worker actions will be called</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#schedule" class="summary-sig-name">schedule</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span>
+<div class="summary-description">Schedule a function to be called every frame.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#schedule_interval" class="summary-sig-name">schedule_interval</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>,
+        <span class="summary-sig-arg">interval</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span>
+<div class="summary-description">Schedule a function to be called every <code class="link">interval</code> seconds.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#stop" class="summary-sig-name">stop</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Removes all actions from the running action list</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#transform" class="summary-sig-name">transform</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Apply ModelView transformations</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#unschedule" class="summary-sig-name">unschedule</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>)</span>
+<div class="summary-description">Remove a function from the schedule.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#visit" class="summary-sig-name">visit</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">This function <em>visits</em> it's children in a recursive
+way.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#walk" class="summary-sig-name">walk</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>,
+        <span class="summary-sig-arg">collect</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Executes callback on all the subtree starting at self.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#anchor" class="summary-name">anchor</a>
+<div class="summary-description">Anchor point of the object.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#anchor_x" class="summary-name">anchor_x</a>
+<div class="summary-description">Anchor x value for transformations and adding children</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#anchor_y" class="summary-name">anchor_y</a>
+<div class="summary-description">Anchor y value for transformations and adding children</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">object</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#parent" class="summary-name">parent</a>
+<div class="summary-description">The parent of this object.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int, int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#position" class="summary-name">position</a>
+<div class="summary-description">The (x, y) coordinates of the object.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#rotation" class="summary-name">rotation</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#scale" class="summary-name">scale</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#transform_anchor" class="summary-name">transform_anchor</a>
+<div class="summary-description">Transformation anchor point.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#x" class="summary-name">x</a>
+<div class="summary-description">The x coordinate of the object</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#y" class="summary-name">y</a>
+<div class="summary-description">The y coordinate of the object</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="actions"></a><span class="summary-name">actions</span>
+<div class="summary-description">list of <a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> objects that are running</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#camera" class="summary-name">camera</a>
+<div class="summary-description">eye, center and up vector for the <a href="cocos.camera.Camera-class.html" class="link">Camera</a>.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="children"></a><span class="summary-name">children</span>
+<div class="summary-description">list of (int, child-reference) where int is the z-order, sorted by ascending z (back to front order)</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="children_names"></a><span class="summary-name">children_names</span>
+<div class="summary-description">dictionary that maps children names with children references</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#grid" class="summary-name">grid</a>
+<div class="summary-description">the grid object for the grid actions.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="is_running"></a><span class="summary-name">is_running</span>
+<div class="summary-description">whether of not the object is running</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scheduled_calls"></a><span class="summary-name">scheduled_calls</span>
+<div class="summary-description">list of scheduled callbacks</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scheduled_interval_calls"></a><span class="summary-name">scheduled_interval_calls</span>
+<div class="summary-description">list of scheduled interval callbacks</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="skip_frame"></a><span class="summary-name">skip_frame</span>
+<div class="summary-description">whether or not the next frame will be skipped</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="to_remove"></a><span class="summary-name">to_remove</span>
+<div class="summary-description">list of <a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> objects to be removed</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#transform_anchor_x" class="summary-name">transform_anchor_x</a>
+<div class="summary-description">offset from (x,0) from where rotation and scale will be applied.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#transform_anchor_y" class="summary-name">transform_anchor_y</a>
+<div class="summary-description">offset from (0,y) from where rotation and scale will be applied.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#visible" class="summary-name">visible</a>
+<div class="summary-description">whether of not the object and his childrens are visible.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="add"></a>
+<div class=" detail">
+  <h3>add</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">add</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">child</span>,
+        <span class="sig-arg">z</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  Adds a child and if it becomes part of the active scene calls its on_enter method
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">child</span> : <span class='ptype'>CocosNode</span></dt>
+        <dd>object to be added</dd>
+        <dt><span class="pname">z</span> : <span class='ptype'>float</span></dt>
+        <dd>the z index of self</dd>
+        <dt><span class="pname">name</span> : <span class='ptype'>str</span></dt>
+        <dd>Name of the child</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype"><a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> instance</span>: self</dd>
+  </dl>
+  </div>
+</div>
+<a name="do"></a>
+<div class=" detail">
+  <h3>do</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">do</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">action</span>,
+        <span class="sig-arg">target</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Executes an <em>action</em>.
+When the action finished, it will be removed from the node's actions
+container.</p>
+<p>to remove an action you must use the .do return value to
+call .remove_action</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">action</span> : <span class='ptype'>an <a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> instance</span></dt>
+        <dd>Action that will be executed.</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype"><a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> instance</span>: A clone of <em>action</em></dd>
+  </dl>
+  </div>
+</div>
+<a name="draw"></a>
+<div class=" detail">
+  <h3>draw</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">draw</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>This is the function you will have to override if you want your
+subclassed to draw something on screen.</p>
+<p>You <em>must</em> respect the position, scale, rotation and anchor attributes.
+If you want OpenGL to do the scaling for you, you can:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">draw</span>(self):
+    glPushMatrix()
+    self.transform()
+    <span class="py-comment"># ... draw ..</span>
+    glPopMatrix()</pre>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="get"></a>
+<div class=" detail">
+  <h3>get</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Gets a child given its name</p>
+<p>Warning: if a node is added with name, then removed not by name, the name
+cannot be recycled: attempting to add other node with this name will
+produce an Exception.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">name</span> : <span class='ptype'>string</span></dt>
+        <dd>name of the reference to be get</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype">CocosNode</span>: the child named 'name'. Will raise Exception if not present</dd>
+  </dl>
+  </div>
+</div>
+<a name="get_children"></a>
+<div class=" detail">
+  <h3>get_children</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_children</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  Return a list with the node's childs, order is back to front
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">list of CocosNode</span>: childs of this node, ordered back to front</dd>
+  </dl>
+  </div>
+</div>
+<a name="on_enter"></a>
+<div class=" detail">
+  <h3>on_enter</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">on_enter</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Called every time just before the node enters the stage.</p>
+<p>scheduled calls and worker actions begins or continues to perform</p>
+<p>Good point to do .push_handlers if you have custom ones
+Rule: a handler pushed there is near certain to require a .pop_handlers
+in the .on_exit method (else it will be called even after removed from
+the active scene, or, if going on stage again will be called multiple
+times for each event ocurrence)</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="on_exit"></a>
+<div class=" detail">
+  <h3>on_exit</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">on_exit</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Called every time just before the node leaves the stage</p>
+<p>scheduled calls and worker actions are suspended, that is, will not
+be called until an on_enter event happens.</p>
+<p>Most of the time you will want to .pop_handlers for all explicit
+.push_handlers found in on_enter</p>
+<p>Consider to release here openGL resources created by this node, like
+compiled vertex lists</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="remove"></a>
+<div class=" detail">
+  <h3>remove</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">remove</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">obj</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Removes a child given its name or object</p>
+<p>If the node was added with name, it is better to remove by name, else
+the name will be unavailable for further adds ( and will raise Exception
+if add with this same name is attempted)</p>
+<p>If the node was part of the active scene, its on_exit method will be called.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">obj</span> : <span class='ptype'>string or object</span></dt>
+        <dd>name of the reference to be removed
+or object to be removed</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="remove_action"></a>
+<div class=" detail">
+  <h3>remove_action</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">remove_action</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">action</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Removes an action from the node actions container, potentially calling action.stop()</p>
+<p>If action was running, action.stop is called
+Mandatory interfase to remove actions in the node actions container.
+When skipping this there is the posibility to double call the action.stop</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">action</span> : <span class='ptype'>Action</span></dt>
+        <dd>Action to be removed
+Must be the return value for a .do(...) call</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="schedule"></a>
+<div class=" detail">
+  <h3>schedule</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">schedule</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">callback</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Schedule a function to be called every frame.</p>
+<p>The function should have a prototype that includes <tt class="rst-docutils literal"><span class="pre">dt</span></tt> as the
+first argument, which gives the elapsed time, in seconds, since the
+last clock tick.  Any additional arguments given to this function
+are passed on to the callback:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">callback</span>(dt, *args, **kwargs):
+    <span class="py-keyword">pass</span></pre>
+<p>This function is a wrapper to pyglet.clock.schedule.
+It has the additional benefit that all calllbacks are paused and
+resumed when the node leaves or enters a scene.</p>
+<p>You should not have to schedule things using pyglet by yourself.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">callback</span> : <span class='ptype'>function</span></dt>
+        <dd>The function to call each frame.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="schedule_interval"></a>
+<div class=" detail">
+  <h3>schedule_interval</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">schedule_interval</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">callback</span>,
+        <span class="sig-arg">interval</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Schedule a function to be called every <code class="link">interval</code> seconds.</p>
+<p>Specifying an interval of 0 prevents the function from being
+called again (see <a href="cocos.cocosnode.CocosNode-class.html#schedule" class="link">schedule</a> to call a function as often as possible).</p>
+<p>The callback function prototype is the same as for <a href="cocos.cocosnode.CocosNode-class.html#schedule" class="link">schedule</a>.</p>
+<p>This function is a wrapper to pyglet.clock.schedule_interval.
+It has the additional benefit that all calllbacks are paused and
+resumed when the node leaves or enters a scene.</p>
+<p>You should not have to schedule things using pyglet by yourself.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">callback</span> : <span class='ptype'>function</span></dt>
+        <dd>The function to call when the timer lapses.</dd>
+        <dt><span class="pname">interval</span> : <span class='ptype'>float</span></dt>
+        <dd>The number of seconds to wait between each call.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="stop"></a>
+<div class=" detail">
+  <h3>stop</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">stop</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Removes all actions from the running action list</p>
+<p>For each action running the stop method will be called,
+and the action will be retired from the actions container.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="transform"></a>
+<div class=" detail">
+  <h3>transform</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">transform</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Apply ModelView transformations</p>
+<p>you will most likely want to wrap calls to this function with
+glPushMatrix/glPopMatrix</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="unschedule"></a>
+<div class=" detail">
+  <h3>unschedule</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">unschedule</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">callback</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Remove a function from the schedule.</p>
+<p>If the function appears in the schedule more than once, all occurances
+are removed.  If the function was not scheduled, no error is raised.</p>
+<p>This function is a wrapper to pyglet.clock.unschedule.
+It has the additional benefit that all calllbacks are paused and
+resumed when the node leaves or enters a scene.</p>
+<p>You should not unschedule things using pyglet that where scheduled
+by node.schedule/node.schedule_interface.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">callback</span> : <span class='ptype'>function</span></dt>
+        <dd>The function to remove from the schedule.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="visit"></a>
+<div class=" detail">
+  <h3>visit</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">visit</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>This function <em>visits</em> it's children in a recursive
+way.</p>
+<p>It will first <em>visit</em> the children that
+that have a z-order value less than 0.</p>
+<p>Then it will call the <a href="cocos.cocosnode.CocosNode-class.html#draw" class="link">draw</a> method to
+draw itself.</p>
+<p>And finally it will <em>visit</em> the rest of the
+children (the ones with a z-value bigger
+or equal than 0)</p>
+<p>Before <em>visiting</em> any children it will call
+the <a href="cocos.cocosnode.CocosNode-class.html#transform" class="link">transform</a> method to apply any possible
+transformation.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="walk"></a>
+<div class=" detail">
+  <h3>walk</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">walk</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">callback</span>,
+        <span class="sig-arg">collect</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  Executes callback on all the subtree starting at self.
+returns a list of all return values that are not none
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">callback</span> : <span class='ptype'>function</span></dt>
+        <dd>callable, takes a cocosnode as argument</dd>
+        <dt><span class="pname">collect</span> : <span class='ptype'>list</span></dt>
+        <dd>list of visited nodes</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype">list</span>: the list of not-none return values</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+        <h2>Property Details</h2>
+<table class="details">
+</table>
+<a name="anchor"></a>
+<div class=" detail">
+  <h3>anchor</h3>
+  <div class="detail-description">
+  Anchor point of the object.
+Children will be added at this point
+and transformations like scaling and rotation will use this point
+as the center
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>(int,int)</dd>
+  </dl>
+  </div>
+</div>
+<a name="anchor_x"></a>
+<div class=" detail">
+  <h3>anchor_x</h3>
+  <div class="detail-description">
+  Anchor x value for transformations and adding children
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>(int,int)</dd>
+  </dl>
+  </div>
+</div>
+<a name="anchor_y"></a>
+<div class=" detail">
+  <h3>anchor_y</h3>
+  <div class="detail-description">
+  Anchor y value for transformations and adding children
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>(int,int)</dd>
+  </dl>
+  </div>
+</div>
+<a name="parent"></a>
+<div class=" detail">
+  <h3>parent</h3>
+  <div class="detail-description">
+  The parent of this object.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>object</dd>
+  </dl>
+  </div>
+</div>
+<a name="position"></a>
+<div class=" detail">
+  <h3>position</h3>
+  <div class="detail-description">
+  The (x, y) coordinates of the object.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>(int, int)</dd>
+  </dl>
+  </div>
+</div>
+<a name="rotation"></a>
+<div class=" detail">
+  <h3>rotation</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="scale"></a>
+<div class=" detail">
+  <h3>scale</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="transform_anchor"></a>
+<div class=" detail">
+  <h3>transform_anchor</h3>
+  <div class="detail-description">
+  Transformation anchor point.
+Transformations like scaling and rotation
+will use this point as it's center
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>(int,int)</dd>
+  </dl>
+  </div>
+</div>
+<a name="x"></a>
+<div class=" detail">
+  <h3>x</h3>
+  <div class="detail-description">
+  The x coordinate of the object
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="y"></a>
+<div class=" detail">
+  <h3>y</h3>
+  <div class="detail-description">
+  The y coordinate of the object
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+        <h2>Instance Variable Details</h2>
+<table class="details">
+</table>
+<a name="camera"></a>
+<div class=" detail">
+  <h3>camera</h3>
+  <div class="detail-description">
+  eye, center and up vector for the <a href="cocos.camera.Camera-class.html" class="link">Camera</a>.
+gluLookAt() is used with these values.
+Default: FOV 60, center of the screen.
+IMPORTANT: The camera can perform exactly the same
+transformation as <tt class="rst-docutils literal"><span class="pre">scale</span></tt>, <tt class="rst-docutils literal"><span class="pre">rotation</span></tt> and the
+<tt class="rst-docutils literal"><span class="pre">x</span></tt>, <tt class="rst-docutils literal"><span class="pre">y</span></tt> attributes (with the exception that the
+camera can modify also the z-coordinate)
+In fact, they all transform the same matrix, so
+use either the camera or the other attributes, but not both
+since the camera will be overridden by the transformations done
+by the other attributes.
+You can change the camera manually or by using the <a href="cocos.actions.camera_actions.Camera3DAction-class.html" class="link">Camera3DAction</a>
+action.
+  <dl class="fields">
+  </div>
+</div>
+<a name="grid"></a>
+<div class=" detail">
+  <h3>grid</h3>
+  <div class="detail-description">
+  the grid object for the grid actions.
+This can be a <a href="cocos.grid.Grid3D-class.html" class="link">Grid3D</a> or a <a href="cocos.grid.TiledGrid3D-class.html" class="link">TiledGrid3D</a> object depending
+on the action.
+  <dl class="fields">
+  </div>
+</div>
+<a name="transform_anchor_x"></a>
+<div class=" detail">
+  <h3>transform_anchor_x</h3>
+  <div class="detail-description">
+  offset from (x,0) from where rotation and scale will be applied.
+Default: 0
+  <dl class="fields">
+  </div>
+</div>
+<a name="transform_anchor_y"></a>
+<div class=" detail">
+  <h3>transform_anchor_y</h3>
+  <div class="detail-description">
+  offset from (0,y) from where rotation and scale will be applied.
+Default: 0
+  <dl class="fields">
+  </div>
+</div>
+<a name="visible"></a>
+<div class=" detail">
+  <h3>visible</h3>
+  <div class="detail-description">
+  whether of not the object and his childrens are visible.
+Default: True
+  <dl class="fields">
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.cocosnode-module.html">cocosnode</a>&nbsp;.&nbsp;CocosNode
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

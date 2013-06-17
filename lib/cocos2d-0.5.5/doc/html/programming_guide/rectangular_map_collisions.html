@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Rectangular Map Collisions</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="rectangular_maps.html" title="Rectangular Maps">Rectangular Maps</a></span><span class="next">Next: <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="tiled_maps.html" title="Tiled maps">Tiled maps</a> » Rectangular Map Collisions</span></div>
+<h1 class="title">Rectangular Map Collisions</h1>
+
+<p>A simple collider class is provided called RectMapCollider. This
+collider is particularly useful in 2D side-scrolling platformers, or
+top-down dungeon crawlers, to control movement of the player.</p>
+<p>It assumes that the cells within your tile map have the boolean properties
+&quot;left&quot;, &quot;right&quot;, &quot;top&quot; and &quot;bottom&quot; defined for those cells which are to be
+collidable. See <a class="reference" href="map_cell_and_tile_properties.html">Map, Cell and Tile Properties</a> for information about
+properties.</p>
+<p>A solid block would probably have all four sides set. A
+platform would usually only have the top set so the player might jump up
+from underneath and pass through.</p>
+<p>For convenience these properties would typically be set ont he tiles
+themselves, rather than on individual cells. Of course for the cell which
+is the entrance to a secret area you could override a wall's properties to
+set the side to False and allow ingress.</p>
+<p>The basic interface to RectMapCollider is to invoke collide_map to collide
+a single moving actor with a RectMapLayer.</p>
+<p>You would typically override RectMapCollider to provide implementations
+of its collision methods, for example:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">PlayerCollider</span>(tiles.RectMapCollider):
+   <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, player):
+       self.player = player
+
+   <span class="py-keyword">def</span> <span class="py-defname">collide_bottom</span>(self, dy):
+       <span class="py-keyword">if</span> self.player.dy:
+           self.player.do_landed()
+
+   <span class="py-keyword">def</span> <span class="py-defname">collide_left</span>(self, dx):
+       self.player.stop_walk()
+
+   <span class="py-keyword">def</span> <span class="py-defname">collide_right</span>(self, dx):
+       self.player.stop_walk()
+
+   <span class="py-keyword">def</span> <span class="py-defname">collide_top</span>(self, dy):
+       <span class="py-keyword">if</span> self.player.dy:
+           self.player.do_ouch()</pre>
+<p>Then you would instantiate the collider (possibly only once) passing in the
+object representing the player which manages the player's velocity (dx and
+dy). Once per update you would could something like:</p>
+<pre class="py-doctest">
+collider = PlayerCollider(player)
+dx, dy = player.velocity
+
+<span class="py-comment"># using the player controls, gravity and other acceleration influences</span>
+<span class="py-comment"># update the velocity</span>
+dx = ...
+dy = dy - gravity
+
+<span class="py-comment"># get the player's current bounding rectangle</span>
+last = player.get_rect()
+new = last.copy()
+new.x += dx
+new.y += dy
+
+<span class="py-comment"># run the collider</span>
+collider.collide_map(map, last, new, dy, dx)
+
+<span class="py-comment"># move the player</span>
+player.position = new.position</pre>
+<p>Another approach which may be simpler is to mix the collider into your
+Player class, and then just provide those collide methods on your Player
+class.</p>
+<p>A third approach is to create a cocos Action derivative which handles the
+player controls and collision. This is the approach taken in the
+test/test_platformer.py code.</p>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="rectangular_maps.html" title="Rectangular Maps">Rectangular Maps</a></span><span class="next">Next: <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="tiled_maps.html" title="Tiled maps">Tiled maps</a> » Rectangular Map Collisions</span></div>
+</div>
+</body>
+</html>

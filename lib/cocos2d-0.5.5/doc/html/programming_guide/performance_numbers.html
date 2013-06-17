@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Performance numbers</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="collision_model.html" title="Collision Model">Collision Model</a></span><span class="next">Next: <a class="reference" href="skeletal_animations.html" title="Skeletal Animations">Skeletal Animations</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="collision.html" title="Collision">Collision</a> » Performance numbers</span></div>
+<h1 class="title">Performance numbers</h1>
+
+<div class="section" id="the-benchmark">
+<h1><a class="toc-backref" href="#id190">The benchmark</a></h1>
+<p>The benchmark moves a number of balls in a rectangular area, with soft bounce in the ball-ball and ball-border interactions. We measure the time to calculate a fixed number of frames without drawing; this gives the time per physic frame.
+The initial positions are randomly chosen in the rectangle, and the initial velocity has random uniform angle.
+Most of the time the balls will have a uniform distribution over the rectangle.</p>
+<p>The model for the world is coded in  benchmarks/collision/a0_bouncing_balls_Model.py, and the runner in benchmarks/collision/a0_benchmark_time_per_frame.py</p>
+<p>Directly running the model script renders on screen and shows the fps.</p>
+<p>Testbed: windows xp sp3 32 bits, python 2.6.5,
+AMD athlon dual core 5200+, memory DDR2 800 single channel</p>
+</div>
+<div class="section" id="comparing-with-brute-force">
+<h1><a class="toc-backref" href="#id191">Comparing with brute force</a></h1>
+<p>A benchmark was writen to compare brute force versus other implementations.
+Currently the only CollisionManager implementation is CollisionManagerGrid, which has parameters defining the cell size; the figure compares time per frame for brute force and CollisionManagerGrid with diferent cell sizes.</p>
+<div align="center" class="align-center"><img alt="comparing_collision_managers.png" class="align-center" src="comparing_collision_managers.png" style="width: 500px; height: 600px;" /></div>
+</div>
+<div class="section" id="shape-comparisson">
+<h1><a class="toc-backref" href="#id192">Shape comparisson</a></h1>
+<p>The benchmark is parametrizable in the Cshape implementation to use; here we compare circle vs AABB</p>
+<div align="center" class="align-center"><img alt="comparing_shapes.png" class="align-center" src="comparing_shapes.png" style="width: 500px; height: 600px;" /></div>
+</div>
+<div class="section" id="ballpark-fps">
+<h1><a class="toc-backref" href="#id193">Ballpark fps</a></h1>
+<p>The visualization provided by a0_bouncing_balls_Model.py, which shows all balls and a colored rectangle runs at 60 fps with 165 balls, and 30fps with 300 balls (gpu ati radeon 4650)</p>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="collision_model.html" title="Collision Model">Collision Model</a></span><span class="next">Next: <a class="reference" href="skeletal_animations.html" title="Skeletal Animations">Skeletal Animations</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="collision.html" title="Collision">Collision</a> » Performance numbers</span></div>
+</div>
+</body>
+</html>

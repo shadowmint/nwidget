@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.particle.ParticleSystem</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.particle-module.html">particle</a>&nbsp;.&nbsp;ParticleSystem
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.particle.ParticleSystem</h1>
+<pre class="base-tree">
+<a href="cocos.cocosnode.CocosNode-class.html">cocosnode.CocosNode</a> --+
+                      |
+                     <strong class="uidshort">ParticleSystem</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+    <a href="cocos.particle_systems.Explosion-class.html">particle_systems.Explosion</a>,
+    <a href="cocos.particle_systems.Fire-class.html">particle_systems.Fire</a>,
+    <a href="cocos.particle_systems.Fireworks-class.html">particle_systems.Fireworks</a>,
+    <a href="cocos.particle_systems.Flower-class.html">particle_systems.Flower</a>,
+    <a href="cocos.particle_systems.Galaxy-class.html">particle_systems.Galaxy</a>,
+    <a href="cocos.particle_systems.Meteor-class.html">particle_systems.Meteor</a>,
+    <a href="cocos.particle_systems.Smoke-class.html">particle_systems.Smoke</a>,
+    <a href="cocos.particle_systems.Spiral-class.html">particle_systems.Spiral</a>,
+    <a href="cocos.particle_systems.Sun-class.html">particle_systems.Sun</a>
+</dd></dl>
+
+<p>Base class for many flawors of cocos particle systems</p>
+<p>The most easy way to customize is subclass and redefine some class members;
+see particle_systems by example.</p>
+<p>If you want to use a custom texture remember it should hold only one image,
+so don't use texture = pyglet.resource.image(...) (it would produce an atlas,
+ie multiple images in a texture); using texture = pyglet.image.load(...) is fine</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.particle.ParticleSystem-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fallback</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">False: use point sprites, faster, not always availabel
+True: use quads, slower but always available)
+None: autodetect, use the faster available</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.particle.ParticleSystem-class.html#on_enter" class="summary-sig-name">on_enter</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Called every time just before the node enters the stage.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.particle.ParticleSystem-class.html#draw" class="summary-sig-name">draw</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">This is the function you will have to override if you want your
+subclassed to draw something on screen.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="step"></a><span class="summary-sig-name">step</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">delta</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.particle.ParticleSystem-class.html#add_particle" class="summary-sig-name">add_particle</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">be sure there is room for the particle
+or
+be prepared to catch the exception ExceptionNoEmptyParticle
+It is acceptable to try: ...</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="stop_system"></a><span class="summary-sig-name">stop_system</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="reset_system"></a><span class="summary-sig-name">reset_system</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="update_particles"></a><span class="summary-sig-name">update_particles</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">delta</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="init_particle"></a><span class="summary-sig-name">init_particle</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="draw_fallback"></a><span class="summary-sig-name">draw_fallback</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="update_vertexs_from_pos"></a><span class="summary-sig-name">update_vertexs_from_pos</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="update_per_vertex_colors"></a><span class="summary-sig-name">update_per_vertex_colors</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="make_delta_pos_to_vertex"></a><span class="summary-sig-name">make_delta_pos_to_vertex</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__contains__"></a><span class="summary-sig-name">__contains__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">child</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> instance</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#add" class="summary-sig-name">add</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">child</span>,
+        <span class="summary-sig-arg">z</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Adds a child and if it becomes part of the active scene calls its on_enter method</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="are_actions_running"></a><span class="summary-sig-name">are_actions_running</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Determine whether any actions are running.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> instance</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#do" class="summary-sig-name">do</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>,
+        <span class="summary-sig-arg">target</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Executes an <em>action</em>.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">CocosNode</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#get" class="summary-sig-name">get</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span>
+<div class="summary-description">Gets a child given its name</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> or None</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_ancestor"></a><span class="summary-sig-name">get_ancestor</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">klass</span>)</span>
+<div class="summary-description">Walks the nodes tree upwards until it finds a node of the class <code class="link">klass</code>
+or returns None</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of CocosNode</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#get_children" class="summary-sig-name">get_children</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Return a list with the node's childs, order is back to front</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_local_inverse"></a><span class="summary-sig-name">get_local_inverse</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the local inverse transformation matrix</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_local_transform"></a><span class="summary-sig-name">get_local_transform</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the local transformation matrix</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_world_inverse"></a><span class="summary-sig-name">get_world_inverse</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the world inverse transformation matrix</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Matrix3</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_world_transform"></a><span class="summary-sig-name">get_world_transform</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">returns an euclid.Matrix3 with the world transformation matrix</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="kill"></a><span class="summary-sig-name">kill</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Remove this object from its parent, and thus most likely from
+everything.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#on_exit" class="summary-sig-name">on_exit</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Called every time just before the node leaves the stage</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="pause"></a><span class="summary-sig-name">pause</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Suspends the execution of actions.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="pause_scheduler"></a><span class="summary-sig-name">pause_scheduler</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Time will stop passing for this node: scheduled callbacks will
+not be called, worker actions will not be called</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Vector2</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="point_to_local"></a><span class="summary-sig-name">point_to_local</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">p</span>)</span>
+<div class="summary-description">returns an euclid.Vector2 converted to local space</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">euclid.Vector2</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="point_to_world"></a><span class="summary-sig-name">point_to_world</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">p</span>)</span>
+<div class="summary-description">returns an euclid.Vector2 converted to world space</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#remove" class="summary-sig-name">remove</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description">Removes a child given its name or object</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#remove_action" class="summary-sig-name">remove_action</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>)</span>
+<div class="summary-description">Removes an action from the node actions container, potentially calling action.stop()</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="resume"></a><span class="summary-sig-name">resume</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Resumes the execution of actions.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="resume_scheduler"></a><span class="summary-sig-name">resume_scheduler</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Time will continue/start passing for this node and callbacks
+will be called, worker actions will be called</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#schedule" class="summary-sig-name">schedule</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span>
+<div class="summary-description">Schedule a function to be called every frame.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#schedule_interval" class="summary-sig-name">schedule_interval</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>,
+        <span class="summary-sig-arg">interval</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span>
+<div class="summary-description">Schedule a function to be called every <code class="link">interval</code> seconds.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#stop" class="summary-sig-name">stop</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Removes all actions from the running action list</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#transform" class="summary-sig-name">transform</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Apply ModelView transformations</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#unschedule" class="summary-sig-name">unschedule</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>)</span>
+<div class="summary-description">Remove a function from the schedule.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#visit" class="summary-sig-name">visit</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">This function <em>visits</em> it's children in a recursive
+way.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.cocosnode.CocosNode-class.html#walk" class="summary-sig-name">walk</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>,
+        <span class="summary-sig-arg">collect</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Executes callback on all the subtree starting at self.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#anchor" class="summary-name">anchor</a>
+<div class="summary-description">Anchor point of the object.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#anchor_x" class="summary-name">anchor_x</a>
+<div class="summary-description">Anchor x value for transformations and adding children</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#anchor_y" class="summary-name">anchor_y</a>
+<div class="summary-description">Anchor y value for transformations and adding children</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">object</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#parent" class="summary-name">parent</a>
+<div class="summary-description">The parent of this object.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int, int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#position" class="summary-name">position</a>
+<div class="summary-description">The (x, y) coordinates of the object.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#rotation" class="summary-name">rotation</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#scale" class="summary-name">scale</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int,int)</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#transform_anchor" class="summary-name">transform_anchor</a>
+<div class="summary-description">Transformation anchor point.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#x" class="summary-name">x</a>
+<div class="summary-description">The x coordinate of the object</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#y" class="summary-name">y</a>
+<div class="summary-description">The y coordinate of the object</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="emit_counter"></a><span class="summary-name">emit_counter</span>
+<div class="summary-description">How many particles can be emitted per second</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="particle_count"></a><span class="summary-name">particle_count</span>
+<div class="summary-description">Count of particles</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="auto_remove_on_finish"></a><span class="summary-name">auto_remove_on_finish</span>
+<div class="summary-description">auto remove when particle finishes</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="actions"></a><span class="summary-name">actions</span>
+<div class="summary-description">list of <a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> objects that are running</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#camera" class="summary-name">camera</a>
+<div class="summary-description">eye, center and up vector for the <a href="cocos.camera.Camera-class.html" class="link">Camera</a>.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="children"></a><span class="summary-name">children</span>
+<div class="summary-description">list of (int, child-reference) where int is the z-order, sorted by ascending z (back to front order)</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="children_names"></a><span class="summary-name">children_names</span>
+<div class="summary-description">dictionary that maps children names with children references</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#grid" class="summary-name">grid</a>
+<div class="summary-description">the grid object for the grid actions.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="is_running"></a><span class="summary-name">is_running</span>
+<div class="summary-description">whether of not the object is running</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scheduled_calls"></a><span class="summary-name">scheduled_calls</span>
+<div class="summary-description">list of scheduled callbacks</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scheduled_interval_calls"></a><span class="summary-name">scheduled_interval_calls</span>
+<div class="summary-description">list of scheduled interval callbacks</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="skip_frame"></a><span class="summary-name">skip_frame</span>
+<div class="summary-description">whether or not the next frame will be skipped</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="to_remove"></a><span class="summary-name">to_remove</span>
+<div class="summary-description">list of <a href="cocos.actions.base_actions.Action-class.html" class="link">Action</a> objects to be removed</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#transform_anchor_x" class="summary-name">transform_anchor_x</a>
+<div class="summary-description">offset from (x,0) from where rotation and scale will be applied.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#transform_anchor_y" class="summary-name">transform_anchor_y</a>
+<div class="summary-description">offset from (0,y) from where rotation and scale will be applied.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.cocosnode.CocosNode-class.html#visible" class="summary-name">visible</a>
+<div class="summary-description">whether of not the object and his childrens are visible.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.cocosnode.CocosNode-class.html">cocos.cocosnode.CocosNode</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+        <h2>Class Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="active"></a><span class="summary-name">active</span> = <code title="True">True</code>
+<div class="summary-description">is the particle system active ?</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.particle.ParticleSystem-class.html#duration" class="summary-name">duration</a> = <code title="0">0</code>
+<div class="summary-description">duration in seconds of the system.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="elapsed"></a><span class="summary-name">elapsed</span> = <code title="0">0</code>
+<div class="summary-description">time elapsed since the start of the system (in seconds)</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="gravity"></a><span class="summary-name">gravity</span> = <code title="Point2(0.00, 0.00)">Point2(0.00, 0.00)</code>
+<div class="summary-description">Gravity of the particles</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="pos_var"></a><span class="summary-name">pos_var</span> = <code title="Point2(0.00, 0.00)">Point2(0.00, 0.00)</code>
+<div class="summary-description">position is from &quot;superclass&quot; CocosNode
+Position variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="angle"></a><span class="summary-name">angle</span> = <code title="0.0">0.0</code>
+<div class="summary-description">The angle (direction) of the particles measured in degrees</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="angle_var"></a><span class="summary-name">angle_var</span> = <code title="0.0">0.0</code>
+<div class="summary-description">Angle variance measured in degrees;</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="speed"></a><span class="summary-name">speed</span> = <code title="0.0">0.0</code>
+<div class="summary-description">The speed the particles will have.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="speed_var"></a><span class="summary-name">speed_var</span> = <code title="0.0">0.0</code>
+<div class="summary-description">The speed variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="tangential_accel"></a><span class="summary-name">tangential_accel</span> = <code title="0.0">0.0</code>
+<div class="summary-description">Tangential acceleration</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="tangential_accel_var"></a><span class="summary-name">tangential_accel_var</span> = <code title="0.0">0.0</code>
+<div class="summary-description">Tangential acceleration variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="radial_accel"></a><span class="summary-name">radial_accel</span> = <code title="0.0">0.0</code>
+<div class="summary-description">Radial acceleration</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="radial_accel_var"></a><span class="summary-name">radial_accel_var</span> = <code title="0.0">0.0</code>
+<div class="summary-description">Radial acceleration variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="size"></a><span class="summary-name">size</span> = <code title="0.0">0.0</code>
+<div class="summary-description">Size of the particles</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="size_var"></a><span class="summary-name">size_var</span> = <code title="0.0">0.0</code>
+<div class="summary-description">Size variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="life"></a><span class="summary-name">life</span> = <code title="0">0</code>
+<div class="summary-description">How many seconds will the particle live</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="life_var"></a><span class="summary-name">life_var</span> = <code title="0">0</code>
+<div class="summary-description">Life variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="start_color"></a><span class="summary-name">start_color</span> = <code title="Color(0.0, 0.0, 0.0, 0.0)">Color(0.0, 0.0, 0.0, 0.0)</code>
+<div class="summary-description">Start color of the particles</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="start_color_var"></a><span class="summary-name">start_color_var</span> = <code title="Color(0.0, 0.0, 0.0, 0.0)">Color(0.0, 0.0, 0.0, 0.0)</code>
+<div class="summary-description">Start color variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="end_color"></a><span class="summary-name">end_color</span> = <code title="Color(0.0, 0.0, 0.0, 0.0)">Color(0.0, 0.0, 0.0, 0.0)</code>
+<div class="summary-description">End color of the particles</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="end_color_var"></a><span class="summary-name">end_color_var</span> = <code title="Color(0.0, 0.0, 0.0, 0.0)">Color(0.0, 0.0, 0.0, 0.0)</code>
+<div class="summary-description">End color variance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="total_particles"></a><span class="summary-name">total_particles</span> = <code title="0">0</code>
+<div class="summary-description">Maximum particles</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="pic"></a><span class="summary-name">pic</span> = <code title="&lt;ImageData 128x128&gt;">&lt;ImageData 128x128&gt;</code>
+<div class="summary-description">texture for the particles</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="texture"></a><span class="summary-name">texture</span> = <code title="&lt;Texture 128x128&gt;">&lt;Texture 128x128&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="blend_additive"></a><span class="summary-name">blend_additive</span> = <code title="False">False</code>
+<div class="summary-description">blend additive</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="color_modulate"></a><span class="summary-name">color_modulate</span> = <code title="True">True</code>
+<div class="summary-description">color modulate</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="position_type"></a><span class="summary-name">position_type</span> = <code title="1">1</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CONSTANTS ==================== -->
+<a name="section-Constants"></a>
+        <h2>Constants</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="POSITION_FREE"></a><span class="summary-name">POSITION_FREE</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="POSITION_GROUPED"></a><span class="summary-name">POSITION_GROUPED</span> = <code title="1">1</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="__init__"></a>
+<div class=" detail">
+  <h3>__init__</h3>
+  <div class="detail-signature">
+    <span class="fspecial">(Constructor)</span>
+    <span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">fallback</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  <dl class="rst-docutils">
+<dt>fallback can be None, True, False; default is None</dt>
+<dd>False: use point sprites, faster, not always availabel
+True: use quads, slower but always available)
+None: autodetect, use the faster available</dd>
+</dl>
+  <dl class="fields">
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      <a href="cocos.cocosnode.CocosNode-class.html#__init__">cocosnode.CocosNode.__init__</a>
+    </dd>
+  </dl>
+  </div>
+</div>
+<a name="on_enter"></a>
+<div class=" detail">
+  <h3>on_enter</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">on_enter</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Called every time just before the node enters the stage.</p>
+<p>scheduled calls and worker actions begins or continues to perform</p>
+<p>Good point to do .push_handlers if you have custom ones
+Rule: a handler pushed there is near certain to require a .pop_handlers
+in the .on_exit method (else it will be called even after removed from
+the active scene, or, if going on stage again will be called multiple
+times for each event ocurrence)</p>
+  <dl class="fields">
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      <a href="cocos.cocosnode.CocosNode-class.html#on_enter">cocosnode.CocosNode.on_enter</a>
+    </dd>
+  </dl>
+  </div>
+</div>
+<a name="draw"></a>
+<div class=" detail">
+  <h3>draw</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">draw</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>This is the function you will have to override if you want your
+subclassed to draw something on screen.</p>
+<p>You <em>must</em> respect the position, scale, rotation and anchor attributes.
+If you want OpenGL to do the scaling for you, you can:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">draw</span>(self):
+    glPushMatrix()
+    self.transform()
+    <span class="py-comment"># ... draw ..</span>
+    glPopMatrix()</pre>
+  <dl class="fields">
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      <a href="cocos.cocosnode.CocosNode-class.html#draw">cocosnode.CocosNode.draw</a>
+    </dd>
+  </dl>
+  </div>
+</div>
+<a name="add_particle"></a>
+<div class=" detail">
+  <h3>add_particle</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">add_particle</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <dl class="rst-docutils">
+<dt>Code calling add_particle must be either:</dt>
+<dd>be sure there is room for the particle
+or
+be prepared to catch the exception ExceptionNoEmptyParticle
+It is acceptable to try: ... except...: pass</dd>
+</dl>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+        <h2>Class Variable Details</h2>
+<table class="details">
+</table>
+<a name="duration"></a>
+<div class=" detail">
+  <h3>duration</h3>
+  <div class="detail-description">
+  duration in seconds of the system. -1 is infinity
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+0
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.particle-module.html">particle</a>&nbsp;.&nbsp;ParticleSystem
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:20 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

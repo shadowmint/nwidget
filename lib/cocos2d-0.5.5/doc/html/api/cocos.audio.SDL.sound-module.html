@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL.sound</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;sound
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.audio.SDL.sound</h1>
+<p>An abstract sound format decoding API.</p>
+<p>The latest version of SDL_sound can be found at: <a class="rst-reference external" href="http://icculus.org/SDL_sound/" target="_top">http://icculus.org/SDL_sound/</a></p>
+<p>The basic gist of SDL_sound is that you use an SDL_RWops to get sound data
+into this library, and SDL_sound will take that data, in one of several
+popular formats, and decode it into raw waveform data in the format of
+your choice. This gives you a nice abstraction for getting sound into your
+game or application; just feed it to SDL_sound, and it will handle
+decoding and converting, so you can just pass it to your SDL audio
+callback (or whatever). Since it gets data from an SDL_RWops, you can get
+the initial sound data from any number of sources: file, memory buffer,
+network connection, etc.</p>
+<p>As the name implies, this library depends on SDL: Simple Directmedia Layer,
+which is a powerful, free, and cross-platform multimedia library. It can
+be found at <a class="rst-reference external" href="http://www.libsdl.org/" target="_top">http://www.libsdl.org/</a></p>
+<p>Support is in place or planned for the following sound formats:
+- .WAV  (Microsoft WAVfile RIFF data, internal.)
+- .VOC  (Creative Labs' Voice format, internal.)
+- .MP3  (MPEG-1 Layer 3 support, via the SMPEG and mpglib libraries.)
+- .MID  (MIDI music converted to Waveform data, internal.)
+- .MOD  (MOD files, via MikMod and ModPlug.)
+- .OGG  (Ogg files, via Ogg Vorbis libraries.)
+- .SPX  (Speex files, via libspeex.)
+- .SHN  (Shorten files, internal.)
+- .RAW  (Raw sound data in any format, internal.)
+- .AU   (Sun's Audio format, internal.)
+- .AIFF (Audio Interchange format, internal.)
+- .FLAC (Lossless audio compression, via libFLAC.)</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound.Sound_Version-class.html" class="summary-name">Sound_Version</a>
+<div class="summary-description">Version structure.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound.Sound_AudioInfo-class.html" class="summary-name">Sound_AudioInfo</a>
+<div class="summary-description">Information about an existing sample's format.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound.Sound_DecoderInfo-class.html" class="summary-name">Sound_DecoderInfo</a>
+<div class="summary-description">Information about a sound decoder.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound.Sound_Sample-class.html" class="summary-name">Sound_Sample</a>
+<div class="summary-description">Represents sound data in the process of being decoded.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.audio.SDL.sound.Sound_Version-class.html" class="link">Sound_Version</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="Sound_GetLinkedVersion"></a><span class="summary-sig-name">Sound_GetLinkedVersion</span>()</span>
+<div class="summary-description">Get the version of the dynamically linked SDL_sound library</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of <a href="cocos.audio.SDL.sound.Sound_DecoderInfo-class.html" class="link">Sound_DecoderInfo</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.sound-module.html#Sound_AvailableDecoders" class="summary-sig-name">Sound_AvailableDecoders</a>()</span>
+<div class="summary-description">Get a list of sound formats supported by this version of SDL_sound.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.audio.SDL.sound.Sound_Sample-class.html" class="link">Sound_Sample</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.sound-module.html#Sound_NewSampleFromMem" class="summary-sig-name">Sound_NewSampleFromMem</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">ext</span>,
+        <span class="summary-sig-arg">desired</span>,
+        <span class="summary-sig-arg">bufferSize</span>)</span>
+<div class="summary-description">Start decoding a new sound sample from a buffer.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_Init" class="summary-name">Sound_Init</a> = <code title="_dll.function('Sound_Init', '''Initialize SDL_sound.
+
+    This must be called before any other SDL_sound function (except pe\
+rhaps
+    `Sound_GetLinkedVersion`). You should call `SDL_Init` before calli\
+ng
+    this.  `Sound_Init` will attempt to call ``SDL_Init(SDL_INIT_AUDIO\
+)``,
+...">_dll.function('Sound_Init', '''Initialize SDL_sou<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_Quit" class="summary-name">Sound_Quit</a> = <code title="_dll.function('Sound_Quit', '''Shutdown SDL_sound.
+
+    This closes any SDL_RWops that were being used as sound sources, a\
+nd
+    frees any resources in use by SDL_sound.
+
+    All Sound_Sample structures existing will become invalid.
+
+...">_dll.function('Sound_Quit', '''Shutdown SDL_soun<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_GetError" class="summary-name">Sound_GetError</a> = <code title="_dll.function('Sound_GetError', '''Get the last SDL_sound error messag\
+e.
+
+    This will be None if there's been no error since the last call to \
+this
+    function.  Each thread has a unique error state associated with it\
+, but
+    each time a new error message is set, it will overwrite the previo\
+...">_dll.function('Sound_GetError', '''Get the la<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_ClearError" class="summary-name">Sound_ClearError</a> = <code title="_dll.function('Sound_ClearError', '''Clear the current error message.
+
+    The next call to `Sound_GetError` after `Sound_ClearError` will re\
+turn
+    None.
+    ''', args= [], arg_types= [], return_type= None)">_dll.function('Sound_ClearError', '''Clear <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_NewSample" class="summary-name">Sound_NewSample</a> = <code title="_dll.function('Sound_NewSample', '''Start decoding a new sound sample.\
+
+
+    The data is read via an SDL_RWops structure, so it may be coming f\
+rom
+    memory, disk, network stream, etc. The `ext` parameter is merely a\
+ hint
+    to determining the correct decoder; if you specify, for example, &quot;\
+...">_dll.function('Sound_NewSample', '''Start de<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_NewSampleFromFile" class="summary-name">Sound_NewSampleFromFile</a> = <code title="_dll.function('Sound_NewSampleFromFile', '''Start decoding a new sound\
+ sample from a file on disk.
+
+    This is identical to `Sound_NewSample`, but it creates an `SDL_RWo\
+ps
+    for you from the file located at `filename`.
+    ''', args= ['filename', 'desired', 'bufferSize'], arg_types= [c_ch\
+ar_p, POINTER(Sound_AudioInfo), c_uint], return_type= POINTER(Sound_Sa\
+...">_dll.function('Sound_NewSampleFromFi<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_FreeSample" class="summary-name">Sound_FreeSample</a> = <code title="_dll.function('Sound_FreeSample', '''Dispose of a `Sound_Sample`.
+
+    This will also close/dispose of the `SDL_RWops` that was used at
+    creation time.  The `Sound_Sample` structure is invalid after this\
+
+    call.
+
+    :Parameters:
+...">_dll.function('Sound_FreeSample', '''Dispos<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_GetDuration" class="summary-name">Sound_GetDuration</a> = <code title="_dll.function('Sound_GetDuration', '''Retrieve the total play time of \
+a sample, in milliseconds.
+
+    Report total time length of sample, in milliseconds.  This is a fa\
+st
+    call.  Duration is calculated during `Sound_NewSample`, so this is\
+ just
+    an accessor into otherwise opaque data.
+...">_dll.function('Sound_GetDuration', '''Retr<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_SetBufferSize" class="summary-name">Sound_SetBufferSize</a> = <code title="_dll.function('Sound_SetBufferSize', '''Change the current buffer size\
+ for a sample.
+
+    If the buffer size could be changed, then the ``sample.buffer`` an\
+d
+    ``sample.buffer_size`` fields will reflect that. If they could not\
+ be
+    changed, then your original sample state is preserved. If the buff\
+...">_dll.function('Sound_SetBufferSize', '''<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_Decode" class="summary-name">Sound_Decode</a> = <code title="_dll.function('Sound_Decode', '''Decode more of the sound data in a `S\
+ound_Sample`.
+
+    It will decode at most sample-&gt;buffer_size bytes into ``sample.buf\
+fer``
+    in the desired format, and return the number of decoded bytes.
+
+    If ``sample.buffer_size`` bytes could not be decoded, then refer t\
+...">_dll.function('Sound_Decode', '''Decode more of<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_DecodeAll" class="summary-name">Sound_DecodeAll</a> = <code title="_dll.function('Sound_DecodeAll', '''Decode the remainder of the sound \
+data in a `Sound_Sample`.
+
+    This will dynamically allocate memory for the entire remaining sam\
+ple.
+    ``sample.buffer_size`` and ``sample.buffer`` will be updated to re\
+flect
+    the new buffer.  Refer to ``sample.flags`` to determine if the
+...">_dll.function('Sound_DecodeAll', '''Decode t<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_Rewind" class="summary-name">Sound_Rewind</a> = <code title="_dll.function('Sound_Rewind', '''Rewind a sample to the start.
+
+    Restart a sample at the start of its waveform data, as if newly
+    created with `Sound_NewSample`. If successful, the next call to
+    `Sound_Decode` will give audio data from the earliest point in the\
+
+    stream.
+
+...">_dll.function('Sound_Rewind', '''Rewind a sampl<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.sound-module.html#Sound_Seek" class="summary-name">Sound_Seek</a> = <code title="_dll.function('Sound_Seek', '''Seek to a different point in a sample.
+
+    Reposition a sample's stream. If successful, the next call to
+    `Sound_Decode` or `Sound_DecodeAll` will give audio data from the
+    offset you specified.
+
+    The offset is specified in milliseconds from the start of the
+    sample.
+...">_dll.function('Sound_Seek', '''Seek to a differen<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="Sound_AvailableDecoders"></a>
+<div class=" detail">
+  <h3>Sound_AvailableDecoders</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Sound_AvailableDecoders</span>()</span>
+    </div>
+  <div class="detail-description">
+  <p>Get a list of sound formats supported by this version of SDL_sound.</p>
+<p>This is for informational purposes only. Note that the extension listed
+is merely convention: if we list &quot;MP3&quot;, you can open an MPEG-1 Layer 3
+audio file with an extension of &quot;XYZ&quot;, if you like. The file extensions
+are informational, and only required as a hint to choosing the correct
+decoder, since the sound data may not be coming from a file at all,
+thanks to the abstraction that an SDL_RWops provides.</p>
+  <dl class="fields">
+    <dt>Returns: list of <a href="cocos.audio.SDL.sound.Sound_DecoderInfo-class.html" class="link">Sound_DecoderInfo</a></dt>
+  </dl>
+  </div>
+</div>
+<a name="Sound_NewSampleFromMem"></a>
+<div class=" detail">
+  <h3>Sound_NewSampleFromMem</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Sound_NewSampleFromMem</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">ext</span>,
+        <span class="sig-arg">desired</span>,
+        <span class="sig-arg">bufferSize</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Start decoding a new sound sample from a buffer.</p>
+<p>This is identical to <a href="cocos.audio.SDL.sound-module.html#Sound_NewSample" class="link">Sound_NewSample</a>, but it creates an <a href="cocos.audio.SDL.rwops.SDL_RWops-class.html" class="link">SDL_RWops</a>
+for you from the buffer.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">data</span> : <span class='ptype'><a href="cocos.audio.SDL.array.SDL_array-class.html" class="link">SDL_array</a> or sequence</span></dt>
+        <dd>Buffer holding encoded byte sound data</dd>
+        <dt><span class="pname">ext</span> : <span class='ptype'>str</span></dt>
+        <dd>File extension normally associated with a data format.  Can
+usually be None.</dd>
+        <dt><span class="pname">desired</span> : <span class='ptype'><a href="cocos.audio.SDL.sound.Sound_AudioInfo-class.html" class="link">Sound_AudioInfo</a></span></dt>
+        <dd>Format to convert sound data into.  Can usually be None if you
+don't need conversion.</dd>
+        <dt><span class="pname">bufferSize</span> : <span class='ptype'>int</span></dt>
+        <dd>Size, in bytes, to allocate for the decoding buffer</dd>
+    </dl></dd>
+    <dt>Returns: <a href="cocos.audio.SDL.sound.Sound_Sample-class.html" class="link">Sound_Sample</a></dt>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        Not yet released in SDL_sound
+      </p>
+</div>  </div>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+        <h2>Variables Details</h2>
+<table class="details">
+</table>
+<a name="Sound_Init"></a>
+<div class=" detail">
+  <h3>Sound_Init</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_Init', '''Initialize SDL_sound.
+
+    This must be called before any other SDL_sound function (except pe<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+rhaps
+    `Sound_GetLinkedVersion`). You should call `SDL_Init` before calli<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ng
+    this.  `Sound_Init` will attempt to call ``SDL_Init(SDL_INIT_AUDIO<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+)``,
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_Quit"></a>
+<div class=" detail">
+  <h3>Sound_Quit</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_Quit', '''Shutdown SDL_sound.
+
+    This closes any SDL_RWops that were being used as sound sources, a<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+nd
+    frees any resources in use by SDL_sound.
+
+    All Sound_Sample structures existing will become invalid.
+
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_GetError"></a>
+<div class=" detail">
+  <h3>Sound_GetError</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_GetError', '''Get the last SDL_sound error messag<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+e.
+
+    This will be None if there's been no error since the last call to <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+this
+    function.  Each thread has a unique error state associated with it<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, but
+    each time a new error message is set, it will overwrite the previo<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_ClearError"></a>
+<div class=" detail">
+  <h3>Sound_ClearError</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_ClearError', '''Clear the current error message.
+
+    The next call to `Sound_GetError` after `Sound_ClearError` will re<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+turn
+    None.
+    ''', args= [], arg_types= [], return_type= None)
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_NewSample"></a>
+<div class=" detail">
+  <h3>Sound_NewSample</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_NewSample', '''Start decoding a new sound sample.<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+
+
+    The data is read via an SDL_RWops structure, so it may be coming f<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+rom
+    memory, disk, network stream, etc. The `ext` parameter is merely a<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ hint
+    to determining the correct decoder; if you specify, for example, &quot;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_NewSampleFromFile"></a>
+<div class=" detail">
+  <h3>Sound_NewSampleFromFile</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_NewSampleFromFile', '''Start decoding a new sound<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ sample from a file on disk.
+
+    This is identical to `Sound_NewSample`, but it creates an `SDL_RWo<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ps
+    for you from the file located at `filename`.
+    ''', args= ['filename', 'desired', 'bufferSize'], arg_types= [c_ch<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ar_p, POINTER(Sound_AudioInfo), c_uint], return_type= POINTER(Sound_Sa<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_FreeSample"></a>
+<div class=" detail">
+  <h3>Sound_FreeSample</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_FreeSample', '''Dispose of a `Sound_Sample`.
+
+    This will also close/dispose of the `SDL_RWops` that was used at
+    creation time.  The `Sound_Sample` structure is invalid after this<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+
+    call.
+
+    :Parameters:
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_GetDuration"></a>
+<div class=" detail">
+  <h3>Sound_GetDuration</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_GetDuration', '''Retrieve the total play time of <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+a sample, in milliseconds.
+
+    Report total time length of sample, in milliseconds.  This is a fa<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+st
+    call.  Duration is calculated during `Sound_NewSample`, so this is<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ just
+    an accessor into otherwise opaque data.
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_SetBufferSize"></a>
+<div class=" detail">
+  <h3>Sound_SetBufferSize</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_SetBufferSize', '''Change the current buffer size<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ for a sample.
+
+    If the buffer size could be changed, then the ``sample.buffer`` an<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+d
+    ``sample.buffer_size`` fields will reflect that. If they could not<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ be
+    changed, then your original sample state is preserved. If the buff<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_Decode"></a>
+<div class=" detail">
+  <h3>Sound_Decode</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_Decode', '''Decode more of the sound data in a `S<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ound_Sample`.
+
+    It will decode at most sample-&gt;buffer_size bytes into ``sample.buf<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+fer``
+    in the desired format, and return the number of decoded bytes.
+
+    If ``sample.buffer_size`` bytes could not be decoded, then refer t<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_DecodeAll"></a>
+<div class=" detail">
+  <h3>Sound_DecodeAll</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_DecodeAll', '''Decode the remainder of the sound <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+data in a `Sound_Sample`.
+
+    This will dynamically allocate memory for the entire remaining sam<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ple.
+    ``sample.buffer_size`` and ``sample.buffer`` will be updated to re<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+flect
+    the new buffer.  Refer to ``sample.flags`` to determine if the
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_Rewind"></a>
+<div class=" detail">
+  <h3>Sound_Rewind</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_Rewind', '''Rewind a sample to the start.
+
+    Restart a sample at the start of its waveform data, as if newly
+    created with `Sound_NewSample`. If successful, the next call to
+    `Sound_Decode` will give audio data from the earliest point in the<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+
+    stream.
+
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="Sound_Seek"></a>
+<div class=" detail">
+  <h3>Sound_Seek</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+_dll.function('Sound_Seek', '''Seek to a different point in a sample.
+
+    Reposition a sample's stream. If successful, the next call to
+    `Sound_Decode` or `Sound_DecodeAll` will give audio data from the
+    offset you specified.
+
+    The offset is specified in milliseconds from the start of the
+    sample.
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;sound
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

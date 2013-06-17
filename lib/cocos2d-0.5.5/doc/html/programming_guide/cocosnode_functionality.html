@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>CocosNode Functionality</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a></span><span class="next">Next: <a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html" title="Brief tour of built-in CocosNode subclasses">Brief tour ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a> » CocosNode Functionality</span></div>
+<h1 class="title">CocosNode Functionality</h1>
+
+<p>The fact that all objects depicting the scene are CocosNodes subclasses means that they share a common core of characteristics and functionalities. You know for one and you know for all.</p>
+<p>The common core can be broken by functionality in</p>
+<div class="section" id="parent-child">
+<h1><a class="toc-backref" href="#id154">Parent-child</a></h1>
+<blockquote>
+<ul class="simple">
+<li>.add(self, child, z=0, name=None ): Adds a child, raises exception Name already exists if duplicated</li>
+<li>.remove(self, name_or_obj): Removes a child given its name or object, raises exception Child not found if not present</li>
+<li>.kill(self): Remove itself from its parent</li>
+<li>.parent: property giving the parent node or None</li>
+<li>.get_ancestor(self, klass): Returns the first ancestor that isinstance of klass, or None</li>
+<li>.get_children(self): Returns a list with the node children, order is back to front (ascending z)</li>
+<li>.get(self, name): Gets a child given its name, raises exception Child not found if not present</li>
+<li>operator in , as 'in node1 in node2': returns True if and only if node1 is child of node 2</li>
+</ul>
+</blockquote>
+<p><a class="reference sectionlink" href="cocosnodes_examples.html#parent-child-examples">Parent-Child examples</a></p>
+</div>
+<div class="section" id="spatial-placement">
+<h1><a class="toc-backref" href="#id155">Spatial Placement</a></h1>
+<p>A node position is defined relative to the parent node, most precisely with respect the parent position.</p>
+<blockquote>
+<ul class="simple">
+<li>.x, .y .position: properties giving position relative to parent origin; updating x or y automatically updates position, the reverse is also true.</li>
+<li>.anchor_x, .anchor_y, anchor: properties giving the center for the scale and rotation, they automatically maintain the relation anchor == (anchor_x, anchor_y). Notice that different CocosNodes subclasses can have different default values for anchor.</li>
+<li>.scale : 1.0 is the default scale, with 2.0 the node will double its apparent size.</li>
+<li>.rotation : in degrees</li>
+</ul>
+</blockquote>
+<p><a class="reference sectionlink" href="cocosnodes_examples.html#spatial-placement-snippets">Spatial Placement snippets</a>; also most of scripts in directory tests do explicit placement.</p>
+</div>
+<div class="section" id="going-in-or-out-of-the-active-scene">
+<h1><a class="toc-backref" href="#id156">Going in or out of the active scene</a></h1>
+<blockquote>
+<ul class="simple">
+<li>.on_enter(self): called if added to a parent while parent in the active scene or if the entire scene goes active</li>
+<li>.on_exit(self): called if removed from parent while parent in the active scene or if the entire scene</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="render">
+<h1><a class="toc-backref" href="#id157">Render</a></h1>
+<blockquote>
+<ul class="simple">
+<li>.visit(self): renders itself and its children. Render order is children with z &lt;= 0, itself, children with z &gt; 0</li>
+<li>.draw(self): draws itself</li>
+<li>.transform(self): helper for draw and visit, handles the openGL coordinate changes needed to render mandated by position, anchor, scale and rotation</li>
+<li>.camera: instead of the stock position, anchor, scale and rotation uses a custom gluLookAt that also allows z. This is rarely used, usually by special effects in transitions.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="time-management">
+<h1><a class="toc-backref" href="#id158">Time management</a></h1>
+<blockquote>
+<ul class="simple">
+<li>.schedule_interval(self, callback, interval, *args, **kwargs): Schedule a function to be called every interval seconds.</li>
+<li>.schedule(self, callback, *args, **kwargs): Schedule a function to be called every frame.</li>
+<li>.unschedule(self, callback): Remove a function from the schedule.</li>
+<li>.pause_scheduler(self): Time will stop passing for this node: scheduled callbacks will not be called, worker actions will not be called</li>
+<li>.resume_scheduler(self): Time will continue/start passing for this node and callbacks will be called, worker actions will be called</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="automated-changes-along-the-time">
+<h1><a class="toc-backref" href="#id159">Automated changes along the time</a></h1>
+<blockquote>
+<ul class="simple">
+<li>.do(self, template_action, target=None): most of the time it is called with target=None, which result in target being self. The action will perform a potentially gradual change in target. Returns the worker action, which is the object doing the changes. You must save a reference to the worker if you plan to call later to .action_remove</li>
+<li>.action_remove(self, worker_action): the worker action will terminate</li>
+<li>.pause(self): Suspends the execution of actions.</li>
+<li>.resume(self): Resumes the execution of actions.</li>
+<li>.stop(self): All actions scheduled in this node are removed, stop method will be called for each action.</li>
+<li>.are_actions_running(self): True or False</li>
+</ul>
+</blockquote>
+<p>The automated changes are performed by a collaboration between CocosNode instances and <a class="reference apilink" href="../api/cocos.actions.base_actions.Action-class.html " title="cocos.actions.base_actions.Action">Action</a> instances.</p>
+<p><a class="reference sectionlink" href="cocosnodes_examples.html#automated-changes-along-the-time-snippets">Automated changes along the time snippets</a>
+Also the test directory has many samples like test_accel*.py, test_blink.py, test_callfunc*.py and others.</p>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a></span><span class="next">Next: <a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html" title="Brief tour of built-in CocosNode subclasses">Brief tour ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a> » CocosNode Functionality</span></div>
+</div>
+</body>
+</html>

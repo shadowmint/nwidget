@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.pygame.base</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.pygame-module.html">pygame</a>&nbsp;.&nbsp;base
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.audio.pygame.base</h1>
+<p>Pygame core routines</p>
+<p>Contains the core routines that are used by the rest of the
+pygame modules. Its routines are merged directly into the pygame
+namespace. This mainly includes the auto-initialization <a href="cocos.audio.pygame.base-module.html#init" class="link">init</a> and
+<a href="cocos.audio.pygame.base-module.html#quit" class="link">quit</a> routines.</p>
+<p>There is a small module named <code class="link">locals</code> that also gets merged into
+this namespace. This contains all the constants needed by pygame.
+Object constructors also get placed into this namespace, you can
+call functions like <a href="cocos.rect.Rect-class.html" class="link">Rect</a> and <code class="link">Surface</code> to create objects of
+that type. As a convenience, you can import the members of
+pygame.locals directly into your module's namespace with:</p>
+<pre class="py-doctest">
+<span class="py-keyword">from</span> pygame.locals <span class="py-keyword">import</span> *</pre>
+<p>Most of the pygame examples do this if you'd like to take a look.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.pygame.base.error-class.html" class="summary-name">error</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.base-module.html#get_error" class="summary-sig-name">get_error</a>()</span>
+<div class="summary-description">Get current error message.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int, int, int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.base-module.html#get_sdl_version" class="summary-sig-name">get_sdl_version</a>()</span>
+<div class="summary-description">Get the version of the linked SDL runtime.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int, int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.base-module.html#init" class="summary-sig-name">init</a>()</span>
+<div class="summary-description">Autoinitialize all imported pygame modules.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.base-module.html#quit" class="summary-sig-name">quit</a>()</span>
+<div class="summary-description">Uninitialize all pygame modules.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.base-module.html#register_quit" class="summary-sig-name">register_quit</a>(<span class="summary-sig-arg">func</span>)</span>
+<div class="summary-description">Routine to call when pygame quits.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos.audio.pygame'"><code class="variable-quote">'</code><code class="variable-string">cocos.audio.pygame</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="get_error"></a>
+<div class=" detail">
+  <h3>get_error</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_error</span>()</span>
+    </div>
+  <div class="detail-description">
+  <p>Get current error message.</p>
+<p>SDL maintains an internal current error message. This message is
+usually given to you when an SDL related exception occurs, but
+sometimes you may want to call this directly yourself.</p>
+  <dl class="fields">
+    <dt>Returns: str</dt>
+  </dl>
+  </div>
+</div>
+<a name="get_sdl_version"></a>
+<div class=" detail">
+  <h3>get_sdl_version</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_sdl_version</span>()</span>
+    </div>
+  <div class="detail-description">
+  Get the version of the linked SDL runtime.
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">int, int, int</span>: major, minor, patch</dd>
+  </dl>
+  </div>
+</div>
+<a name="init"></a>
+<div class=" detail">
+  <h3>init</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">init</span>()</span>
+    </div>
+  <div class="detail-description">
+  <p>Autoinitialize all imported pygame modules.</p>
+<p>Initialize all imported pygame modules. Includes pygame modules
+that are not part of the base modules (like font and image).</p>
+<p>It does not raise exceptions, but instead silently counts which
+modules have failed to init. The return argument contains a count
+of the number of modules initialized, and the number of modules
+that failed to initialize.</p>
+<p>You can always initialize the modules you want by hand. The
+modules that need it have an <a href="cocos.audio.pygame.base-module.html#init" class="link">init</a> and <a href="cocos.audio.pygame.base-module.html#quit" class="link">quit</a> routine built in,
+which you can call directly. They also have a <code class="link">get_init</code> routine
+which you can use to doublecheck the initialization. Note that
+the manual <a href="cocos.audio.pygame.base-module.html#init" class="link">init</a> routines will raise an exception on error. Be
+aware that most platforms require the display module to be
+initialized before others. This <a href="cocos.audio.pygame.base-module.html#init" class="link">init</a> will handle that for you,
+but if you initialize by hand, be aware of this constraint.</p>
+<p>As with the manual <a href="cocos.audio.pygame.base-module.html#init" class="link">init</a> routines. It is safe to call this
+<a href="cocos.audio.pygame.base-module.html#init" class="link">init</a> as often as you like.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">int, int</span>: (count_passed, count_failed)</dd>
+  </dl>
+  </div>
+</div>
+<a name="quit"></a>
+<div class=" detail">
+  <h3>quit</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">quit</span>()</span>
+    </div>
+  <div class="detail-description">
+  <p>Uninitialize all pygame modules.</p>
+<p>Uninitialize all pygame modules that have been initialized. Even
+if you initialized the module by hand, this <a href="cocos.audio.pygame.base-module.html#quit" class="link">quit</a> will
+uninitialize it for you.</p>
+<p>All the pygame modules are uninitialized automatically when your
+program exits, so you will usually not need this routine. If you
+program plans to keep running after it is done with pygame, then
+would be a good time to make this call.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="register_quit"></a>
+<div class=" detail">
+  <h3>register_quit</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">register_quit</span>(<span class="sig-arg">func</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Routine to call when pygame quits.</p>
+<p>The given callback routine will be called when pygame is
+quitting. Quit callbacks are served on a 'last in, first out'
+basis.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.pygame-module.html">pygame</a>&nbsp;.&nbsp;base
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.tiles.RectMapCollider</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.tiles-module.html">tiles</a>&nbsp;.&nbsp;RectMapCollider
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.tiles.RectMapCollider</h1>
+This class implements collisions between a moving rect object and a
+tilemap.
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="collide_bottom"></a><span class="summary-sig-name">collide_bottom</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dy</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="collide_left"></a><span class="summary-sig-name">collide_left</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dx</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="collide_right"></a><span class="summary-sig-name">collide_right</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dx</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="collide_top"></a><span class="summary-sig-name">collide_top</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dy</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectMapCollider-class.html#collide_map" class="summary-sig-name">collide_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">map</span>,
+        <span class="summary-sig-arg">last</span>,
+        <span class="summary-sig-arg">new</span>,
+        <span class="summary-sig-arg">dy</span>,
+        <span class="summary-sig-arg">dx</span>)</span>
+<div class="summary-description">Collide a rect with the given RectMap map.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectMapCollider-class.html#do_collision" class="summary-sig-name">do_collision</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cell</span>,
+        <span class="summary-sig-arg">last</span>,
+        <span class="summary-sig-arg">new</span>,
+        <span class="summary-sig-arg">dy</span>,
+        <span class="summary-sig-arg">dx</span>)</span>
+<div class="summary-description">Collide a Rect moving from &quot;last&quot; to &quot;new&quot; with the given map
+RectCell &quot;cell&quot;.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+        <h2>Class Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="resting"></a><span class="summary-name">resting</span> = <code title="False">False</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="collide_map"></a>
+<div class=" detail">
+  <h3>collide_map</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">collide_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">map</span>,
+        <span class="sig-arg">last</span>,
+        <span class="sig-arg">new</span>,
+        <span class="sig-arg">dy</span>,
+        <span class="sig-arg">dx</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Collide a rect with the given RectMap map.</p>
+<p>Apart from &quot;map&quot; the arguments are as per <a href="cocos.tiles.RectMapCollider-class.html#do_collision" class="link">do_collision</a>.</p>
+<p>Mutates the new rect to conform with the map.</p>
+<p>Returns the (possibly modified) (dx, dy)</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="do_collision"></a>
+<div class=" detail">
+  <h3>do_collision</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">do_collision</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cell</span>,
+        <span class="sig-arg">last</span>,
+        <span class="sig-arg">new</span>,
+        <span class="sig-arg">dy</span>,
+        <span class="sig-arg">dx</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Collide a Rect moving from &quot;last&quot; to &quot;new&quot; with the given map
+RectCell &quot;cell&quot;. The &quot;dx&quot; and &quot;dy&quot; values may indicate the velocity
+of the moving rect.</p>
+<p>The RectCell must have the boolean properties &quot;top&quot;, &quot;left&quot;,
+&quot;bottom&quot; and &quot;right&quot; for those sides which the rect should collide.</p>
+<p>If there is no collision then nothing is done.</p>
+<p>If there is a collision:</p>
+<ol class="rst-arabic simple">
+<li>The &quot;new&quot; rect's position will be modified to its closest position
+to the side of the cell that the collision is on, and</li>
+<li>If the &quot;dx&quot; and &quot;dy&quot; values are passed in the methods
+collide_&lt;side&gt; will be called to indicate that the rect has
+collided with the cell on the rect's side indicated. The value
+passed to the collide method will be a <em>modified</em> distance based
+on the position of the rect after collision (according to step
+#1).</li>
+</ol>
+<p>Mutates the new rect to conform with the map.</p>
+<p>Returns the (possibly modified) (dx, dy)</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.tiles-module.html">tiles</a>&nbsp;.&nbsp;RectMapCollider
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:22 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

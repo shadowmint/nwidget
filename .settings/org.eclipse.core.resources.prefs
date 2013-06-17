@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//lib/pywidget/__init__.py=utf-8
+encoding//lib/pywidget/button.py=utf-8
+encoding//lib/pywidget/dialog.py=utf-8
+encoding//lib/pywidget/hbox.py=utf-8
+encoding//lib/pywidget/image.py=utf-8
+encoding//lib/pywidget/label.py=utf-8
+encoding//lib/pywidget/textbox.py=utf-8
+encoding//lib/pywidget/widget.py=utf-8
+encoding//lib/ws4py/__init__.py=utf-8
+encoding//lib/ws4py/client/__init__.py=utf-8
+encoding//lib/ws4py/client/geventclient.py=utf-8
+encoding//lib/ws4py/client/tornadoclient.py=utf-8
+encoding//lib/ws4py/websocket.py=utf-8

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.camera.Camera</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.camera-module.html">camera</a>&nbsp;.&nbsp;Camera
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.camera.Camera</h1>
+<p>Camera used in every <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a>.
+Useful to look at the object from different views.
+The OpenGL gluLookAt() function is used to locate the
+camera.</p>
+<p>If the object is transformed by any of the scale, rotation or
+position attributes, then they will override the camera.</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.camera.Camera-class.html#get_z_eye" class="summary-sig-name">get_z_eye</a>(<span class="summary-sig-arg">cls</span>)</span>
+<div class="summary-description">Returns the best distance for the camera for the current window size</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.camera.Camera-class.html#restore" class="summary-sig-name">restore</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Restore the camera to the initial position
+and sets it's <tt class="rst-docutils literal"><span class="pre">dirty</span></tt> attribute in False and <tt class="rst-docutils literal"><span class="pre">once</span></tt> in true.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.camera.Camera-class.html#locate" class="summary-sig-name">locate</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">force</span>=<span class="summary-sig-default">False</span>)</span>
+<div class="summary-description">Sets the camera using gluLookAt using its eye, center and up_vector</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">flaat,float,float</span>
+    </td><td class="summary">
+        <a href="cocos.camera.Camera-class.html#eye" class="summary-name">eye</a>
+<div class="summary-description">Eye of the camera in x,y,z coordinates</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">flaat,float,float</span>
+    </td><td class="summary">
+        <a href="cocos.camera.Camera-class.html#center" class="summary-name">center</a>
+<div class="summary-description">Center of the camera in x,y,z coordinates</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">flaat,float,float</span>
+    </td><td class="summary">
+        <a href="cocos.camera.Camera-class.html#up_vector" class="summary-name">up_vector</a>
+<div class="summary-description">Up vector of the camera in x,y,z coordinates</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dirty"></a><span class="summary-name">dirty</span>
+<div class="summary-description">whether or not the camera is 'dirty'
+It is dirty if it is not in the original position</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.camera.Camera-class.html#once" class="summary-name">once</a>
+<div class="summary-description">optimization.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="get_z_eye"></a>
+<div class=" detail">
+  <h3>get_z_eye</h3>
+  <div class="detail-signature">
+    <span class="fspecial">Class Method</span>
+    <span class="sig"><span class="sig-name">get_z_eye</span>(<span class="sig-arg">cls</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns the best distance for the camera for the current window size</p>
+<p>cocos2d uses a Filed Of View (fov) of 60</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="restore"></a>
+<div class=" detail">
+  <h3>restore</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">restore</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Restore the camera to the initial position
+and sets it's <tt class="rst-rst-docutils literal rst-docutils literal"><span class="pre">dirty</span></tt> attribute in False and <tt class="rst-rst-docutils literal rst-docutils literal"><span class="pre">once</span></tt> in true.</p>
+<p>If you use the camera, for a while and you want to stop using it
+call this method.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="locate"></a>
+<div class=" detail">
+  <h3>locate</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">locate</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">force</span>=<span class="sig-default">False</span>)</span>
+    </div>
+  <div class="detail-description">
+  Sets the camera using gluLookAt using its eye, center and up_vector
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">force</span> : <span class='ptype'>bool</span></dt>
+        <dd>whether or not the camera will be located even if it is not dirty</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+        <h2>Property Details</h2>
+<table class="details">
+</table>
+<a name="eye"></a>
+<div class=" detail">
+  <h3>eye</h3>
+  <div class="detail-description">
+  Eye of the camera in x,y,z coordinates
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>flaat,float,float</dd>
+  </dl>
+  </div>
+</div>
+<a name="center"></a>
+<div class=" detail">
+  <h3>center</h3>
+  <div class="detail-description">
+  Center of the camera in x,y,z coordinates
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>flaat,float,float</dd>
+  </dl>
+  </div>
+</div>
+<a name="up_vector"></a>
+<div class=" detail">
+  <h3>up_vector</h3>
+  <div class="detail-description">
+  Up vector of the camera in x,y,z coordinates
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>flaat,float,float</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+        <h2>Instance Variable Details</h2>
+<table class="details">
+</table>
+<a name="once"></a>
+<div class=" detail">
+  <h3>once</h3>
+  <div class="detail-description">
+  optimization. Only renders the camera once
+  <dl class="fields">
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.camera-module.html">camera</a>&nbsp;.&nbsp;Camera
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.tiles</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;tiles
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.tiles</h1>
+<p>Tile map management and rendering.</p>
+<p>This module provides an API for loading, saving and rendering a map
+constructed of image tiles.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.ScrollableLayer-class.html" class="summary-name">ScrollableLayer</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.ScrollingManager-class.html" class="summary-name">ScrollingManager</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.ResourceError-class.html" class="summary-name">ResourceError</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.TilesPropertyWithoutName-class.html" class="summary-name">TilesPropertyWithoutName</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.TilesPropertyWithoutValue-class.html" class="summary-name">TilesPropertyWithoutValue</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.Resource-class.html" class="summary-name">Resource</a>
+<div class="summary-description">Load some tile mapping resources from an XML file.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.Tile-class.html" class="summary-name">Tile</a>
+<div class="summary-description">Tiles hold an image and some optional properties.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.TileSet-class.html" class="summary-name">TileSet</a>
+<div class="summary-description">Contains a set of Tile objects referenced by some id.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.MapLayer-class.html" class="summary-name">MapLayer</a>
+<div class="summary-description">Base class for Maps.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RegularTesselationMap-class.html" class="summary-name">RegularTesselationMap</a>
+<div class="summary-description">A regularly tesselated map that allows access to its cells by index
+(i, j).</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectMap-class.html" class="summary-name">RectMap</a>
+<div class="summary-description">Rectangular map.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectMapLayer-class.html" class="summary-name">RectMapLayer</a>
+<div class="summary-description">A renderable, scrollable rect map.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectMapCollider-class.html" class="summary-name">RectMapCollider</a>
+<div class="summary-description">This class implements collisions between a moving rect object and a
+tilemap.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.Cell-class.html" class="summary-name">Cell</a>
+<div class="summary-description">Base class for cells from rect and hex maps.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html" class="summary-name">RectCell</a>
+<div class="summary-description">A rectangular cell from a MapLayer.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.HexMap-class.html" class="summary-name">HexMap</a>
+<div class="summary-description">MapLayer with flat-top, regular hexagonal cells.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.HexMapLayer-class.html" class="summary-name">HexMapLayer</a>
+<div class="summary-description">A renderable, scrollable hex map.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.HexCell-class.html" class="summary-name">HexCell</a>
+<div class="summary-description">A flat-top, regular hexagon cell from a HexMap.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="load"></a><span class="summary-sig-name">load</span>(<span class="summary-sig-arg">filename</span>)</span>
+<div class="summary-description">Load resource(s) defined in the indicated XML file.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="load_tiles"></a><span class="summary-sig-name">load_tiles</span>(<span class="summary-sig-arg">filename</span>)</span>
+<div class="summary-description">Load some tile mapping resources from an XML file.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="load_tmx"></a><span class="summary-sig-name">load_tmx</span>(<span class="summary-sig-arg">filename</span>)</span>
+<div class="summary-description">Load some tile mapping resources from a TMX file.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles-module.html#image_factory" class="summary-sig-name">image_factory</a>(<span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">tag</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles-module.html#imageatlas_factory" class="summary-sig-name">imageatlas_factory</a>(<span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">tag</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles-module.html#tileset_factory" class="summary-sig-name">tileset_factory</a>(<span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">tag</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles-module.html#rectmap_factory" class="summary-sig-name">rectmap_factory</a>(<span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">tag</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles-module.html#hexmap_factory" class="summary-sig-name">hexmap_factory</a>(<span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">tag</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="hex_width"></a><span class="summary-sig-name">hex_width</span>(<span class="summary-sig-arg">height</span>)</span>
+<div class="summary-description">Determine a regular hexagon's width given its height.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos'"><code class="variable-quote">'</code><code class="variable-string">cocos</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="image_factory"></a>
+<div class=" detail">
+  <h3>image_factory</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">image_factory</span>(<span class="sig-arg">resource</span>,
+        <span class="sig-arg">tag</span>)</span>
+    </div>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@Resource.register_factory('image')</code></li>
+    </ul></dd>
+  </dl>
+  </div>
+</div>
+<a name="imageatlas_factory"></a>
+<div class=" detail">
+  <h3>imageatlas_factory</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">imageatlas_factory</span>(<span class="sig-arg">resource</span>,
+        <span class="sig-arg">tag</span>)</span>
+    </div>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@Resource.register_factory('imageatlas')</code></li>
+    </ul></dd>
+  </dl>
+  </div>
+</div>
+<a name="tileset_factory"></a>
+<div class=" detail">
+  <h3>tileset_factory</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">tileset_factory</span>(<span class="sig-arg">resource</span>,
+        <span class="sig-arg">tag</span>)</span>
+    </div>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@Resource.register_factory('tileset')</code></li>
+    </ul></dd>
+  </dl>
+  </div>
+</div>
+<a name="rectmap_factory"></a>
+<div class=" detail">
+  <h3>rectmap_factory</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">rectmap_factory</span>(<span class="sig-arg">resource</span>,
+        <span class="sig-arg">tag</span>)</span>
+    </div>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@Resource.register_factory('rectmap')</code></li>
+    </ul></dd>
+  </dl>
+  </div>
+</div>
+<a name="hexmap_factory"></a>
+<div class=" detail">
+  <h3>hexmap_factory</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">hexmap_factory</span>(<span class="sig-arg">resource</span>,
+        <span class="sig-arg">tag</span>)</span>
+    </div>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@Resource.register_factory('hexmap')</code></li>
+    </ul></dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;tiles
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:18 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

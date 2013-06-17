@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Collision Model</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="collision.html" title="Collision">Collision</a></span><span class="next">Next: <a class="reference" href="performance_numbers.html" title="Performance numbers">Performance numbers</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="collision.html" title="Collision">Collision</a> » Collision Model</span></div>
+<h1 class="title">Collision Model</h1>
+
+<div class="section" id="use-cases">
+<h1><a class="toc-backref" href="#id183">Use cases</a></h1>
+<p>It is common to ask about one or another spatial relation between actors, by example</p>
+<blockquote>
+<ul class="simple">
+<li>any enemy is touching player ?</li>
+<li>is player near to certain enemy or trigger ?</li>
+<li>which enemy is nearest the player ?</li>
+<li>any actor under the mouse cursor ?</li>
+</ul>
+</blockquote>
+<p>The collision_model module has functionality to address these questions, lets see how it works.</p>
+</div>
+<div class="section" id="simplified-shapes">
+<h1><a class="toc-backref" href="#id184">Simplified shapes</a></h1>
+<p>Actors generally have an irregular shape, thus to answer 'actor A is touching actor B ?' ideally the rendered pixels for both actors should be considered. That would be too slow, so each actor specifies a simple geometrical shape to be used for collision calculations, and the question is translated to 'shape for actor A overlaps shape for actor B ?</p>
+<p>The available shapes at the moment are circles (discs) and rectangles with sides parallel to the axis x=0 and y=0.</p>
+</div>
+<div class="section" id="what-an-object-must-comply-to-be-collidable">
+<h1><a class="toc-backref" href="#id185">What an object must comply to be collidable ?</a></h1>
+<blockquote>
+<ul class="simple">
+<li>must have a member .cshape</li>
+<li>the .cshape value is an instance of cocos.collision_model.CircleShape or cocos.collision_model.AARectShape</li>
+</ul>
+</blockquote>
+<p>Examples:</p>
+<pre class="py-doctest">
+<span class="py-keyword">import</span> cocos.euclid <span class="py-keyword">as</span> eu
+<span class="py-keyword">import</span> cocos.collision_model <span class="py-keyword">as</span> cm
+
+<span class="py-keyword">class</span> <span class="py-defname">CollidableSprite</span>(cocos.sprite.Sprite):
+        <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, image, center_x, center_y, radius):
+                super(ActorSprite, self).__init__(image)
+                self.position = (center_x, center_y)
+                self.cshape = cm.CircleShape(eu.Vector2(center_x, center_y), radius)
+
+<span class="py-keyword">class</span> <span class="py-defname">ActorModel</span>(object):
+        <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, cx, cy, radius):
+                self.cshape = cm.CircleShape(eu.Vector2(center_x, center_y), radius)</pre>
+</div>
+<div class="section" id="the-role-of-collision-manager">
+<h1><a class="toc-backref" href="#id186">The role of collision manager</a></h1>
+<p>Questions like 'which actors are near actor A ?' implicitly assumes a set of candidates to try is known. Thats when a CollisionManager instance kicks in: it holds a record of which collidables consider as candidates for proximity or collision. Being the entity that knows the candidates, it is the one to answer questions about spatial relations between a collidable and the known collidables.</p>
+<p>To mantain the set of know candidates you have the methods</p>
+<blockquote>
+<ul class="simple">
+<li>add(obj) : makes obj a collidable known to the CollisionManager instance</li>
+<li>remove_tricky(obj) : makes the collisionManager instance forget about obj; to perform correctly obj.cshape must have the same value as when .add(obj) was called</li>
+<li>clear() : the CollisionManager instance will forget all known objects</li>
+</ul>
+</blockquote>
+<p>For testing and debug purposes the methods ´knows(obj)´ and ´known_objs()´ are available.</p>
+<p>Correct answers requires that the known objects have the same cshape value at the asking time than at the 'add' time.
+To satisfy that restriction there are two common strategies</p>
+<blockquote>
+<ul>
+<li><p class="first">do collision_manager.remove_tricky(obj); obj.update_cshape(); collision_manager.add(obj) whenever obj need to update his cshape value. This is relatively slow, but acceptable if few collidables need to update his cshape at each frame.</p>
+</li>
+<li><p class="first">at each frame do:</p>
+<pre class="py-doctest">
+collision_manager.clear()
+<span class="py-builtin">update</span> cshape <span class="py-keyword">for</span> all collidables
+add all collidables to collision_manager
+do the game logic related to actor collision</pre>
+</li>
+</ul>
+<p>This pattern is adequate when most of actors change cshape at each frame.</p>
+</blockquote>
+<p>Sometimes it can be worth to use two collision manager instances: one for actors that rarely change it's cshape (rocks, food,...) and other entities that update cshape at each frame (player, monsters,...)</p>
+</div>
+<div class="section" id="limitations-and-weaknesees">
+<h1><a class="toc-backref" href="#id187">Limitations and weaknesees</a></h1>
+<p>This is probably the simplest schema to deal with collisions and proximity.
+The code and API are simple and easy to modify.
+The drawbacks are well known</p>
+<blockquote>
+<ul class="simple">
+<li>collisions for too fast or too tiny objects can go undetected</li>
+<li>ill suited to do realistic bounces</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="more-details">
+<h1><a class="toc-backref" href="#id188">More details</a></h1>
+<p>Look at <a class="reference apilink" href="../api/cocos.collision_model.CollisionManager-class.html " title="cocos.collision_model.CollisionManager">CollisionManager</a> and <a class="reference apilink" href="../api/cocos.collision_model.Cshape-class.html " title="cocos.collision_model.Cshape">Cshape</a> for details; for __init__parameters look at the respective implementation.</p>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="collision.html" title="Collision">Collision</a></span><span class="next">Next: <a class="reference" href="performance_numbers.html" title="Performance numbers">Performance numbers</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="collision.html" title="Collision">Collision</a> » Collision Model</span></div>
+</div>
+</body>
+</html>

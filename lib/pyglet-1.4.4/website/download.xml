@@ -1,0 +1,90 @@
+<div>
+  <p>
+    The current stable version of pyglet is <strong>1.1.4</strong>.
+    See below for the latest <a href="#unstable">development
+    release</a>.
+  </p>
+
+  <h2>current release</h2>
+<!--
+  <h2>runtime eggs</h2>
+  <p>
+    The runtime eggs can be used with any setuptools-enabled application.
+  </p>
+  <ul>
+    <li><a
+    href="http://pyglet.googlecode.com/files/pyglet-1.0-py2.4.egg">pyglet-1.0-py2.4.egg</a>:
+    Runtime for Python 2.4</li>
+    <li><a
+    href="http://pyglet.googlecode.com/files/pyglet-1.0.2-py2.5.egg">pyglet-1.0.2-py2.5.egg</a>:
+    Runtime for Python 2.5</li>
+  </ul>
+-->
+  <h3>platform distributions</h3>
+  <p>
+    Choose the pyglet distribution corresponding to your platform, or select
+    one of the source distributions below.  Double-click on the downloaded
+    file to install pyglet.
+  </p>
+  <ul>
+    <li><a
+    href="http://pyglet.googlecode.com/files/pyglet-1.1.4.msi">pyglet-1.1.4.msi</a>: Windows
+    installer, includes AVbin-5</li>
+    <li><a
+    href="http://pyglet.googlecode.com/files/pyglet-1.1.4.dmg">pyglet-1.1.4.dmg</a>: Mac OS X
+    disk image, includes AVbin-5</li>
+  </ul>
+  <h4>note about windows installer</h4>
+  <p>
+    The pyglet-1.1.4.msi installer only works with python versions 2.4, 2.5 or
+    2.6; if you wish to use python 2.7 please install from source. Simply
+    download the source tarball or zip, unpack it, enter the directory and run:
+    "python setup.py install". Alternatively if you are familiar with pip, "pip
+    install pyglet" will install pyglet-1.1.4.
+  </p>
+
+  <h3>documentation</h3>
+  <p>
+    Download the complete documentation and application examples to go with
+    the above platform distributions.
+  </p>
+  <ul>
+    <li><a
+    href="http://pyglet.googlecode.com/files/pyglet-1.1.4-docs.zip">pyglet-1.1.4-docs.zip</a></li>
+  </ul>
+
+  <h3>source distributions</h3>
+  <p>
+    The source distribution includes pyglet, documentation and examples.  To
+    install, run:
+  </p>
+  <p class="console">
+    python setup.py install
+  </p>
+  <p>
+    To play compressed audio and video files, you will also need <a
+    href="http://code.google.com/p/avbin">AVbin</a>.
+  </p>
+  <ul>
+    <li><a
+    href="http://pyglet.googlecode.com/files/pyglet-1.1.4.tar.gz">pyglet-1.1.4.tar.gz</a></li>
+    <li><a
+    href="http://pyglet.googlecode.com/files/pyglet-1.1.4.zip">pyglet-1.1.4.zip</a></li>
+  </ul>
+
+  <a name="unstable" />
+  <h2>development release</h2>
+
+  <p>These packages are provided for testing purposes, and are not suitable
+  for production use.</p>
+
+  <ul>
+    <li>
+      Source and documentation for
+      <b>pyglet 1.2alpha1</b> are available directly from the
+      <a href="http://code.google.com/p/pyglet/downloads/list?q=1.2alpha1">
+      download server</a>.
+    </li>
+  </ul>
+
+</div>

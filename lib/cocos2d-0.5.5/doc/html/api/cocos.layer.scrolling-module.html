@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.layer.scrolling</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.layer-module.html">layer</a>&nbsp;.&nbsp;scrolling
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.layer.scrolling</h1>
+<p>This module defines the ScrollableLayer and ScrollingManager classes.</p>
+<div class="rst-section" id="rst-controlling-scrolling">
+<h1 class="heading">Controlling Scrolling</h1>
+<p>You have two options for scrolling:</p>
+<ol class="rst-arabic simple">
+<li>automatically scroll the map but stop at the map edges, and</li>
+<li>scroll the map an allow the edge of the map to be displayed.</li>
+</ol>
+<p>The ScrollingManager has a concept of &quot;focus&quot; which is the pixel
+position of the player's view focus (<em>usually</em> the center of the
+player sprite itself, but the player may be allowed to
+move the view around, or you may move it around for them to highlight
+something else in the scene). The ScrollingManager is clever enough to
+manage many layers and handle scaling them.</p>
+<p>Two methods are available for setting the map focus:</p>
+<dl class="rst-docutils">
+<dt><strong>set_focus(x, y)</strong></dt>
+<dd>Attempt to set the focus to the pixel coordinates given. The layer(s)
+contained in the ScrollingManager are moved accordingly. If a layer
+would be moved outside of its define px_width, px_height then the
+scrolling is restricted. The resultant restricted focal point is stored
+on the ScrollingManager as restricted_fx and restricted_fy.</dd>
+<dt><strong>force_focus(x, y)</strong></dt>
+<dd>Force setting the focus to the pixel coordinates given. The layer(s)
+contained in the ScrollingManager are moved accordingly regardless of
+whether any out-of-bounds cells would be displayed. The .fx and .fy
+attributes are still set, but they'll <em>always</em> be set to the supplied
+x and y values.</dd>
+</dl>
+</div>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.layer.scrolling.ScrollableLayer-class.html" class="summary-name">ScrollableLayer</a>
+<div class="summary-description">A Cocos Layer that is scrollable in a Scene.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.layer.scrolling.ScrollingManager-class.html" class="summary-name">ScrollingManager</a>
+<div class="summary-description">Manages scrolling of Layers in a Cocos Scene.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos.layer'"><code class="variable-quote">'</code><code class="variable-string">cocos.layer</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.layer-module.html">layer</a>&nbsp;.&nbsp;scrolling
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:18 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

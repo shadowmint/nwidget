@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.actions.base_actions</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;base_actions
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.actions.base_actions</h1>
+<p>Foundation for all actions</p>
+<div class="rst-section" id="rst-actions">
+<h1 class="heading">Actions</h1>
+<p>Actions purpose is to modify along the time some trait of an object.
+The object that the action will modify is the action's target.
+Usually the target will be an instance of some CocosNode subclass.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+MoveTo(position, duration)</pre>
+<p>the target will move smoothly over the segment
+(target.position, action position parameter), reaching the final position
+after duration seconds have elapsed.</p>
+<p>Cocos also provide some powerful operators to combine or modify actions, the
+more important s being:</p>
+<p><strong>sequence operator:</strong>   action_1 + action_2 -&gt; action_result</p>
+<p>where action_result performs by first doing all that action_1 would do and
+then perform all that action_2 would do</p>
+<p>Example use:</p>
+<pre class="py-doctest">
+move_2 = MoveTo((100, 100), 10) + MoveTo((200, 200), 15)</pre>
+<p>When activated, move_2 will move the target first to (100, 100), it will
+arrive there 10 seconds after departure; then it will move to (200, 200),
+and will arrive there 10 seconds after having arrived to (100, 100)</p>
+<p><strong>spawn operator:</strong>  action_1 | action_2 -&gt; action_result</p>
+<p>where action_result performs by doing what would do action_1 in parallel with
+what would perform action_2</p>
+<p>Example use:</p>
+<pre class="py-doctest">
+move_rotate = MoveTo((100,100), 10) | RotateBy(360, 5)</pre>
+<p>When activated, move_rotate will move the target from the position at the
+time of activation to (100, 100); also in the first 5 seconds target will
+be rotated 360 degrees</p>
+<p><strong>loop operator:</strong>   action_1 * n -&gt; action_result</p>
+<p>Where n non negative integer, and action result would repeat n times in a
+row the same that action_1 would perform.</p>
+<p>Example use:</p>
+<pre class="py-doctest">
+rotate_3 = RotateBy(360, 5) * 3</pre>
+<p>When activated, rotate_3 will rotate target 3 times, spending 5 sec in each
+turn.</p>
+<div class="rst-section" id="rst-action-instance-roles">
+<h2 class="heading">Action instance roles</h2>
+<p>Action subclass: a detailed cualitative description for a change</p>
+<p>An Action instance can play one of the following roles</p>
+<div class="rst-section" id="rst-template-role">
+<h3 class="heading">Template Role</h3>
+<p>The instance knows all the details to perform,
+except a target has not been set.
+In this role only __init__ and init should be called.
+It has no access to the concrete action target.
+The most usual way to obtain an action in the template mode is
+by calling the constructor of some Action subclass.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+position = (100, 100); duration = 10
+move = MoveTo(position, duration)
+move <span class="py-keyword">is</span> playing here the template role.</pre>
+</div>
+<div class="rst-section" id="rst-worker-role">
+<h3 class="heading">Worker role</h3>
+<p>Carry on with the changes desired when the action is initiated.
+You obtain an action in the worker role by calling the method
+do in a cocosnode instance, like:</p>
+<pre class="py-doctest">
+worker_action = cocosnode.do(template_action, target=...)</pre>
+<p>The most usual is to call without the target kw-param, thus by default
+setting target to the same cocosnode that performs the do.
+The worker action begins to perform at the do call, and will carry on
+with the desired modifications to target in subsequent frames.
+If you want the capabilty to stop the changes midway, then you must
+retain the worker_action returned by the do and then, when you want stop
+the changes, call:</p>
+<pre class="py-doctest">
+cocosnode.remove_action(worker_action)
+( the cocosnode must be the same <span class="py-keyword">as</span> <span class="py-keyword">in</span> the do call )</pre>
+<p>Also, if your code need access to the action that performs the changes,
+have in mind that you want the worker_action (but this is discouraged,</p>
+<p>Example:</p>
+<pre class="py-doctest">
+position = (100, 100); duration = 10
+move = MoveTo(position, duration)
+blue_bird = Bird_CocosNode_subclass(...)
+blue_move = blue_bird.do(move)</pre>
+<p>Here move plays the template role and blue_move plays the worker role.
+The target for blue_move has been set for the do method.
+When the do call omits the target parameter it defaults to the cocosnode where
+the do is called, so in the example the target for blue_move is blue_bird.
+In subsequents frames after this call, the blue_bird will move to the position
+(100, 100), arriving there 10 seconds after the do was executed.</p>
+<p>From the point of view of a worker role action, the actions life
+can be mimicked by:</p>
+<pre class="py-doctest">
+worker_action = deepcopy(template_action)
+worker_action.target = some_obj
+worker_action.start()
+<span class="py-keyword">for</span> dt <span class="py-keyword">in</span> frame.next():
+    worker_action.step(dt)
+    <span class="py-keyword">if</span> premature_termination() <span class="py-keyword">or</span> worker_action.done():
+        <span class="py-keyword">break</span>
+worker_action.stop()</pre>
+</div>
+<div class="rst-section" id="rst-component-role">
+<h3 class="heading">Component role</h3>
+<p>Such an instance is created and stored into an Action class instance
+that implements an Action operator (a composite action).
+Carries on with the changes desired on behalf of the composite action.
+When the composite action is not instance of IntervalAction, the
+perceived life can be mimicked as in the worker role.
+When the composite action is instance of IntervalAction, special rules apply.
+For examples look at code used in the implementation of any operator, like
+Sequence_Action or Sequence_IntervalAction.</p>
+</div>
+</div>
+<div class="rst-section" id="rst-restrictions-and-capabilities-for-the-current-design-and-implementation">
+<h2 class="heading">Restrictions and Capabilities for the current design and implementation</h2>
+<div class="rst-section" id="rst-worker-independence">
+<h3 class="heading">Worker Independence</h3>
+<p>Multiple worker actions can be obtained from a single template action, and
+they wont interfere between them when applied to different targets.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+ position = (100, 0); duration = 10
+ move = MoveBy(position, duration)
+
+ blue_bird = Sprite(<span class="py-string">&quot;blue_bird.png&quot;</span>)
+ blue_bird.position = (0, 100)
+ blue_move = blue_bird.do(move)
+
+ red_bird = Sprite(<span class="py-string">&quot;red_bird.png&quot;</span>)
+ red_bird.position = (0, 200)
+ red_move = blue_bird.do(move)
+
+Here we placed two birds at the left screen border, separated vertically
+by 100.
+move <span class="py-keyword">is</span> the template_action: full details on changes, still no target
+blue_move, red_move are worker_action <span class="py-string">'s: obtained by a node.do, have all</span>
+<span class="py-string">the details plus the target; they will perform the changes along the time.</span>
+<span class="py-string">What we see is both birds moving smooth to right by 100, taking 10 seconds</span>
+<span class="py-string">to arrive at final position.</span>
+<span class="py-string">Note that even if both worker actions derive for the same template, they</span>
+<span class="py-string">don'</span>t interfere one with the other.</pre>
+</div>
+<div class="rst-section" id="rst-a-worker-action-instance-should-not-be-used-as-a-template">
+<h3 class="heading">A worker action instance should not be used as a template</h3>
+<p>You will not get tracebacks, but the second worker action most surelly will
+have a corrupt workspace, that will produce unexpected behavior.</p>
+</div>
+<div class="rst-section" id="rst-posible-fights-between-worker-actions-over-a-target-member">
+<h3 class="heading">Posible fights between worker actions over a target member</h3>
+<p>If two actions that are active at the same time try to change the same
+target's member(s), the resulting change is computationally well defined, but
+can be somewhat unexpected by the programmer.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+guy = Sprite(<span class="py-string">&quot;grossini.png&quot;</span>)
+guy.position = (100, 100)
+worker1 = guy.do(MoveTo((400, 100), 3))
+worker2 = guy.do(MoveBy((0, 300), 3))
+layer.add(guy)</pre>
+<p>Here the worker1 action will try to move to (400, 100), while the worker2 action
+will try to move 300 in the up direction.
+Both are changing guy.position in each frame.</p>
+<p>What we see on screen, in the current cocos implementation, is the guy moving up,
+like if only worker2 were active.
+And, by physics, the programmer expectation probably guessed more like a
+combination of both movements.</p>
+<p>Note that the unexpected comes from two actions trying to control the same target
+member. If the actions were changing diferent members, like position and
+rotation, then no unexpected can happen.</p>
+<p>The fighting can result in a behavior that is a combination of both workers, not one
+a 'winning' one. It entirely depends on the implementation from each action.
+It is possible to write actions than in a fight will show additive behavoir,
+by example:</p>
+<pre class="py-doctest">
+<span class="py-keyword">import</span> cocos.euclid <span class="py-keyword">as</span> eu
+<span class="py-keyword">class</span> <span class="py-defname">MoveByAdditive</span>(ac.Action):
+    <span class="py-keyword">def</span> <span class="py-defname">init</span>( self, delta_pos, duration ):
+        <span class="py-keyword">try</span>:
+            self.delta_pos = eu.Vector2(*delta_pos)/float(duration)
+        <span class="py-keyword">except</span> ZeroDivisionError:
+            duration = 0.0
+            self.delta_pos = eu.Vector2(*delta_pos)
+        self.duration = duration
+
+    <span class="py-keyword">def</span> <span class="py-defname">start</span>(self):
+        <span class="py-keyword">if</span> self.duration==0.0:
+            self.target.position += self.delta_pos
+            self._done = True
+
+    <span class="py-keyword">def</span> <span class="py-defname">step</span>(self, dt):
+        old_elapsed = self._elapsed
+        self._elapsed += dt
+        <span class="py-keyword">if</span> self._elapsed &gt; self.duration:
+            dt = self.duration - old_elapsed
+            self._done = True
+        self.target.position += dt*self.delta_pos
+
+guy = Sprite(<span class="py-string">&quot;grossini.png&quot;</span>)
+guy.position = (100, 100)
+worker1 = guy.do(MoveByAdditive((300, 0), 3))
+worker2 = guy.do(MoveByAdditive((0, 300), 3))
+layer.add(guy)</pre>
+<p>Here the guy will mode in diagonal, ending 300 right and 300 up, the two
+actions have combined.</p>
+</div>
+<div class="rst-section" id="rst-action-s-instances-in-the-template-role-must-be-really-deepcopyiable">
+<h3 class="heading">Action's instances in the template role must be (really) deepcopyiable</h3>
+<p>Beginers note: if you pass in init only floats, ints, strings, dicts or tuples
+of the former you can skip this section and revisit later.</p>
+<p>If the action template is not deepcopyiable, you will get a deepcopy exception,
+complaining it can't copy something</p>
+<p>If you cheat deepcopy by overriding __deepcopy__ in your class like:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">__deepcopy__</span>(self):
+    <span class="py-keyword">return</span> self</pre>
+<p>you will not get a traceback, but the Worker Independence will broke, the Loop
+and Repeat operators will broke, and maybe some more.</p>
+<p>The section name states a precise requeriment, but it is a bit concise. Let see
+some common situations where you can be in trouble and how to manage them.</p>
+<blockquote>
+<ul class="rst-simple">
+<li>you try to pass a CocosNode instance in init, and init stores that in an
+action member</li>
+<li>you try to pass a callback f = some_cocosnode.a_method, with the idea that
+it shoud be called when some condition is meet, and init stores it in an
+action member</li>
+<li>You want the action access some big decision table, static in the sense it
+will not change over program execution. Even if is deepcopyable, there's
+no need to deepcopy.</li>
+</ul>
+</blockquote>
+<p>Workarounds:</p>
+<blockquote>
+<ul>
+<li><p class="rst-first">store the data that you do not want to deepcopy in some member in the
+cocosnode</p>
+</li>
+<li><p class="rst-first">use an init2 fuction to pass the params you want to not deepcopy:</p>
+<pre class="py-doctest">
+worker = node.do(template)
+worker.init2(another_cocosnode)</pre>
+<p>(see test_action_non_interval.py for an example)</p>
+</li>
+</ul>
+</blockquote>
+<p>Future:
+Next cocos version probably will provide an easier mechanism to designate some
+parameters as references.</p>
+</div>
+</div>
+<div class="rst-section" id="rst-overview-main-subclasses">
+<h2 class="heading">Overview main subclasses</h2>
+<p>All action classes in cocos must be subclass of one off the following:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>Action</li>
+<li>IntervalAction (is itself subclass of Action)</li>
+<li>InstantAction  (is itself subclass of IntervalAction)</li>
+</ul>
+</blockquote>
+<div class="rst-section" id="rst-instantaction">
+<h3 class="heading">InstantAction</h3>
+<p>The task that must perform happens in only one call, the start method.
+The duration member has the value zero.
+Examples:</p>
+<pre class="py-doctest">
+Place(position) : does target.position &lt;- position
+CallFunc(f, *args, **kwargs) : performs the call f(*args,**kwargs)</pre>
+</div>
+<div class="rst-section" id="rst-intervalaction">
+<h3 class="heading">IntervalAction</h3>
+<p>The task that must perform is spanned over a number of frames.
+The total time needed to complete the task is stored in the member duration.
+The action will cease to perform when the time elapsed from the start call
+reachs duration.
+A proper IntervalAction must adhere to extra rules, look in the details section
+Examples:</p>
+<pre class="py-doctest">
+MoveTo(position, duration)
+RotateBy(angle, duration)</pre>
+</div>
+<div class="rst-section" id="rst-action">
+<h3 class="heading">Action</h3>
+<p>The most general posible action class.
+The task that must perform is spanned over a number of frames.
+The time that the action would perfom is undefined, and member duration has
+value None.
+Examples:</p>
+<pre class="py-doctest">
+RandomWalk(fastness)</pre>
+<p>Performs:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>selects a random point in the screen</li>
+<li>moves to it with the required fastness</li>
+<li>repeat</li>
+</ul>
+</blockquote>
+<p>This action will last forever.</p>
+<pre class="py-doctest">
+Chase(fastness, chasee)</pre>
+<p>Performs:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>at each frame, move the target toward the chasee with the specified
+fastness.</li>
+<li>Declare the action as done when the distance from target to
+chasee is less than 10.</li>
+</ul>
+</blockquote>
+<p>If fastness is greather than the chasee fastness this action will certainly
+terminate, but we dont know how much time when the action starts.</p>
+</div>
+</div>
+</div>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.base_actions.Action-class.html" class="summary-name">Action</a>
+<div class="summary-description">The most general action</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.base_actions.IntervalAction-class.html" class="summary-name">IntervalAction</a>
+<div class="summary-description">IntervalAction()</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.base_actions.InstantAction-class.html" class="summary-name">InstantAction</a>
+<div class="summary-description">Instant actions are actions that promises to do nothing when the
+methods step, update, and stop are called.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.base_actions.Repeat-class.html" class="summary-name">Repeat</a>
+<div class="summary-description">Applied to InstantAction s means once per frame.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.base_actions._ReverseTime-class.html" class="summary-name">_ReverseTime</a>
+<div class="summary-description">Executes an action in reverse order, from time=duration to time=0</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.base_actions-module.html#Reverse" class="summary-sig-name">Reverse</a>(<span class="summary-sig-arg">action</span>)</span>
+<div class="summary-description">Reverses the behavior of the action</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="loop"></a><span class="summary-sig-name">loop</span>(<span class="summary-sig-arg">action</span>,
+        <span class="summary-sig-arg">times</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="sequence"></a><span class="summary-sig-name">sequence</span>(<span class="summary-sig-arg">action_1</span>,
+        <span class="summary-sig-arg">action_2</span>)</span>
+<div class="summary-description">Returns an action that runs first action_1 and then action_2
+The returned action will be instance of the most narrow class
+posible in InstantAction, IntervalAction, Action</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.actions.base_actions-module.html#spawn" class="summary-sig-name">spawn</a>(<span class="summary-sig-arg">action_1</span>,
+        <span class="summary-sig-arg">action_2</span>)</span>
+<div class="summary-description">Returns an action that runs action_1 and action_2 in paralel.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="Reverse"></a>
+<div class=" detail">
+  <h3>Reverse</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Reverse</span>(<span class="sig-arg">action</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Reverses the behavior of the action</p>
+<p>Example:</p>
+<pre class="py-doctest">
+<span class="py-comment"># rotates the sprite 180 degrees in 2 seconds counter clockwise</span>
+action = Reverse( RotateBy( 180, 2 ) )
+sprite.do( action )</pre>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="spawn"></a>
+<div class=" detail">
+  <h3>spawn</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">spawn</span>(<span class="sig-arg">action_1</span>,
+        <span class="sig-arg">action_2</span>)</span>
+    </div>
+  <div class="detail-description">
+  Returns an action that runs action_1 and action_2 in paralel.
+The returned action will be instance of the most narrow class
+posible in InstantAction, IntervalAction, Action
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;base_actions
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

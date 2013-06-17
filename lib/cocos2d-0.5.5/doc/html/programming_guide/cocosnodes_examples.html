@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>CocosNodes Examples</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html" title="Brief tour of built-in CocosNode subclasses">Brief tour ...</a></span><span class="next">Next: <a class="reference" href="built_in_python_interpreter.html" title="Built-in Python Interpreter">Built-in Python Interpreter</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a> » CocosNodes Examples</span></div>
+<h1 class="title">CocosNodes Examples</h1>
+
+<div class="section" id="parent-child-examples">
+<h1><a class="toc-backref" href="#id179">Parent-Child examples</a></h1>
+<p>Building a scene, object instantiation omitted</p>
+<pre class="py-doctest">
+<span class="py-comment"># a scene with 2 layers; the background would be seen behind the game layer because of z values</span>
+scene.add( background_layer, z=0 )
+scene.add( game_layer, z=1 )
+
+<span class="py-comment"># the layer with 1 bloody pacman sprite</span>
+blody_pacman_sprite.position = (100, 100)
+game_layer.add( bloody_pacman_sprite )
+
+<span class="py-comment"># the bloody pacman has two daggers !!!</span>
+sprite.add( dagger_far_sprite, z=-1 )
+sprite.add( dagger_near_sprite, z=1  )
+<span class="py-comment"># the draw order is dagger_far, bloody_pacman, dagger_near</span>
+
+<span class="py-comment"># also they are zombie alien cowboys in the game,</span>
+<span class="py-comment"># so we add a bunch of them to the game_layer</span>
+<span class="py-more">...</span></pre>
+<p>A dagger has touched a zombie alien cowboy so it wants to spawn a nasty blotch of green blood.
+We could add the blotch_sprite to the zac_sprite, an then the blotch will follow the zombie:</p>
+<pre class="py-doctest">
+zac_zprite.add(blotch_sprite, z = 1)</pre>
+<p>or we could add to the game_layer, and the blotch will not follow the zombie:</p>
+<pre class="py-doctest">
+layer = zac_sprite.parent <span class="py-comment"># should be game_layer, because our staggering</span>
+layer.add(blotch_sprite)</pre>
+<p>If for some ridiculous reason a dagger needs to grab a reference to the game_layer we could use 'get_ancestor'.
+Due to to way we staged the scene, we know game_layer is parent of bloody_pacman_sprite which is parent of the dagger. So:</p>
+<pre class="py-doctest">
+layer = dagger_near.get_ancestor(Layer)</pre>
+<p>should produce game_layer.</p>
+<p>A zombie is killed, we can retire from the scene with:</p>
+<pre class="py-doctest">
+zac_sprite.kill()</pre>
+<p>or with:</p>
+<pre class="py-doctest">
+game_layer.remove(zac_sprite)</pre>
+<p>or if we named it &quot;T'chkss&quot; when we added to the game_layer, like in:</p>
+<pre class="py-doctest">
+game_layer.add(zac_sprite, name = <span class="py-string">&quot;T'chkss&quot;</span>, z=4)</pre>
+<p>then we can retire it with:</p>
+<pre class="py-doctest">
+game_layer.remove(<span class="py-string">&quot;T'chkss&quot;</span>)</pre>
+<p>Note that in current cocos if you add with name then you should remove by name,
+else the name will become unusable for new additions.</p>
+</div>
+<div class="section" id="spatial-placement-snippets">
+<h1><a class="toc-backref" href="#id180">Spatial Placement snippets</a></h1>
+<p>Example:</p>
+<pre class="py-doctest">
+<span class="py-comment"># place the sprite in 320,240</span>
+sprite.position = (320,240)</pre>
+<p>or by using actions.
+Example:</p>
+<pre class="py-doctest">
+<span class="py-comment"># move the sprite to 320,240 in 5 seconds</span>
+sprite.do( MoveTo( (320,240, duration=2 ) )</pre>
+</div>
+<div class="section" id="automated-changes-along-the-time-snippets">
+<h1><a class="toc-backref" href="#id181">Automated changes along the time snippets</a></h1>
+<p>You can modify attributes to <strong>any</strong> <a class="reference apilink" href="../api/cocos.cocosnode.CocosNode-class.html " title="cocos.cocosnode.CocosNode">CocosNode</a> object.
+By example:</p>
+<pre class="py-doctest">
+scene.do( ScaleTo(2, duration=2) )
+
+layer.do( RotateBy(360, duration=3) )
+
+sprite.do( Blink(5, duration=1 ) )
+
+label.do( JumpBy( (100,100), 50, 5, duration=3) )</pre>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html" title="Brief tour of built-in CocosNode subclasses">Brief tour ...</a></span><span class="next">Next: <a class="reference" href="built_in_python_interpreter.html" title="Built-in Python Interpreter">Built-in Python Interpreter</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a> » CocosNodes Examples</span></div>
+</div>
+</body>
+</html>

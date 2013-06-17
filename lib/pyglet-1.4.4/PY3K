@@ -1,0 +1,12 @@
+
+Last updated: 21. Dec 2010
+
+Most features of pyglet should work just fine with Python 3, but there may still be
+many bugs. Bug reports and patches are welcome.
+
+
+To use pyglet with Python 3.x, the source code has to be converted using 2to3.
+When pyglet is installed using "python setup.py install" this happens automatically.
+
+The converted version of pyglet is currently known to work on Windows and Linux, it
+might not work on MacOS (needs testing).

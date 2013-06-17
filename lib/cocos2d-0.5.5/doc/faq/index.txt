@@ -1,0 +1,112 @@
+===========
+cocos2d FAQ
+===========
+
+----------------------------------
+cocos2d Frequently Asked Questions
+----------------------------------
+
+
+.. contents::
+	:local:
+
+Can I use 3D objects in cocos2d ?
+---------------------------------
+
+Yes. cocos2d uses `pyglet`_ / OpenGL so you can 
+use 3D objects and use them within cocos2d.
+
+You can include some 3D objects in your 2d game
+to improve the quality of your graphics without any problem.
+
+Also, the default projection matrix of cocos2d is a 3D one,
+so probably you won't need to change it. But you can override 
+the projection matrix by registering to the ``director on_resize``
+event. See the `test/test_custom_on_resize.py` code as an example.
+
+To enable OpenGL depth test, you can call Director's `set_depth_test` method.
+
+Also, remember that cocos2d focuses on 2D games, so if you want
+to create a full-blown 3D game, `Panda3d`_ will suit you best.
+
+
+Can I use cocos2d's sprites and actions without the rest of the framework ?
+---------------------------------------------------------------------------
+
+Short answer: **No**.
+Long answer: **Yes**.
+
+Almost everything in cocos2d is `CocosNode` object (``sprites``, ``layers``,
+``scenes``, etc...), so the easiest way to use cocos2d's sprites (or any
+other `CocosNode` object) is to port `CocosNode` to your project.
+
+Since `CocosNode` uses director's `get_window_size` method, you shall create
+a Director stub in your project that implements `get_window_size`.
+You shall also call the `CocosNode.visit` method from your main loop to draw
+the sprites.
+
+Although I haven't tried it, I think this shall work ok. If it doesn't work,
+let us know.
+
+
+Can I code a presentation (ala PowerPoint) in cocos2d ?
+-------------------------------------------------------
+
+Yes, you can.
+
+Since cocos2d has features like 'scene flow control' and transitions
+you can code a presentation using cocos2d relatively easy, and make
+it look pretty cool using those transitions.
+
+Did you know that we have OpenGL transitions, like the ones you will find
+in Apple's Keynote and OpenOffice's Impress ? That's cool :-)
+
+For example, the lighting talk that we did in PyCon 2008 was coded in cocos2d.
+The source code is here: `pycon 2008 cocos2d lighting talk`_
+
+That being said, you should bear in mind that cocos2d is not a presentation
+tool. We are not planning to add presentation-like features to cocos2d.
+
+If you want a python presentation tool, we recommend:
+`Bruce the Presentation Tool`_
+
+
+I get this error: ERROR: GPU doesn't support Frame Buffers Objects. Can't continue
+----------------------------------------------------------------------------------
+
+This means that your GPU doesn't support the ``GL_EXT_framebuffer_object`` extension.
+
+cocos2d's `effects`_ needs this extension, and some transitions that depends on
+some effects will need it too.
+
+The workaround is to activate the *GenericGrabber* by editing the ``cocos/framegrabber.py`` file.
+To do so, modify these lines::
+
+    raise Exception("ERROR: GPU doesn't support Frame Buffers Objects. Can't continue")
+    #_best_grabber = GenericGrabber
+    #return _best_grabber()
+
+into these ones::
+
+    #raise Exception("ERROR: GPU doesn't support Frame Buffers Objects. Can't continue")
+    _best_grabber = GenericGrabber
+    return _best_grabber()
+
+**WARNING** : This modification will let you see the effects, but it doesn't
+support some features, like having effects on layers or sprites.
+It will also perform much slower. And we don't support it.
+
+As we said, it is a workaround, not a fix.
+
+If you want to fix it, you can contribute with a `pbuffer grabber`_ .
+This unfinished code might help you: `gl_pbuffer.py`_
+
+
+
+.. _Panda3d: http://www.panda3d.org
+.. _pyglet: http://www.pyglet.org
+.. _Bruce the Presentation Tool: http://code.google.com/p/bruce-tpt/
+.. _pycon 2008 cocos2d lighting talk: http://los-cocos.googlecode.com/svn/branches/pycon-lighting-talk/
+.. _effects: http://cocos2d.org/doc/programming_guide/effects.html
+.. _pbuffer grabber: http://oss.sgi.com/projects/ogl-sample/registry/SGIX/pbuffer.txt
+.. _gl_pbuffer.py: http://los-cocos.googlecode.com/svn/branches/branch-0.2/cocos/gl_pbuffer.py 

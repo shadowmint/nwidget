@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Animations</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="creating_skeletons_and_skins.html" title="Creating Skeletons and skins">Creating Skeletons ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="skeletal_animations.html" title="Skeletal Animations">Skeletal Animations</a> » Animations</span></div>
+<h1 class="title">Animations</h1>
+
+<p>Now that you have your skeletons, its time to animate them. An animation has a
+list of keyframes, ie, skeleton poses and times. When you play an animation,
+cocos will pose your skeleton according to the current time, interpolating between
+the previous and next frame.</p>
+<div class="section" id="the-animator-editor">
+<h1><a class="toc-backref" href="#id199">The animator editor</a></h1>
+<p>Start the animation editor doing:</p>
+<pre class="py-doctest">
+tools/skeleton$ python animator.py ../../test/sample_skeleton.py --skin ../../test/sample_skin.py ../../test/SAMPLE.anim</pre>
+<div class="figure">
+<img alt="skeleton/animator.png" src="skeleton/animator.png" />
+</div>
+<p>On the top you can see the timeline with the keyframes in blue and the
+current position marked in yellow.</p>
+<p>You can also see the first keyframe, with its skin and control points.</p>
+<p>You can control the animator with the following keys:</p>
+<blockquote>
+<ul class="simple">
+<li><em>S</em>: Save the current animator</li>
+<li><em>LEFT</em>: move $TICK_DELTA time to the left</li>
+<li><em>RIGHT</em>: move $TICK_DELTA time to the right</li>
+<li><em>PLUS</em>: add a keyframe in the current position</li>
+<li><em>MINUS</em>: remove the keyframe in the current position</li>
+<li><em>PAGE UP</em>: Move to the previous keyframe</li>
+<li><em>PAGE DOWN</em>: Move to the next keyframe</li>
+<li><em>INSERT</em>: insert $TICK_DELTA time at the current position</li>
+<li><em>DELETE</em>: delete $TICK_DELTA time at the current position</li>
+<li><em>HOME</em>: Go to the start of the animation</li>
+<li><em>END</em>: Go to the end of the animation</li>
+<li><em>SPACE</em>: Play the animation</li>
+</ul>
+</blockquote>
+<p>When standing on a keyframe you will see some control points, that you can move to edit the
+keyframe.</p>
+<p>$TICK_DELTA is 1/16 of a second.</p>
+</div>
+<div class="section" id="playing-animations">
+<h1><a class="toc-backref" href="#id200">Playing animations</a></h1>
+<p>You can play an animation on a skin doing:</p>
+<p>from test/test_skeleton_anim.py:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">TestLayer</span>(cocos.layer.Layer):
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+        super( TestLayer, self ).__init__()
+
+        x,y = director.get_window_size()
+        self.skin = skeleton.BitmapSkin(sample_skeleton.skeleton, sample_skin.skin)
+        self.add( self.skin )
+        x, y = director.get_window_size()
+        self.skin.position = x/2, y/2
+        anim = cPickle.load(open(<span class="py-string">&quot;SAMPLE.anim&quot;</span>))
+        self.skin.do( cocos.actions.Repeat( skeleton.Animate(anim) ) )</pre>
+<p>The Animate action has the following parameters: recenter, recenter_x, recenter_y.
+This control how the skeleton position is moved. If you run two walk left animations without translation
+you will see a player move left, go to the origin and move left again. if you use
+translation, the player will just move left twicenas far.</p>
+<p>Also, animations can be flipped, which makes the character look to the other side.</p>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="creating_skeletons_and_skins.html" title="Creating Skeletons and skins">Creating Skeletons ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="skeletal_animations.html" title="Skeletal Animations">Skeletal Animations</a> » Animations</span></div>
+</div>
+</body>
+</html>

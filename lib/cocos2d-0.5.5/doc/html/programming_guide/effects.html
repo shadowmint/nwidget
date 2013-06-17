@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Effects</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="basic_actions.html" title="Basic actions">Basic actions</a></span><span class="next">Next: <a class="reference" href="composition.html" title="Composition">Composition</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="actions_transformations_and_effects.html" title="Actions, Transformations and Effects">Actions, Transformations ...</a> » Effects</span></div>
+<h1 class="title">Effects</h1>
+
+<p>Effects are a special kind of actions. Instead of modifying normal attributes
+like <em>opacity</em>, <em>color</em>, <em>position</em>, <em>rotation</em>, or <em>scale</em>, they modify a new kind
+of attribute: the <strong>grid</strong> attribute.</p>
+<p>A grid attribute is like a matrix, it is a network of lines that cross each other
+to form a series of squares or rectangles.</p>
+<p>These special actions render any <a class="reference apilink" href="../api/cocos.cocosnode.CocosNode-class.html " title="cocos.cocosnode.CocosNode">CocosNode</a> object (<a class="reference apilink" href="../api/cocos.layer.base_layers.Layer-class.html " title="cocos.layer.base_layers.Layer">Layer</a>, <a class="reference apilink" href="../api/cocos.scene.Scene-class.html " title="cocos.scene.Scene">Scene</a>, etc.) into the
+grid, and you can transform the grid by moving it's vertices.</p>
+<p>There are 2 kind of grids: <tt class="docutils literal"><span class="pre">tiled</span></tt> grids and <tt class="docutils literal"><span class="pre">non-tiled</span></tt> grids. The difference is that
+the <tt class="docutils literal"><span class="pre">tiled</span></tt> grid is composed of individual tiles while the <tt class="docutils literal"><span class="pre">non-tiled</span></tt> grid is
+composed of vertex.</p>
+<img alt="tiled_and_nontiled_grid.png" src="tiled_and_nontiled_grid.png" />
+<p>The grids has 2 dimensions: <tt class="docutils literal"><span class="pre">rows</span></tt> and <tt class="docutils literal"><span class="pre">columns</span></tt>, but each vertex of the grid has
+3 dimension: <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt> and <tt class="docutils literal"><span class="pre">z</span></tt>. So you can create 2d or 3d effects by transforming
+a <tt class="docutils literal"><span class="pre">tiled-grid-3D</span></tt> or a <tt class="docutils literal"><span class="pre">grid-3D</span></tt> grid.</p>
+<p>You can improve the quality of the effect by increasing the size of the
+grid, but the effect's speed will decrease.</p>
+<p>A grid of size (16,12) will run fast in most computers but it won't look
+pretty well. And a grid of (32,24) will look pretty well, but in won't
+run fast in some old computers.</p>
+<div class="section" id="how-they-work">
+<h1><a class="toc-backref" href="#id139">How they work</a></h1>
+<p>Each frame the screen is rendered into a texture. This texture is transformed into a <tt class="docutils literal"><span class="pre">vertex</span> <span class="pre">array</span></tt>
+and this <tt class="docutils literal"><span class="pre">vertex</span> <span class="pre">array</span></tt> (the grid!) is transformed by the grid effects.
+Finally the <tt class="docutils literal"><span class="pre">vertex</span> <span class="pre">array</span></tt> is rendered into the screen.</p>
+<dl class="docutils">
+<dt>For more information about the internals refer to:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference apilink" href="../api/cocos.grid.TiledGrid3D-class.html " title="cocos.grid.TiledGrid3D">TiledGrid3D</a> and <a class="reference apilink" href="../api/cocos.actions.basegrid_actions.TiledGrid3DAction-class.html " title="cocos.actions.basegrid_actions.TiledGrid3DAction">TiledGrid3DAction</a> for <tt class="docutils literal"><span class="pre">tiled</span></tt> grids</li>
+<li><a class="reference apilink" href="../api/cocos.grid.Grid3D-class.html " title="cocos.grid.Grid3D">Grid3D</a> and <a class="reference apilink" href="../api/cocos.actions.basegrid_actions.Grid3DAction-class.html " title="cocos.actions.basegrid_actions.Grid3DAction">Grid3DAction</a> for <tt class="docutils literal"><span class="pre">non-tiled</span></tt> grids</li>
+</ul>
+</dd>
+</dl>
+<p>For example, if you have an scene or layer that renders this image:</p>
+<img alt="original_image.png" src="original_image.png" />
+<p>...we can transform that image into this one using the <a class="reference apilink" href="../api/cocos.actions.grid3d_actions.Ripple3D-class.html " title="cocos.actions.grid3d_actions.Ripple3D">Ripple3D</a> action.
+As you can see from the <em>wired</em> image, it is using a grid of 32x24 squares,
+and the grid is <em>non-tiled</em> (all the squares are together).</p>
+<img alt="effect_ripple3d.png" src="effect_ripple3d.png" />
+<img alt="effect_ripple3d_grid.png" src="effect_ripple3d_grid.png" />
+<p>...or we can transform it into this one using the <a class="reference apilink" href="../api/cocos.actions.tiledgrid_actions.FadeOutTRTiles-class.html " title="cocos.actions.tiledgrid_actions.FadeOutTRTiles">FadeOutTRTiles</a> action.
+As you can see from the <em>wired</em> image, it is using a grid of 16x12 squares,
+and the grid is <em>tiled</em> (all the squares/tiles can be separated).</p>
+<img alt="effect_fadeouttiles.png" src="effect_fadeouttiles.png" />
+<img alt="effect_fadeouttiles_grid.png" src="effect_fadeouttiles_grid.png" />
+</div>
+<div class="section" id="d-actions">
+<h1><a class="toc-backref" href="#id140">3D actions</a></h1>
+<p>Action names that has the '3D' characters on it's name means
+that they produce a 3D visual effects by modifying the z-coordinate
+of the grid.</p>
+<p>If you're going to use any '3D' action, probably you will want to
+enable the OpenGL depth test. An easy way to do that is by calling
+the Director's <a class="reference apilink" href="../api/cocos.director.Director-class.html#set_depth_test " title="cocos.director.Director.set_depth_test">set_depth_test</a> method.</p>
+</div>
+<div class="section" id="index-of-grid-effects">
+<h1><a class="toc-backref" href="#id141">Index of grid effects</a></h1>
+<dl class="docutils">
+<dt>You can find all the <cite>Grid3DAction</cite> actions here:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference apilink" href="../api/cocos.actions.grid3d_actions-module.html " title="cocos.actions.grid3d_actions">grid3d_actions</a></li>
+</ul>
+</dd>
+<dt>And all the <cite>TiledGrid3DAction</cite> actions here:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference apilink" href="../api/cocos.actions.tiledgrid_actions-module.html " title="cocos.actions.tiledgrid_actions">tiledgrid_actions</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="examples">
+<h1><a class="toc-backref" href="#id142">Examples</a></h1>
+<p>Some examples:</p>
+<pre class="py-doctest">
+<span class="py-comment"># effect applied on a Scene</span>
+scene.do( Twirl( grid=(16,12), duration=4) )
+
+<span class="py-comment"># effect applied on a Layer</span>
+layer1.do( Lens3D( grid=(32,24), duration=5 )
+
+<span class="py-comment"># effect applied on a different Layer</span>
+layer2.do( Waves( grid=(16,12), duration=4) + Liquid( grid=(16,12), duration=5 ) )</pre>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="basic_actions.html" title="Basic actions">Basic actions</a></span><span class="next">Next: <a class="reference" href="composition.html" title="Composition">Composition</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="actions_transformations_and_effects.html" title="Actions, Transformations and Effects">Actions, Transformations ...</a> » Effects</span></div>
+</div>
+</body>
+</html>

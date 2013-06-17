@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.pygame.mixer.Sound</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.pygame-module.html">pygame</a>&nbsp;.&nbsp;<a href="cocos.audio.pygame.mixer-module.html">mixer</a>&nbsp;.&nbsp;Sound
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.audio.pygame.mixer.Sound</h1>
+<p>The Sound object represents actual sound sample data.</p>
+<p>Methods that change the state of the Sound object will the all instances
+of the Sound playback.</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__del__"></a><span class="summary-sig-name">__del__</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">file</span>,
+        <span class="summary-sig-arg">_chunk</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Create a new Sound object from a file.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#fadeout" class="summary-sig-name">fadeout</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">time</span>)</span>
+<div class="summary-description">Stop sound playback after fading out.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#get_length" class="summary-sig-name">get_length</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Get the length of the Sound.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#get_num_channels" class="summary-sig-name">get_num_channels</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Count how many times this Sound is playing.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#get_volume" class="summary-sig-name">get_volume</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Get the playback volume.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.audio.pygame.mixer.Channel-class.html" class="link">Channel</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#play" class="summary-sig-name">play</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">loops</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">maxtime</span>=<span class="summary-sig-default">-1</span>)</span>
+<div class="summary-description">Begin sound playback.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#set_volume" class="summary-sig-name">set_volume</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">volume</span>)</span>
+<div class="summary-description">Set the playback volume for this Sound.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.pygame.mixer.Sound-class.html#stop" class="summary-sig-name">stop</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Stop sound playback.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="__init__"></a>
+<div class=" detail">
+  <h3>__init__</h3>
+  <div class="detail-signature">
+    <span class="fspecial">(Constructor)</span>
+    <span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">file</span>,
+        <span class="sig-arg">_chunk</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Create a new Sound object from a file.</p>
+<p>Load a new sound buffer from a filename or from a python file object.
+Limited resampling will be performed to help the sample match the
+initialize arguments for the mixer.</p>
+<p>The Sound can be loaded from an OGG audio file or from an uncompressed
+WAV.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">file</span> : <span class='ptype'>str or file-like object</span></dt>
+        <dd>The filename or file to load.</dd>
+        <dt><span class="pname">_chunk</span> : <span class='ptype'>None</span></dt>
+        <dd>Internal use only.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="fadeout"></a>
+<div class=" detail">
+  <h3>fadeout</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">fadeout</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">time</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Stop sound playback after fading out.</p>
+<p>This will stop playback of the sound after fading it out over the
+time argument in milliseconds. The Sound will fade and stop on all
+actively playing channels.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">time</span> : <span class='ptype'>int</span></dt>
+        <dd>Time to fade out, in milliseconds.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="get_length"></a>
+<div class=" detail">
+  <h3>get_length</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_length</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Get the length of the Sound.</p>
+<p>Return the length of this Sound in seconds.</p>
+  <dl class="fields">
+    <dt>Returns: float</dt>
+  </dl>
+  </div>
+</div>
+<a name="get_num_channels"></a>
+<div class=" detail">
+  <h3>get_num_channels</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_num_channels</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Count how many times this Sound is playing.</p>
+<p>Return the number of active channels this sound is playing on.</p>
+  <dl class="fields">
+    <dt>Returns: int</dt>
+  </dl>
+  </div>
+</div>
+<a name="get_volume"></a>
+<div class=" detail">
+  <h3>get_volume</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_volume</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Get the playback volume.</p>
+<p>Return a value from 0.0 to 1.0 representing the volume for this Sound.</p>
+  <dl class="fields">
+    <dt>Returns: float</dt>
+  </dl>
+  </div>
+</div>
+<a name="play"></a>
+<div class=" detail">
+  <h3>play</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">play</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">loops</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">maxtime</span>=<span class="sig-default">-1</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Begin sound playback.</p>
+<p>Begin playback of the Sound (i.e., on the computer's speakers) on an
+available Channel. This will forcibly select a Channel, so playback
+may cut off a currently playing sound if necessary.</p>
+<p>The loops argument controls how many times the sample will be repeated
+after being played the first time. A value of 5 means that the sound
+will be played once, then repeated five times, and so is played a
+total of six times. The default value (zero) means the Sound is not
+repeated, and so is only played once. If loops is set to -1 the Sound
+will loop indefinitely (though you can still call stop() to stop it).</p>
+<p>The maxtime argument can be used to stop playback after a given number
+of milliseconds.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">loops</span> : <span class='ptype'>int</span></dt>
+        <dd>Number of times to repeat the sound after the first play.</dd>
+        <dt><span class="pname">maxtime</span> : <span class='ptype'>int</span></dt>
+        <dd>Maximum number of milliseconds to play for.</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype"><a href="cocos.audio.pygame.mixer.Channel-class.html" class="link">Channel</a></span>: The Channel object for the channel that was selected.</dd>
+  </dl>
+  </div>
+</div>
+<a name="set_volume"></a>
+<div class=" detail">
+  <h3>set_volume</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">set_volume</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">volume</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Set the playback volume for this Sound.</p>
+<p>This will set the playback volume (loudness) for this Sound. This will
+immediately affect the Sound if it is playing. It will also affect any
+future playback of this Sound. The argument is a value from 0.0 to
+1.0.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">volume</span> : <span class='ptype'>float</span></dt>
+        <dd>Volume of playback, in range [0.0, 1.0]</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="stop"></a>
+<div class=" detail">
+  <h3>stop</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">stop</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Stop sound playback.</p>
+<p>This will stop the playback of this Sound on any active Channels.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.pygame-module.html">pygame</a>&nbsp;.&nbsp;<a href="cocos.audio.pygame.mixer-module.html">mixer</a>&nbsp;.&nbsp;Sound
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

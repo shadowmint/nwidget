@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Brief tour of built-in CocosNode subclasses</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="cocosnode_functionality.html" title="CocosNode Functionality">CocosNode Functionality</a></span><span class="next">Next: <a class="reference" href="cocosnodes_examples.html" title="CocosNodes Examples">CocosNodes Examples</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a> » Brief tour ...</span></div>
+<h1 class="title">Brief tour of built-in CocosNode subclasses</h1>
+
+<div class="section" id="scene">
+<h1><a class="toc-backref" href="#id161">Scene</a></h1>
+<p>The root of the tree depicting the full content to be displayed.
+To change between scenes you use director.</p>
+</div>
+<div class="section" id="transitionscene">
+<h1><a class="toc-backref" href="#id162">TransitionScene</a></h1>
+<p><a class="reference apilink" href="../api/cocos.scenes.transitions.TransitionScene-class.html " title="cocos.scenes.transitions.TransitionScene">TransitionScene</a></p>
+<p>Base class to implement a gradual change from one screen (scene) to other. Typical examples are fade in and fade out.</p>
+<p>Cocos provides a bunch of ready made scene transitions (sample code in test/test_transition_*.py)</p>
+</div>
+<div class="section" id="layer">
+<h1><a class="toc-backref" href="#id163">Layer</a></h1>
+<p><a class="reference apilink" href="../api/cocos.layer.base_layers.Layer-class.html " title="cocos.layer.base_layers.Layer">Layer</a></p>
+<p>Helps to organize the view in the depth axis.
+Subclasses often offer specialized services to the childs (like ScrollingManager), and can be used to build higher order functionality (like Menu)</p>
+</div>
+<div class="section" id="colorlayer">
+<h1><a class="toc-backref" href="#id164">ColorLayer</a></h1>
+<p><a class="reference apilink" href="../api/cocos.layer.util_layers.ColorLayer-class.html " title="cocos.layer.util_layers.ColorLayer">ColorLayer</a></p>
+<p>The primary use is to provide a solid color background to a scene, also used to draw solid color rectangles.</p>
+</div>
+<div class="section" id="multiplexlayer">
+<h1><a class="toc-backref" href="#id165">MultiplexLayer</a></h1>
+<p><a class="reference apilink" href="../api/cocos.layer.base_layers.MultiplexLayer-class.html " title="cocos.layer.base_layers.MultiplexLayer">MultiplexLayer</a></p>
+<p>Allows to show only one of his childs, and to select which one.
+An use case is when you want to show one of a number of menus.</p>
+</div>
+<div class="section" id="scrollingmanager">
+<h1><a class="toc-backref" href="#id166">ScrollingManager</a></h1>
+<p><a class="reference sectionlink" href="brief_tour_of_built_in_cocosnode_subclasses.html#scrollingmanager">ScrollingManager</a></p>
+<p>Coordinates a number of ScrollableLayer to do scroll and parallax so that the scroll don't goes out of the the world.</p>
+</div>
+<div class="section" id="scrollablelayer">
+<h1><a class="toc-backref" href="#id167">ScrollableLayer</a></h1>
+<p>Used as childs of ScrollingManager, helps to manage scroll limits and parallax.
+You must set attributes px_with and px_height in a <a class="reference sectionlink" href="brief_tour_of_built_in_cocosnode_subclasses.html#scrollablelayer">ScrollableLayer</a> instance so restrictions in the scroll are enforced.
+If using parallax, it must be provided in the constructor.</p>
+</div>
+<div class="section" id="rectmaplayer-and-hexmaplayer">
+<h1><a class="toc-backref" href="#id168">RectMapLayer and HexMapLayer</a></h1>
+<dl class="docutils">
+<dt>A tilemap is a world description where</dt>
+<dd><ul class="first last simple">
+<li>the space is partitioned in a regular grid (rectangular or hexagonal in cocos)</li>
+<li>it is known which associated image and game properties has each cell in the grid.</li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference apilink" href="../api/cocos.tiles.RectMapLayer-class.html " title="cocos.tiles.RectMapLayer">RectMapLayer</a> and <a class="reference apilink" href="../api/cocos.tiles.HexMapLayer-class.html " title="cocos.tiles.HexMapLayer">HexMapLayer</a> are usually created by tiles.load, and they care to display the world and give access to the cells properties.</p>
+<p>Examples are test/test_tiles.py and test/test_platformer.py</p>
+</div>
+<div class="section" id="interpreterlayer">
+<h1><a class="toc-backref" href="#id169">InterpreterLayer</a></h1>
+<p>Used by director to show a python console that allows to inspect and modify the objects in the application using director.
+You don't instantiate manually an InterpreterLayer, simply press ctrl + i (cmd + i on mac) to toggle the layer's visibility.</p>
+</div>
+<div class="section" id="sprite">
+<h1><a class="toc-backref" href="#id170">Sprite</a></h1>
+<p><a class="reference apilink" href="../api/cocos.sprite.Sprite-class.html " title="cocos.sprite.Sprite">Sprite</a></p>
+<p>Sprites allows to display an image in a rectangular area, which can be rotated,
+scaled and moved.</p>
+<div class="section" id="animating-a-sprite">
+<h2><a class="toc-backref" href="#id171">Animating a sprite</a></h2>
+<p>Animation as in cartoon style animation, that is, replacing the image fast
+enough to give the illusion of movement, can be accomplished by:</p>
+<ul class="simple">
+<li>using an animated .gif file as source for the image</li>
+<li>passing a pyglet.image.Animation as image, which collects a number of images</li>
+<li>have an array of images and let your code assign to the sprite image member</li>
+</ul>
+</div>
+<div class="section" id="performance-considerations">
+<h2><a class="toc-backref" href="#id172">Performance Considerations</a></h2>
+<p>Sprites are not suitable for effects that piles a lot of semitransparent images
+to render things like smoke or poisoning fog. Use particle systems or custom
+CocosNode s managing vertex lists for that.</p>
+<p>If your scene has less than 25 sprites, you can add directly to the
+scene, like:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">TLayer</span>(cocos.layer.Layer):
+    is_event_handler = True
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+        cocos.layer.Layer.__init__(self)
+        world_width, world_height = director.get_window_size()
+        rand_color = [255, 0, 0]
+        icolor = 0
+        <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(qty_balls):
+            ball = Ball((world_width*random.random(), world_height*random.random()), color=rand_color)
+            rand_color[icolor] = random.randint(50, 255)
+            icolor = (icolor + 1)%len(rand_color)
+            self.add(ball)
+self.time = 0.0
+self.schedule(self.update)</pre>
+<p>When you have between 25 and 100 visible sprites, moving at each frame, you
+should add one or more BatchNode s at some level in the scene and add the
+sprites to them. Even only one batch can give you 4x fps:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">TLayer</span>(cocos.layer.Layer):
+    is_event_handler = True
+        <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+            cocos.layer.Layer.__init__(self)
+            batch = cocos.batch.BatchNode()
+            self.add(batch) <span class="py-comment"># we add a batch to the layer ...</span>
+            world_width, world_height = director.get_window_size()
+            rand_color = [255, 0, 0]
+            icolor = 0
+            <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(100):
+                ball = Ball((world_width*random.random(), world_height*random.random()), color=rand_color)
+                rand_color[icolor] = random.randint(50, 255)
+                icolor = (icolor + 1)%len(rand_color)
+                batch.add(ball) <span class="py-comment"># see ? we add sprites to the batch, not the layer</span>
+            self.batch = batch
+            self.time = 0.0
+            self.schedule(self.update)</pre>
+<p>With more than 100 visible, moving at each frame sprites, you will need to
+optimize further to run at 60 fps in weak hardware like netbooks, old desktops,
+cheap new desktops.
+You can look at cocos particle systems and the section graphics in pyglet
+programing guide for ideas.</p>
+<p>For a ballpark data point, a 2008 low gamming spec machine (athon 5200, radeon 4650) gives:</p>
+<pre class="py-doctest">
+numballs    fps
+    250     98
+    500     54
+    750     36</pre>
+<p>Notice that sprites out of view has a fraction of the cost that visible sprites: they are discarded at the openGL geometry stage (in most of openGL implementations)</p>
+</div>
+</div>
+<div class="section" id="particlesystems">
+<h1><a class="toc-backref" href="#id173">ParticleSystems</a></h1>
+<p><a class="reference sectionlink" href="brief_tour_of_built_in_cocosnode_subclasses.html#particlesystems">ParticleSystems</a></p>
+<p>Certain effects are best rendered as a big number of translucent, colored images, by example explosions and smoke.
+Cocos provides the base class <cite>ParticleSystems</cite> to efficiently render those entities, and some specialized subclasses like <a class="reference apilink" href="../api/cocos.particle_systems.Fireworks-class.html " title="cocos.particle_systems.Fireworks">Fireworks</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Spiral-class.html " title="cocos.particle_systems.Spiral">Spiral</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Meteor-class.html " title="cocos.particle_systems.Meteor">Meteor</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Sun-class.html " title="cocos.particle_systems.Sun">Sun</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Fire-class.html " title="cocos.particle_systems.Fire">Fire</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Galaxy-class.html " title="cocos.particle_systems.Galaxy">Galaxy</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Flower-class.html " title="cocos.particle_systems.Flower">Flower</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Explosion-class.html " title="cocos.particle_systems.Explosion">Explosion</a>, <a class="reference apilink" href="../api/cocos.particle_systems.Smoke-class.html " title="cocos.particle_systems.Smoke">Smoke</a>.</p>
+<p>The most common method to customize particle systems is to subclass one of the cocos particle systems and modify some of the class members defining its behavior.
+If you change the particle texture remember to load it with pyglet.image.load, not pyglet.resource.image
+Of course, deeper customization can be achieved with subclassing and code customization.</p>
+<p>Look at test/test_particle_*.py for smaple code.</p>
+</div>
+<div class="section" id="textelement-label-htmllabel-richlabel">
+<h1><a class="toc-backref" href="#id174">TextElement, Label, HTMLLabel, RichLabel</a></h1>
+<p>Overall opacity, Family and Font size can be specified for all.</p>
+<p><a class="reference apilink" href="../api/cocos.text.TextElement-class.html " title="cocos.text.TextElement">TextElement</a>: base class for all cocos text. Holds internally (member 'element') a suitable pyglet text object, providing the CocosNode interface and pyglet Batch to store parts.
+Features other than opacity and the common cocosnode ones should be accessed trough the instance.element.</p>
+<p><cite>Label</cite>: provide the most simple text display; color can also be set.</p>
+<p><cite>HTMLLabel</cite>: a slightly more powerful label, it can use mixed styles. Uses HTML syntax for text and styles; opacity as a whole can be set.</p>
+<p><cite>RichTextLabel</cite>: Allows rich text attributes.</p>
+<p>Look for examples at test/test_label_*.py, test/test_htmllabel_*.py, test/test_rich_label.py</p>
+</div>
+<div class="section" id="menu">
+<h1><a class="toc-backref" href="#id175">Menu</a></h1>
+<p><a class="reference apilink" href="../api/cocos.menu.Menu-class.html " title="cocos.menu.Menu">Menu</a></p>
+<ul class="simple">
+<li>Does the layout of menu items</li>
+<li>Handles navigation between menu items</li>
+<li>Passes to the items the desired animation to play when the focus changes from one to another item</li>
+</ul>
+<p>Look for examples at test/test_menu_*.py</p>
+</div>
+<div class="section" id="menu-items">
+<h1><a class="toc-backref" href="#id176">Menu items</a></h1>
+<p><a class="reference apilink" href="../api/cocos.menu.MenuItem-class.html " title="cocos.menu.MenuItem">MenuItem</a>: A menu item that shows text</p>
+<p><a class="reference apilink" href="../api/cocos.menu.ImageMenuItem-class.html " title="cocos.menu.ImageMenuItem">ImageMenuItem</a>: A menu item that shows a image and optionally text</p>
+<p><a class="reference apilink" href="../api/cocos.menu.MultipleMenuItem-class.html " title="cocos.menu.MultipleMenuItem">MultipleMenuItem</a>: Allows to cycle trough a customizable list of options</p>
+<p><a class="reference apilink" href="../api/cocos.menu.ToggleMenuItem-class.html " title="cocos.menu.ToggleMenuItem">ToggleMenuItem</a>: Exposes a on/off selection</p>
+<p><a class="reference apilink" href="../api/cocos.menu.EntryMenuItem-class.html " title="cocos.menu.EntryMenuItem">EntryMenuItem</a>: Exposes a label and a text entry field</p>
+<p><a class="reference apilink" href="../api/cocos.menu.ColorMenuItem-class.html " title="cocos.menu.ColorMenuItem">ColorMenuItem</a>: Allows to select a color</p>
+<p>Look at test/test_menu_items.py for sample code.</p>
+</div>
+<div class="section" id="creating-your-cocosnode-subclasses">
+<h1><a class="toc-backref" href="#id177">Creating your CocosNode subclasses</a></h1>
+<p>TODO: explain how to build custom cocosnode objects,
+how to use <cite>transform</cite> , etc.</p>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="cocosnode_functionality.html" title="CocosNode Functionality">CocosNode Functionality</a></span><span class="next">Next: <a class="reference" href="cocosnodes_examples.html" title="CocosNodes Examples">CocosNodes Examples</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="cocosnodes.html" title="CocosNodes">CocosNodes</a> » Brief tour ...</span></div>
+</div>
+</body>
+</html>

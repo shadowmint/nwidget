@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Using Director's API</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="scenes_transitions.html" title="Scenes &amp; Transitions">Scenes &amp; Transitions</a></span><span class="next">Next: <a class="reference" href="transitions.html" title="Transitions">Transitions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="scenes_transitions.html" title="Scenes &amp; Transitions">Scenes &amp; Transitions</a> » Using Director's API</span></div>
+<h1 class="title">Using Director's API</h1>
+
+<p>As we mentioned earlier, one of the main responsibilities of
+the <a class="reference apilink" href="../api/cocos.director.Director-class.html " title="cocos.director.Director">Director</a> is to manage the flow control of the scenes.</p>
+<p>To do this, the director provides an API:</p>
+<pre class="py-doctest">
+director.replace( new_scene )
+
+director.push( new_scene )
+director.pop()</pre>
+<p>Use <a class="reference apilink" href="../api/cocos.director.Director-class.html#replace " title="cocos.director.Director.replace">Director.replace</a> to replace the current scene with a new one,
+and use <a class="reference apilink" href="../api/cocos.director.Director-class.html#push " title="cocos.director.Director.push">Director.push</a> to push a new scene on the stack.
+The old scene will be stack, under the new one.
+You can remove an scene from the stack using <a class="reference apilink" href="../api/cocos.director.Director-class.html#pop " title="cocos.director.Director.pop">Director.pop</a>.</p>
+<p>When a new scene is pushed or replaced, these actions will be executed:</p>
+<pre class="py-doctest">
+<span class="py-comment"># calls on_exit on the 'old' scene</span>
+outgoing_scene.on_exit()
+
+<span class="py-comment"># disable handlers</span>
+outgoing_scnee.enable_handlers( False)
+
+
+<span class="py-comment"># calls on_enter() on the 'new' scene</span>
+incoming_scene.on_enter()
+
+<span class="py-comment"># enable handlers</span>
+incoming_scene.enable_handlers( True )</pre>
+<p>When an <a class="reference apilink" href="../api/cocos.scene.Scene-class.html " title="cocos.scene.Scene">Scene</a> is <em>entered</em>, it will propagate the <em>on_enter</em> message
+to all it's children, and it's children will do the same with it's children,
+and so on.</p>
+<p>The same happens with the <em>on_exit</em> message.</p>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="scenes_transitions.html" title="Scenes &amp; Transitions">Scenes &amp; Transitions</a></span><span class="next">Next: <a class="reference" href="transitions.html" title="Transitions">Transitions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="scenes_transitions.html" title="Scenes &amp; Transitions">Scenes &amp; Transitions</a> » Using Director's API</span></div>
+</div>
+</body>
+</html>

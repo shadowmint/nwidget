@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.grid.Grid3D</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.grid-module.html">grid</a>&nbsp;.&nbsp;Grid3D
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.grid.Grid3D</h1>
+<pre class="base-tree">
+<a href="cocos.grid.GridBase-class.html">GridBase</a> --+
+           |
+          <strong class="uidshort">Grid3D</strong>
+</pre>
+
+<p><a href="cocos.grid.Grid3D-class.html" class="link">Grid3D</a> is a 3D grid implementation. Each vertex has 3 dimensions: x,y,z</p>
+<p>The vindexed ertex array will be built with:</p>
+<pre class="py-doctest">
+self.vertex_list.vertices: x,y,z (floats)
+self.vertex_list.tex_coords: x,y,z (floats)
+self.vertex_list.colors: RGBA, with <span class="py-builtin">values</span> <span class="py-keyword">from</span> 0 - 255</pre>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(float, float, float)</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.grid.Grid3D-class.html#get_vertex" class="summary-sig-name">get_vertex</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+<div class="summary-description">Get the current vertex coordinate</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(float, float, float)</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.grid.Grid3D-class.html#get_original_vertex" class="summary-sig-name">get_original_vertex</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+<div class="summary-description">Get the original vertex coordinate.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.grid.Grid3D-class.html#set_vertex" class="summary-sig-name">set_vertex</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">v</span>)</span>
+<div class="summary-description">Set a vertex point is a certain value</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.grid.GridBase-class.html#after_draw" class="summary-sig-name">after_draw</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">camera</span>)</span>
+<div class="summary-description">Called by CocosNode when the texture is already grabbed.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="before_draw"></a><span class="summary-sig-name">before_draw</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Binds the framebuffer to a texture
+and set a 2d projection before binding
+to prevent calculating a new texture</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.grid.GridBase-class.html#init" class="summary-sig-name">init</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">grid</span>)</span>
+<div class="summary-description">Initializes the grid creating both a vertex_list for an independent-tiled grid
+and creating also a vertex_list_indexed for a &quot;united&quot; (non independent tile) grid.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.grid.GridBase-class.html#active" class="summary-name">active</a>
+<div class="summary-description">Determines whether the grid is active or not
+:type: bool</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.grid.Grid3D-class.html#vertex_list" class="summary-name">vertex_list</a>
+<div class="summary-description">indexed vertex array that can be transformed.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.grid.Grid3D-class.html#vertex_points" class="summary-name">vertex_points</a>
+<div class="summary-description">original vertex array of the grid.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.grid.GridBase-class.html#grid" class="summary-name">grid</a>
+<div class="summary-description">size of the grid.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="x_step"></a><span class="summary-name">x_step</span>
+<div class="summary-description">x pixels between each vertex (float)</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="y_step"></a><span class="summary-name">y_step</span>
+<div class="summary-description">y pixels between each vertex (float)</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+        <h2>Class Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="texture"></a><span class="summary-name">texture</span> = <code title="None">None</code>
+      <span class='inherited-from'>(Inherited from <a href="cocos.grid.GridBase-class.html">cocos.grid.GridBase</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="get_vertex"></a>
+<div class=" detail">
+  <h3>get_vertex</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_vertex</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+    </div>
+  <div class="detail-description">
+  Get the current vertex coordinate
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">x</span> : <span class='ptype'>int</span></dt>
+        <dd>x-vertex</dd>
+        <dt><span class="pname">y</span> : <span class='ptype'>int</span></dt>
+        <dd>y-vertex</dd>
+    </dl></dd>
+    <dt>Returns: (float, float, float)</dt>
+  </dl>
+  </div>
+</div>
+<a name="get_original_vertex"></a>
+<div class=" detail">
+  <h3>get_original_vertex</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_original_vertex</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+    </div>
+  <div class="detail-description">
+  Get the original vertex coordinate.
+The original vertices are the ones weren't modified by the current action.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">x</span> : <span class='ptype'>int</span></dt>
+        <dd>x-vertex</dd>
+        <dt><span class="pname">y</span> : <span class='ptype'>int</span></dt>
+        <dd>y-vertex</dd>
+    </dl></dd>
+    <dt>Returns: (float, float, float)</dt>
+  </dl>
+  </div>
+</div>
+<a name="set_vertex"></a>
+<div class=" detail">
+  <h3>set_vertex</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">set_vertex</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">v</span>)</span>
+    </div>
+  <div class="detail-description">
+  Set a vertex point is a certain value
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">x</span> : <span class='ptype'>int</span></dt>
+        <dd>x-vertex</dd>
+        <dt><span class="pname">y</span> : <span class='ptype'>int</span></dt>
+        <dd>y-vertex</dd>
+        <dt><span class="pname">v</span> : <span class='ptype'>(float, float, float)</span></dt>
+        <dd>tuple value for the vertex</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+        <h2>Instance Variable Details</h2>
+<table class="details">
+</table>
+<a name="vertex_list"></a>
+<div class=" detail">
+  <h3>vertex_list</h3>
+  <div class="detail-description">
+  <p>indexed vertex array that can be transformed.
+it has these attributes:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>vertices</li>
+<li>colors</li>
+<li>tex_coords</li>
+</ul>
+</blockquote>
+<p>for more information refer to pyglet's documentation: pyglet.graphics.vertex_list_indexed</p>
+  <dl class="fields">
+  </div>
+</div>
+<a name="vertex_points"></a>
+<div class=" detail">
+  <h3>vertex_points</h3>
+  <div class="detail-description">
+  original vertex array of the grid. (read-only)
+  <dl class="fields">
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.grid-module.html">grid</a>&nbsp;.&nbsp;Grid3D
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:20 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

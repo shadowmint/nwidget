@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.actions.basegrid_actions</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;basegrid_actions
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.actions.basegrid_actions</h1>
+<p>Grid Actions</p>
+<div class="rst-section" id="rst-grid-actions">
+<h1 class="heading">Grid Actions</h1>
+<p>There are 2 kinds of grids:</p>
+<blockquote>
+<ul>
+<li><p class="rst-first"><a href="cocos.grid.Grid3D-class.html" class="link">Grid3D</a> : A 3D grid with x,y and z coordinates</p>
+</li>
+<li><dl class="rst-first rst-docutils">
+<dt><a href="cocos.grid.TiledGrid3D-class.html" class="link">TiledGrid3D</a> <span class="classifier-delimiter">:</span> <span class="rst-classifier">A 3D grid with x,y and z coordinates, composed</span></dt>
+<dd><p class="rst-first rst-last">with independent tiles</p>
+</dd>
+</dl>
+</li>
+</ul>
+</blockquote>
+<p>Hence, there are 2 kinds of grid actions:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><a href="cocos.actions.basegrid_actions.Grid3DAction-class.html" class="link">Grid3DAction</a></li>
+<li><a href="cocos.actions.basegrid_actions.TiledGrid3DAction-class.html" class="link">TiledGrid3DAction</a></li>
+</ul>
+</blockquote>
+<p>The <a href="cocos.actions.basegrid_actions.Grid3DAction-class.html" class="link">Grid3DAction</a> can modify any of vertex of the grid in any direction (x,y or z).
+The <a href="cocos.actions.basegrid_actions.TiledGrid3DAction-class.html" class="link">TiledGrid3DAction</a> can modify any tile of the grid without modifying the adjacent tiles.</p>
+<p>To understand visually the difference between these 2 kinds of grids, try these examples:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>run <tt class="rst-docutils literal"><span class="pre">test/test_shakytiles3d.py</span></tt> to see a <a href="cocos.actions.basegrid_actions.TiledGrid3DAction-class.html" class="link">TiledGrid3DAction</a> example</li>
+<li>run <tt class="rst-docutils literal"><span class="pre">test/test_shaky3d.py</span></tt> to see the <a href="cocos.actions.basegrid_actions.Grid3DAction-class.html" class="link">Grid3DAction</a> counterpart</li>
+</ul>
+</blockquote>
+</div>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.GridException-class.html" class="summary-name">GridException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.GridBaseAction-class.html" class="summary-name">GridBaseAction</a>
+<div class="summary-description">GridBaseAction is the base class of all Grid Actions.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.Grid3DAction-class.html" class="summary-name">Grid3DAction</a>
+<div class="summary-description">Action that does transformations
+to a 3D grid ( <a href="cocos.grid.Grid3D-class.html" class="link">Grid3D</a> )</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.TiledGrid3DAction-class.html" class="summary-name">TiledGrid3DAction</a>
+<div class="summary-description">Action that does transformations
+to a grid composed of tiles ( <a href="cocos.grid.TiledGrid3D-class.html" class="link">TiledGrid3D</a> ).</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.AccelDeccelAmplitude-class.html" class="summary-name">AccelDeccelAmplitude</a>
+<div class="summary-description">Increases and Decreases the amplitude of Wave</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.AccelAmplitude-class.html" class="summary-name">AccelAmplitude</a>
+<div class="summary-description">Increases the waves amplitude from 0 to self.amplitude</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.DeccelAmplitude-class.html" class="summary-name">DeccelAmplitude</a>
+<div class="summary-description">Decreases the waves amplitude from self.amplitude to 0</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.StopGrid-class.html" class="summary-name">StopGrid</a>
+<div class="summary-description">StopGrid disables the current grid.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.basegrid_actions.ReuseGrid-class.html" class="summary-name">ReuseGrid</a>
+<div class="summary-description">Will reuse the current grid for the next grid action.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;basegrid_actions
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

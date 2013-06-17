@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.custom_clocks</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;custom_clocks
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.custom_clocks</h1>
+<dl class="rst-docutils">
+<dt>Custom clocks used by cocos to perform special tasks, like:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>recording a cocos app as a sequence of snapshots with an exact, fixed framerate</li>
+<li>jump in a predefined sequence of timestamps taking snapshots</li>
+</ul>
+</dd>
+</dl>
+<p>dev notes:
+There's code duplication here, but having separated codepaths would help to
+follow changes in pyglet 1.2dev. When released, we could refactor this with
+some confidence.</p>
+<p>References to the classes defined here are discouraged in code outside this
+module because of possible changes.</p>
+<dl class="rst-docutils">
+<dt>The public interface should be</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>get_recorder_clock</li>
+<li>set_app_clock</li>
+</ul>
+</dd>
+</dl>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.custom_clocks.ScreenReaderClock-class.html" class="summary-name">ScreenReaderClock</a>
+<div class="summary-description">Make frames happen every 1/framerate and takes screenshots</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.custom_clocks.ScreenReaderClock_12dev-class.html" class="summary-name">ScreenReaderClock_12dev</a>
+<div class="summary-description">Make frames happen every 1/framerate and takes screenshots</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.custom_clocks.AutotestClock-class.html" class="summary-name">AutotestClock</a>
+<div class="summary-description">Make frames follow a test plan</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.custom_clocks.AutotestClock_12dev-class.html" class="summary-name">AutotestClock_12dev</a>
+<div class="summary-description">Make frames follow a test plan</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.custom_clocks-module.html#get_recorder_clock" class="summary-sig-name">get_recorder_clock</a>(<span class="summary-sig-arg">framerate</span>,
+        <span class="summary-sig-arg">template</span>,
+        <span class="summary-sig-arg">duration</span>=<span class="summary-sig-default">0</span>)</span>
+<div class="summary-description">Returns a clock object suitable to be used as a pyglet app clock, which
+will provide a steady framerate, and saves a snapshot for each frame from
+time=0 to time=duration</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.custom_clocks-module.html#get_autotest_clock" class="summary-sig-name">get_autotest_clock</a>(<span class="summary-sig-arg">sampler</span>)</span>
+<div class="summary-description">Returns a clock object suitable to be used as a pyglet app clock, which
+will follow a test plan to advance time and take snapshots.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_app_clock"></a><span class="summary-sig-name">set_app_clock</span>(<span class="summary-sig-arg">clock</span>)</span>
+<div class="summary-description">Sets the cocos (or pyglet) app clock to a custom one</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos'"><code class="variable-quote">'</code><code class="variable-string">cocos</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="get_recorder_clock"></a>
+<div class=" detail">
+  <h3>get_recorder_clock</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_recorder_clock</span>(<span class="sig-arg">framerate</span>,
+        <span class="sig-arg">template</span>,
+        <span class="sig-arg">duration</span>=<span class="sig-default">0</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns a clock object suitable to be used as a pyglet app clock, which
+will provide a steady framerate, and saves a snapshot for each frame from
+time=0 to time=duration</p>
+<p>The clock object class depends on the pyglet version, and is set automatically</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">framerate</span> : <span class='ptype'>int</span></dt>
+        <dd>the number of frames per second</dd>
+        <dt><span class="pname">template</span> : <span class='ptype'>str</span></dt>
+        <dd>snapshot filenames will be template%frame_number (ex: &quot;s%d.png&quot; -&gt; s0.png, s1.png...)</dd>
+        <dt><span class="pname">duration</span> : <span class='ptype'>float</span></dt>
+        <dd>the amount of seconds to record, or 0 for infinite</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="get_autotest_clock"></a>
+<div class=" detail">
+  <h3>get_autotest_clock</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_autotest_clock</span>(<span class="sig-arg">sampler</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns a clock object suitable to be used as a pyglet app clock, which
+will follow a test plan to advance time and take snapshots.</p>
+<p>The clock object class depends on the pyglet version, and is determined automatically.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">sampler</span> : <span class='ptype'>obj</span></dt>
+        <dd>obj with interface sampler.next(last_app_time) -&gt; next_app_time
+Drives the app trough the desired states, take snapshots and handles
+the app termination conditions.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;custom_clocks
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

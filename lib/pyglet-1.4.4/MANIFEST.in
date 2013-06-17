@@ -1,0 +1,24 @@
+include LICENSE
+include NOTICE
+include README
+include CHANGELOG
+
+# Public tools
+include tools/inspect_font.py
+
+# Examples
+recursive-include examples *
+prune examples/**/dist
+
+# Tests
+recursive-include tests *
+recursive-exclude tests/regression/images *.png
+
+# Docs
+# removed - docs available separately
+#recursive-include doc/html *
+#recursive-include doc/pdf *
+
+prune **/.svn
+recursive-exclude * *.pyc
+recursive-exclude * *.pyo

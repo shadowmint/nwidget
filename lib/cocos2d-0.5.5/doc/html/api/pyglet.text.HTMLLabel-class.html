@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyglet.text.HTMLLabel</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          pyglet&nbsp;.&nbsp;text&nbsp;.&nbsp;HTMLLabel
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class pyglet.text.HTMLLabel</h1>
+<pre class="base-tree">
+layout.TextLayout --+    
+                    |    
+        DocumentLabel --+
+                        |
+                       <strong class="uidshort">HTMLLabel</strong>
+</pre>
+
+<p>HTML formatted text label.</p>
+<p>A subset of HTML 4.01 is supported.  See <code class="link">pyglet.text.formats.html</code> for
+details.</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="pyglet.text.HTMLLabel-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">text</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">location</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">x</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">y</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">width</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">height</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">anchor_x</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">left</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">anchor_y</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">baseline</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">multiline</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">dpi</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">batch</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">group</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Create a label with an HTML string.</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code>DocumentLabel</code></b>:
+      <code>get_style</code>,
+      <code>set_style</code>
+<b>Inherited from <code>layout.TextLayout</code></b>:
+      <code>begin_update</code>,
+      <code>delete</code>,
+      <code>draw</code>,
+      <code>end_update</code>,
+      <code>on_delete_text</code>,
+      <code>on_insert_text</code>,
+      <code>on_style_text</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str</span>
+    </td><td class="summary">
+        <a href="pyglet.text.HTMLLabel-class.html#text" class="summary-name">text</a>
+<div class="summary-description">HTML formatted text of the label.</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code>DocumentLabel</code></b>:
+      <code>bold</code>,
+      <code>color</code>,
+      <code>font_name</code>,
+      <code>font_size</code>,
+      <code>italic</code>
+<b>Inherited from <code>layout.TextLayout</code></b>:
+      <code>anchor_x</code>,
+      <code>anchor_y</code>,
+      <code>content_valign</code>,
+      <code>document</code>,
+      <code>dpi</code>,
+      <code>height</code>,
+      <code>multiline</code>,
+      <code>width</code>,
+      <code>x</code>,
+      <code>y</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code>layout.TextLayout</code></b>:
+      <code>background_group</code>,
+      <code>content_height</code>,
+      <code>content_width</code>,
+      <code>foreground_decoration_group</code>,
+      <code>foreground_group</code>,
+      <code>top_group</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="__init__"></a>
+<div class=" detail">
+  <h3>__init__</h3>
+  <div class="detail-signature">
+    <span class="fspecial">(Constructor)</span>
+    <span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">text</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">location</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">x</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">y</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">width</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">height</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">anchor_x</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">left</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">anchor_y</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">baseline</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">multiline</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">dpi</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">batch</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">group</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  Create a label with an HTML string.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">text</span> : <span class='ptype'>str</span></dt>
+        <dd>HTML formatted text to display.</dd>
+        <dt><span class="pname">location</span> : <span class='ptype'><code class="link">Location</code></span></dt>
+        <dd>Location object for loading images referred to in the
+document.  By default, the working directory is used.</dd>
+        <dt><span class="pname">x</span> : <span class='ptype'>int</span></dt>
+        <dd>X coordinate of the label.</dd>
+        <dt><span class="pname">y</span> : <span class='ptype'>int</span></dt>
+        <dd>Y coordinate of the label.</dd>
+        <dt><span class="pname">width</span> : <span class='ptype'>int</span></dt>
+        <dd>Width of the label in pixels, or None</dd>
+        <dt><span class="pname">height</span> : <span class='ptype'>int</span></dt>
+        <dd>Height of the label in pixels, or None</dd>
+        <dt><span class="pname">anchor_x</span> : <span class='ptype'>str</span></dt>
+        <dd>Anchor point of the X coordinate: one of <tt class="rst-docutils literal"><span class="pre">&quot;left&quot;</span></tt>,
+<tt class="rst-docutils literal"><span class="pre">&quot;center&quot;</span></tt> or <tt class="rst-docutils literal"><span class="pre">&quot;right&quot;</span></tt>.</dd>
+        <dt><span class="pname">anchor_y</span> : <span class='ptype'>str</span></dt>
+        <dd>Anchor point of the Y coordinate: one of <tt class="rst-docutils literal"><span class="pre">&quot;bottom&quot;</span></tt>,
+<tt class="rst-docutils literal"><span class="pre">&quot;baseline&quot;</span></tt>, <tt class="rst-docutils literal"><span class="pre">&quot;center&quot;</span></tt> or <tt class="rst-docutils literal"><span class="pre">&quot;top&quot;</span></tt>.</dd>
+        <dt><span class="pname">multiline</span> : <span class='ptype'>bool</span></dt>
+        <dd>If True, the label will be word-wrapped and render paragraph
+and line breaks.  You must also set the width of the label.</dd>
+        <dt><span class="pname">dpi</span> : <span class='ptype'>float</span></dt>
+        <dd>Resolution of the fonts in this layout.  Defaults to 96.</dd>
+        <dt><span class="pname">batch</span> : <span class='ptype'><code class="link">Batch</code></span></dt>
+        <dd>Optional graphics batch to add the label to.</dd>
+        <dt><span class="pname">group</span> : <span class='ptype'><code class="link">Group</code></span></dt>
+        <dd>Optional graphics group to use.</dd>
+    </dl></dd>
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      DocumentLabel.__init__
+    </dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+        <h2>Property Details</h2>
+<table class="details">
+</table>
+<a name="text"></a>
+<div class=" detail">
+  <h3>text</h3>
+  <div class="detail-description">
+  HTML formatted text of the label.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>str</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          pyglet&nbsp;.&nbsp;text&nbsp;.&nbsp;HTMLLabel
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:22 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

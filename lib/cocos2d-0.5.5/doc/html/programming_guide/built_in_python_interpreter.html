@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Built-in Python Interpreter</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="cocosnodes_examples.html" title="CocosNodes Examples">CocosNodes Examples</a></span><span class="next">Next: <a class="reference" href="default_handlers.html" title="Default Handlers">Default Handlers</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » Built-in Python Interpreter</span></div>
+<h1 class="title">Built-in Python Interpreter</h1>
+
+<p>A python interpreter can be activated by pressing
+the keys CTRL + i in Windows and Linux and by
+using COMMAND + i in OS/X.</p>
+<p>The <tt class="docutils literal"><span class="pre">locals()</span></tt> of the python interpreter are:</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">cocos</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">director</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">self</span></tt></li>
+</ul>
+</blockquote>
+<p>The interpreter also has some attributes that
+can be changed in runtime, like:</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">opacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">color</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cfg['code.font_size']</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cfg['code.font_name']</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cfg['code.font_color']</span></tt></li>
+</ul>
+</blockquote>
+<p>For example:</p>
+<pre class="py-doctest">
+<span class="py-comment"># 0 means, no opacity</span>
+<span class="py-comment"># 255 means,  full opacity</span>
+self.opacity = 50
+
+<span class="py-comment"># changing layer color to a reddish one</span>
+self.color = (204, 32, 32 )
+
+<span class="py-comment"># changing the font color to white</span>
+self.cfg[<span class="py-string">'code.font_color'</span>] = (255,255,255)
+
+<span class="py-comment"># changing the font size</span>
+self.cfg[<span class="py-string">'code.font_size'</span>] = 24
+
+<span class="py-comment"># changing the font name</span>
+self.cfg[<span class="py-string">'code.font_name'</span>] = <span class="py-string">'Courier New'</span>
+
+<span class="py-comment"># obtaining the current scene:</span>
+current_scene = director.scene</pre>
+<p>Once the interpreter was activated, it will remain in memory.
+From now on, you can hide it and show it by pressing
+(again) the CTRL+i (or COMMAND+i) keys.</p>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="cocosnodes_examples.html" title="CocosNodes Examples">CocosNodes Examples</a></span><span class="next">Next: <a class="reference" href="default_handlers.html" title="Default Handlers">Default Handlers</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » Built-in Python Interpreter</span></div>
+</div>
+</body>
+</html>

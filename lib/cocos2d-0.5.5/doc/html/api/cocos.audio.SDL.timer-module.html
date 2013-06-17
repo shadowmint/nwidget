@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL.timer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;timer
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.audio.SDL.timer</h1>
+Time management routines.
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.timer-module.html#SDL_SetTimer" class="summary-sig-name">SDL_SetTimer</a>(<span class="summary-sig-arg">interval</span>,
+        <span class="summary-sig-arg">callback</span>)</span>
+<div class="summary-description">Set a callback to run after the specified number of milliseconds has
+elapsed.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.timer-module.html#SDL_AddTimer" class="summary-sig-name">SDL_AddTimer</a>(<span class="summary-sig-arg">interval</span>,
+        <span class="summary-sig-arg">callback</span>,
+        <span class="summary-sig-arg">param</span>)</span>
+<div class="summary-description">Add a new timer to the pool of timers already running.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.timer-module.html#SDL_RemoveTimer" class="summary-sig-name">SDL_RemoveTimer</a>(<span class="summary-sig-arg">t</span>)</span>
+<div class="summary-description">Remove one of the multiple timers knowing its ID.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos.audio.SDL'"><code class="variable-quote">'</code><code class="variable-string">cocos.audio.SDL</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="SDL_SetTimer"></a>
+<div class=" detail">
+  <h3>SDL_SetTimer</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_SetTimer</span>(<span class="sig-arg">interval</span>,
+        <span class="sig-arg">callback</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Set a callback to run after the specified number of milliseconds has
+elapsed.</p>
+<p>The callback function is passed the current timer interval
+and returns the next timer interval.  If the returned value is the
+same as the one passed in, the periodic alarm continues, otherwise a
+new alarm is scheduled.  If the callback returns 0, the periodic alarm
+is cancelled.</p>
+<p>To cancel a currently running timer, call <tt class="rst-docutils literal"><span class="pre">SDL_SetTimer(0,</span> <span class="pre">None)</span></tt>.</p>
+<p>The timer callback function may run in a different thread than your
+main code, and so shouldn't call any functions from within itself.</p>
+<p>The maximum resolution of this timer is 10 ms, which means that if
+you request a 16 ms timer, your callback will run approximately 20 ms
+later on an unloaded system.  If you wanted to set a flag signaling
+a frame update at 30 frames per second (every 33 ms), you might set a
+timer for 30 ms:</p>
+<pre class="py-doctest">
+SDL_SetTimer((33/10)*10, flag_update)</pre>
+<p>If you use this function, you need to pass SDL_INIT_TIMER to
+<a href="cocos.audio.SDL-module.html#SDL_Init" class="link">SDL_Init</a>.</p>
+<p>Under UNIX, you should not use raise or use SIGALRM and this function
+in the same program, as it is implemented using <tt class="rst-docutils literal"><span class="pre">setitimer</span></tt>.  You
+also should not use this function in multi-threaded applications as
+signals to multi-threaded apps have undefined behavior in some
+implementations.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">interval</span> : <span class='ptype'>int</span></dt>
+        <dd>Interval before callback, in milliseconds.</dd>
+        <dt><span class="pname">callback</span> : <span class='ptype'>function</span></dt>
+        <dd>Callback function should accept one argument, the number of
+milliseconds elapsed, and return the next timer interval,
+in milliseconds.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="SDL_AddTimer"></a>
+<div class=" detail">
+  <h3>SDL_AddTimer</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_AddTimer</span>(<span class="sig-arg">interval</span>,
+        <span class="sig-arg">callback</span>,
+        <span class="sig-arg">param</span>)</span>
+    </div>
+  <div class="detail-description">
+  Add a new timer to the pool of timers already running.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">interval</span> : <span class='ptype'>int</span></dt>
+        <dd>The interval before calling the callback, in milliseconds.</dd>
+        <dt><span class="pname">callback</span> : <span class='ptype'>function</span></dt>
+        <dd><p>The callback function.  It is passed the current timer
+interval, in millseconds, and returns the next timer interval,
+in milliseconds.  If the returned value is the same as the one
+passed in, the periodic alarm continues, otherwise a new alarm
+is scheduled.  If the callback returns 0, the periodic alarm is
+cancelled.  An example callback function is:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">timer_callback</span>(interval, param):
+    <span class="py-keyword">print</span> <span class="py-string">'timer called after %d ms.'</span> % interval
+    <span class="py-keyword">return</span> 1000     <span class="py-comment"># call again in 1 second</span></pre></dd>
+        <dt><span class="pname">param</span> : <span class='ptype'>any</span></dt>
+        <dd>A value passed to the callback function.</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype">int</span>: the timer ID</dd>
+  </dl>
+  </div>
+</div>
+<a name="SDL_RemoveTimer"></a>
+<div class=" detail">
+  <h3>SDL_RemoveTimer</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">SDL_RemoveTimer</span>(<span class="sig-arg">t</span>)</span>
+    </div>
+  <div class="detail-description">
+  Remove one of the multiple timers knowing its ID.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">t</span> : <span class='ptype'>int</span></dt>
+        <dd>The timer ID, as returned by <a href="cocos.audio.SDL.timer-module.html#SDL_AddTimer" class="link">SDL_AddTimer</a>.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;timer
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>XML file contents</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="the_xml_file_specification.html" title="The XML File Specification">The XML ...</a></span><span class="next">Next: <a class="reference" href="map_cell_and_tile_properties.html" title="Map, Cell and Tile Properties">Map, Cell ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="tiled_maps.html" title="Tiled maps">Tiled maps</a> » XML file contents</span></div>
+<h1 class="title">XML file contents</h1>
+
+<p>XML resource files must contain a document-level tag &lt;resource&gt;:</p>
+<pre class="py-doctest">
+&lt;?xml version=<span class="py-string">&quot;1.0&quot;</span>?&gt;
+&lt;resource&gt;
+<span class="py-more"> ...</span>
+&lt;/resource&gt;</pre>
+<p>You may draw in other resource files by using the &lt;requires&gt; tag:</p>
+<pre class="py-doctest">
+&lt;requires file=<span class="py-string">&quot;road-tiles.xml&quot;</span> /&gt;</pre>
+<p>This will load &quot;road-tiles.xml&quot; into the resource's namespace.
+If you wish to avoid id clashes you may supply a namespace:</p>
+<pre class="py-doctest">
+&lt;requires file=<span class="py-string">&quot;road-tiles.xml&quot;</span> namespace=<span class="py-string">&quot;road&quot;</span> /&gt;</pre>
+<p>If a namespace is given then the element ids from the &quot;road-tiles.xml&quot;
+will be prefixed by the namespace and a period, e.g. &quot;road:bitumen&quot;.</p>
+<p>Other tags within &lt;resource&gt; are:</p>
+<pre class="py-doctest">
+&lt;image file=<span class="py-string">&quot;&quot;</span> id=<span class="py-string">&quot;&quot;</span>&gt;</pre>
+<p>Loads file with pyglet.image.load and gives it the id which is used
+by tiles to reference the image.</p>
+<pre class="py-doctest">
+&lt;imageatlas file=<span class="py-string">&quot;&quot;</span> [id=<span class="py-string">&quot;&quot;</span> size=<span class="py-string">&quot;x,y&quot;</span>]&gt;</pre>
+<p>Sets up an image atlas for child &lt;image&gt; tags to use. Child tags are of
+the form:</p>
+<pre class="py-doctest">
+&lt;image offset=<span class="py-string">&quot;&quot;</span> id=<span class="py-string">&quot;&quot;</span> [size=<span class="py-string">&quot;&quot;</span>]&gt;</pre>
+<p>If the &lt;imageatlas&gt; tag does not provide a size attribute then all
+child &lt;image&gt; tags must provide one. Image atlas ids are optional as
+they are currently not reference directly.</p>
+<pre class="py-doctest">
+&lt;tileset id=<span class="py-string">&quot;&quot;</span>&gt;</pre>
+<p>Sets up a TileSet object. Child tags are of the form:</p>
+<pre class="py-doctest">
+&lt;tile id=<span class="py-string">&quot;&quot;</span>&gt;
+  [&lt;image ...&gt;]
+&lt;/tile&gt;</pre>
+<p>The &lt;image&gt; tag is optional; these tiles may have only properties (or be
+completely empty). The id is used by maps to reference the tile.</p>
+<pre class="py-doctest">
+&lt;rectmap id=<span class="py-string">&quot;&quot;</span> tile_size=<span class="py-string">&quot;&quot;</span> [origin=<span class="py-string">&quot;&quot;</span>]&gt;</pre>
+<p>Sets up a RectMap object. Child tags are of the form:</p>
+<pre class="py-doctest">
+&lt;column&gt;
+ &lt;cell tile=<span class="py-string">&quot;&quot;</span> /&gt;
+&lt;/column&gt;</pre>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="the_xml_file_specification.html" title="The XML File Specification">The XML ...</a></span><span class="next">Next: <a class="reference" href="map_cell_and_tile_properties.html" title="Map, Cell and Tile Properties">Map, Cell ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="tiled_maps.html" title="Tiled maps">Tiled maps</a> » XML file contents</span></div>
+</div>
+</body>
+</html>

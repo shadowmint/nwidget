@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL.mixer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;mixer
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.audio.SDL.mixer</h1>
+<p>A simple multi-channel audio mixer.</p>
+<p>It supports 8 channels of 16 bit stereo audio, plus a single channel
+of music, mixed by MidMod MOD, Timidity MIDI or SMPEG MP3 libraries.</p>
+<p>The mixer can currently load Microsoft WAVE files and Creative Labs VOC
+files as audio samples, and can load MIDI files via Timidity and the
+following music formats via MikMod: MOD, S3M, IT, XM.  It can load Ogg
+Vorbis streams as music if built with the Ogg Vorbis libraries, and finally
+it can load MP3 music using the SMPEG library.</p>
+<p>The process of mixing MIDI files to wave output is very CPU intensive, so
+if playing regular WAVE files sounds great, but playing MIDI files sounds
+choppy, try using 8-bit audio, mono audio, or lower frequencies.</p>
+
+<div class="fields">      <p><strong>Note:</strong>
+        The music stream does not resample to the required audio rate.  You
+must call Mix_OpenAudio with the sampling rate of your music track.
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="summary-name">Mix_Chunk</a>
+<div class="summary-description">Internal format for an audio chunk.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+        <h2>Functions</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(int, int, int, int)</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_QuerySpec" class="summary-sig-name">Mix_QuerySpec</a>()</span>
+<div class="summary-description">Find out what the actual audio device parameters are.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_LoadWAV" class="summary-sig-name">Mix_LoadWAV</a>(<span class="summary-sig-arg">file</span>)</span>
+<div class="summary-description">Load a WAV, RIFF, AIFF, OGG or VOC file.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_QuickLoad_WAV" class="summary-sig-name">Mix_QuickLoad_WAV</a>(<span class="summary-sig-arg">mem</span>)</span>
+<div class="summary-description">Load a wave file of the mixer format from a sequence or SDL_array.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_QuickLoad_RAW" class="summary-sig-name">Mix_QuickLoad_RAW</a>(<span class="summary-sig-arg">mem</span>)</span>
+<div class="summary-description">Load raw audio data of the mixer format from a sequence or SDL_array.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_SetPostMix" class="summary-sig-name">Mix_SetPostMix</a>(<span class="summary-sig-arg">mix_func</span>,
+        <span class="summary-sig-arg">udata</span>)</span>
+<div class="summary-description">Set a function that is called after all mixing is performed.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_HookMusic" class="summary-sig-name">Mix_HookMusic</a>(<span class="summary-sig-arg">mix_func</span>,
+        <span class="summary-sig-arg">udata</span>)</span>
+<div class="summary-description">Add your own music player or additional mixer function.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_HookMusicFinished" class="summary-sig-name">Mix_HookMusicFinished</a>(<span class="summary-sig-arg">music_finished</span>)</span>
+<div class="summary-description">Add your own callback when the music has finished playing.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_ChannelFinished" class="summary-sig-name">Mix_ChannelFinished</a>(<span class="summary-sig-arg">channel_finished</span>)</span>
+<div class="summary-description">Add your own callback when a channel has finished playing.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_RegisterEffect" class="summary-sig-name">Mix_RegisterEffect</a>(<span class="summary-sig-arg">chan</span>,
+        <span class="summary-sig-arg">f</span>,
+        <span class="summary-sig-arg">d</span>,
+        <span class="summary-sig-arg">arg</span>)</span>
+<div class="summary-description">Register a special effect function.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_PlayChannel" class="summary-sig-name">Mix_PlayChannel</a>(<span class="summary-sig-arg">channel</span>,
+        <span class="summary-sig-arg">chunk</span>,
+        <span class="summary-sig-arg">loops</span>)</span>
+<div class="summary-description">Play an audio chunk on a specific channel.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.mixer-module.html#Mix_FadeInChannel" class="summary-sig-name">Mix_FadeInChannel</a>(<span class="summary-sig-arg">channel</span>,
+        <span class="summary-sig-arg">chunk</span>,
+        <span class="summary-sig-arg">loops</span>,
+        <span class="summary-sig-arg">ms</span>)</span>
+<div class="summary-description">Fade in a channel.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+        <h2>Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'cocos.audio.SDL'"><code class="variable-quote">'</code><code class="variable-string">cocos.audio.SDL</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+        <h2>Function Details</h2>
+<table class="details">
+</table>
+<a name="Mix_QuerySpec"></a>
+<div class=" detail">
+  <h3>Mix_QuerySpec</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_QuerySpec</span>()</span>
+    </div>
+  <div class="detail-description">
+  <p>Find out what the actual audio device parameters are.</p>
+<p>The function returns a tuple giving each parameter value.  The first
+value is 1 if the audio has been opened, 0 otherwise.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">(int, int, int, int)</span>: (opened, frequency, format, channels)</dd>
+  </dl>
+  </div>
+</div>
+<a name="Mix_LoadWAV"></a>
+<div class=" detail">
+  <h3>Mix_LoadWAV</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_LoadWAV</span>(<span class="sig-arg">file</span>)</span>
+    </div>
+  <div class="detail-description">
+  Load a WAV, RIFF, AIFF, OGG or VOC file.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">file</span> : <span class='ptype'>string</span></dt>
+        <dd>Filename to load.</dd>
+    </dl></dd>
+    <dt>Returns: <a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></dt>
+  </dl>
+  </div>
+</div>
+<a name="Mix_QuickLoad_WAV"></a>
+<div class=" detail">
+  <h3>Mix_QuickLoad_WAV</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_QuickLoad_WAV</span>(<span class="sig-arg">mem</span>)</span>
+    </div>
+  <div class="detail-description">
+  Load a wave file of the mixer format from a sequence or SDL_array.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">mem</span></dt>
+        <dd>: sequence or <a href="cocos.audio.SDL.array.SDL_array-class.html" class="link">SDL_array</a></dd>
+    </dl></dd>
+    <dt>Returns: <a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></dt>
+  </dl>
+  </div>
+</div>
+<a name="Mix_QuickLoad_RAW"></a>
+<div class=" detail">
+  <h3>Mix_QuickLoad_RAW</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_QuickLoad_RAW</span>(<span class="sig-arg">mem</span>)</span>
+    </div>
+  <div class="detail-description">
+  Load raw audio data of the mixer format from a sequence or SDL_array.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">mem</span></dt>
+        <dd>: sequence or <a href="cocos.audio.SDL.array.SDL_array-class.html" class="link">SDL_array</a></dd>
+    </dl></dd>
+    <dt>Returns: <a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></dt>
+  </dl>
+  </div>
+</div>
+<a name="Mix_SetPostMix"></a>
+<div class=" detail">
+  <h3>Mix_SetPostMix</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_SetPostMix</span>(<span class="sig-arg">mix_func</span>,
+        <span class="sig-arg">udata</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Set a function that is called after all mixing is performed.</p>
+<p>This can be used to provide real-time visual display of the audio
+stream or add a custom mixer filter for the stream data.</p>
+<dl class="rst-docutils">
+<dt>:Parameters</dt>
+<dd><dl class="rst-first rst-last rst-docutils">
+<dt><code class="link">mix_func</code> <span class="classifier-delimiter">:</span> <span class="rst-classifier">function</span></dt>
+<dd>The function must have the signature
+(stream: <a href="cocos.audio.SDL.array.SDL_array-class.html" class="link">SDL_array</a>, udata: any) -&gt; None.  The first argument
+is the array of audio data that may be modified in place.
+<code class="link">udata</code> is the value passed in this function.</dd>
+<dt><code class="link">udata</code> <span class="classifier-delimiter">:</span> <span class="rst-classifier">any</span></dt>
+<dd>A variable that is passed to the <code class="link">mix_func</code> function each
+call.</dd>
+</dl>
+</dd>
+</dl>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="Mix_HookMusic"></a>
+<div class=" detail">
+  <h3>Mix_HookMusic</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_HookMusic</span>(<span class="sig-arg">mix_func</span>,
+        <span class="sig-arg">udata</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Add your own music player or additional mixer function.</p>
+<p>If <code class="link">mix_func</code> is None, the default music player is re-enabled.</p>
+<dl class="rst-docutils">
+<dt>:Parameters</dt>
+<dd><dl class="rst-first rst-last rst-docutils">
+<dt><code class="link">mix_func</code> <span class="classifier-delimiter">:</span> <span class="rst-classifier">function</span></dt>
+<dd>The function must have the signature
+(stream: <a href="cocos.audio.SDL.array.SDL_array-class.html" class="link">SDL_array</a>, udata: any) -&gt; None.  The first argument
+is the array of audio data that may be modified in place.
+<code class="link">udata</code> is the value passed in this function.</dd>
+<dt><code class="link">udata</code> <span class="classifier-delimiter">:</span> <span class="rst-classifier">any</span></dt>
+<dd>A variable that is passed to the <code class="link">mix_func</code> function each
+call.</dd>
+</dl>
+</dd>
+</dl>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="Mix_HookMusicFinished"></a>
+<div class=" detail">
+  <h3>Mix_HookMusicFinished</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_HookMusicFinished</span>(<span class="sig-arg">music_finished</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Add your own callback when the music has finished playing.</p>
+<p>This callback is only called if the music finishes naturally.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">music_finished</span> : <span class='ptype'>function</span></dt>
+        <dd>The callback takes no arguments and returns no value.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="Mix_ChannelFinished"></a>
+<div class=" detail">
+  <h3>Mix_ChannelFinished</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_ChannelFinished</span>(<span class="sig-arg">channel_finished</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Add your own callback when a channel has finished playing.</p>
+<p>The callback may be called from the mixer's audio callback or it
+could be called as a result of Mix_HaltChannel, etc.</p>
+<p>Do not call SDL_LockAudio from this callback; you will either be
+inside the audio callback, or SDL_mixer will explicitly lock the
+audio before calling your callback.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">channel_finished</span> : <span class='ptype'>function</span></dt>
+        <dd>The function takes the channel number as its only argument,
+and returns None.  Pass None here to disable the callback.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="Mix_RegisterEffect"></a>
+<div class=" detail">
+  <h3>Mix_RegisterEffect</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_RegisterEffect</span>(<span class="sig-arg">chan</span>,
+        <span class="sig-arg">f</span>,
+        <span class="sig-arg">d</span>,
+        <span class="sig-arg">arg</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Register a special effect function.</p>
+<p>At mixing time, the channel data is copied into a buffer and passed
+through each registered effect function.  After it passes through all
+the functions, it is mixed into the final output stream. The copy to
+buffer is performed once, then each effect function performs on the
+output of the previous effect. Understand that this extra copy to a
+buffer is not performed if there are no effects registered for a given
+chunk, which saves CPU cycles, and any given effect will be extra
+cycles, too, so it is crucial that your code run fast. Also note that
+the data that your function is given is in the format of the sound
+device, and not the format you gave to Mix_OpenAudio, although they
+may in reality be the same. This is an unfortunate but necessary speed
+concern. Use <a href="cocos.audio.SDL.mixer-module.html#Mix_QuerySpec" class="link">Mix_QuerySpec</a> to determine if you can handle the data
+before you register your effect, and take appropriate actions.</p>
+<p>You may also specify a callback (<code class="link">d</code>) that is called when the channel
+finishes playing. This gives you a more fine-grained control than
+<a href="cocos.audio.SDL.mixer-module.html#Mix_ChannelFinished" class="link">Mix_ChannelFinished</a>, in case you need to free effect-specific
+resources, etc. If you don't need this, you can specify None.</p>
+<p>You may set the callbacks before or after calling <a href="cocos.audio.SDL.mixer-module.html#Mix_PlayChannel" class="link">Mix_PlayChannel</a>.</p>
+<p>Things like Mix_SetPanning are just internal special effect
+functions, so if you are using that, you've already incurred the
+overhead of a copy to a separate buffer, and that these effects will be
+in the queue with any functions you've registered. The list of
+registered effects for a channel is reset when a chunk finishes
+playing, so you need to explicitly set them with each call to
+<tt class="rst-docutils literal"><span class="pre">Mix_PlayChannel*</span></tt>.</p>
+<p>You may also register a special effect function that is to be run after
+final mixing occurs. The rules for these callbacks are identical to
+those in <a href="cocos.audio.SDL.mixer-module.html#Mix_RegisterEffect" class="link">Mix_RegisterEffect</a>, but they are run after all the channels
+and the music have been mixed into a single stream, whereas
+channel-specific effects run on a given channel before any other mixing
+occurs. These global effect callbacks are call &quot;posteffects&quot;.
+Posteffects only have their <code class="link">d</code> function called when they are
+unregistered (since the main output stream is never &quot;done&quot; in the same
+sense as a channel).  You must unregister them manually when you've had
+enough. Your callback will be told that the channel being mixed is
+(MIX_CHANNEL_POST) if the processing is considered a posteffect.</p>
+<p>After all these effects have finished processing, the callback
+registered through <a href="cocos.audio.SDL.mixer-module.html#Mix_SetPostMix" class="link">Mix_SetPostMix</a> runs, and then the stream goes to
+the audio device.</p>
+<p>Do not call SDL_LockAudio from your callback function.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">chan</span> : <span class='ptype'>int</span></dt>
+        <dd>Channel to set effect on, or MIX_CHANNEL_POST for postmix.</dd>
+        <dt><span class="pname">f</span> : <span class='ptype'>function</span></dt>
+        <dd>Callback function for effect.  Must have the signature
+(channel: int, stream: <a href="cocos.audio.SDL.array.SDL_array-class.html" class="link">SDL_array</a>, udata: any) -&gt; None;
+where channel is the channel being affected, stream contains
+the audio data and udata is the user variable passed in to
+this function.</dd>
+        <dt><span class="pname">d</span> : <span class='ptype'>function</span></dt>
+        <dd>Callback function for when the effect is done.  The function
+must have the signature (channel: int, udata: any) -&gt; None.</dd>
+        <dt><span class="pname">arg</span> : <span class='ptype'>any</span></dt>
+        <dd>User data passed to both callbacks.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="Mix_PlayChannel"></a>
+<div class=" detail">
+  <h3>Mix_PlayChannel</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_PlayChannel</span>(<span class="sig-arg">channel</span>,
+        <span class="sig-arg">chunk</span>,
+        <span class="sig-arg">loops</span>)</span>
+    </div>
+  <div class="detail-description">
+  Play an audio chunk on a specific channel.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">channel</span> : <span class='ptype'>int</span></dt>
+        <dd>If -1, play on the first free channel.</dd>
+        <dt><span class="pname">chunk</span> : <span class='ptype'><a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></span></dt>
+        <dd>Chunk to play</dd>
+        <dt><span class="pname">loops</span> : <span class='ptype'>int</span></dt>
+        <dd>If greater than zero, the number of times to play the sound;
+if -1, loop infinitely.</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype">int</span>: the channel that was used to play the sound.</dd>
+  </dl>
+  </div>
+</div>
+<a name="Mix_FadeInChannel"></a>
+<div class=" detail">
+  <h3>Mix_FadeInChannel</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">Mix_FadeInChannel</span>(<span class="sig-arg">channel</span>,
+        <span class="sig-arg">chunk</span>,
+        <span class="sig-arg">loops</span>,
+        <span class="sig-arg">ms</span>)</span>
+    </div>
+  <div class="detail-description">
+  Fade in a channel.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">channel</span> : <span class='ptype'>int</span></dt>
+        <dd>If -1, play on the first free channel.</dd>
+        <dt><span class="pname">chunk</span> : <span class='ptype'><a href="cocos.audio.SDL.mixer.Mix_Chunk-class.html" class="link">Mix_Chunk</a></span></dt>
+        <dd>Chunk to play</dd>
+        <dt><span class="pname">loops</span> : <span class='ptype'>int</span></dt>
+        <dd>If greater than zero, the number of times to play the sound;
+if -1, loop infinitely.</dd>
+        <dt><span class="pname">ms</span> : <span class='ptype'>int</span></dt>
+        <dd>Number of milliseconds to fade up over.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;mixer
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

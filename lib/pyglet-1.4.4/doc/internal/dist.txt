@@ -1,0 +1,61 @@
+Making a pyglet release
+-----------------------
+
+1. hg pull -u
+2. Update version string in setup.py, pyglet/__init__.py and CHANGELOG
+   Update README, and the two readme.rtf files on Windows and Mac.
+3. hg push
+4. Mac OS X release (requires OS X 10.5 and developer tools installed)::
+
+           sudo tools/genmpkg/genmpkg.sh
+
+   Creates .dmg in dist/
+
+   NOTE for 10.5:  bdist_mpkg doesn't quite work, needs a hack to avoid
+   doing the admin write check (you'll see when you get the
+   traceback).
+
+5. Windows release (requires WIX 3.0.  WIX bin/ must be in PATH)::
+
+        python tools/genmsi/genmsi.py
+  
+   Creates .msi in dist/
+
+6. Linux - You will need docutils, the docbook writer from the docutils sandbox, inkscape, fop, docbook-xsl, and perhaps more:
+
+   	./make.py clean ; ./make.py docs:w
+
+   Creates doc package in dist/
+
+7. Source, egg and doc releases:
+
+        tools/gendist.sh
+
+   Creates .eggs, .tar.gzs and .zips in dist/
+
+8. Upload files to googlecode::
+
+        python tools/upload/upload.py
+
+9. svn copy https://pyglet.googlecode.com/svn/trunk \
+            https://pyglet.googlecode.com/svn/tags/pyglet-**VERSION**
+10. Copy URLs reported from upload into website/download.xml
+11. Add news item to website/news-items.xml
+12. Regenerate website with tools/genwebsite.sh
+13. Update pyglet.org from website/dist/ to /: 
+      download.html, news.html, news.xml, index.html
+    From doc/ to doc/:
+      html/api/*,  html/programming_guide/*
+      pdf/programming_guide.pdf
+14. python setup.py register
+15. Tell people!
+
+Untested AFAIK:
+  * Source distros on any platform
+  * Eggs on any platform: both to be installed and without installation
+    ('require')
+  * Windows Vista
+  * Upgrade of Mac OS X install (after changing version string to beta, etc)
+  * Mac OS X with Python 2.4 + ctypes (ctypes didn't compile on my mac).
+  * Mac OS X 10.3
+

@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.tiles.RectCell</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.tiles-module.html">tiles</a>&nbsp;.&nbsp;RectCell
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.tiles.RectCell</h1>
+<pre class="base-tree">
+<a href="cocos.rect.Rect-class.html">rect.Rect</a> --+
+            |
+     <a href="cocos.tiles.Cell-class.html">Cell</a> --+
+            |
+           <strong class="uidshort">RectCell</strong>
+</pre>
+
+<p>A rectangular cell from a MapLayer.</p>
+<dl class="rst-docutils">
+<dt>Cell attributes:</dt>
+<dd>i, j            -- index of this cell in the map
+x, y            -- bottom-left pixel
+width, height   -- dimensions
+properties      -- arbitrary properties
+cell            -- cell from the MapLayer's cells</dd>
+</dl>
+<p>The cell may have the standard properties &quot;top&quot;, &quot;left&quot;, &quot;bottom&quot; and
+&quot;right&quot; which are booleans indicating that those sides are impassable.
+These are used by RectCellCollider.</p>
+<p>Note that all pixel attributes are <em>not</em> adjusted for screen,
+view or layer transformations.</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.tiles.RectCell-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">i</span>,
+        <span class="summary-sig-arg">j</span>,
+        <span class="summary-sig-arg">width</span>,
+        <span class="summary-sig-arg">height</span>,
+        <span class="summary-sig-arg">properties</span>,
+        <span class="summary-sig-arg">tile</span>)</span>
+<div class="summary-description">Create a Rect with the bottom-left corner at (x, y) and
+dimensions (width, height).</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__contains__"></a><span class="summary-sig-name">__contains__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.tiles.Cell-class.html">cocos.tiles.Cell</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__eq__"></a><span class="summary-sig-name">__eq__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">Compare the two rects.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__getitem__"></a><span class="summary-sig-name">__getitem__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.tiles.Cell-class.html">cocos.tiles.Cell</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__ne__"></a><span class="summary-sig-name">__ne__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">Compare the two rects.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__nonzero__"></a><span class="summary-sig-name">__nonzero__</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__repr__"></a><span class="summary-sig-name">__repr__</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__setitem__"></a><span class="summary-sig-name">__setitem__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.tiles.Cell-class.html">cocos.tiles.Cell</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="clippedBy"></a><span class="summary-sig-name">clippedBy</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">Determine whether this rect is clipped by the other rect.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="contains"></a><span class="summary-sig-name">contains</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+<div class="summary-description">Return boolean whether the point defined by x, y is inside the
+rect area.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="copy"></a><span class="summary-sig-name">copy</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get"></a><span class="summary-sig-name">get</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>,
+        <span class="summary-sig-arg">default</span>=<span class="summary-sig-default">None</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.tiles.Cell-class.html">cocos.tiles.Cell</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_bottom"></a><span class="summary-sig-name">get_bottom</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_bottomleft"></a><span class="summary-sig-name">get_bottomleft</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_bottomright"></a><span class="summary-sig-name">get_bottomright</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_center"></a><span class="summary-sig-name">get_center</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_left"></a><span class="summary-sig-name">get_left</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_midbottom"></a><span class="summary-sig-name">get_midbottom</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_midleft"></a><span class="summary-sig-name">get_midleft</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_midright"></a><span class="summary-sig-name">get_midright</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_midtop"></a><span class="summary-sig-name">get_midtop</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_origin"></a><span class="summary-sig-name">get_origin</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_right"></a><span class="summary-sig-name">get_right</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_top"></a><span class="summary-sig-name">get_top</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_topleft"></a><span class="summary-sig-name">get_topleft</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="get_topright"></a><span class="summary-sig-name">get_topright</span>(<span class="summary-sig-arg">self</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="intersect"></a><span class="summary-sig-name">intersect</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">Find the intersection of two Rects.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="intersects"></a><span class="summary-sig-name">intersects</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">Return boolean whether the &quot;other&quot; rect (an object with .x, .y,
+.width and .height attributes) overlaps this Rect in any way.</div>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_bottom"></a><span class="summary-sig-name">set_bottom</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_bottomleft"></a><span class="summary-sig-name">set_bottomleft</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">position</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_bottomright"></a><span class="summary-sig-name">set_bottomright</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">position</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_center"></a><span class="summary-sig-name">set_center</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">center</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_height"></a><span class="summary-sig-name">set_height</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_left"></a><span class="summary-sig-name">set_left</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_midbottom"></a><span class="summary-sig-name">set_midbottom</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">midbottom</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_midleft"></a><span class="summary-sig-name">set_midleft</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">midleft</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_midright"></a><span class="summary-sig-name">set_midright</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">midright</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_midtop"></a><span class="summary-sig-name">set_midtop</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">midtop</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_origin"></a><span class="summary-sig-name">set_origin</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">origin</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_position"></a><span class="summary-sig-name">set_position</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_right"></a><span class="summary-sig-name">set_right</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_size"></a><span class="summary-sig-name">set_size</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_top"></a><span class="summary-sig-name">set_top</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_topleft"></a><span class="summary-sig-name">set_topleft</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">position</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_topright"></a><span class="summary-sig-name">set_topright</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">position</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_width"></a><span class="summary-sig-name">set_width</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_x"></a><span class="summary-sig-name">set_x</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_y"></a><span class="summary-sig-name">set_y</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#origin" class="summary-name">origin</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#top" class="summary-name">top</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#bottom" class="summary-name">bottom</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#center" class="summary-name">center</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#midtop" class="summary-name">midtop</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#midbottom" class="summary-name">midbottom</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#left" class="summary-name">left</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#right" class="summary-name">right</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#topleft" class="summary-name">topleft</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#topright" class="summary-name">topright</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#bottomleft" class="summary-name">bottomleft</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#bottomright" class="summary-name">bottomright</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#midleft" class="summary-name">midleft</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.tiles.RectCell-class.html#midright" class="summary-name">midright</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.rect.Rect-class.html#height" class="summary-name">height</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.rect.Rect-class.html#position" class="summary-name">position</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.rect.Rect-class.html#size" class="summary-name">size</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.rect.Rect-class.html#width" class="summary-name">width</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.rect.Rect-class.html#x" class="summary-name">x</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.rect.Rect-class.html#y" class="summary-name">y</a>
+      <span class='inherited-from'>(Inherited from <a href="cocos.rect.Rect-class.html">cocos.rect.Rect</a>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="__init__"></a>
+<div class=" detail">
+  <h3>__init__</h3>
+  <div class="detail-signature">
+    <span class="fspecial">(Constructor)</span>
+    <span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">i</span>,
+        <span class="sig-arg">j</span>,
+        <span class="sig-arg">width</span>,
+        <span class="sig-arg">height</span>,
+        <span class="sig-arg">properties</span>,
+        <span class="sig-arg">tile</span>)</span>
+    </div>
+  <div class="detail-description">
+  Create a Rect with the bottom-left corner at (x, y) and
+dimensions (width, height).
+  <dl class="fields">
+    <dt>Overrides:</dt>
+    <dd class="overrides">
+      <a href="cocos.rect.Rect-class.html#__init__">rect.Rect.__init__</a>
+    </dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+        <h2>Property Details</h2>
+<table class="details">
+</table>
+<a name="origin"></a>
+<div class=" detail">
+  <h3>origin</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="top"></a>
+<div class=" detail">
+  <h3>top</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="bottom"></a>
+<div class=" detail">
+  <h3>bottom</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="center"></a>
+<div class=" detail">
+  <h3>center</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="midtop"></a>
+<div class=" detail">
+  <h3>midtop</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="midbottom"></a>
+<div class=" detail">
+  <h3>midbottom</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="left"></a>
+<div class=" detail">
+  <h3>left</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="right"></a>
+<div class=" detail">
+  <h3>right</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="topleft"></a>
+<div class=" detail">
+  <h3>topleft</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="topright"></a>
+<div class=" detail">
+  <h3>topright</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="bottomleft"></a>
+<div class=" detail">
+  <h3>bottomleft</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="bottomright"></a>
+<div class=" detail">
+  <h3>bottomright</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="midleft"></a>
+<div class=" detail">
+  <h3>midleft</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="midright"></a>
+<div class=" detail">
+  <h3>midright</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.tiles-module.html">tiles</a>&nbsp;.&nbsp;RectCell
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:22 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

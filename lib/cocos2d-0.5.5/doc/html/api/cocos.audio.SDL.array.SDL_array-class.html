@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL.array.SDL_array</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL.array-module.html">array</a>&nbsp;.&nbsp;SDL_array
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.audio.SDL.array.SDL_array</h1>
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.array.SDL_array-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ptr</span>,
+        <span class="summary-sig-arg">count</span>,
+        <span class="summary-sig-arg">ctype</span>)</span>
+<div class="summary-description">Construct an array at memory location <code class="link">ptr</code> with <code class="link">count</code> elements
+of type <code class="link">ctype</code>.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">SDL_array</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.array.SDL_array-class.html#as_bytes" class="summary-sig-name">as_bytes</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Access the array as raw bytes, regardless of the underlying
+data type.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">SDL_array</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="as_int16"></a><span class="summary-sig-name">as_int16</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Access the array as 16-bit integers, regardless of the underlying
+data type.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">SDL_array</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="as_int32"></a><span class="summary-sig-name">as_int32</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Access the array as 32-bit integers, regardless of the underlying
+data type.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">ctypes.Array</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="as_ctypes"></a><span class="summary-sig-name">as_ctypes</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Access the array as a ctypes array.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="have_numpy"></a><span class="summary-sig-name">have_numpy</span>(<span class="summary-sig-arg">cls</span>)</span>
+<div class="summary-description">Determine if the numpy array module is available.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy.ndarray</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.array.SDL_array-class.html#as_numpy" class="summary-sig-name">as_numpy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">shape</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Access the array as a numpy array.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="to_string"></a><span class="summary-sig-name">to_string</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Return a string with the contents of this array.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.audio.SDL.array.SDL_array-class.html#from_string" class="summary-sig-name">from_string</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span>
+<div class="summary-description">Copy string data into this array.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__repr__"></a><span class="summary-sig-name">__repr__</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__len__"></a><span class="summary-sig-name">__len__</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__getitem__"></a><span class="summary-sig-name">__getitem__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="__setitem__"></a><span class="summary-sig-name">__setitem__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="__init__"></a>
+<div class=" detail">
+  <h3>__init__</h3>
+  <div class="detail-signature">
+    <span class="fspecial">(Constructor)</span>
+    <span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ptr</span>,
+        <span class="sig-arg">count</span>,
+        <span class="sig-arg">ctype</span>)</span>
+    </div>
+  <div class="detail-description">
+  Construct an array at memory location <code class="link">ptr</code> with <code class="link">count</code> elements
+of type <code class="link">ctype</code>.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">ptr</span> : <span class='ptype'>ctypes.Array, POINTER(ctype) or POINTER(ctypes.Array)</span></dt>
+        <dd>Starting point of the array space.  Don't use c_void_p; this
+will not cast correctly.  If <code class="link">ptr</code> is None, the array
+will be created (filled with random data).</dd>
+        <dt><span class="pname">count</span> : <span class='ptype'>int</span></dt>
+        <dd>Number of elements in the array.</dd>
+        <dt><span class="pname">ctype</span> : <span class='ptype'>type</span></dt>
+        <dd>ctypes type if each element, e.g., c_ubyte, c_int, etc.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="as_bytes"></a>
+<div class=" detail">
+  <h3>as_bytes</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">as_bytes</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Access the array as raw bytes, regardless of the underlying
+data type.</p>
+<p>This can be useful, for example, in accessing a 32-bit colour
+buffer by individual components rather than the encoded pixel.</p>
+  <dl class="fields">
+    <dt>Returns: SDL_array</dt>
+  </dl>
+  </div>
+</div>
+<a name="as_numpy"></a>
+<div class=" detail">
+  <h3>as_numpy</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">as_numpy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">shape</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Access the array as a numpy array.</p>
+<p>The numpy array shares the same underlying memory buffer, so
+changes are immediate, and you can use the numpy array as you would
+normally.  To set the entire contents of the array at once, use a
+<tt class="rst-docutils literal"><span class="pre">[:]</span></tt> slice.</p>
+<p>If numpy is not installed, an ImportError will be raised.</p>
+  <dl class="fields">
+    <dt>Returns: numpy.ndarray</dt>
+  </dl>
+  </div>
+</div>
+<a name="from_string"></a>
+<div class=" detail">
+  <h3>from_string</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">from_string</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Copy string data into this array.</p>
+<p>The string must have exactly the same length of this array (in bytes).
+No size checking is performed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">data</span> : <span class='ptype'>str</span></dt>
+        <dd>String data to copy.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL.array-module.html">array</a>&nbsp;.&nbsp;SDL_array
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

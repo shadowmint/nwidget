@@ -1,0 +1,22 @@
+Introduction
+============
+
+cocos2d is a framework for building 2D games, demos, and other
+graphical/interactive applications.
+
+cocos2d simplifies the game development in these areas:
+    - **Flow control:** Manage the flow control between different scenes in an easy way
+    - **Sprites:** Fast and easy sprites
+    - **Actions:** Just tell sprites what you want them to do. Composable actions like move, rotate, scale, etc
+    - **Effects:** Effects like waves, twirl, lens and much more
+    - **Particle Systems:** Explosions, fireworks, meteors, smoke and more
+    - **Tiled maps:** Support for rectangular and hexagonal tiled maps
+    - **Collision:** Basic pure python support for collisions
+    - **Transitions:** Move from scene to scene with style
+    - **Menus:** Built in classes to create menus
+    - **Text rendering**
+    - **Documentation:** Programming Guide + API Reference + Lots of simple tests showing how to use it
+    - **Built-in python interpreter:** For debugging purposes
+    - **BSD license:** Just use it
+    - **pyglet based:** No external dependencies
+    - **OpenGL based:** Hardward accelerated

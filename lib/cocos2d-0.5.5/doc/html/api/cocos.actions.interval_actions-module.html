@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.actions.interval_actions</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;interval_actions
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module cocos.actions.interval_actions</h1>
+<p>Interval Action</p>
+<div class="rst-section" id="rst-interval-actions">
+<h1 class="heading">Interval Actions</h1>
+<p>An interval action is an action that takes place within a certain period of time.
+It has an start time, and a finish time. The finish time is the parameter
+<tt class="rst-docutils literal"><span class="pre">duration</span></tt> plus the start time.</p>
+<p>These <a href="cocos.actions.base_actions.IntervalAction-class.html" class="link">IntervalAction</a> have some interesting properties, like:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>They can run normally (default)</li>
+<li>They can run reversed with the <a href="cocos.actions.base_actions-module.html#Reverse" class="link">Reverse</a> action.</li>
+<li>They can run with the time altered with the <a href="cocos.actions.interval_actions.Accelerate-class.html" class="link">Accelerate</a>, <a href="cocos.actions.interval_actions.AccelDeccel-class.html" class="link">AccelDeccel</a> and
+<a href="cocos.actions.interval_actions.Speed-class.html" class="link">Speed</a> actions.</li>
+</ul>
+</blockquote>
+<p>For example, you can simulate a Ping Pong effect running the action normally and
+then running it again in Reverse mode.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+ping_pong_action = action + Reverse( action )</pre>
+</div>
+<div class="rst-section" id="rst-available-intervalactions">
+<h1 class="heading">Available IntervalActions</h1>
+<blockquote>
+<ul class="rst-simple">
+<li><a href="cocos.actions.interval_actions.MoveTo-class.html" class="link">MoveTo</a></li>
+<li><a href="cocos.actions.interval_actions.MoveBy-class.html" class="link">MoveBy</a></li>
+<li><a href="cocos.actions.interval_actions.JumpTo-class.html" class="link">JumpTo</a></li>
+<li><a href="cocos.actions.interval_actions.JumpBy-class.html" class="link">JumpBy</a></li>
+<li><a href="cocos.actions.interval_actions.Bezier-class.html" class="link">Bezier</a></li>
+<li><a href="cocos.actions.interval_actions.Blink-class.html" class="link">Blink</a></li>
+<li><a href="cocos.actions.interval_actions.RotateTo-class.html" class="link">RotateTo</a></li>
+<li><a href="cocos.actions.interval_actions.RotateBy-class.html" class="link">RotateBy</a></li>
+<li><a href="cocos.actions.interval_actions.ScaleTo-class.html" class="link">ScaleTo</a></li>
+<li><a href="cocos.actions.interval_actions.ScaleBy-class.html" class="link">ScaleBy</a></li>
+<li><a href="cocos.actions.interval_actions.FadeOut-class.html" class="link">FadeOut</a></li>
+<li><a href="cocos.actions.interval_actions.FadeIn-class.html" class="link">FadeIn</a></li>
+<li><a href="cocos.actions.interval_actions.FadeTo-class.html" class="link">FadeTo</a></li>
+<li><a href="cocos.actions.interval_actions.Delay-class.html" class="link">Delay</a></li>
+<li><a href="cocos.actions.interval_actions.RandomDelay-class.html" class="link">RandomDelay</a></li>
+</ul>
+</blockquote>
+</div>
+<div class="rst-section" id="rst-modifier-actions">
+<h1 class="heading">Modifier actions</h1>
+<blockquote>
+<ul class="rst-simple">
+<li><a href="cocos.actions.interval_actions.Accelerate-class.html" class="link">Accelerate</a></li>
+<li><a href="cocos.actions.interval_actions.AccelDeccel-class.html" class="link">AccelDeccel</a></li>
+<li><a href="cocos.actions.interval_actions.Speed-class.html" class="link">Speed</a></li>
+</ul>
+</blockquote>
+<p>Examples:</p>
+<pre class="py-doctest">
+move = MoveBy( (200,0), duration=5 )  <span class="py-comment"># Moves 200 pixels to the right in 5 seconds.</span>
+
+move = MoveTo( (320,240), duration=5) <span class="py-comment"># Moves to the pixel (320,240) in 5 seconds</span>
+
+jump = JumpBy( (320,0), 100, 5, duration=5) <span class="py-comment"># Jumps to the right 320 pixels</span>
+                                            <span class="py-comment"># doing 5 jumps of 100 pixels</span>
+                                            <span class="py-comment"># of height in 5 seconds</span>
+
+accel_move = Accelerate(move)               <span class="py-comment"># accelerates action move</span></pre>
+</div>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+        <h2>Classes</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.Lerp-class.html" class="summary-name">Lerp</a>
+<div class="summary-description">Interpolate between values for some specified attribute</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.RotateBy-class.html" class="summary-name">RotateBy</a>
+<div class="summary-description">Rotates a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object clockwise a number of degrees
+by modiying it's rotation attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.RotateBy-class.html" class="summary-name">Rotate</a>
+<div class="summary-description">Rotates a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object clockwise a number of degrees
+by modiying it's rotation attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.RotateTo-class.html" class="summary-name">RotateTo</a>
+<div class="summary-description">Rotates a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object to a certain angle by modifying it's
+rotation attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.Speed-class.html" class="summary-name">Speed</a>
+<div class="summary-description">Changes the speed of an action, making it take longer (speed&gt;1)
+or less (speed&lt;1)</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.Accelerate-class.html" class="summary-name">Accelerate</a>
+<div class="summary-description">Changes the acceleration of an action</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.AccelDeccel-class.html" class="summary-name">AccelDeccel</a>
+<div class="summary-description">Makes an action change the travel speed but retain near normal
+speed at the beginning and ending.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.MoveTo-class.html" class="summary-name">MoveTo</a>
+<div class="summary-description">Moves a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object to the position x,y.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.MoveBy-class.html" class="summary-name">MoveBy</a>
+<div class="summary-description">Moves a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object x,y pixels by modifying it's
+position attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.FadeOut-class.html" class="summary-name">FadeOut</a>
+<div class="summary-description">Fades out a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object by modifying it's opacity attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.FadeTo-class.html" class="summary-name">FadeTo</a>
+<div class="summary-description">Fades a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object to a specific alpha value by modifying it's opacity attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.FadeIn-class.html" class="summary-name">FadeIn</a>
+<div class="summary-description">Fades in a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object by modifying it's opacity attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.ScaleTo-class.html" class="summary-name">ScaleTo</a>
+<div class="summary-description">Scales a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object to a zoom factor by modifying it's scale attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.ScaleBy-class.html" class="summary-name">ScaleBy</a>
+<div class="summary-description">Scales a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object a zoom factor by modifying it's scale attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.Blink-class.html" class="summary-name">Blink</a>
+<div class="summary-description">Blinks a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object by modifying it's visible attribute</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.Bezier-class.html" class="summary-name">Bezier</a>
+<div class="summary-description">Moves a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object through a bezier path by modifying it's position attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.Jump-class.html" class="summary-name">Jump</a>
+<div class="summary-description">Moves a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object simulating a jump movement by modifying it's position attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.JumpBy-class.html" class="summary-name">JumpBy</a>
+<div class="summary-description">Moves a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object simulating a jump movement by modifying it's position attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.JumpTo-class.html" class="summary-name">JumpTo</a>
+<div class="summary-description">Moves a <a href="cocos.cocosnode.CocosNode-class.html" class="link">CocosNode</a> object to a position simulating a jump movement by modifying
+it's position attribute.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.Delay-class.html" class="summary-name">Delay</a>
+<div class="summary-description">Delays the action a certain amount of seconds</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.actions.interval_actions.RandomDelay-class.html" class="summary-name">RandomDelay</a>
+<div class="summary-description">Delays the actions between <em>min</em> and <em>max</em> seconds</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.actions-module.html">actions</a>&nbsp;.&nbsp;interval_actions
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:17 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

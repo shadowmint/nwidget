@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.audio.SDL.audio.SDL_AudioCVT</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL.audio-module.html">audio</a>&nbsp;.&nbsp;SDL_AudioCVT
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.audio.SDL.audio.SDL_AudioCVT</h1>
+<pre class="base-tree">
+    ??._CData --+    
+                |    
+_ctypes.Structure --+
+                    |
+                   <strong class="uidshort">SDL_AudioCVT</strong>
+</pre>
+
+Set of audio conversion filters and buffers.
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code>_ctypes.Structure</code></b>:
+      <code>__init__</code>,
+      <code>__new__</code>
+<b>Inherited from <code><i>unreachable</i>._CData</code></b>:
+      <code>__ctypes_from_outparam__</code>,
+      <code>__hash__</code>,
+      <code>__reduce__</code>,
+      <code>__setstate__</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code><i>unreachable</i>._CData</code></b>:
+      <code>_b_base_</code>,
+      <code>_b_needsfree_</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.audio.SDL_AudioCVT-class.html#dst_format" class="summary-name">dst_format</a> = <code title="&lt;Field type=c_ushort, ofs=6, size=2&gt;">&lt;Field type=c_ushort, ofs=6, size=2&gt;</code>
+<div class="summary-description">Destination audio format.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="filter_index"></a><span class="summary-name">filter_index</span> = <code title="&lt;Field type=c_long, ofs=80, size=4&gt;">&lt;Field type=c_long, ofs=80, size=4&gt;</code>
+<div class="summary-description">Current audio conversion function</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="len"></a><span class="summary-name">len</span> = <code title="&lt;Field type=c_long, ofs=20, size=4&gt;">&lt;Field type=c_long, ofs=20, size=4&gt;</code>
+<div class="summary-description">Length of original audio buffer</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="len_cvt"></a><span class="summary-name">len_cvt</span> = <code title="&lt;Field type=c_long, ofs=24, size=4&gt;">&lt;Field type=c_long, ofs=24, size=4&gt;</code>
+<div class="summary-description">Length of converted audio buffer</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="len_mult"></a><span class="summary-name">len_mult</span> = <code title="&lt;Field type=c_long, ofs=28, size=4&gt;">&lt;Field type=c_long, ofs=28, size=4&gt;</code>
+<div class="summary-description">Buffer must be len * len_mult big</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <a name="len_ratio"></a><span class="summary-name">len_ratio</span> = <code title="&lt;Field type=c_double, ofs=32, size=8&gt;">&lt;Field type=c_double, ofs=32, size=8&gt;</code>
+<div class="summary-description">Given len, final size is len * len_ratio</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="needed"></a><span class="summary-name">needed</span> = <code title="&lt;Field type=c_long, ofs=0, size=4&gt;">&lt;Field type=c_long, ofs=0, size=4&gt;</code>
+<div class="summary-description">1 if conversion is possible</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <a name="rate_incr"></a><span class="summary-name">rate_incr</span> = <code title="&lt;Field type=c_double, ofs=8, size=8&gt;">&lt;Field type=c_double, ofs=8, size=8&gt;</code>
+<div class="summary-description">Rate conversion increment</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.audio.SDL_AudioCVT-class.html#src_format" class="summary-name">src_format</a> = <code title="&lt;Field type=c_ushort, ofs=4, size=2&gt;">&lt;Field type=c_ushort, ofs=4, size=2&gt;</code>
+<div class="summary-description">Source audio format.</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+        <h2>Class Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.audio.SDL.audio.SDL_AudioCVT-class.html#_fields_" class="summary-name">_fields_</a> = <code title="[('needed', &lt;class 'ctypes.c_long'&gt;),
+ ('src_format', &lt;class 'ctypes.c_ushort'&gt;),
+ ('dst_format', &lt;class 'ctypes.c_ushort'&gt;),
+ ('rate_incr', &lt;class 'ctypes.c_double'&gt;),
+ ('buf', &lt;class 'pyglet.gl.gl.LP_c_ubyte'&gt;),
+ ('len', &lt;class 'ctypes.c_long'&gt;),
+ ('len_cvt', &lt;class 'ctypes.c_long'&gt;),
+ ('len_mult', &lt;class 'ctypes.c_long'&gt;),
+..."><code class="variable-group">[</code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">needed</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_long'&gt;<code class="variable-group">)</code><code class="variable-op">, </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">src_format</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="buf"></a><span class="summary-name">buf</span> = <code title="&lt;Field type=LP_c_ubyte, ofs=16, size=4&gt;">&lt;Field type=LP_c_ubyte, ofs=16, size=4&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="filters"></a><span class="summary-name">filters</span> = <code title="&lt;Field type=CFunctionType_Array_10, ofs=40, size=40&gt;">&lt;Field type=CFunctionType_Array_10, ofs=40, size=40&gt;</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+        <h2>Instance Variable Details</h2>
+<table class="details">
+</table>
+<a name="dst_format"></a>
+<div class=" detail">
+  <h3>dst_format</h3>
+  <div class="detail-description">
+  Destination audio format.  See <a href="cocos.audio.SDL.audio.SDL_AudioSpec-class.html#format" class="link">SDL_AudioSpec.format</a>
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>int</dd>
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&lt;Field type=c_ushort, ofs=6, size=2&gt;
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="src_format"></a>
+<div class=" detail">
+  <h3>src_format</h3>
+  <div class="detail-description">
+  Source audio format.  See <a href="cocos.audio.SDL.audio.SDL_AudioSpec-class.html#format" class="link">SDL_AudioSpec.format</a>
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>int</dd>
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&lt;Field type=c_ushort, ofs=4, size=2&gt;
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+        <h2>Class Variable Details</h2>
+<table class="details">
+</table>
+<a name="_fields_"></a>
+<div class=" detail">
+  <h3>_fields_</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">needed</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_long'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">src_format</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_ushort'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">dst_format</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_ushort'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">rate_incr</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_double'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">buf</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'pyglet.gl.gl.LP_c_ubyte'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">len</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_long'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">len_cvt</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_long'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">len_mult</code><code class="variable-quote">'</code><code class="variable-op">, </code>&lt;class 'ctypes.c_long'&gt;<code class="variable-group">)</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.audio-module.html">audio</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL-module.html">SDL</a>&nbsp;.&nbsp;<a href="cocos.audio.SDL.audio-module.html">audio</a>&nbsp;.&nbsp;SDL_AudioCVT
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

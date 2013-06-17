@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.collision_model.CollisionManager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.collision_model-module.html">collision_model</a>&nbsp;.&nbsp;CollisionManager
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.collision_model.CollisionManager</h1>
+<p>Answers questions about proximity or collision with known objects.</p>
+<p>After instantiation or after calling its 'clear' method the instance
+don't knows any object.</p>
+<p>An object is made known to the CollisionManager instance by calling its
+'add' method with the object instance.</p>
+<p>Example questions are:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>which known objects collides with &lt;this object&gt; ?</li>
+<li>which known objects are near than 6.0 from &lt;this object&gt; ?</li>
+</ul>
+</blockquote>
+<p>Note that explicit objects in the question (call) don't need to be known to
+the collision manager answering the question.
+If the explicit object indeed is known, then it is omitted in the answer as a
+trivial case.</p>
+<p>There can be multiple CollisionManager instances in the same scope, and
+an object can be known to many collision managers at the same time.</p>
+<p>Objects that can be known or can be presented to a Collision Manager in
+a question must comply with:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>obj has a member called cshape</li>
+<li>obj.cshape supports the interface Cshape</li>
+</ul>
+</blockquote>
+<p>Such an object can be called 'a collidable' in the documentation, and when
+'obj' or 'other' is seen in the code you can assume it means collidable.</p>
+<p>As a limitation imposed by the current Cshapes implementations, all the
+collidables that interacts with a particular instance of CollisionManager
+must share the same concrete Cshape subclass: by example, all
+objects should have a CircleShape cshape, or all objects should have a
+AARectShape cshape.</p>
+<p>The known objects collective for each CollisionManager instance is
+manipulated by calling the methods</p>
+<blockquote>
+<ul class="rst-simple">
+<li>clean() : forgets all objects and empties internal data structures</li>
+<li>add(obj) : remember obj as a known object</li>
+<li>remove_tricky(obj) : forgets obj</li>
+</ul>
+</blockquote>
+<p>When objects are made known to a collision manager, internal data structures
+are updated based on the obj.cshape value at the 'add' moment.
+In particular, the obj.cshape indirectly tells where in the internal
+structures certain info will be stored.
+Later, the internal data structures are used to accelerate answers.</p>
+<p>This  means that modifying obj.cshape after an 'add' can produce a memory
+leak in the next 'remove_tricky', and that in the same situation some
+answers can be partially wrong.
+What type of wrong ? It can sometimes miss a collision with a know
+object that changed it cshape.</p>
+<p>It is user code responsibility to drive the know objects update when
+obj.cshape values changes.</p>
+<p>Common use patterns that are safe and efficient:</p>
+<p>When most of the known objects update cshape each frame</p>
+<p>You do:</p>
+<pre class="py-doctest">
+<span class="py-comment"># updating collision info</span>
+collision_manager.clear() <span class="py-comment"># fast, no leaks even if changed cshapes</span>
+<span class="py-keyword">for</span> actor <span class="py-keyword">in</span> moving_actors:
+    collision_manager.add(actor)
+
+<span class="py-comment"># game logic</span>
+<span class="py-comment"># do what you need, but defer changes in cshape to next block</span>
+<span class="py-comment"># by example</span>
+<span class="py-keyword">for</span> actor <span class="py-keyword">in</span> moving_actors:
+    actor.new_pos = actor.cshape.center + dt * vel
+    <span class="py-comment">#other logic that potentially needs collision info;</span>
+    <span class="py-comment">#it will be accurate because you have not changed cshapes</span>
+<span class="py-more">    ...</span>
+
+<span class="py-comment"># update cshapes for next frame</span>
+<span class="py-keyword">for</span> actor <span class="py-keyword">in</span> moving actors:
+    actor.cshape.center = actor.new_pos</pre>
+<p>Example actors for this case are player, enemies, soldiers.</p>
+<p>All of the known objects don't change cshapes</p>
+<blockquote>
+<ul class="rst-simple">
+<li>At level start you add all objects</li>
+<li>When an actor reaches end of life use 'remove_tricky' to make it not known, no problem because his cshape has not changed</li>
+</ul>
+</blockquote>
+<p>Examples actors for this case are food, coins, trees, rocks.</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="add"></a><span class="summary-sig-name">add</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description">Makes obj a know entity</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.CollisionManager-class.html#remove_tricky" class="summary-sig-name">remove_tricky</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description"><em>(obj should have the same .cshape value that when added)</em>
+Makes collision manager forget about obj, thus no further query will
+return obj.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="clear"></a><span class="summary-sig-name">clear</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Empties the known set</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="they_collide"></a><span class="summary-sig-name">they_collide</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj1</span>,
+        <span class="summary-sig-arg">obj2</span>)</span>
+<div class="summary-description">Returns a boolean, True if obj1 overlaps objs2
+obj1, obj2 are not required to be known objects</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="objs_colliding"></a><span class="summary-sig-name">objs_colliding</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description">Returns a container with known objects that overlaps obj,
+excluding obj itself
+obj is not required to be a known object</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.CollisionManager-class.html#iter_colliding" class="summary-sig-name">iter_colliding</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description">A lazy iterator over objects colliding with obj, allows to spare some
+CPU when the loop procesing the colissions breaks before exausting
+the collisions.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="any_near"></a><span class="summary-sig-name">any_near</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">near_distance</span>)</span>
+<div class="summary-description">Returns None if no know object (except itself) is near than
+near_distance, else an arbitrary known object with distance
+less than near_distance
+obj is not required to be a known object</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.CollisionManager-class.html#objs_near" class="summary-sig-name">objs_near</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">near_distance</span>)</span>
+<div class="summary-description">Returns a container with the objects known by collision manager that
+are at distance to obj less or equal than near_distance, excluding
+itself.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.CollisionManager-class.html#objs_near_wdistance" class="summary-sig-name">objs_near_wdistance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">near_distance</span>)</span>
+<div class="summary-description">Returns a list with the (other, distance) pairs that with all the
+known objects at distance less or equal than near_distance to obj,
+except obj itself.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="ranked_objs_near"></a><span class="summary-sig-name">ranked_objs_near</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">near_distance</span>)</span>
+<div class="summary-description">Same as objs_near_wdistance but the list is ordered in increasing distance
+obj is not required to be a known object</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.CollisionManager-class.html#iter_all_collisions" class="summary-sig-name">iter_all_collisions</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Iterator that exposes all collisions between known objects.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="knows"></a><span class="summary-sig-name">knows</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj</span>)</span>
+<div class="summary-description">Returns True if obj was added to the collision manager, false otherwise
+Used for debug and testing.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="known_objs"></a><span class="summary-sig-name">known_objs</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Reurns a set with all the objects known by the CollisionManager
+Used for debug and testing.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.CollisionManager-class.html#objs_touching_point" class="summary-sig-name">objs_touching_point</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+<div class="summary-description">Returns a container with known objects touching point (x, y)</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.CollisionManager-class.html#objs_into_box" class="summary-sig-name">objs_into_box</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">minx</span>,
+        <span class="summary-sig-arg">maxx</span>,
+        <span class="summary-sig-arg">miny</span>,
+        <span class="summary-sig-arg">maxy</span>)</span>
+<div class="summary-description">Returns a container with know objects that fully fits into the axis
+aligned rectangle defined by params</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="remove_tricky"></a>
+<div class=" detail">
+  <h3>remove_tricky</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">remove_tricky</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">obj</span>)</span>
+    </div>
+  <div class="detail-description">
+  <em>(obj should have the same .cshape value that when added)</em>
+Makes collision manager forget about obj, thus no further query will
+return obj.
+obj is required to be a known object.
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="iter_colliding"></a>
+<div class=" detail">
+  <h3>iter_colliding</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">iter_colliding</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">obj</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>A lazy iterator over objects colliding with obj, allows to spare some
+CPU when the loop procesing the colissions breaks before exausting
+the collisions.
+obj is not required to be a known object</p>
+<p>Usage:</p>
+<pre class="py-doctest">
+<span class="py-keyword">for</span> other <span class="py-keyword">in</span> collision_manager.iter_colliding(obj):
+    <span class="py-comment"># process event 'obj touches other'</span></pre>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="objs_near"></a>
+<div class=" detail">
+  <h3>objs_near</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">objs_near</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">obj</span>,
+        <span class="sig-arg">near_distance</span>)</span>
+    </div>
+  <div class="detail-description">
+  Returns a container with the objects known by collision manager that
+are at distance to obj less or equal than near_distance, excluding
+itself.
+Notice that it includes the ones colliding with obj.
+obj is not required to be a known object
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="objs_near_wdistance"></a>
+<div class=" detail">
+  <h3>objs_near_wdistance</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">objs_near_wdistance</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">obj</span>,
+        <span class="sig-arg">near_distance</span>)</span>
+    </div>
+  <div class="detail-description">
+  Returns a list with the (other, distance) pairs that with all the
+known objects at distance less or equal than near_distance to obj,
+except obj itself.
+Notice that it includes the ones colliding with obj.
+obj is not required to be a known object
+If the game logic wants the list ordered by ascending distances, use
+ranked_objs_near instead.
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="iter_all_collisions"></a>
+<div class=" detail">
+  <h3>iter_all_collisions</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">iter_all_collisions</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  Iterator that exposes all collisions between known objects.
+At each step it will yield a pair (obj, other).
+If (obj1, obj2) is seen when consuming the iterator, then (obj2, obj1)
+will not be seen.
+In other worlds, 'obj1 collides with obj2' means (obj1, obj2) or
+(obj2, obj1) will appear in the iterator output but not both.
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="objs_touching_point"></a>
+<div class=" detail">
+  <h3>objs_touching_point</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">objs_touching_point</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns a container with known objects touching point (x, y)</p>
+<p>Useful for mouse pick</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="objs_into_box"></a>
+<div class=" detail">
+  <h3>objs_into_box</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">objs_into_box</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">minx</span>,
+        <span class="sig-arg">maxx</span>,
+        <span class="sig-arg">miny</span>,
+        <span class="sig-arg">maxy</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns a container with know objects that fully fits into the axis
+aligned rectangle defined by params</p>
+<p>Useful for elastic box selection</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.collision_model-module.html">collision_model</a>&nbsp;.&nbsp;CollisionManager
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

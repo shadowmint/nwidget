@@ -1,0 +1,46 @@
+``pyglet`` Documentation Index
+------------------------------
+
+Pyglet is a pure python cross-platform application framework intended for game
+development. It supports windowing, user interface event handling, OpenGL
+graphics, loading images and videos and playing sounds and music. It works on
+Windows, OS X and Linux.
+
+
+
+Programming Guide:
+==================
+
+.. toctree::
+   :maxdepth: 2
+
+   Chapters <programming_guide/index>
+
+
+API Reference:
+==============
+
+
+.. toctree::
+   :maxdepth: 3
+
+   pyglet
+
+Testing Framework:
+==================
+
+.. toctree::
+   :maxdepth: 2
+
+   api/tests.test
+
+
+Related Documentation:
+======================
+
+* `OpenGL Programming Guide <http://www.glprogramming.com/red/>`_
+* `OpenGL Reference Pages <http://opengl.org/sdk/docs/man/>`_
+* `AVbin Documentation <http://avbin.github.com/AVbin/Docs.html>`_
+* `ctypes Reference <http://docs.python.org/lib/module-ctypes.html>`_
+* `Python Documentation <http://docs.python.org/>`_
+

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Creating your own actions</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="special_actions.html" title="Special Actions">Special Actions</a></span><span class="next">Next: <a class="reference" href="scenes_transitions.html" title="Scenes &amp; Transitions">Scenes &amp; Transitions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="actions_transformations_and_effects.html" title="Actions, Transformations and Effects">Actions, Transformations ...</a> » Creating your ...</span></div>
+<h1 class="title">Creating your own actions</h1>
+
+<p>Creating your own actions is pretty easy. You should familiarize yourself with this concepts,
+because actions are very powerful and can be combined with another actions to create more actions.</p>
+<p>For example, there is the Blink action. It is implemented by subclassing <a class="reference apilink" href="../api/cocos.actions.base_actions.IntervalAction-class.html " title="cocos.actions.base_actions.IntervalAction">IntervalAction</a>,
+but you could actually do something like:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">Blink</span>(times, duration):
+    <span class="py-keyword">return</span> (
+        Hide() + Delay(duration/(times*2)) +
+        Show() + Delay(duration/(times*2))
+    ) * times</pre>
+<div class="section" id="basic-internals">
+<h1><a class="toc-backref" href="#id147">Basic Internals</a></h1>
+<p>All actions work on a <a class="reference apilink" href="../api/cocos.actions.base_actions.Action-class.html#target " title="cocos.actions.base_actions.Action.target">target</a>. Its their callers responsibility to set
+the target to the correct element. This allows the user to instantiate an action and then apply the same
+action to various different elements. All cocosnodes can be a target for an action.</p>
+<p>You will not know who the target is when <cite>__init__</cite> or <cite>init</cite> is called, but you will when <cite>start</cite> is called. If
+you are making an action that takes more actions as parameters, it is your responsibility to:</p>
+<blockquote>
+<ul class="simple">
+<li>set the target</li>
+<li>call the start method</li>
+<li>call the stop method</li>
+</ul>
+</blockquote>
+<p>You can also override the <cite>__reversed__</cite> method. In this method you have to construct and return an action
+that would be the reversed version of the action you are doing. For example,
+in <cite>Show()</cite> we return <cite>Hide()</cite> as its reverse:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">Show</span>( InstantAction ):
+    <span class="py-string">&quot;&lt;snip&gt;&quot;</span>
+    <span class="py-keyword">def</span> <span class="py-defname">__reversed__</span>(self):
+        <span class="py-keyword">return</span> Hide()</pre>
+</div>
+<div class="section" id="instant-actions">
+<h1><a class="toc-backref" href="#id148">Instant Actions</a></h1>
+<p>Instant actions are actions that will take no time to execute. For example, <cite>Hide()</cite>
+sets the target visibility to False.</p>
+<p>It is very easy to create an action using the CallFuncS action as a decorator:</p>
+<pre class="py-doctest">
+@CallFuncS
+    <span class="py-keyword">def</span> <span class="py-defname">make_visible</span>( sp ):
+        sp.do( Show() )
+    self.sprite.do( make_visible )</pre>
+<p>please note that make_visible will not be a regular function that you can call,
+it will be an action. So you can compose it like any other action.</p>
+<dl class="docutils">
+<dt>If you want to subclass InstantAction, you will have to override:</dt>
+<dd><ul class="first last simple">
+<li>the <cite>init</cite> method to take the parameters you desire</li>
+<li>the <cite>start</cite> method to do the action</li>
+</ul>
+</dd>
+</dl>
+<p>Thats it.</p>
+<p>For example, this is a minimal implementation of SetOpacity:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">SetOpacity</span>( InstantAction ):
+    <span class="py-keyword">def</span> <span class="py-defname">init</span>(self, opacity):
+        self.opacity = opacity
+    <span class="py-keyword">def</span> <span class="py-defname">start</span>(self):
+        self.target.opacity = self.opacity</pre>
+</div>
+<div class="section" id="interval-actions">
+<h1><a class="toc-backref" href="#id149">Interval Actions</a></h1>
+<p>Interval actions is where the fun is. With this actions you can specify
+transformations that take a finite time. For example, <cite>MoveBy(how_much, duration)</cite>.</p>
+<dl class="docutils">
+<dt>The protocol for <cite>IntervalAction</cite> subclasses is the following:</dt>
+<dd><ul class="first last simple">
+<li><cite>init</cite> method will be called. here you have to set your <cite>duration</cite> property.</li>
+<li>a copy of the instance will be made (you don't have to worry about this)</li>
+<li><cite>start</cite> method will be called (<cite>self.target</cite> will be set)</li>
+<li><cite>update(t)</cite> will most likely be called many time with t in [0,1) and t will monotonically rise.</li>
+<li><cite>update(1)</cite> will be called.</li>
+<li><cite>stop()</cite> will be called.</li>
+</ul>
+</dd>
+</dl>
+<p>So its in update that you do your magic. For example, if you want to fade something out,
+you can write something like:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">FadeOut</span>( IntervalAction ):
+    <span class="py-keyword">def</span> <span class="py-defname">init</span>( self, duration ):
+        self.duration = duration
+
+    <span class="py-keyword">def</span> <span class="py-defname">update</span>( self, t ):
+        self.target.opacity = 255 * (1-t)
+
+    <span class="py-keyword">def</span> <span class="py-defname">__reversed__</span>(self):
+        <span class="py-keyword">return</span> FadeIn( self.duration )</pre>
+<p>The trick is that whoever is running your action will interpolate the values of t so that you
+get called with <cite>t==1</cite> when your duration is up. This does not mean that <cite>duration</cite> seconds
+have elapsed, but it usually does. If someone wants to make your action go twice as fast, they can feed you
+updates at a different rate and you should not care.</p>
+<p>Also, this allows us to change the interpolation method. We usually use linear interpolation,
+but <a class="reference apilink" href="../api/cocos.actions.interval_actions.AccelDeccel-class.html " title="cocos.actions.interval_actions.AccelDeccel">AccelDeccel</a>, for example, uses a sigmoid function so that is goes slower at the ends.</p>
+</div>
+<div class="section" id="grid-actions">
+<h1><a class="toc-backref" href="#id150">Grid Actions</a></h1>
+<p>These are <cite>IntervalAction</cite> actions, but instead of modifying
+<em>normal</em> attributes like <em>rotation</em>, <em>position</em>, <em>scale</em>, they modify the <em>grid</em>
+attribute.</p>
+<p>Let's see in detail how to build a basic <em>non-tiled-grid</em> action:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">Shaky3D</span>( Grid3DAction):</pre>
+<p><em>Shaky3D</em> is a subclass of <a class="reference apilink" href="../api/cocos.actions.basegrid_actions.Grid3DAction-class.html " title="cocos.actions.basegrid_actions.Grid3DAction">Grid3DAction</a>, so we are building a <em>non-tiled</em> action. If we want to
+create a <em>tiled</em> action, we need to subclass from the <a class="reference apilink" href="../api/cocos.actions.basegrid_actions.TiledGrid3DAction-class.html " title="cocos.actions.basegrid_actions.TiledGrid3DAction">TiledGrid3DAction</a> class:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">init</span>( self, randrange=6, *args, **kw ):
+    <span class="py-string">'''</span>
+<span class="py-string">    :Parameters:</span>
+<span class="py-string">        `randrange` : int</span>
+<span class="py-string">            Number that will be used in random.randrange( -randrange, randrange) to do the effect</span>
+<span class="py-string">    '''</span>
+    super(Shaky3D,self).init(*args,**kw)
+
+    <span class="py-comment">#: random range of the shaky effect</span>
+    self.randrange = randrange</pre>
+<p>Our class receives the <tt class="docutils literal"><span class="pre">randrange</span></tt> parameter, so we save it, and we call <tt class="docutils literal"><span class="pre">init</span></tt> of our
+super class:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">update</span>( self, t ):
+    <span class="py-keyword">for</span> i <span class="py-keyword">in</span> xrange(0, self.grid.x+1):
+        <span class="py-keyword">for</span> j <span class="py-keyword">in</span> xrange(0, self.grid.y+1):
+            x,y,z = self.get_original_vertex(i,j)
+            x += random.randrange( -self.randrange, self.randrange+1 )
+            y += random.randrange( -self.randrange, self.randrange+1 )
+            z += random.randrange( -self.randrange, self.randrange+1 )
+
+            self.set_vertex( i,j, (x,y,z) )</pre>
+<p>Like any other <cite>IntervalAction</cite> action the <tt class="docutils literal"><span class="pre">update</span></tt> method is going to be
+called once per frame. So, our <em>Shaky3D</em> effect will modify the <tt class="docutils literal"><span class="pre">x</span></tt>,``y``
+and <tt class="docutils literal"><span class="pre">z</span></tt> coordinate by a random number that is calculated by the
+<tt class="docutils literal"><span class="pre">random.randrange</span></tt> function.</p>
+<p>The <cite>get_original_vertex</cite> method returns the original coordinates of the vertex
+<tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>, while the <cite>get_vertex</cite> method returns the current coordinates
+of the vertex <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>.</p>
+<p>XXX: Explain how to build a Tiled Action
+XXX: How to use: <cite>get_original_tile</cite> and <cite>get_tile</cite></p>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="special_actions.html" title="Special Actions">Special Actions</a></span><span class="next">Next: <a class="reference" href="scenes_transitions.html" title="Scenes &amp; Transitions">Scenes &amp; Transitions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="actions_transformations_and_effects.html" title="Actions, Transformations and Effects">Actions, Transformations ...</a> » Creating your ...</span></div>
+</div>
+</body>
+</html>

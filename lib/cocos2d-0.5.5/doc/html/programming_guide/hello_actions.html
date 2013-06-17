@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Hello Actions</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="hello_world.html" title="Hello, World">Hello, World</a></span><span class="next">Next: <a class="reference" href="handling_events.html" title="Handling Events">Handling Events</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a> » Hello Actions</span></div>
+<h1 class="title">Hello Actions</h1>
+
+<div class="figure">
+<img alt="hello_world_actions.py.png" src="hello_world_actions.py.png" />
+</div>
+<p>This example is very similar to example #1, with the difference that it introduces
+us to the world of actions.
+An action is like an order. You can tell <strong>any</strong> <a class="reference apilink" href="../api/cocos.cocosnode.CocosNode-class.html " title="cocos.cocosnode.CocosNode">CocosNode</a> object to execute an
+action.
+You can find the entire program in the <a class="reference filelink" href="hello_world_actions.py">samples/hello_world_actions.py</a> file.</p>
+<p>Like in our previous example, we import the cocos package:</p>
+<pre class="py-doctest">
+<span class="py-keyword">import</span> cocos</pre>
+<p>If you're going to use several actions, you can import all
+the available actions into the namespace with this import:</p>
+<pre class="py-doctest">
+<span class="py-keyword">from</span> cocos.actions <span class="py-keyword">import</span> *</pre>
+<p>We subclass <a class="reference apilink" href="../api/cocos.layer.util_layers.ColorLayer-class.html " title="cocos.layer.util_layers.ColorLayer">ColorLayer</a> to have a background color, and then
+we call super() with a blueish color:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">HelloWorld</span>(cocos.layer.ColorLayer):
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+        <span class="py-comment"># blueish color</span>
+        super( HelloWorld, self ).__init__( 64,64,224,255)</pre>
+<p>As in the previous example, we create and add a label:</p>
+<pre class="py-doctest">
+label = cocos.text.Label(<span class="py-string">'Hello, World!'</span>,
+    font_name=<span class="py-string">'Times New Roman'</span>,
+    font_size=32,
+    anchor_x=<span class="py-string">'center'</span>, anchor_y=<span class="py-string">'center'</span>)
+
+<span class="py-comment"># set the label in the center of the screen</span>
+label.position = 320,240
+self.add( label )</pre>
+<p>In this example we also create and add an sprite as a child. In cocos2d
+sprites are <a class="reference apilink" href="../api/cocos.sprite.Sprite-class.html " title="cocos.sprite.Sprite">Sprite</a> objects:</p>
+<pre class="py-doctest">
+sprite = cocos.sprite.Sprite(<span class="py-string">'grossini.png'</span>)</pre>
+<p>We place the sprite in the center of the screen. Default position is (0,0):</p>
+<pre class="py-doctest">
+sprite.position = 320,240</pre>
+<p>We set the scale attribute to 3. This means that our sprite will be 3 times bigger.
+The default scale attribute is 1:</p>
+<pre class="py-doctest">
+sprite.scale = 3</pre>
+<p>We add the sprite as a child but on top of the label by setting the z-value to 1, since
+the default z-value is 0:</p>
+<pre class="py-doctest">
+self.add( sprite, z=1 )</pre>
+<p>We create a <a class="reference apilink" href="../api/cocos.actions.interval_actions.ScaleBy-class.html " title="cocos.actions.interval_actions.ScaleBy">ScaleBy</a> action. It will scale 3 times the object in 2 seconds:</p>
+<pre class="py-doctest">
+scale = ScaleBy(3, duration=2)</pre>
+<dl class="docutils">
+<dt>We tell the label to:</dt>
+<dd><ol class="first last arabic simple">
+<li>scale 3 times in 2 seconds</li>
+<li>then to scale back 3 times in 2 seconds</li>
+<li>and we repeat these 2 actions forever</li>
+</ol>
+</dd>
+</dl>
+<p>Notice that the '+' operator is the <cite>Sequence</cite> action:</p>
+<pre class="py-doctest">
+label.do( Repeat( scale + Reverse( scale) ) )</pre>
+<p>And we tell the sprite to do the same actions but starting with the 'scale back' action:</p>
+<pre class="py-doctest">
+sprite.do( Repeat( Reverse(scale) + scale ) )</pre>
+<p>Then we initialize the director, like in the previous example:</p>
+<pre class="py-doctest">
+cocos.director.director.init()
+hello_layer = HelloWorld ()</pre>
+<p>And... we tell the <a class="reference apilink" href="../api/cocos.layer.base_layers.Layer-class.html " title="cocos.layer.base_layers.Layer">Layer</a> (yes, all <cite>CocosNode</cite> objects can execute actions) to
+execute a <a class="reference apilink" href="../api/cocos.actions.interval_actions.RotateBy-class.html " title="cocos.actions.interval_actions.RotateBy">RotateBy</a> action of 360 degrees in 10 seconds:</p>
+<pre class="py-doctest">
+hello_layer.do( RotateBy(360, duration=10) )</pre>
+<p>Finally we start the execution:</p>
+<pre class="py-doctest">
+<span class="py-comment"># A scene that contains the layer hello_layer</span>
+main_scene = cocos.scene.Scene (hello_layer)
+
+<span class="py-comment"># And now, start the application, starting with main_scene</span>
+cocos.director.director.run (main_scene)</pre>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="hello_world.html" title="Hello, World">Hello, World</a></span><span class="next">Next: <a class="reference" href="handling_events.html" title="Handling Events">Handling Events</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a> » Hello Actions</span></div>
+</div>
+</body>
+</html>

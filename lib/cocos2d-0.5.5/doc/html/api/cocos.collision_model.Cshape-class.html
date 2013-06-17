@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.collision_model.Cshape</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.collision_model-module.html">collision_model</a>&nbsp;.&nbsp;Cshape
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.collision_model.Cshape</h1>
+<p>Represents an abstract geometric shape in the 2D space, and can
+answer questions about proximity or intersection with other shapes.</p>
+<p>Implementations are free to restrict the type of geometrical shapes
+that will accept, by example circles or axis aligned rectangles.</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="overlaps"></a><span class="summary-sig-name">overlaps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">Returns True if overlapping other, False otherwise</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.Cshape-class.html#distance" class="summary-sig-name">distance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>)</span>
+<div class="summary-description">Returns a float, distance from itself to other;</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="near_than"></a><span class="summary-sig-name">near_than</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">other</span>,
+        <span class="summary-sig-arg">near_distance</span>)</span>
+<div class="summary-description">Returns a boolean, True if distance(self, other)&lt;=near_distance</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="touches_point"></a><span class="summary-sig-name">touches_point</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+<div class="summary-description">Returns True if the point (x,y) overlaps the shape, False otherwise</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.Cshape-class.html#fits_in_box" class="summary-sig-name">fits_in_box</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">packed_box</span>)</span>
+<div class="summary-description">Returns a boolean, True if the shape fully fits into the axis aligned
+rectangle defined by packed_box, False otherwise.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">4-tuple of floats</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.collision_model.Cshape-class.html#minmax" class="summary-sig-name">minmax</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Returns the smallest axis aligned rectangle that contains all shape points.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Cshape</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="copy"></a><span class="summary-sig-name">copy</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Returns a copy of itself</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="distance"></a>
+<div class=" detail">
+  <h3>distance</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">distance</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">other</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns a float, distance from itself to other;</p>
+<p>Not necessarily  euclidean distance.
+It is distances between boundaries.</p>
+  <dl class="fields">
+    <dt>Returns: float</dt>
+  </dl>
+  </div>
+</div>
+<a name="fits_in_box"></a>
+<div class=" detail">
+  <h3>fits_in_box</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">fits_in_box</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">packed_box</span>)</span>
+    </div>
+  <div class="detail-description">
+  Returns a boolean, True if the shape fully fits into the axis aligned
+rectangle defined by packed_box, False otherwise.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">packed_box</span> : <span class='ptype'>4-tuple floats</span></dt>
+        <dd>An axis aligned rectangle expressed as (minx, maxx, miny, maxy)</dd>
+    </dl></dd>
+    <dt>Returns: bool</dt>
+  </dl>
+  </div>
+</div>
+<a name="minmax"></a>
+<div class=" detail">
+  <h3>minmax</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">minmax</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns the smallest axis aligned rectangle that contains all shape points.</p>
+<p>The rectangle is expressed as a 4-tuple of floats (minx, maxx, miny, maxy)
+Such a rectangle is also know as the Axis Aligned Bounding Box for shape;
+AABB for short.</p>
+  <dl class="fields">
+    <dt>Returns: 4-tuple of floats</dt>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.collision_model-module.html">collision_model</a>&nbsp;.&nbsp;Cshape
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

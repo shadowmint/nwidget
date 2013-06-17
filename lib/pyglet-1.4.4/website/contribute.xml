@@ -1,0 +1,74 @@
+<div>
+  <h2>mailing lists</h2>
+  <p>
+    Pyglet communication mostly occurs on mailing lists.  You can browse them
+    online or subscribe for immediate or digest updates.
+  </p>
+
+  <ul>
+    <li><a
+    href="http://groups.google.com/group/pyglet-users">pyglet-users</a> is
+    the main forum for pyglet discussion.</li>
+
+    <li><a
+    href="http://groups.google.com/group/pyglet-issues">pyglet-issues</a> is
+    an announcement list which broadcasts emails from the issue tracker.</li>
+
+    <li><a
+    href="http://groups.google.com/group/pyglet-commits">pyglet-commits</a> is
+    an announcement list which broadcasts source commits.</li>
+  </ul>
+
+  <!--
+  <h2>user pages</h2>
+
+  <p>Members of the pyglet-users mailing list can collaborate to <a
+  href="http://groups.google.com/group/pyglet-users/files">upload files</a>
+  and <a href="http://groups.google.com/group/pyglet-users/web">create web
+  pages</a>.  Screenshots from these pages will appear on pyglet.org to
+  promote your projects as well as pyglet.</p>
+
+  <p>Members can also contribute to the <a
+  href="http://groups.google.com/group/pyglet-users/web/faq">FAQ</a>, or write
+  new tutorials and "howto"s.</p>
+  -->
+
+  <h2>issue tracker</h2>
+
+  <p>The <a href="http://code.google.com/p/pyglet/issues/list">issue tracker</a>
+  should be used to report any bugs or compatibility issues.  You will need
+  a <a href="http://mail.google.com/mail/signup">Google account</a> to submit
+  issues.</p>
+
+  <h2>wiki</h2>
+
+  <p>We have a <a href="http://code.google.com/p/pyglet/w/list">wiki</a> which
+  is primarily used for discussing future design aspects of pyglet.  Anyone
+  can read this wiki, however you must be a pyglet developer (have SVN commit
+  access) to write to it.</p>
+
+  <h2>mercurial repository</h2>
+
+  <p>The mercurial repository houses the source trunk, documentation,
+  examples and development tools.  You can <a
+  href="http://code.google.com/p/pyglet/source/browse/">browse the
+  repository</a> or check out a working copy using a mercurial client:</p>
+
+  <p class="console">hg clone https://pyglet.googlecode.com/hg/ pyglet</p>
+
+  <p>See the <a
+      href="http://code.google.com/p/pyglet/source/checkout">googlecode</a>
+    hosting page for more details about the repository.</p>
+
+  <h2>contact</h2>
+
+  <p>pyglet is developed by many individual volunteers, and there is no
+    central point of contact.  If you have a question about developing with
+    pyglet, or you wish to contribute a patch, please join the mailing list
+    (details above).</p>
+
+  <p>For legal issues, please contact Alex Holkner.  You can reach him via
+    email at <a 
+      href="mailto:Alex.Holkner@gmail.com">Alex.Holkner@gmail.com</a>.</p>
+
+</div>

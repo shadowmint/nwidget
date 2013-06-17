@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>cocos2d FAQ</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="cocos2d-faq">
+<div class="navigation navigation-header container">
+</div>
+<h1 class="title">cocos2d FAQ</h1>
+<h2 class="subtitle" id="cocos2d-frequently-asked-questions">cocos2d Frequently Asked Questions</h2>
+
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference" href="index.html#can-i-use-3d-objects-in-cocos2d" id="id1">Can I use 3D objects in cocos2d ?</a></li>
+<li><a class="reference" href="index.html#can-i-use-cocos2d-s-sprites-and-actions-without-the-rest-of-the-framework" id="id2">Can I use cocos2d's sprites and actions without the rest of the framework ?</a></li>
+<li><a class="reference" href="index.html#can-i-code-a-presentation-ala-powerpoint-in-cocos2d" id="id3">Can I code a presentation (ala PowerPoint) in cocos2d ?</a></li>
+<li><a class="reference" href="index.html#i-get-this-error-error-gpu-doesn-t-support-frame-buffers-objects-can-t-continue" id="id4">I get this error: ERROR: GPU doesn't support Frame Buffers Objects. Can't continue</a></li>
+</ul>
+</div>
+<div class="section" id="can-i-use-3d-objects-in-cocos2d">
+<h1><a class="toc-backref" href="#id1">Can I use 3D objects in cocos2d ?</a></h1>
+<p>Yes. cocos2d uses <a class="reference" href="http://www.pyglet.org">pyglet</a> / OpenGL so you can
+use 3D objects and use them within cocos2d.</p>
+<p>You can include some 3D objects in your 2d game
+to improve the quality of your graphics without any problem.</p>
+<p>Also, the default projection matrix of cocos2d is a 3D one,
+so probably you won't need to change it. But you can override
+the projection matrix by registering to the <tt class="docutils literal"><span class="pre">director</span> <span class="pre">on_resize</span></tt>
+event. See the <a class="reference filelink" href="test_custom_on_resize.py">test/test_custom_on_resize.py</a> code as an example.</p>
+<p>To enable OpenGL depth test, you can call Director's <a class="reference apilink" href="../api/cocos.director.Director-class.html#set_depth_test " title="cocos.director.Director.set_depth_test">set_depth_test</a> method.</p>
+<p>Also, remember that cocos2d focuses on 2D games, so if you want
+to create a full-blown 3D game, <a class="reference" href="http://www.panda3d.org">Panda3d</a> will suit you best.</p>
+</div>
+<div class="section" id="can-i-use-cocos2d-s-sprites-and-actions-without-the-rest-of-the-framework">
+<h1><a class="toc-backref" href="#id2">Can I use cocos2d's sprites and actions without the rest of the framework ?</a></h1>
+<p>Short answer: <strong>No</strong>.
+Long answer: <strong>Yes</strong>.</p>
+<p>Almost everything in cocos2d is <a class="reference apilink" href="../api/cocos.cocosnode.CocosNode-class.html " title="cocos.cocosnode.CocosNode">CocosNode</a> object (<tt class="docutils literal"><span class="pre">sprites</span></tt>, <tt class="docutils literal"><span class="pre">layers</span></tt>,
+<tt class="docutils literal"><span class="pre">scenes</span></tt>, etc...), so the easiest way to use cocos2d's sprites (or any
+other <cite>CocosNode</cite> object) is to port <cite>CocosNode</cite> to your project.</p>
+<p>Since <cite>CocosNode</cite> uses director's <a class="reference apilink" href="../api/cocos.director.Director-class.html#get_window_size " title="cocos.director.Director.get_window_size">get_window_size</a> method, you shall create
+a Director stub in your project that implements <cite>get_window_size</cite>.
+You shall also call the <a class="reference apilink" href="../api/cocos.cocosnode.CocosNode-class.html#visit " title="cocos.cocosnode.CocosNode.visit">CocosNode.visit</a> method from your main loop to draw
+the sprites.</p>
+<p>Although I haven't tried it, I think this shall work ok. If it doesn't work,
+let us know.</p>
+</div>
+<div class="section" id="can-i-code-a-presentation-ala-powerpoint-in-cocos2d">
+<h1><a class="toc-backref" href="#id3">Can I code a presentation (ala PowerPoint) in cocos2d ?</a></h1>
+<p>Yes, you can.</p>
+<p>Since cocos2d has features like 'scene flow control' and transitions
+you can code a presentation using cocos2d relatively easy, and make
+it look pretty cool using those transitions.</p>
+<p>Did you know that we have OpenGL transitions, like the ones you will find
+in Apple's Keynote and OpenOffice's Impress ? That's cool :-)</p>
+<p>For example, the lighting talk that we did in PyCon 2008 was coded in cocos2d.
+The source code is here: <a class="reference" href="http://los-cocos.googlecode.com/svn/branches/pycon-lighting-talk/">pycon 2008 cocos2d lighting talk</a></p>
+<p>That being said, you should bear in mind that cocos2d is not a presentation
+tool. We are not planning to add presentation-like features to cocos2d.</p>
+<p>If you want a python presentation tool, we recommend:
+<a class="reference" href="http://code.google.com/p/bruce-tpt/">Bruce the Presentation Tool</a></p>
+</div>
+<div class="section" id="i-get-this-error-error-gpu-doesn-t-support-frame-buffers-objects-can-t-continue">
+<h1><a class="toc-backref" href="#id4">I get this error: ERROR: GPU doesn't support Frame Buffers Objects. Can't continue</a></h1>
+<p>This means that your GPU doesn't support the <tt class="docutils literal"><span class="pre">GL_EXT_framebuffer_object</span></tt> extension.</p>
+<p>cocos2d's <a class="reference" href="http://cocos2d.org/doc/programming_guide/effects.html">effects</a> needs this extension, and some transitions that depends on
+some effects will need it too.</p>
+<p>The workaround is to activate the <em>GenericGrabber</em> by editing the <tt class="docutils literal"><span class="pre">cocos/framegrabber.py</span></tt> file.
+To do so, modify these lines:</p>
+<pre class="py-doctest">
+<span class="py-keyword">raise</span> Exception(<span class="py-string">&quot;ERROR: GPU doesn't support Frame Buffers Objects. Can't continue&quot;</span>)
+<span class="py-comment">#_best_grabber = GenericGrabber</span>
+<span class="py-comment">#return _best_grabber()</span></pre>
+<p>into these ones:</p>
+<pre class="py-doctest">
+<span class="py-comment">#raise Exception(&quot;ERROR: GPU doesn't support Frame Buffers Objects. Can't continue&quot;)</span>
+_best_grabber = GenericGrabber
+<span class="py-keyword">return</span> _best_grabber()</pre>
+<p><strong>WARNING</strong> : This modification will let you see the effects, but it doesn't
+support some features, like having effects on layers or sprites.
+It will also perform much slower. And we don't support it.</p>
+<p>As we said, it is a workaround, not a fix.</p>
+<p>If you want to fix it, you can contribute with a <a class="reference" href="http://oss.sgi.com/projects/ogl-sample/registry/SGIX/pbuffer.txt">pbuffer grabber</a> .
+This unfinished code might help you: <a class="reference" href="http://los-cocos.googlecode.com/svn/branches/branch-0.2/cocos/gl_pbuffer.py">gl_pbuffer.py</a></p>
+</div>
+<div class="navigation navigation-footer container">
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Programming Guide</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="cocos2d-programming-guide">
+<div class="navigation navigation-header container">
+<span class="next">Next: <a class="reference" href="introduction.html" title="Introduction">Introduction</a></span></div>
+<h1 class="title">cocos2d Programming Guide</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+</tbody>
+</table>
+<div class="figure">
+<img alt="coco.png" src="coco.png" />
+</div>
+<p>The cocos2d Programming Guide provides in-depth documentation for writing
+applications that use cocos2d.  Many topics described here reference the cocos2d
+API reference, provided separately.</p>
+<p>If this is your first time reading about cocos2d, we suggest you start at
+<a class="reference sectionlink" href="writing_a_cocos2d_application.html">Writing a cocos2d application</a>.</p>
+<div class="contents topic" id="sections">
+<p class="topic-title first">Sections</p>
+<ul class="simple">
+<li><a class="reference" href="introduction.html" id="id9">Introduction</a></li>
+<li><a class="reference" href="installation_dependencies_and_compatibility.html" id="id10">Installation, Dependencies and Compatibility</a></li>
+<li><a class="reference" href="writing_a_cocos2d_application.html" id="id11">Writing a cocos2d application</a></li>
+<li><a class="reference" href="basic_concepts.html" id="id12">Basic Concepts</a></li>
+<li><a class="reference" href="actions_transformations_and_effects.html" id="id13">Actions, Transformations and Effects</a></li>
+<li><a class="reference" href="scenes_transitions.html" id="id14">Scenes &amp; Transitions</a></li>
+<li><a class="reference" href="tiled_maps.html" id="id15">Tiled maps</a></li>
+<li><a class="reference" href="cocosnodes.html" id="id16">CocosNodes</a></li>
+<li><a class="reference" href="built_in_python_interpreter.html" id="id17">Built-in Python Interpreter</a></li>
+<li><a class="reference" href="default_handlers.html" id="id18">Default Handlers</a></li>
+<li><a class="reference" href="collision.html" id="id19">Collision</a></li>
+<li><a class="reference" href="skeletal_animations.html" id="id20">Skeletal Animations</a></li>
+</ul>
+</div>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference" href="introduction.html" id="id21">Introduction</a></li>
+<li><a class="reference" href="installation_dependencies_and_compatibility.html" id="id22">Installation, Dependencies and Compatibility</a><ul>
+<li><a class="reference" href="id1.html" id="id23">Installation, Dependencies and Compatibility</a><ul>
+<li><a class="reference" href="id1.html#dependencies" id="id24">Dependencies</a></li>
+<li><a class="reference" href="id1.html#compatibility" id="id25">Compatibility</a></li>
+<li><a class="reference" href="id1.html#installing-from-source" id="id26">Installing from source</a></li>
+<li><a class="reference" href="id1.html#installing-with-easy-install" id="id27">Installing with easy_install</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference" href="writing_a_cocos2d_application.html" id="id28">Writing a cocos2d application</a><ul>
+<li><a class="reference" href="hello_world.html" id="id29">Hello, World</a></li>
+<li><a class="reference" href="hello_actions.html" id="id30">Hello Actions</a></li>
+<li><a class="reference" href="handling_events.html" id="id31">Handling Events</a></li>
+<li><a class="reference" href="where_to_next.html" id="id32">Where to next?</a></li>
+</ul>
+</li>
+<li><a class="reference" href="basic_concepts.html" id="id33">Basic Concepts</a><ul>
+<li><a class="reference" href="scenes.html" id="id34">Scenes</a></li>
+<li><a class="reference" href="director.html" id="id35">Director</a></li>
+<li><a class="reference" href="layers.html" id="id36">Layers</a></li>
+<li><a class="reference" href="sprites.html" id="id37">Sprites</a></li>
+<li><a class="reference" href="events.html" id="id38">Events</a><ul>
+<li><a class="reference" href="events.html#the-pyglet-event-framework-in-a-pinch" id="id39">The pyglet event framework in a pinch</a></li>
+<li><a class="reference" href="events.html#cocos-and-events" id="id40">Cocos and events</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference" href="actions_transformations_and_effects.html" id="id41">Actions, Transformations and Effects</a><ul>
+<li><a class="reference" href="actions.html" id="id42">Actions</a></li>
+<li><a class="reference" href="basic_actions.html" id="id43">Basic actions</a></li>
+<li><a class="reference" href="effects.html" id="id44">Effects</a><ul>
+<li><a class="reference" href="effects.html#how-they-work" id="id45">How they work</a></li>
+<li><a class="reference" href="effects.html#d-actions" id="id46">3D actions</a></li>
+<li><a class="reference" href="effects.html#index-of-grid-effects" id="id47">Index of grid effects</a></li>
+<li><a class="reference" href="effects.html#examples" id="id48">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference" href="composition.html" id="id49">Composition</a></li>
+<li><a class="reference" href="modifiers.html" id="id50">Modifiers</a></li>
+<li><a class="reference" href="special_actions.html" id="id51">Special Actions</a></li>
+<li><a class="reference" href="creating_your_own_actions.html" id="id52">Creating your own actions</a><ul>
+<li><a class="reference" href="creating_your_own_actions.html#basic-internals" id="id53">Basic Internals</a></li>
+<li><a class="reference" href="creating_your_own_actions.html#instant-actions" id="id54">Instant Actions</a></li>
+<li><a class="reference" href="creating_your_own_actions.html#interval-actions" id="id55">Interval Actions</a></li>
+<li><a class="reference" href="creating_your_own_actions.html#grid-actions" id="id56">Grid Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference" href="scenes_transitions.html" id="id57">Scenes &amp; Transitions</a><ul>
+<li><a class="reference" href="using_director_s_api.html" id="id58">Using Director's API</a></li>
+<li><a class="reference" href="transitions.html" id="id59">Transitions</a></li>
+</ul>
+</li>
+<li><a class="reference" href="tiled_maps.html" id="id60">Tiled maps</a><ul>
+<li><a class="reference" href="maps.html" id="id61">Maps</a></li>
+<li><a class="reference" href="the_xml_file_specification.html" id="id62">The XML File Specification</a></li>
+<li><a class="reference" href="xml_file_contents.html" id="id63">XML file contents</a></li>
+<li><a class="reference" href="map_cell_and_tile_properties.html" id="id64">Map, Cell and Tile Properties</a></li>
+<li><a class="reference" href="controlling_map_scrolling.html" id="id65">Controlling Map Scrolling</a></li>
+<li><a class="reference" href="map_queries.html" id="id66">Map Queries</a></li>
+<li><a class="reference" href="rectangular_maps.html" id="id67">Rectangular Maps</a></li>
+<li><a class="reference" href="rectangular_map_collisions.html" id="id68">Rectangular Map Collisions</a></li>
+</ul>
+</li>
+<li><a class="reference" href="cocosnodes.html" id="id69">CocosNodes</a><ul>
+<li><a class="reference" href="cocosnode_functionality.html" id="id70">CocosNode Functionality</a><ul>
+<li><a class="reference" href="cocosnode_functionality.html#parent-child" id="id71">Parent-child</a></li>
+<li><a class="reference" href="cocosnode_functionality.html#spatial-placement" id="id72">Spatial Placement</a></li>
+<li><a class="reference" href="cocosnode_functionality.html#going-in-or-out-of-the-active-scene" id="id73">Going in or out of the active scene</a></li>
+<li><a class="reference" href="cocosnode_functionality.html#render" id="id74">Render</a></li>
+<li><a class="reference" href="cocosnode_functionality.html#time-management" id="id75">Time management</a></li>
+<li><a class="reference" href="cocosnode_functionality.html#automated-changes-along-the-time" id="id76">Automated changes along the time</a></li>
+</ul>
+</li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html" id="id77">Brief tour of built-in CocosNode subclasses</a><ul>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#scene" id="id78">Scene</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#transitionscene" id="id79">TransitionScene</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#layer" id="id80">Layer</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#colorlayer" id="id81">ColorLayer</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#multiplexlayer" id="id82">MultiplexLayer</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#scrollingmanager" id="id83">ScrollingManager</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#scrollablelayer" id="id84">ScrollableLayer</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#rectmaplayer-and-hexmaplayer" id="id85">RectMapLayer and HexMapLayer</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#interpreterlayer" id="id86">InterpreterLayer</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#sprite" id="id87">Sprite</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#particlesystems" id="id88">ParticleSystems</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#textelement-label-htmllabel-richlabel" id="id89">TextElement, Label, HTMLLabel, RichLabel</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#menu" id="id90">Menu</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#menu-items" id="id91">Menu items</a></li>
+<li><a class="reference" href="brief_tour_of_built_in_cocosnode_subclasses.html#creating-your-cocosnode-subclasses" id="id92">Creating your CocosNode subclasses</a></li>
+</ul>
+</li>
+<li><a class="reference" href="cocosnodes_examples.html" id="id93">CocosNodes Examples</a><ul>
+<li><a class="reference" href="cocosnodes_examples.html#parent-child-examples" id="id94">Parent-Child examples</a></li>
+<li><a class="reference" href="cocosnodes_examples.html#spatial-placement-snippets" id="id95">Spatial Placement snippets</a></li>
+<li><a class="reference" href="cocosnodes_examples.html#automated-changes-along-the-time-snippets" id="id96">Automated changes along the time snippets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference" href="built_in_python_interpreter.html" id="id97">Built-in Python Interpreter</a></li>
+<li><a class="reference" href="default_handlers.html" id="id98">Default Handlers</a></li>
+<li><a class="reference" href="collision.html" id="id99">Collision</a><ul>
+<li><a class="reference" href="collision_model.html" id="id100">Collision Model</a><ul>
+<li><a class="reference" href="collision_model.html#use-cases" id="id101">Use cases</a></li>
+<li><a class="reference" href="collision_model.html#simplified-shapes" id="id102">Simplified shapes</a></li>
+<li><a class="reference" href="collision_model.html#what-an-object-must-comply-to-be-collidable" id="id103">What an object must comply to be collidable ?</a></li>
+<li><a class="reference" href="collision_model.html#the-role-of-collision-manager" id="id104">The role of collision manager</a></li>
+<li><a class="reference" href="collision_model.html#limitations-and-weaknesees" id="id105">Limitations and weaknesees</a></li>
+<li><a class="reference" href="collision_model.html#more-details" id="id106">More details</a></li>
+</ul>
+</li>
+<li><a class="reference" href="performance_numbers.html" id="id107">Performance numbers</a><ul>
+<li><a class="reference" href="performance_numbers.html#the-benchmark" id="id108">The benchmark</a></li>
+<li><a class="reference" href="performance_numbers.html#comparing-with-brute-force" id="id109">Comparing with brute force</a></li>
+<li><a class="reference" href="performance_numbers.html#shape-comparisson" id="id110">Shape comparisson</a></li>
+<li><a class="reference" href="performance_numbers.html#ballpark-fps" id="id111">Ballpark fps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference" href="skeletal_animations.html" id="id112">Skeletal Animations</a><ul>
+<li><a class="reference" href="creating_skeletons_and_skins.html" id="id113">Creating Skeletons and skins</a><ul>
+<li><a class="reference" href="creating_skeletons_and_skins.html#the-skeleton-file" id="id114">The skeleton file</a></li>
+<li><a class="reference" href="creating_skeletons_and_skins.html#the-skin-file" id="id115">The skin file</a></li>
+<li><a class="reference" href="creating_skeletons_and_skins.html#the-skeleton-editor" id="id116">The skeleton editor</a></li>
+</ul>
+</li>
+<li><a class="reference" href="animations.html" id="id117">Animations</a><ul>
+<li><a class="reference" href="animations.html#the-animator-editor" id="id118">The animator editor</a></li>
+<li><a class="reference" href="animations.html#playing-animations" id="id119">Playing animations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="navigation navigation-footer container">
+<span class="next">Next: <a class="reference" href="introduction.html" title="Introduction">Introduction</a></span></div>
+</div>
+</body>
+</html>

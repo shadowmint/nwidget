@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Installation, Dependencies and Compatibility</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="installation_dependencies_and_compatibility.html" title="Installation, Dependencies and Compatibility">Installation, Dependencies ...</a></span><span class="next">Next: <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="installation_dependencies_and_compatibility.html" title="Installation, Dependencies and Compatibility">Installation, Dependencies ...</a> » Installation, Dependencies ...</span></div>
+<h1 class="title">Installation, Dependencies and Compatibility</h1>
+
+<div class="section" id="dependencies">
+<h1><a class="toc-backref" href="#id121">Dependencies</a></h1>
+<p>A quick rundown about dependencies, see also compatibility notes below</p>
+<p>Cocos and Pyglet both are pure python packages, both using ctypes to bind
+other libraries.</p>
+<blockquote>
+<dl class="docutils">
+<dt>. for python 2.4 only, you need</dt>
+<dd><ul class="first last simple">
+<li>ctypes, <a class="reference" href="http://pypi.python.org/pypi/ctypes">http://pypi.python.org/pypi/ctypes</a></li>
+<li>elementtree, <a class="reference" href="http://effbot.org/downloads/#elementtree">http://effbot.org/downloads/#elementtree</a></li>
+</ul>
+</dd>
+<dt>. If you stash the source cocos and pyglet directories under</dt>
+<dd><p class="first">site-packages, you have most of functionality.
+What you (maybe) don't have is:</p>
+<blockquote class="last">
+<ul class="simple">
+<li>cocos particles</li>
+<li>SDL audio backend</li>
+<li>AVBin (pyglet) audio-video backend</li>
+</ul>
+</blockquote>
+</dd>
+<dt>. For particles to work you need the python package Numpy</dt>
+<dd><a class="reference" href="http://new.scipy.org/download.html">http://new.scipy.org/download.html</a></dd>
+</dl>
+<p>. For SDL audio backend:</p>
+<blockquote>
+<ul class="simple">
+<li>Numpy</li>
+<li>in windows, the pygame binaries (<a class="reference" href="http://www.pygame.org/download.shtml">http://www.pygame.org/download.shtml</a>)</li>
+<li>in unix like OSes, libraries sdl 1.2 and sdl-mixer 1.2;
+in debian/ubuntu their packages are libsdl1.2 and libsdl-mixer1.2</li>
+<li>in Mac, theres no confirmed info. Should be similar to unix.</li>
+</ul>
+</blockquote>
+<p>. For AVBin (pyglet) audio backend:</p>
+<blockquote>
+<ul class="simple">
+<li>For windows and Mac, if you installed pyglet using the <em>binaries</em>
+provided by pyglet you have all you need.</li>
+<li>For unix like systems: add AVBin, <a class="reference" href="http://code.google.com/p/avbin/">http://code.google.com/p/avbin/</a></li>
+</ul>
+</blockquote>
+</blockquote>
+<dl class="docutils">
+<dt>What explicit dependencies are declared in the setup.py ?</dt>
+<dd>pyglet 1.1.4+</dd>
+</dl>
+</div>
+<div class="section" id="compatibility">
+<h1><a class="toc-backref" href="#id122">Compatibility</a></h1>
+<p>Compatibility notes at the time of writing, August 2011</p>
+<blockquote>
+<p>. python : cocos needs python 2.4+, is not compatible with 3.x</p>
+<p>. pyglet : The last released pyglet is 1.1.4 and</p>
+<blockquote>
+<dl class="docutils">
+<dt>. don't runs on 64bits windows. Theres a patch in the issue tracker</dt>
+<dd>(<a class="reference" href="http://code.google.com/p/pyglet/issues/detail?id=510">http://code.google.com/p/pyglet/issues/detail?id=510</a>) that can fix
+this; notice that the patch is for the pyglet 1.2dev that you must
+fetch from the repository, not the current 1.1.4 release</dd>
+</dl>
+<p>. Macs: The 1.1.4  release needs a 32bit python, not a 64bits</p>
+<dl class="docutils">
+<dt>. Macs: The 1.2dev (repo default) received much work about Cocoa</dt>
+<dd>integration, it is probably in alpha state. You should ask in
+the pyglet mailing list about status and instructions.</dd>
+</dl>
+</blockquote>
+</blockquote>
+</div>
+<div class="section" id="installing-from-source">
+<h1><a class="toc-backref" href="#id123">Installing from source</a></h1>
+<p>Install setuptools if you don't have it.( <a class="reference" href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a> )</p>
+<p>Download cocos2d-0.5.0.zip, unzip to a temporary directory</p>
+<p>In the command line do:</p>
+<pre class="py-doctest">
+cd &lt;temporal_directory&gt;
+python setup.py install
+(note that <span class="py-keyword">in</span> windows the last line should be)
+setup.py install</pre>
+<p>Move from the temporary directory to your preferred locations the docs,
+examples, tests and unitests</p>
+<p>Done, you can delete the temporal directory.
+All of cocos should be usable now, with the possible exceptions</p>
+<blockquote>
+<ul class="simple">
+<li>cocos particles</li>
+<li>SDL audio backend</li>
+<li>AVBin (pyglet) audio-video backend</li>
+</ul>
+</blockquote>
+<p>If you need to add these, look at the dependencies and compatibility section.</p>
+</div>
+<div class="section" id="installing-with-easy-install">
+<h1><a class="toc-backref" href="#id124">Installing with easy_install</a></h1>
+<p>Install setuptools if you don't have it.( <a class="reference" href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a> )</p>
+<dl class="docutils">
+<dt>at the command line enter</dt>
+<dd>easy_install cocos</dd>
+</dl>
+<p>All of cocos should be usable now, with the possible exceptions</p>
+<blockquote>
+<ul class="simple">
+<li>cocos particles</li>
+<li>SDL audio backend</li>
+<li>AVBin (pyglet) audio-video backend</li>
+</ul>
+</blockquote>
+<p>If you need to add these, look at the dependencies and compatibility section</p>
+<p>You also will want to download the zip that contains the documentation, samples
+and demo, and unzip to a convenient location.</p>
+</div>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="installation_dependencies_and_compatibility.html" title="Installation, Dependencies and Compatibility">Installation, Dependencies ...</a></span><span class="next">Next: <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="installation_dependencies_and_compatibility.html" title="Installation, Dependencies and Compatibility">Installation, Dependencies ...</a> » Installation, Dependencies ...</span></div>
+</div>
+</body>
+</html>

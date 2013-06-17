@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Rectangular Maps</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="map_queries.html" title="Map Queries">Map Queries</a></span><span class="next">Next: <a class="reference" href="rectangular_map_collisions.html" title="Rectangular Map Collisions">Rectangular Map Collisions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="tiled_maps.html" title="Tiled maps">Tiled maps</a> » Rectangular Maps</span></div>
+<h1 class="title">Rectangular Maps</h1>
+
+<p>Cells are stored in column-major order with y increasing up,
+allowing [i][j] addressing:</p>
+<pre class="py-doctest">
++---+---+---+
+| d | e | f |
++---+---+---+
+| a | b | c |
++---+---+---+</pre>
+<p>The cells property is list of lists: <tt class="docutils literal"><span class="pre">[['a',</span> <span class="pre">'d'],</span> <span class="pre">['b',</span> <span class="pre">'e'],</span>
+<span class="pre">['c',</span> <span class="pre">'f']]</span></tt></p>
+<p>Thus the cell at (0, 0) is 'a' and (0, 1) is 'd'.</p>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="map_queries.html" title="Map Queries">Map Queries</a></span><span class="next">Next: <a class="reference" href="rectangular_map_collisions.html" title="Rectangular Map Collisions">Rectangular Map Collisions</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="tiled_maps.html" title="Tiled maps">Tiled maps</a> » Rectangular Maps</span></div>
+</div>
+</body>
+</html>

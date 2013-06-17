@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Handling Events</title>
+<link rel="stylesheet" href="doc.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<div class="navigation navigation-header container">
+<span class="previous">Previous: <a class="reference" href="hello_actions.html" title="Hello Actions">Hello Actions</a></span><span class="next">Next: <a class="reference" href="where_to_next.html" title="Where to next?">Where to next?</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a> » Handling Events</span></div>
+<h1 class="title">Handling Events</h1>
+
+<p>All our previous examples are non-interactive. They display something, but do not respond to user input (except for quitting when you press <strong>ESC</strong> or close the window).
+Cocos obtains inputs by listening to director.window events, and conveniently cocos.layer can automatically listen to director.window events: in your layer subclass set the is_event_handler class member to True and cocos will take care.</p>
+<p>In this section we will build step by step the demo provided in <a class="reference filelink" href="handling_events.py">samples/handling_events.py</a>; this is a very simple cocos app which shows which keys are pressed, and reacts to mouse motion and clicks. Run the app before reading on te get a clearer idea of what we are trying to build.</p>
+<div class="figure">
+<img alt="event_demo.py.png" src="event_demo.py.png" />
+</div>
+<p>This demo has a scene with two layers; one shows which keys are currently pressed (none, one, or maybe several at the same time), the other one shows text with the mouse position, and clicking moves the text.</p>
+<p>We start defining the KeyDisplay layer class. As always, we put some initialization on <tt class="docutils literal"><span class="pre">__init__</span></tt> and the code for displaying it in step:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">KeyDisplay</span>(cocos.layer.Layer):
+
+    <span class="py-comment"># If you want that your layer receives director.window events</span>
+    <span class="py-comment"># you must set this variable to 'True'</span>
+    is_event_handler = True
+
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+
+        super( KeyDisplay, self ).__init__()
+
+        self.text = cocos.text.Label(<span class="py-string">&quot;&quot;</span>, x=100, y=280 )
+
+        <span class="py-comment"># To keep track of which keys are pressed:</span>
+        self.keys_pressed = set()
+        self.update_text()
+        self.add(self.text)
+
+    <span class="py-keyword">def</span> <span class="py-defname">update_text</span>(self):
+        key_names = [pyglet.window.key.symbol_string (k) <span class="py-keyword">for</span> k <span class="py-keyword">in</span> self.keys_pressed]
+        text = <span class="py-string">'Keys: '</span>+<span class="py-string">','</span>.join (key_names)
+        <span class="py-comment"># Update self.text</span>
+        self.text.element.text = text</pre>
+<p>This class defines a key_pressed set, which should be the set of keys pressed at any time. However, this code as it is still does nothing. We need to tell this layer to update this set when a key is pressed or released. In other words, we need to add event handlers to the layer. Adding event handlers to a layer is just a matter of adding methods to it called on_&lt;event name&gt;. The two events that interest us now are <tt class="docutils literal"><span class="pre">on_key_press</span></tt> and <tt class="docutils literal"><span class="pre">on_key_release</span></tt>:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">on_key_press</span> (self, key, modifiers):
+    <span class="py-string">&quot;&quot;&quot;This function is called when a key is pressed.</span>
+<span class="py-string">    'key' is a constant indicating which key was pressed.</span>
+<span class="py-string">    'modifiers' is a bitwise or of several constants indicating which</span>
+<span class="py-string">        modifiers are active at the time of the press (ctrl, shift, capslock, etc.)</span>
+<span class="py-string">    &quot;&quot;&quot;</span>
+
+    self.keys_pressed.add (key)
+    self.update_text()
+
+<span class="py-keyword">def</span> <span class="py-defname">on_key_release</span> (self, key, modifiers):
+    <span class="py-string">&quot;&quot;&quot;This function is called when a key is released.</span>
+
+<span class="py-string">    'key' is a constant indicating which key was pressed.</span>
+<span class="py-string">    'modifiers' is a bitwise or of several constants indicating which</span>
+<span class="py-string">        modifiers are active at the time of the press (ctrl, shift, capslock, etc.)</span>
+
+<span class="py-string">    Constants are the ones from pyglet.window.key</span>
+<span class="py-string">    &quot;&quot;&quot;</span>
+
+    self.keys_pressed.remove (key)
+    self.update_text()
+
+<span class="py-keyword">def</span> <span class="py-defname">update_text</span>(self):
+    key_names = [pyglet.window.key.symbol_string (k) <span class="py-keyword">for</span> k <span class="py-keyword">in</span> self.keys_pressed]
+    text = <span class="py-string">'Keys: '</span>+<span class="py-string">','</span>.join (key_names)
+    <span class="py-comment"># Update self.text</span>
+    self.text.element.text = text</pre>
+<p>With that code, the layer is now fully working. You can press and release keys or key combinations, and you will se how the display is updated telling you which keys are pressed at any time.</p>
+<p>Handling mouse input is similar. You have three events of interest: on_mouse_press, on_mouse_motion and on_mouse_drag. With that, we can define our layer:</p>
+<pre class="py-doctest">
+<span class="py-keyword">class</span> <span class="py-defname">MouseDisplay</span>(cocos.layer.Layer):
+
+    is_event_handler = True     <span class="py-comment">#: enable director.window events</span>
+
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+        super( MouseDisplay, self ).__init__()
+
+        self.posx = 100
+        self.posy = 240
+        self.text = cocos.text.Label(<span class="py-string">'No mouse events yet'</span>, font_size=18, x=self.posx, y=self.posy )
+        self.add( self.text )
+
+    <span class="py-keyword">def</span> <span class="py-defname">update_text</span> (self, x, y):
+        text = <span class="py-string">'Mouse @ %d,%d'</span> % (x, y)
+        self.text.element.text = text
+        self.text.element.x = self.posx
+        self.text.element.y = self.posy</pre>
+<p>And then add event handlers to update the text when the mouse is moved, and change the text position when any button is clicked:</p>
+<pre class="py-doctest">
+<span class="py-keyword">def</span> <span class="py-defname">on_mouse_motion</span> (self, x, y, dx, dy):
+    <span class="py-string">&quot;&quot;&quot;Called when the mouse moves over the app window with no button pressed</span>
+
+<span class="py-string">    (x, y) are the physical coordinates of the mouse</span>
+<span class="py-string">    (dx, dy) is the distance vector covered by the mouse pointer since the</span>
+<span class="py-string">      last call.</span>
+<span class="py-string">    &quot;&quot;&quot;</span>
+    self.update_text (x, y)
+
+<span class="py-keyword">def</span> <span class="py-defname">on_mouse_drag</span> (self, x, y, dx, dy, buttons, modifiers):
+    <span class="py-string">&quot;&quot;&quot;Called when the mouse moves over the app window with some button(s) pressed</span>
+
+<span class="py-string">    (x, y) are the physical coordinates of the mouse</span>
+<span class="py-string">    (dx, dy) is the distance vector covered by the mouse pointer since the</span>
+<span class="py-string">      last call.</span>
+<span class="py-string">    'buttons' is a bitwise or of pyglet.window.mouse constants LEFT, MIDDLE, RIGHT</span>
+<span class="py-string">    'modifiers' is a bitwise or of pyglet.window.key modifier constants</span>
+<span class="py-string">       (values like 'SHIFT', 'OPTION', 'ALT')</span>
+<span class="py-string">    &quot;&quot;&quot;</span>
+    self.update_text (x, y)
+
+<span class="py-keyword">def</span> <span class="py-defname">on_mouse_press</span> (self, x, y, buttons, modifiers):
+    <span class="py-string">&quot;&quot;&quot;This function is called when any mouse button is pressed</span>
+
+<span class="py-string">    (x, y) are the physical coordinates of the mouse</span>
+<span class="py-string">    'buttons' is a bitwise or of pyglet.window.mouse constants LEFT, MIDDLE, RIGHT</span>
+<span class="py-string">    'modifiers' is a bitwise or of pyglet.window.key modifier constants</span>
+<span class="py-string">       (values like 'SHIFT', 'OPTION', 'ALT')</span>
+<span class="py-string">    &quot;&quot;&quot;</span>
+    self.posx, self.posy = director.get_virtual_coordinates (x, y)
+    self.update_text (x,y)</pre>
+<p>The only thing a bit unusual here is the call to <cite>director.get_virtual_coordinates</cite> (x, y). As explained in the example before, cocos has two coordinates systems, a physical one and a virtual one. The mouse event handlers receive their arguments from pyglet in physical coordinates. If you want to map that to virtual coordinates, you need to use the director.get_virtual_coordinates method, which does the correct mapping. If you put instead <tt class="docutils literal"><span class="pre">self.posx</span></tt>, <tt class="docutils literal"><span class="pre">self.posy</span> <span class="pre">=</span> <span class="pre">x,y</span></tt> in the on_mouse_press handler above, you will see that the app seems to work, but if you resize the window, the clicks will move the text to the wrong place.</p>
+<dl class="docutils">
+<dt>For completneddes, they are other mouse events that can be of interest:</dt>
+<dd>on_mouse_release : called when a button is released
+on_mouse_scroll : called when the mouse wheel moved
+on_mouse_leave : called when the mouse cursor goes out of the window
+on_mouse_enter : called when the mouse cursor enters the window</dd>
+</dl>
+<p>The demo does not have much more code, just creating a scene with these two layers and running it:</p>
+<pre class="py-doctest">
+director.init(resizable=True)
+<span class="py-comment"># Run a scene with our event displayers:</span>
+director.run( cocos.scene.Scene( KeyDisplay(), MouseDisplay() ) )</pre>
+<p>You can now play to the demo and change it. Some things you can try are:</p>
+<blockquote>
+<ul class="simple">
+<li>Change the on_mouse_press handler and remove the mapping to virtual coordinates; note how it behaves strangely after resizing the window</li>
+<li>Note that the mouse coordinates on screen are physical coordinates, so their range changes when resizing the window; modify the demo to show virtual coordinates.</li>
+<li>Change the code to be able to move the mouse coordinates label when you drag the mouse</li>
+<li>Change the code so the keyboard display also shows the modifiers set at each time</li>
+</ul>
+</blockquote>
+<div class="navigation navigation-footer container">
+<span class="previous">Previous: <a class="reference" href="hello_actions.html" title="Hello Actions">Hello Actions</a></span><span class="next">Next: <a class="reference" href="where_to_next.html" title="Where to next?">Where to next?</a></span><span class="breadcrumbs"><a class="reference" href="index.html" title="Programming Guide">Programming Guide</a> » <a class="reference" href="writing_a_cocos2d_application.html" title="Writing a cocos2d application">Writing a ...</a> » Handling Events</span></div>
+</div>
+</body>
+</html>

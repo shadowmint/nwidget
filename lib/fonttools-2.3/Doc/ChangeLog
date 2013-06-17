@@ -1,0 +1,8745 @@
+2009-11-08 15:58  pabs3
+
+	* Doc/changes.txt,
+	  Lib/fontTools/__init__.py,
+	  setup.py:
+	  Release
+	  fonttools
+	  version
+	  2.3
+
+2009-11-08 15:57  pabs3
+
+	* Lib/fontTools/misc/eexec.py:
+	  Fix
+	  loading
+	  the
+	  fontTools.misc.eexecOp
+	  module
+	  that
+	  speeds
+	  up
+	  fontTools.misc.eexec.
+
+2009-11-08 15:55  pabs3
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  Fix
+	  some
+	  broken
+	  assertions
+	  in
+	  the
+	  cmap
+	  format
+	  1
+	  code. Shame
+	  on
+	  Gentoo
+	  for
+	  not
+	  forwarding
+	  the
+	  patch
+	  upstream.
+
+2009-11-08 15:54  pabs3
+
+	* setup.py:
+	  Install
+	  the
+	  manual
+	  page
+	  to
+	  the
+	  correct
+	  location. Shame
+	  on
+	  MacPorts
+	  and
+	  Gentoo
+	  for
+	  not
+	  forwarding
+	  this
+	  change.
+
+2009-11-08 15:53  pabs3
+
+	* Lib/fontTools/ttx.py:
+	  Fix
+	  typo
+	  in
+	  help
+	  output.
+
+2009-11-08 15:52  pabs3
+
+	* Doc/changes.txt:
+	  Add
+	  brief
+	  entries
+	  to
+	  Doc/changes.txt
+	  for
+	  the
+	  past
+	  two
+	  releases.
+
+2009-11-08 15:51  pabs3
+
+	* Doc/install.txt:
+	  Drop
+	  version
+	  number
+	  from
+	  Doc/install.txt
+
+2009-11-08 15:50  pabs3
+
+	* MANIFEST.in:
+	  Include
+	  the
+	  Doc/ChangeLog
+	  file
+	  in
+	  source
+	  tarballs
+
+2009-11-08 11:19  pabs3
+
+	* Doc/ttx.1:
+	  Document
+	  the
+	  new
+	  -y
+	  option
+	  to
+	  choose
+	  which
+	  font
+	  in
+	  a
+	  TTC
+	  to
+	  decompile.
+
+2009-11-08 11:00  pabs3
+
+	* Lib/fontTools/unicode.py:
+	  updated
+	  unicode
+	  module
+	  to
+	  unicode
+	  5.2.0
+
+2009-11-08 06:39  pabs3
+
+	* Lib/fontTools/ttLib/tables/ttProgram.py:
+	  Raising
+	  strings
+	  is
+	  deprecated
+	  in
+	  Python
+	  2.5,
+	  raise
+	  an
+	  exception
+	  instead.
+
+2009-03-24 09:42  pabs3
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  Fix
+	  some
+	  warnings
+	  due
+	  to
+	  signedness
+	  and
+	  64-bitness
+	  issues
+
+2009-03-24 09:41  pabs3
+
+	* MetaTools/roundTrip.py:
+	  Fix
+	  arguments
+	  to
+	  diff
+	  in
+	  the
+	  roundTrip
+	  testing
+	  tool
+
+2009-03-23 07:11  pabs3
+
+	* Lib/fontTools/ttLib/tables/.cvsignore:
+	  Remove
+	  old
+	  .cvsignore
+	  file
+
+2009-03-22 15:32  pabs3
+
+	* Doc/ChangeLog.txt,
+	  Doc/install.txt,
+	  MetaTools/buildChangeLog.py,
+	  MetaTools/logmerge.py,
+	  Windows/README.TXT:
+	  Adapt
+	  Doc
+	  and
+	  MetaTools
+	  to
+	  the
+	  use
+	  of
+	  SVN
+	  instead
+	  of
+	  CVS
+
+2009-02-22 08:55  pabs3
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/sfnt.py,
+	  Lib/fontTools/ttx.py:
+	  Apply
+	  remainder
+	  of
+	  #1675210:
+	  add
+	  support
+	  for
+	  TrueType
+	  Collection
+	  (TTC)
+	  files.
+
+2008-09-16 14:14  jvr
+
+	* Lib/fontTools/ttLib/tables/ttProgram.py:
+	  don't
+	  use
+	  'as'
+	  as
+	  a
+	  name,
+	  it's
+	  a
+	  keyword
+	  in
+	  Python
+	  >=
+	  2.6
+
+2008-06-17 20:41  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  fixed
+	  buglet
+	  that
+	  caused
+	  the
+	  last
+	  table
+	  in
+	  the
+	  font
+	  not
+	  to
+	  be
+	  padded
+	  to
+	  a
+	  4-byte
+	  boundary
+	  (the
+	  spec
+	  is
+	  a
+	  little
+	  vague
+	  about
+	  this,
+	  but
+	  I
+	  believe
+	  it's
+	  needed,
+	  also,
+	  Suitcase
+	  may
+	  complain...)
+
+2008-05-18 06:30  pabs3
+
+	* Doc/ChangeLog.txt:
+	  Update
+	  changelog
+
+2008-05-18 06:28  pabs3
+
+	* Lib/fontTools/__init__.py,
+	  setup.py:
+	  Get
+	  ready
+	  to
+	  release
+	  version
+	  2.2
+
+2008-05-17 09:21  jvr
+
+	* Lib/fontTools/unicode.py:
+	  updated
+	  unicode
+	  module
+	  to
+	  unicode
+	  5.1.0
+
+2008-05-17 08:52  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  a
+	  different
+	  fix
+	  for
+	  [1296026]:
+	  just
+	  comment
+	  out
+	  the
+	  offending
+	  assert
+
+2008-05-17 08:44  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  back
+	  out
+	  'fix',
+	  as
+	  this
+	  solution
+	  isn't
+	  portable
+
+2008-05-16 17:33  jvr
+
+	* Lib/fontTools/agl.py:
+	  updated
+	  to
+	  aglfn
+	  1.6
+
+2008-05-16 15:07  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  cmap
+	  format
+	  1
+	  support,
+	  contributed
+	  by
+	  rroberts
+
+2008-05-16 14:28  pabs3
+
+	* MANIFEST,
+	  MANIFEST.in,
+	  MetaTools/makeTarball.py:
+	  Use
+	  setup.py
+	  sdist
+	  to
+	  create
+	  the
+	  tarball
+	  for
+	  distribution
+
+2008-05-16 08:45  pabs3
+
+	* Doc/ttx.1,
+	  setup.py:
+	  Add
+	  cleaned-up
+	  and
+	  updated
+	  manual
+	  page
+	  from
+	  the
+	  Debian
+	  package.
+
+2008-05-16 07:17  pabs3
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  Apply
+	  1296026:
+	  fix
+	  tracebacks
+	  in
+	  some
+	  timezones
+
+2008-03-11 07:25  jvr
+
+	* Lib/fontTools/misc/psLib.py:
+	  -
+	  turned
+	  ps
+	  exceptions
+	  into
+	  classes
+	  and
+	  renamed
+	  them
+
+2008-03-10 21:58  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py,
+	  Lib/fontTools/t1Lib.py:
+	  -
+	  t1Lib.py
+	  can
+	  now
+	  properly
+	  read
+	  PFA
+	  fonts -
+	  fixed
+	  "flex"
+	  bug
+	  in
+	  T1
+	  charstring
+	  reader
+
+2008-03-09 21:43  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  added
+	  refactoring
+	  note
+
+2008-03-09 20:48  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  minor
+	  fix:
+	  one
+	  zero
+	  too
+	  many
+	  in
+	  assert
+
+2008-03-09 20:39  jvr
+
+	* Lib/fontTools/ttx.py:
+	  added
+	  comment,
+	  the
+	  OTL
+	  Extension
+	  mechanism
+	  should
+	  not
+	  be
+	  here
+
+2008-03-09 20:13  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  fixed
+	  some
+	  comment
+	  typos
+
+2008-03-09 08:58  jvr
+
+	* Lib/fontTools/ttLib/tables/V_O_R_G_.py:
+	  don't
+	  crash
+	  on
+	  empty
+	  VORG
+	  table
+	  (reported
+	  by
+	  Werner
+	  Lemberg)
+
+2008-03-08 20:29  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  squash
+	  2
+	  bugs
+	  related
+	  to
+	  the
+	  numpy
+	  conversion
+
+2008-03-07 19:56  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  -
+	  use
+	  the
+	  builtin
+	  symbols
+	  instead
+	  of
+	  the
+	  types
+	  module
+
+2008-03-07 19:49  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  better
+	  float
+	  testing,
+	  so
+	  numpy.floats
+	  also
+	  work.
+
+2008-03-04 15:42  jvr
+
+	* Doc/install.txt:
+	  updated
+	  for
+	  numpy
+	  (this
+	  file
+	  needs
+	  a
+	  thorough
+	  review)
+
+2008-03-04 15:34  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_a_s_p.py:
+	  initialize
+	  data
+	  to
+	  empty
+	  string
+	  instead
+	  of
+	  list
+
+2008-03-04 15:34  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  ar.typecode()
+	  doesn't
+	  exist
+	  in
+	  numpy,
+	  but
+	  then
+	  again,
+	  this
+	  was
+	  overkill
+
+2008-03-04 15:25  jvr
+
+	* Lib/fontTools/misc/arrayTools.py,
+	  Lib/fontTools/misc/bezierTools.py,
+	  Lib/fontTools/nfntLib.py,
+	  Lib/fontTools/ttLib/sfnt.py,
+	  Lib/fontTools/ttLib/tables/G_P_K_G_.py,
+	  Lib/fontTools/ttLib/tables/_c_m_a_p.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/tables/_h_m_t_x.py,
+	  Lib/fontTools/ttLib/tables/_l_o_c_a.py,
+	  Lib/fontTools/ttLib/test/ttBrowser.py,
+	  setup.py:
+	  converted
+	  usage
+	  of
+	  Numeric
+	  to
+	  numpy
+
+2008-03-04 15:04  jvr
+
+	* Lib/fontTools/ttLib/test/ttBrowser.py:
+	  note
+	  this
+	  file
+	  is
+	  deprecated
+
+2008-03-04 15:02  jvr
+
+	* Lib/fontTools/ttLib/tables/_v_m_t_x.py:
+	  removed
+	  some
+	  redundant
+	  imports
+
+2008-03-04 14:47  jvr
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  -
+	  moved
+	  Numeric
+	  import
+	  to
+	  top -
+	  converted
+	  tests
+	  to
+	  doctest
+
+2008-03-01 17:26  jvr
+
+	* Doc/ChangeLog.txt:
+	  updated
+	  change
+	  log
+
+2008-03-01 17:22  jvr
+
+	* MANIFEST:
+	  updated
+	  file
+	  list
+
+2008-03-01 17:20  jvr
+
+	* Lib/fontTools/__init__.py,
+	  setup.py:
+	  post
+	  2.1
+	  version
+	  numbering
+
+2008-03-01 17:03  jvr
+
+	* Doc/bugs.txt:
+	  see
+	  sf
+	  tracker
+
+2008-03-01 16:43  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_a_s_p.py:
+	  the
+	  gasp
+	  portion
+	  of
+	  patch
+	  1675210:
+	  support
+	  for
+	  ClearType
+
+2008-03-01 15:31  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_m_t_x.py:
+	  fixed
+	  oversight
+	  in
+	  sys.byteorder
+	  transition
+
+2008-03-01 11:43  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/sfnt.py,
+	  Lib/fontTools/ttLib/tables/G_P_K_G_.py,
+	  Lib/fontTools/ttLib/tables/T_S_I__5.py,
+	  Lib/fontTools/ttLib/tables/_c_m_a_p.py,
+	  Lib/fontTools/ttLib/tables/_c_v_t.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/tables/_h_m_t_x.py,
+	  Lib/fontTools/ttLib/tables/_l_o_c_a.py,
+	  Lib/fontTools/ttLib/tables/_p_o_s_t.py:
+	  Use
+	  sys.byteorder,
+	  getting
+	  rid
+	  of
+	  ttLib.endian
+
+2008-03-01 11:34  jvr
+
+	* Lib/fontTools/misc/macCreatorType.py,
+	  Lib/fontTools/t1Lib.py,
+	  Lib/fontTools/ttx.py:
+	  -
+	  removed
+	  support
+	  for
+	  Python
+	  2.2
+	  on
+	  MacOS
+	  10.2 -
+	  worked
+	  around
+	  a
+	  bug
+	  in
+	  GetCreatorType()
+	  on
+	  intel
+	  Macs
+
+2008-03-01 09:42  jvr
+
+	* Lib/fontTools/ttx.py:
+	  Expose
+	  ignoreDecompileErrors
+	  as
+	  a
+	  command
+	  line
+	  option
+	  (-e,
+	  to
+	  set ignoreDecompileErrors
+	  to
+	  to
+	  false)
+
+2008-03-01 09:30  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  Make
+	  a
+	  hidden
+	  feature
+	  accessible:
+	  optionally
+	  ignore
+	  decompilation
+	  errors, falling
+	  back
+	  to
+	  DefaultTable,
+	  retaining
+	  the
+	  binary
+	  data.
+	  It's
+	  a
+	  bit dangerous
+	  to
+	  enable
+	  this
+	  by
+	  default,
+	  since
+	  it
+	  can
+	  lead
+	  to
+	  hiding
+	  other errors
+	  or
+	  bugs
+	  (in
+	  the
+	  font
+	  or
+	  fonttools
+	  itself).
+
+2008-02-29 14:43  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  -
+	  skip
+	  subtables
+	  of
+	  length
+	  zero -
+	  minor
+	  tweak
+	  in
+	  cmap
+	  4
+	  logic contributed
+	  by
+	  rroberts
+
+2008-02-19 18:49  jvr
+
+	* Lib/fontTools/ttLib/tables/T_S_I__1.py:
+	  fixed
+	  problem
+	  with
+	  private
+	  VTT
+	  table,
+	  found
+	  by
+	  Peter
+	  Bilak
+
+2008-01-28 07:11  pabs3
+
+	* Doc/ChangeLog.txt:
+	  Update
+	  changelog
+
+2008-01-28 07:09  pabs3
+
+	* Lib/fontTools/__init__.py:
+	  Woops,
+	  missed
+	  a
+	  version
+	  number
+
+2008-01-28 04:59  pabs3
+
+	* MANIFEST:
+	  Add
+	  a
+	  MANIFEST
+	  file
+	  so
+	  that
+	  we
+	  don't
+	  forget
+	  files
+	  in
+	  the
+	  source
+	  distribution
+
+2008-01-28 04:22  pabs3
+
+	* Doc/ChangeLog.txt:
+	  Update
+	  the
+	  changelog
+	  from
+	  the
+	  CVS
+	  history
+
+2008-01-28 04:19  pabs3
+
+	* setup.py:
+	  Get
+	  ready
+	  to
+	  release
+	  version
+	  2.1
+
+2008-01-28 04:00  pabs3
+
+	* setup.py:
+	  Just
+	  use
+	  fonttools
+	  as
+	  the
+	  tarball
+	  name.
+
+2007-11-14 07:06  pabs3
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  Fix
+	  1762552:
+	  traceback
+	  on
+	  amd64
+	  with
+	  DejaVuSans.ttf
+
+2007-10-22 09:31  jvr
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py:
+	  added
+	  'support'
+	  for
+	  OS/2
+	  version
+	  4:
+	  can
+	  anyone
+	  verify
+	  this
+	  is
+	  correct?
+	  I
+	  can't
+	  seem
+	  to
+	  find
+	  an
+	  OS/2
+	  v4
+	  spec...
+
+2007-08-25 06:19  pabs3
+
+	* Lib/fontTools/misc/textTools.py:
+	  Patch
+	  #1296028
+	  from
+	  Tomasz
+	  Wegrzanowski:
+	  improve
+	  performance
+	  with
+	  CJK
+	  fonts
+
+2006-10-21 14:12  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/otBase.py,
+	  Lib/fontTools/ttLib/tables/otConverters.py,
+	  Lib/fontTools/ttLib/tables/otData.py,
+	  Lib/fontTools/ttLib/tables/otTables.py,
+	  Lib/fontTools/ttx.py:
+	  Misc
+	  patches
+	  from
+	  rroberts: fontTools/ttx.py
+	  
+	  #
+	  support
+	  virtual
+	  GIDs,
+	  support
+	  handling
+	  some
+	  GSUB
+	  offset
+	  overflows. fontTools/ttlib/__init__.py #
+	  1)
+	  make
+	  getReverseGlyphMap
+	  
+	  a
+	  public
+	  function;
+	  I
+	  find
+	  a
+	  reverse
+	  map to
+	  often
+	  be
+	  useful #
+	  2)
+	  support
+	  virtual
+	  glyphs,
+	  e.g.
+	  references
+	  to
+	  GID's
+	  that
+	  are
+	  not
+	  in
+	  the
+	  font. #
+	  Added
+	  the
+	  TTFont
+	  argument
+	  allowVID
+	  (default
+	  0)
+	  to
+	  turn
+	  this
+	  off
+	  and
+	  on; #
+	  added
+	  the
+	  arg
+	  requireReal
+	  (
+	  default
+	  0)
+	  so
+	  as
+	  to
+	  get
+	  the
+	  obvious default
+	  behaviour
+	  when #
+	  allowVID
+	  is
+	  0
+	  or
+	  1,
+	  but
+	  to
+	  allow
+	  requiring
+	  a
+	  true
+	  GID
+	  when
+	  allowVID
+	  is
+	  1. fontTools/ttlib/tables/otBase.py
+	  fontTools/ttlib/tables/otConverters.py
+	  fontTools/ttlib/tables/otData.py
+	  fontTools/ttlib/tables/otTables.py
+	  #
+	  1)
+	  speed
+	  optimization #
+	  -
+	  collapse
+	  for
+	  loops #
+	  -
+	  do
+	  not
+	  decompile
+	  extension
+	  lookups
+	  until
+	  a
+	  record
+	  is
+	  requested from
+	  within
+	  the
+	  lookup. #
+	  2)
+	  handling
+	  offset
+	  overflows #
+	  3)
+	  support
+	  of
+	  extension
+	  lookups #
+	  4)
+	  Fixed
+	  FetauresParam
+	  converter
+	  class
+	  def
+	  so
+	  as
+	  to
+	  survive
+	  a
+	  font that
+	  has
+	  this
+	  offset
+	  non-NULL. #
+	  This
+	  fixes
+	  a
+	  stack
+	  dump. #
+	  The
+	  data
+	  will
+	  now
+	  just
+	  get
+	  ignored
+
+2006-10-21 13:54  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  patches
+	  from
+	  rroberts: #
+	  1)
+	  Switched
+	  to
+	  using
+	  Numeric
+	  module
+	  arrays
+	  rather
+	  than
+	  array
+	  modules
+	  arrays, #
+	  
+	  because
+	  of
+	  a
+	  memory
+	  leak
+	  in
+	  array.array
+	  when
+	  handling
+	  elements
+	  >
+	  1
+	  byte. #
+	  2)
+	  speed
+	  optimizations: #
+	  -
+	  
+	  For
+	  loops
+	  are
+	  collapsed
+	  when
+	  possible #
+	  -
+	  the
+	  data
+	  for
+	  a
+	  subtable
+	  is
+	  parsed
+	  only
+	  if
+	  a
+	  mapping
+	  value
+	  is
+	  requested #
+	  -
+	  if
+	  two
+	  subtables
+	  share
+	  the
+	  same
+	  data
+	  offset,
+	  then
+	  on decompilation,
+	  they
+	  will #
+	  share
+	  the
+	  same
+	  cmap
+	  dict,
+	  and
+	  not
+	  get
+	  decompiled
+	  twice.
+	  Same
+	  for
+	  compiling. #
+	  -
+	  as
+	  before,
+	  two
+	  tables
+	  with
+	  the
+	  same
+	  contents
+	  will
+	  get
+	  compiled
+	  to
+	  a
+	  single #
+	  data
+	  block
+	  in
+	  the
+	  font. #
+	  3)
+	  added
+	  
+	  (self.platformID,
+	  self.platEncID)
+	  ==
+	  (3,
+	  10)
+	  to
+	  the
+	  list of
+	  subtables
+	  that #
+	  get
+	  Unicode
+	  comments. #
+	  4)
+	  allow
+	  item
+	  reference
+	  by
+	  GID
+	  as
+	  well
+	  as
+	  by
+	  name.
+	  I
+	  did
+	  this
+	  when experimenting
+	  to
+	  see
+	  if
+	  using
+	  GID
+	  references
+	  only
+	  would
+	  speed
+	  the compile;
+	  it
+	  didn't
+	  but
+	  it
+	  seemed
+	  useful
+	  enough
+	  to
+	  leave
+	  in. #
+	  5)
+	  Fixed
+	  compile
+	  to/from
+	  XML:
+	  for
+	  cmap
+	  type
+	  unknown
+	  (
+	  aka
+	  cmap format
+	  10,
+	  in
+	  practice.)
+
+2006-10-21 13:41  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  Some
+	  edits
+	  from
+	  rroberts: #
+	  1)
+	  speed
+	  optimizations #
+	  2)
+	  fixed
+	  parseCharset0
+	  to
+	  support
+	  CFF-CID
+	  fonts. #
+	  3)
+	  fixed
+	  CharsetConverter.read
+	  to
+	  work
+	  a
+	  font
+	  that
+	  actually
+	  has
+	  one of
+	  the
+	  pre-canned
+	  encodings. #
+	  This
+	  fixes
+	  a
+	  stack
+	  dump. #
+	  I
+	  did
+	  not
+	  try
+	  to
+	  support
+	  using
+	  these
+	  encodings
+	  when
+	  writing
+	  a
+	  font, #
+	  as
+	  the
+	  cases
+	  will
+	  be
+	  so
+	  rare
+	  as
+	  to
+	  not
+	  justify
+	  the
+	  processing overhead
+	  for
+	  all
+	  other
+	  fonts. (Read:
+	  I
+	  took
+	  out
+	  some
+	  of
+	  your
+	  loop
+	  optimizations
+	  since
+	  I
+	  believe
+	  they made
+	  the
+	  code
+	  a
+	  lot
+	  less
+	  clear.
+	  I
+	  also
+	  have
+	  my
+	  doubts
+	  whether
+	  they
+	  were actually
+	  performance
+	  improvements.)
+
+2006-10-21 13:29  jvr
+
+	* Lib/fontTools/ttLib/tables/V_O_R_G_.py:
+	  Speed
+	  optimizations
+	  from
+	  rroberts
+
+2006-10-21 13:27  jvr
+
+	* Doc/documentation.html,
+	  Lib/fontTools/ttLib/tables/G_M_A_P_.py,
+	  Lib/fontTools/ttLib/tables/G_P_K_G_.py,
+	  Lib/fontTools/ttLib/tables/M_E_T_A_.py,
+	  Lib/fontTools/ttLib/tables/S_I_N_G_.py,
+	  Lib/fontTools/ttLib/tables/__init__.py:
+	  Some
+	  non-official
+	  OT
+	  tables
+	  from
+	  rrboerts.
+	  He
+	  wrote: There
+	  are
+	  also
+	  some
+	  new
+	  files,
+	  for
+	  SING
+	  glyphlet
+	  support,
+	  that
+	  you may
+	  or
+	  may
+	  not
+	  want
+	  to
+	  add,
+	  because
+	  they
+	  are
+	  not
+	  in
+	  the
+	  OpenType
+	  spec. M_E_T_A_.py
+	  #
+	  SING
+	  glyphlet
+	  meta
+	  data
+	  table.
+	  see
+	  'http://partners.adobe.com/public/developer/opentype/gdk/topic.html"
+	  S_I_N_G_.py
+	  #
+	  SING
+	  glyphlet
+	  basic
+	  info.
+	  See
+	  same
+	  web
+	  site
+	  as
+	  for
+	  META data
+	  table. G_M_A_P_.py
+	  #
+	  Summary
+	  of
+	  sing
+	  glyphlet
+	  info
+	  that
+	  has
+	  been
+	  stuck
+	  into a
+	  parent
+	  font.
+	  Not
+	  documented
+	  anywhere
+	  yet. G_P_K_G_.py
+	  #
+	  Opaque
+	  wrapper
+	  for
+	  SING
+	  glyphlet
+	  info;
+	  travels
+	  with application
+	  document.
+	  Is
+	  also
+	  stuck
+	  into
+	  augmented
+	  parent
+	  font.
+	  Not documented
+	  anywhere
+	  yet
+
+2006-10-21 13:16  jvr
+
+	* Lib/fontTools/nfntLib.py:
+	  make
+	  this
+	  module
+	  work
+	  with
+	  semi-recent
+	  MacPython
+
+2006-02-25 21:39  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  support
+	  the
+	  deprecated
+	  dotsection
+	  T2
+	  operator
+
+2006-01-25 15:24  fcoiffie
+
+	* Lib/fontTools/ttLib/tables/_k_e_r_n.py:
+	  In
+	  some
+	  bad
+	  fonts,
+	  kern
+	  table
+	  is
+	  incomplete
+	  (it
+	  only
+	  contains
+	  a
+	  version
+	  number).
+	  In
+	  this
+	  case,
+	  the
+	  code
+	  accept
+	  a
+	  table
+	  without
+	  kernTables.
+
+2006-01-25 15:21  fcoiffie
+
+	* Lib/fontTools/ttLib/tables/L_T_S_H_.py:
+	  LTSH
+	  length
+	  can
+	  be
+	  different
+	  of
+	  numGlyphs
+	  as
+	  the
+	  table
+	  length
+	  must
+	  be
+	  4-bytes
+	  aligned
+	  (assertion
+	  changed
+	  to
+	  (len(data)
+	  %
+	  numGlyphs)
+	  <
+	  4)
+
+2006-01-25 15:12  fcoiffie
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  The
+	  dates
+	  are
+	  stored
+	  in
+	  8-bytes
+	  fields
+	  (Microsoft
+	  reference
+	  document)
+	  but
+	  Macintosh
+	  dates
+	  are
+	  only
+	  coded
+	  with
+	  4-bytes.
+	  In
+	  some
+	  fonts,
+	  these
+	  date
+	  fields
+	  are
+	  badly
+	  coded
+	  and
+	  8-bytes
+	  are
+	  used.
+	  So,
+	  a
+	  ValueError
+	  occurs.
+
+2006-01-12 14:04  fcoiffie
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py,
+	  Lib/fontTools/ttLib/tables/_p_o_s_t.py:
+	  Unsigned
+	  long
+	  data
+	  field
+	  must
+	  be
+	  packed
+	  with
+	  "L"
+	  instead
+	  of
+	  "l"
+	  (sometimes
+	  an
+	  OverflowError
+	  can
+	  occur)
+
+2005-06-24 09:35  jvr
+
+	* Lib/fontTools/fondLib.py:
+	  Hmm,
+	  fondLib
+	  has
+	  been
+	  broken
+	  on
+	  Python.framework
+	  for
+	  a
+	  while:
+	  I
+	  used the
+	  native
+	  struct
+	  alignment,
+	  which
+	  is
+	  different
+	  on
+	  OSX.
+	  Changed
+	  all struct
+	  calls
+	  to
+	  explicitly
+	  use
+	  big
+	  endian
+	  (ready
+	  for
+	  x86...),
+	  which also
+	  fixes
+	  the
+	  alignment
+	  issue.
+
+2005-05-07 08:41  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  some
+	  flex
+	  hint
+	  fixes
+	  from
+	  rroberts
+
+2005-04-10 13:18  jvr
+
+	* Lib/fontTools/pens/basePen.py:
+	  avoid
+	  glyphSet.get():
+	  not
+	  all
+	  glyphsets
+	  in
+	  use
+	  implement
+	  it.
+
+2005-03-08 09:50  jvr
+
+	* Lib/fontTools/pens/basePen.py,
+	  Lib/fontTools/ttLib/__init__.py:
+	  BasePen
+	  should
+	  not
+	  fail
+	  if
+	  a
+	  base
+	  glyph
+	  does
+	  not
+	  exist
+	  in
+	  the
+	  glyph
+	  set;
+	  added
+	  get()
+	  method
+	  to
+	  _TTGlyphSet
+	  class
+
+2005-03-08 09:40  jvr
+
+	* Lib/fontTools/pens/pointInsidePen.py:
+	  added
+	  _endPath
+	  method;
+	  without
+	  it,
+	  we'd
+	  fail
+	  on
+	  open
+	  paths
+	  (which
+	  requires
+	  pen.endPath()
+	  to
+	  be
+	  called
+	  instead
+	  of
+	  pen.closePath())
+
+2005-02-25 22:31  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  use
+	  highly
+	  unscientific
+	  epsilon
+	  value
+
+2005-02-25 12:51  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  more
+	  doco,
+	  reformatted
+	  __all__
+
+2005-02-25 12:40  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  reworked
+	  test
+	  code
+	  and
+	  results,
+	  to
+	  make
+	  the
+	  results
+	  more
+	  readable
+
+2005-02-25 12:28  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  Refactored
+	  splitting
+	  logic;
+	  added
+	  splitQuadraticAtT()
+	  and
+	  splitCubicAtT()
+
+2005-02-25 10:47  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  show/test
+	  that
+	  _testrepr()
+	  reprs
+	  Numeric
+	  arrays
+	  nicely,
+	  too
+
+2005-02-25 10:42  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  added
+	  a
+	  comment
+
+2005-02-25 10:40  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  factored
+	  out
+	  param
+	  ->
+	  points
+	  conversion
+
+2005-02-25 10:33  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  renamed
+	  and
+	  rewrote
+	  _tuplify()
+	  to
+	  _testrepr(),
+	  added
+	  tests
+	  for
+	  splitCubic()
+
+2005-02-25 10:11  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  some
+	  refactoring,
+	  some
+	  doctests
+
+2005-02-23 22:15  jvr
+
+	* Doc/ChangeLog.txt:
+	  hm,
+	  it's
+	  been
+	  more
+	  than
+	  a
+	  year
+	  and
+	  a
+	  half
+	  since
+	  I
+	  regenerated
+	  ChangeLog.txt...
+
+2005-02-23 21:22  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  This
+	  patch
+	  fixes
+	  two
+	  things -
+	  in
+	  T2
+	  charstrings,
+	  a
+	  byte
+	  code
+	  of
+	  255
+	  is
+	  followed
+	  by
+	  a
+	  16.16
+	  fixed
+	  
+	  point
+	  number,
+	  not
+	  a
+	  4-byte
+	  int
+	  as
+	  in
+	  T1.
+	  Noted
+	  by
+	  rroberts. -
+	  some
+	  integers
+	  were
+	  not
+	  correctly
+	  encoded
+	  in
+	  the
+	  T1
+	  compiler.
+
+2005-02-11 19:36  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  fixed
+	  problem
+	  with
+	  empty
+	  ClassDef,
+	  as
+	  well
+	  as
+	  added
+	  some
+	  more
+	  defenses
+	  for
+	  possible
+	  empty
+	  tables
+
+2005-01-25 19:06  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  expose
+	  onlyHeader
+	  keyword
+	  arg
+	  to
+	  generic
+	  read()
+	  func
+
+2005-01-24 10:18  jvr
+
+	* Lib/fontTools/ttLib/tables/T_S_I__0.py:
+	  uh,
+	  and
+	  the
+	  other
+	  one
+
+2005-01-24 10:06  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  fixed
+	  buglet
+	  in
+	  GlyphSet
+	  support
+	  code
+
+2005-01-24 10:05  jvr
+
+	* Lib/fontTools/ttLib/tables/T_S_I__0.py:
+	  fixed
+	  2.4
+	  compat
+	  issue
+
+2005-01-17 21:34  jvr
+
+	* Lib/xmlWriter.py:
+	  -
+	  rename
+	  file
+	  to
+	  fileOrPath -
+	  check
+	  for
+	  capability,
+	  not
+	  type,
+	  so
+	  XMLWriter
+	  can
+	  hanlde
+	  unicode
+	  
+	  filenames
+	  (on
+	  OS-es
+	  that
+	  support
+	  them).
+
+2004-12-24 16:07  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  fix
+	  for
+	  new
+	  2.4
+	  hex()
+	  behavior
+
+2004-12-24 15:59  jvr
+
+	* Lib/fontTools/ttx.py:
+	  fix
+	  for
+	  new
+	  2.4
+	  hex()
+	  behavior
+
+2004-12-14 07:55  jvr
+
+	* Windows/README.TXT,
+	  Windows/fonttools-win-setup.iss,
+	  Windows/mcmillan.bat:
+	  Updates
+	  from
+	  Adam
+	  Twardoch.
+	  Thanks!
+
+2004-11-16 10:37  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/sfnt.py:
+	  Refactored
+	  and
+	  enhanced
+	  table
+	  order
+	  support: -
+	  Rewrote
+	  sorting
+	  function,
+	  it
+	  was
+	  really
+	  quite
+	  buggy. -
+	  Added
+	  reorderFontTables()
+	  functions,
+	  which
+	  reorders
+	  the
+	  
+	  tables
+	  in
+	  a
+	  font
+	  at
+	  the
+	  sfnt
+	  level. -
+	  TTFont.save()
+	  will
+	  now
+	  by
+	  default
+	  rewrite
+	  the
+	  font
+	  in
+	  the
+	  
+	  optimized
+	  order.
+	  This
+	  is
+	  done
+	  through
+	  a
+	  temp
+	  file
+	  since
+	  
+	  our
+	  dependency
+	  checking
+	  logic
+	  gets
+	  in
+	  the
+	  way
+	  of
+	  writing
+	  
+	  the
+	  tables
+	  in
+	  a
+	  predefined
+	  order
+	  directly
+	  (if
+	  table
+	  A
+	  depends
+	  
+	  on
+	  B,
+	  table
+	  B
+	  will
+	  always
+	  be
+	  compiled
+	  and
+	  written
+	  first,
+	  so
+	  
+	  this
+	  prevents
+	  A
+	  from
+	  showing
+	  up
+	  in
+	  the
+	  file
+	  before
+	  B). sfnt.py: -
+	  removed
+	  closeStream
+	  option
+	  from
+	  SFNTWriter.close();
+	  it's
+	  better
+	  
+	  done
+	  by
+	  the
+	  caller
+	  (TTFont).
+
+2004-11-16 09:12  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  tweak
+	  &
+	  bugfix
+
+2004-09-26 18:32  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  make
+	  sure
+	  that
+	  a
+	  cmap
+	  subtable
+	  instance
+	  always
+	  has
+	  a
+	  language
+	  attr,
+	  so
+	  __cmp__
+	  can't
+	  fail
+
+2004-09-25 10:56  jvr
+
+	* Lib/fontTools/ttLib/tables/_k_e_r_n.py:
+	  Fix
+	  for
+	  [
+	  808370
+	  ]
+	  Dumping
+	  Legendum.otf
+	  fails
+	  on
+	  'kern'
+	  table Work
+	  around
+	  buggy
+	  kern
+	  table.
+
+2004-09-25 10:31  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  [
+	  637398
+	  ]
+	  Failure
+	  while
+	  parsing
+	  OpenType
+	  file Deal
+	  with
+	  empty
+	  Coverage
+	  table:
+	  it
+	  will
+	  be
+	  None
+	  so
+	  won't
+	  have
+	  a
+	  .glyphs attribute.
+
+2004-09-25 10:01  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  workaround
+	  for
+	  bug
+	  [
+	  766694
+	  ]
+	  Error
+	  from
+	  invalid
+	  date
+
+2004-09-25 09:12  jvr
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  bug
+	  #784690:
+	  simple
+	  workaround
+	  for
+	  buggy
+	  name
+	  table
+
+2004-09-25 09:06  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  -
+	  Refactored
+	  XML
+	  writing,
+	  removed
+	  lots
+	  of
+	  code
+	  duplicaiton -
+	  Only
+	  output
+	  unicode
+	  names
+	  as
+	  comments
+	  if
+	  we're
+	  in
+	  fact
+	  dealing
+	  with
+	  
+	  a
+	  unicode
+	  cmap
+	  subtable
+	  (and
+	  this
+	  is
+	  --
+	  in
+	  theory
+	  --
+	  independent
+	  of
+	  
+	  cmap
+	  format)
+
+2004-09-25 08:24  jvr
+
+	* MetaTools/roundTrip.py,
+	  Tools/ttx:
+	  whoops,
+	  rolling
+	  back
+	  accidental
+	  #!
+	  commits
+
+2004-09-25 08:12  jvr
+
+	* Lib/fontTools/agl.py:
+	  "Downgraded"
+	  AGL
+	  list
+	  to
+	  the
+	  "Adobe
+	  Glyph
+	  List
+	  For
+	  New
+	  Fonts",
+	  which
+	  is most
+	  appropriate
+	  here.
+	  There
+	  may
+	  be
+	  a
+	  use
+	  for
+	  the
+	  "big"
+	  AGL,
+	  but
+	  that
+	  will have
+	  to
+	  become
+	  a
+	  new
+	  module.
+
+2004-09-25 07:47  jvr
+
+	* Lib/fontTools/unicode.py,
+	  MetaTools/roundTrip.py,
+	  Tools/ttx:
+	  [
+	  845172
+	  ]
+	  Updating
+	  to
+	  Unicode
+	  4.0.0 Instead
+	  of
+	  using
+	  a
+	  list
+	  internally,
+	  I
+	  now
+	  use
+	  a
+	  dict,
+	  since
+	  the
+	  unicode mapping
+	  is
+	  quite
+	  sparse
+	  (lots
+	  of
+	  unused
+	  slots).
+
+2004-09-25 07:35  jvr
+
+	* LICENSE.txt,
+	  Lib/fontTools/ttx.py:
+	  Patch
+	  #845551
+	  from
+	  Anthony
+	  Fok: -
+	  two
+	  minor
+	  typos -
+	  changed
+	  copyright
+	  year
+	  in
+	  LICENSE
+	  (and
+	  it's
+	  2004
+	  now...)
+
+2004-09-25 07:30  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py,
+	  Lib/fontTools/ttLib/tables/_l_o_c_a.py:
+	  Patch
+	  #845571
+	  from
+	  Anthony
+	  Fok: -
+	  better
+	  exception
+	  msg
+	  in
+	  loca
+	  table -
+	  renamed
+	  "version"
+	  to
+	  "language"
+	  in
+	  cmap -
+	  made
+	  cmap
+	  12
+	  work
+	  (untested
+	  by
+	  me)
+
+2004-09-25 07:19  jvr
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py:
+	  whoops,
+	  forgot
+	  one
+	  part
+	  os
+	  OS/2
+	  version
+	  3
+	  support
+
+2004-09-24 18:33  jvr
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py:
+	  added
+	  support
+	  for
+	  OS/2
+	  table
+	  #3
+
+2003-10-14 20:30  jvr
+
+	* Lib/fontTools/pens/pointInsidePen.py:
+	  Fixed
+	  subtle
+	  bug
+	  in
+	  curve
+	  intersection
+	  logic:
+	  due
+	  to
+	  floating
+	  point
+	  errors, sometimes
+	  a
+	  legitimate
+	  solution
+	  is
+	  ever
+	  so
+	  slightly
+	  over
+	  1.0.
+	  Those
+	  used
+	  to be
+	  filtered
+	  out;
+	  now
+	  checking
+	  for
+	  1.0
+	  +
+	  1e-10.
+
+2003-09-22 13:12  jvr
+
+	* Lib/fontTools/ttLib/tables/otData.py,
+	  Lib/fontTools/ttLib/tables/otTables.py:
+	  ReverseChainSingleSubst
+	  support
+	  from
+	  Yannis
+	  H.
+	  (must
+	  get
+	  that
+	  generate-otdata-from-the-docs
+	  working
+	  again)
+
+2003-09-22 07:09  jvr
+
+	* Lib/fontTools/ttLib/tables/otData.py:
+	  bug
+	  from
+	  the
+	  spec
+	  leaked
+	  into
+	  here;
+	  pointed
+	  out
+	  by
+	  Yannis
+	  H.
+
+2003-09-18 07:33  jvr
+
+	* Doc/install.txt:
+	  checked
+	  in
+	  with
+	  unix
+	  line
+	  endings
+	  --
+	  this
+	  probably
+	  needs
+	  proper
+	  review
+
+2003-09-17 17:32  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  -
+	  Implemented
+	  the
+	  flex
+	  operators
+	  for
+	  T2 -
+	  Changed
+	  a
+	  whole
+	  bunch
+	  of
+	  XXX
+	  traps
+	  into
+	  NotImplementedErrors
+
+2003-09-16 11:30  jvr
+
+	* Lib/fontTools/misc/transform.py:
+	  more
+	  doctests
+
+2003-09-16 11:01  jvr
+
+	* Lib/fontTools/misc/transform.py:
+	  Added
+	  lots
+	  of
+	  doco
+	  and
+	  doctests.
+
+2003-09-16 10:14  jvr
+
+	* Lib/fontTools/pens/transformPen.py:
+	  debogofied
+	  doc
+	  string,
+	  added
+	  another
+	  one
+
+2003-09-16 09:48  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  -
+	  Properly
+	  support
+	  the
+	  pen
+	  protocol
+	  for
+	  open
+	  sub
+	  paths
+	  in
+	  Type
+	  1
+
+2003-09-15 12:26  jvr
+
+	* Lib/fontTools/pens/reportLabPen.py:
+	  Added
+	  Pen
+	  for
+	  reportlab.graphics.
+
+2003-09-11 07:11  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  this
+	  should
+	  have
+	  been
+	  part
+	  of
+	  the
+	  previous
+	  path
+	  by
+	  some
+	  fixes
+	  from
+	  klchxbec
+
+2003-09-09 23:29  jvr
+
+	* Lib/fontTools/pens/transformPen.py:
+	  Correctly
+	  deal
+	  with
+	  the
+	  TT-no-on-curve
+	  special
+	  case.
+
+2003-09-07 09:41  jvr
+
+	* Lib/fontTools/pens/basePen.py:
+	  Factored
+	  out
+	  the
+	  SuperBezier
+	  and
+	  TT-implied-point
+	  algorithms,
+	  as
+	  the may
+	  be
+	  useful
+	  separately
+	  from
+	  pens.
+
+2003-09-06 16:00  jvr
+
+	* Lib/fontTools/pens/basePen.py:
+	  -
+	  added
+	  endPath()
+	  method
+	  to
+	  the
+	  Pen
+	  protocol,
+	  as
+	  a
+	  counterpart
+	  for
+	  
+	  closePath()
+	  for
+	  *open*
+	  sub
+	  paths.
+	  This
+	  allows
+	  pen
+	  implementations
+	  
+	  to
+	  reliably
+	  detect
+	  the
+	  end
+	  of
+	  a
+	  sub
+	  path. -
+	  improved
+	  various
+	  doc
+	  strings.
+
+2003-09-05 14:18  jvr
+
+	* Lib/fontTools/pens/basePen.py:
+	  ensure
+	  that
+	  the
+	  current
+	  point
+	  is
+	  always
+	  set
+	  correctly
+
+2003-09-02 19:23  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  tweaked
+	  doc
+	  string
+
+2003-09-01 16:10  jvr
+
+	* Doc/documentation.html:
+	  more
+	  acks
+
+2003-09-01 15:09  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_h_e_a.py:
+	  Ha,
+	  a
+	  reserved
+	  field
+	  got
+	  eaten.
+	  Noticed
+	  by
+	  Yannis
+	  Haralambous.
+
+2003-08-30 06:46  jvr
+
+	* Doc/ChangeLog.txt:
+	  ***
+	  empty
+	  log
+	  message
+	  ***
+
+2003-08-29 19:29  jvr
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  -
+	  renamed
+	  all
+	  l,t,r,b
+	  tuff
+	  to
+	  xMin,
+	  yMin,
+	  xMax,
+	  yMax -
+	  added
+	  ome
+	  more
+	  doc
+	  strings -
+	  added
+	  some
+	  minimal
+	  test
+	  code
+
+2003-08-29 08:05  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  T2:
+	  I'm
+	  not
+	  sure
+	  if
+	  the
+	  seac-variant
+	  of
+	  the
+	  endchar
+	  operator
+	  may
+	  be combined
+	  with
+	  actual
+	  outlines,
+	  but
+	  if
+	  it
+	  is,
+	  we
+	  need
+	  to
+	  do
+	  the
+	  closePath before
+	  the
+	  components
+	  are
+	  added.
+
+2003-08-28 20:43  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  added
+	  deprecated
+	  endchar/seac
+	  support
+	  for
+	  T2
+	  charstrings
+
+2003-08-28 19:30  jvr
+
+	* Lib/fontTools/pens/basePen.py:
+	  -
+	  added
+	  support
+	  for
+	  quadratic
+	  contours
+	  that
+	  have
+	  NO
+	  on-curve
+	  points. -
+	  more
+	  doco
+	  and
+	  comments.
+
+2003-08-28 19:03  jvr
+
+	* Lib/fontTools/pens/pointInsidePen.py:
+	  more
+	  doco
+	  and
+	  comments
+
+2003-08-28 18:23  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  workaround
+	  for
+	  buggy
+	  2.2
+	  mac
+	  support
+
+2003-08-28 18:14  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  whitespace
+	  nits
+
+2003-08-28 18:04  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  Another
+	  patch
+	  from
+	  rroberts.
+	  He
+	  writes: """It
+	  adds
+	  full
+	  support
+	  for
+	  cmap
+	  format
+	  2,
+	  which
+	  is
+	  what the
+	  Adobe
+	  CJK
+	  fonts
+	  use
+	  for
+	  the
+	  Mac
+	  cmap
+	  subtable."""
+
+2003-08-28 17:59  jvr
+
+	* setup.py:
+	  whoops,
+	  forgot
+	  to
+	  add
+	  the
+	  .pens
+	  subpacke
+	  to
+	  the
+	  distutils
+	  script
+	  :-(
+	  noticed
+	  by
+	  rroberts.
+
+2003-08-28 08:51  jvr
+
+	* Lib/fontTools/pens/pointInsidePen.py:
+	  Is
+	  the
+	  point
+	  inside
+	  or
+	  outside
+	  the
+	  outline?
+
+2003-08-26 19:20  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  -
+	  Fixed
+	  ZeroDivisionError
+	  in
+	  solveCubic().
+	  The
+	  solution
+	  is
+	  mathematically dubious
+	  (I
+	  don't
+	  think
+	  0.0/0.0
+	  ==
+	  0.0...)
+	  but
+	  the
+	  result
+	  seems
+	  to
+	  be correct. -
+	  Documented
+	  that
+	  soleCubic()
+	  and
+	  solveQuadratic()
+	  are
+	  not
+	  guaranteed
+	  to return
+	  the
+	  roots
+	  in
+	  order,
+	  and
+	  nor
+	  that
+	  they
+	  are
+	  guaranteed
+	  to
+	  not
+	  return duplicate
+	  roots.
+
+2003-08-26 19:00  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  Set
+	  .width
+	  in
+	  _TTGlyph.__init__
+	  after
+	  all:
+	  these
+	  are
+	  just
+	  this
+	  wrapper objects,
+	  _TTGlyphSet
+	  doesn't
+	  cache
+	  them,
+	  so
+	  setting
+	  .width
+	  in
+	  .draw() is
+	  confusing
+	  to
+	  say
+	  the
+	  least.
+
+2003-08-26 18:20  jvr
+
+	* Lib/fontTools/pens/cocoaPen.py:
+	  new
+	  Cocoa=specific
+	  drawing
+	  pen
+
+2003-08-26 18:19  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  fixed
+	  AttributeError
+	  in
+	  _TTGlyphSet.keys()
+
+2003-08-26 12:02  jvr
+
+	* Doc/documentation.html:
+	  typo
+	  pointed
+	  out
+	  by
+	  Adam
+	  T.
+
+2003-08-25 21:19  jvr
+
+	* MetaTools/buildTableList.py:
+	  output
+	  don't-edit
+	  note
+
+2003-08-25 21:19  jvr
+
+	* Lib/fontTools/ttLib/tables/__init__.py:
+	  document
+	  that
+	  this
+	  file
+	  is
+	  generated
+
+2003-08-25 21:16  jvr
+
+	* Doc/documentation.html:
+	  add
+	  rroberts
+	  to
+	  the
+	  Acknowledgements
+	  section;
+	  updated
+	  some
+	  years
+
+2003-08-25 17:53  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  add
+	  the
+	  generic
+	  getGlyphSet()
+	  API
+	  to
+	  T1Font
+	  as
+	  well.
+
+2003-08-25 13:20  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  comment
+	  typo
+	  fix,
+	  reflow
+
+2003-08-25 13:18  jvr
+
+	* Doc/ChangeLog.txt:
+	  lots
+	  of
+	  stuff
+
+2003-08-25 13:15  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  TTFont
+	  now
+	  has
+	  a
+	  getGlyphSet()
+	  method,
+	  which
+	  will
+	  return
+	  a
+	  generic GlyphSet.
+	  A
+	  GlyphSet
+	  is
+	  simply
+	  a
+	  dict-like
+	  object
+	  mapping
+	  glyph
+	  names to
+	  glyphs.
+	  The
+	  glyphs
+	  in
+	  a
+	  GlyphSet
+	  have
+	  a
+	  .draw(pen)
+	  method
+	  and
+	  a .width
+	  attribute.
+	  This
+	  provides
+	  a
+	  generic
+	  interface
+	  for
+	  drawing
+	  glyphs or
+	  extracting
+	  outlines,
+	  and
+	  works
+	  both
+	  for
+	  CFF-based
+	  fonts
+	  and
+	  TT
+	  fonts. See
+	  also
+	  fontTools.pens.basePen
+	  for
+	  a
+	  description
+	  of
+	  what
+	  makes
+	  a
+	  Pen a
+	  Pen.
+
+2003-08-25 12:23  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  add
+	  some
+	  more
+	  dict-like
+	  stuff
+	  to
+	  the
+	  glyf
+	  table
+
+2003-08-25 07:37  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  small
+	  nits
+
+2003-08-24 19:56  jvr
+
+	* Lib/fontTools/cffLib.py,
+	  Lib/fontTools/misc/psCharStrings.py,
+	  Lib/fontTools/t1Lib.py:
+	  Refactored
+	  outline
+	  extraction
+	  for
+	  CharStrings.
+	  The
+	  interface
+	  to T{1,2}OutlineExtractor
+	  is
+	  not
+	  backwards
+	  compatible
+	  and
+	  this
+	  change basically
+	  makes
+	  them
+	  private
+	  classes:
+	  CharStrings
+	  now
+	  have
+	  a
+	  .draw() method
+	  that
+	  takes
+	  a
+	  Pen
+	  object
+	  (see
+	  fontTools.pens.*),
+	  so
+	  you
+	  never have
+	  to
+	  deal
+	  with
+	  the
+	  extractor
+	  objects
+	  yourself.
+	  Only
+	  lightly
+	  tested.
+
+2003-08-24 19:52  jvr
+
+	* Lib/fontTools/ttx.py:
+	  don't
+	  use
+	  macfs,
+	  it's
+	  deprecated
+
+2003-08-24 17:23  jvr
+
+	* Lib/fontTools/pens/basePen.py:
+	  small
+	  tweak
+
+2003-08-24 16:25  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  added
+	  and
+	  tweaked
+	  some
+	  asserts
+
+2003-08-24 16:17  jvr
+
+	* Lib/fontTools/misc/transform.py:
+	  remove
+	  trailing
+	  whitespace
+
+2003-08-24 09:48  jvr
+
+	* Lib/fontTools/pens/transformPen.py:
+	  ugh,
+	  lineTo
+	  !=
+	  moveTo...
+
+2003-08-23 20:24  jvr
+
+	* Lib/fontTools/pens/basePen.py,
+	  Lib/fontTools/pens/boundsPen.py:
+	  wrapped
+	  some
+	  long
+	  lines
+
+2003-08-23 20:19  jvr
+
+	* Lib/fontTools/pens,
+	  Lib/fontTools/pens/__init__.py,
+	  Lib/fontTools/pens/basePen.py,
+	  Lib/fontTools/pens/boundsPen.py,
+	  Lib/fontTools/pens/transformPen.py:
+	  Pen
+	  stuff,
+	  see
+	  http://just.letterror.com/cgi-bin/wypy?PenProtocol Only
+	  lightly
+	  tested,
+	  component
+	  support
+	  is
+	  not
+	  tested
+	  at
+	  all.
+
+2003-08-22 20:21  jvr
+
+	* Lib/fontTools/ttLib/tables/otData.py:
+	  some
+	  fixes
+	  from
+	  klchxbec
+
+2003-08-22 20:02  jvr
+
+	* Lib/fontTools/ttLib/tables/V_O_R_G_.py:
+	  VORG
+	  support
+	  by
+	  rroberts.
+
+2003-08-22 19:53  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  Lots
+	  of
+	  CID
+	  work
+	  by
+	  rroberts.
+
+2003-08-22 19:44  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  -
+	  attempted
+	  to
+	  sort
+	  tables
+	  in
+	  order
+	  recommended
+	  by
+	  spec.
+	  
+	  TODO:
+	  need
+	  to
+	  fix
+	  table
+	  dependency
+	  order
+	  to
+	  complete
+	  this.
+	  
+	  (Read:
+	  would
+	  you
+	  mind
+	  posting
+	  a
+	  bug
+	  report
+	  regarding
+	  this?)
+
+2003-08-22 19:38  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  support
+	  for
+	  CEF
+	  fonts:
+	  don't
+	  depend
+	  on
+	  the
+	  head
+	  table
+	  being
+	  available
+
+2003-08-22 19:34  jvr
+
+	* Lib/fontTools/ttLib/tables/_m_a_x_p.py:
+	  recalc
+	  numGlyphs
+	  upon
+	  writing
+
+2003-08-22 18:56  jvr
+
+	* Lib/fontTools/ttLib/macUtils.py:
+	  update
+	  macUtils
+	  to
+	  current
+	  day
+	  MacPython
+
+2003-08-22 18:53  jvr
+
+	* Lib/fontTools/nfntLib.py:
+	  attempt
+	  to
+	  set
+	  the
+	  value
+	  for
+	  fRectWidth
+	  'more
+	  correctly'
+
+2003-08-22 18:52  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  some
+	  modernizations
+
+2003-08-22 18:50  jvr
+
+	* Lib/fontTools/ttx.py:
+	  Jaguar
+	  Python
+	  2.2
+	  workaround
+
+2003-08-22 14:56  jvr
+
+	* Lib/fontTools/misc/transform.py:
+	  this
+	  module
+	  has
+	  been
+	  included
+	  in
+	  so
+	  many
+	  (in
+	  house)
+	  packages
+	  that
+	  it's
+	  time
+	  it
+	  gets
+	  a
+	  more
+	  central
+	  place.
+
+2003-06-29 19:25  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  -
+	  optimized
+	  a
+	  couple
+	  of
+	  invariant
+	  expressions -
+	  made
+	  sure
+	  solveCubic()
+	  also
+	  works
+	  when
+	  called
+	  with
+	  integer
+	  arguments
+
+2003-06-29 18:32  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  splitLine():
+	  make
+	  sure
+	  the
+	  split
+	  is
+	  between
+	  the
+	  end
+	  points
+
+2003-06-29 18:25  jvr
+
+	* Lib/fontTools/misc/bezierTools.py:
+	  new
+	  module
+	  bezierTools.py
+
+2003-06-29 18:18  jvr
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  two
+	  new
+	  functions
+
+2003-06-07 15:15  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  avoid
+	  FSSpec
+	  on
+	  MacOS
+
+2003-05-24 12:50  jvr
+
+	* Lib/fontTools/afmLib.py:
+	  add
+	  default
+	  _attrs
+	  value
+	  so
+	  pickling
+	  AFM
+	  objects
+	  doesn't
+	  blow
+	  up
+
+2003-05-24 12:34  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  updated
+	  for
+	  MacPython2.3
+
+2003-02-23 19:40  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  Fix
+	  for
+	  bug
+	  #691744;
+	  calc_mac_epoch_diff()
+	  was
+	  broken
+	  when
+	  the
+	  timezone was
+	  GMT
+	  (or
+	  perhaps
+	  other
+	  situations;
+	  it's
+	  not
+	  entirely
+	  clear).
+
+2003-02-08 10:45  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  cmap
+	  format
+	  12
+	  support,
+	  donated
+	  by
+	  rroberts:
+	  thanks!
+
+2003-01-25 18:20  jvr
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  second
+	  try
+	  to
+	  work
+	  around
+	  bogus
+	  stringOffset
+	  value
+
+2003-01-25 11:15  jvr
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  renamed
+	  stringoffset
+	  to
+	  stringOffset
+	  as
+	  per
+	  spec
+
+2003-01-25 11:14  jvr
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  gracefully
+	  handle
+	  bogus
+	  stringOffset
+	  values
+	  (thanks
+	  to
+	  Anthony
+	  Fok)
+
+2003-01-10 22:34  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  clean
+	  up
+	  checkSumAdjustment
+	  XML
+	  output:
+	  suppress
+	  trialing
+	  'L'
+
+2003-01-10 22:23  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  fix
+	  from
+	  Owen
+	  Taylor
+	  that
+	  fixes
+	  my
+	  previous
+	  patch;
+	  thanks!
+
+2003-01-03 21:29  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  detab
+	  table
+	  string
+	  literal
+
+2003-01-03 21:23  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  make
+	  two
+	  fields
+	  unsigned,
+	  to
+	  conform
+	  to
+	  the
+	  spec
+	  but
+	  also
+	  to
+	  suppress
+	  Python
+	  2.3
+	  warnings
+	  for
+	  hex(negativenumber).
+
+2003-01-03 21:01  jvr
+
+	* setup.py:
+	  edited
+	  meta
+	  info,
+	  added
+	  trove
+	  classification
+
+2003-01-03 20:57  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  suppres
+	  Python
+	  2.3
+	  warning
+
+2003-01-03 20:56  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  Added
+	  support
+	  for
+	  the
+	  Encoding
+	  field.
+	  (Adam,
+	  please
+	  let
+	  me
+	  know
+	  if
+	  this works
+	  for
+	  you.)
+
+2003-01-03 20:54  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  make
+	  sure
+	  Coverage
+	  instances
+	  have
+	  a
+	  'glyphs'
+	  attribute
+
+2003-01-03 20:52  jvr
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py:
+	  allow
+	  OS/2
+	  tables
+	  containing
+	  too
+	  much
+	  data
+
+2002-11-26 14:09  jvr
+
+	* Lib/fontTools/afmLib.py:
+	  allow
+	  negative
+	  advance
+	  widths
+
+2002-10-29 15:51  jvr
+
+	* Doc/ChangeLog.txt:
+	  it's
+	  been
+	  a
+	  while.
+
+2002-10-29 15:49  jvr
+
+	* Lib/fontTools/fondLib.py:
+	  try
+	  Carbon.Res
+	  first.
+
+2002-10-27 19:47  jvr
+
+	* Lib/fontTools/ttLib/standardGlyphOrder.py:
+	  revised
+	  comment,
+	  added
+	  note
+	  about
+	  MS
+	  disagreement,
+	  removed
+	  alignment
+	  tabs
+
+2002-10-27 09:11  jvr
+
+	* Windows/fonttools-win-setup.iss,
+	  Windows/fonttools-win-setup.txt:
+	  Patches
+	  from
+	  Adam: So,
+	  meanwhile,
+	  attached
+	  is
+	  a
+	  slightly
+	  improved
+	  isntaller.
+	  Now,
+	  .ttx
+	  files are
+	  registered
+	  as
+	  XML
+	  files
+	  so
+	  you
+	  can
+	  use
+	  Internet
+	  Explorer
+	  etc.
+	  to
+	  view them.
+	  Also,
+	  I'm
+	  creating
+	  a
+	  shortcut
+	  in
+	  the
+	  "SendTo"
+	  structure,
+	  so
+	  the
+	  user can
+	  click
+	  with
+	  RMB
+	  on
+	  the
+	  TTF,
+	  OTF
+	  or
+	  TTX
+	  file,
+	  then
+	  select
+	  Send
+	  To
+	  /
+	  TTX. Works
+	  with
+	  multiple
+	  files,
+	  very
+	  nice.
+
+2002-10-08 14:22  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  fixed
+	  previous
+	  fix:
+	  it
+	  assumed
+	  4
+	  bytes
+	  of
+	  data,
+	  which
+	  is
+	  wrong
+
+2002-10-07 21:34  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  Handle
+	  negative
+	  long
+	  time
+	  values
+	  gracefully
+	  instead
+	  of
+	  looping
+	  infinitely.
+	  Reported
+	  by
+	  Jessica
+	  P.
+	  Hekman
+
+2002-09-24 20:50  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  deal
+	  gracefully
+	  with
+	  empty
+	  coverage
+	  tables;
+	  fixes
+	  bug
+	  611509
+
+2002-09-16 08:21  jvr
+
+	* Doc/changes.txt:
+	  note
+	  about
+	  maxp
+	  change
+
+2002-09-16 08:10  jvr
+
+	* Lib/fontTools/ttLib/tables/_m_a_x_p.py:
+	  minor
+	  cleanups
+
+2002-09-16 08:06  jvr
+
+	* Lib/fontTools/ttLib/tables/_m_a_x_p.py:
+	  interpret
+	  any
+	  version
+	  value
+	  as
+	  0x0001000
+	  if
+	  it's
+	  not
+	  0x00005000
+	  (workaround
+	  for
+	  buggy
+	  font)
+
+2002-09-14 15:31  jvr
+
+	* Doc/changes.txt,
+	  Lib/fontTools/ttx.py:
+	  ugh,
+	  the
+	  zfill
+	  string
+	  method
+	  doesn't
+	  exist
+	  in
+	  2.2.1
+	  and
+	  earlier
+	  :-(
+
+2002-09-13 13:17  jvr
+
+	* Doc/changes.txt,
+	  Doc/documentation.html:
+	  small
+	  changes,
+	  first
+	  bux
+	  fix
+	  note
+	  since
+	  2.0b1
+
+2002-09-13 12:07  jvr
+
+	* Lib/fontTools/__init__.py,
+	  Windows/fonttools-win-setup.iss:
+	  bumped
+	  version
+	  to
+	  2.0b2
+
+2002-09-13 12:04  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  whoops,
+	  reversed
+	  key
+	  and
+	  value
+
+2002-09-13 00:17  jvr
+
+	* Doc/bugs.txt:
+	  mention
+	  control
+	  chars
+	  in
+	  name
+	  table
+
+2002-09-12 23:15  jvr
+
+	* Doc/ChangeLog.txt:
+	  last
+	  commit
+	  for
+	  2.0b1,
+	  I
+	  hope...
+
+2002-09-12 23:14  jvr
+
+	* Tools/ttx:
+	  macfreeze
+	  import
+	  hints
+
+2002-09-12 22:59  jvr
+
+	* Lib/fontTools/ttx.py:
+	  add
+	  simple
+	  support
+	  for
+	  Mac
+	  Suitcases,
+	  when
+	  running
+	  on
+	  MacOS
+
+2002-09-12 22:22  jvr
+
+	* Doc/bugs.txt,
+	  Doc/documentation.html:
+	  converging
+	  towards
+	  2.0b1
+
+2002-09-12 22:03  jvr
+
+	* Mac/README.txt:
+	  note
+	  about
+	  rustiness
+
+2002-09-12 21:48  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  added
+	  manual
+	  implementation
+	  of
+	  LigatureSubst
+	  to
+	  get
+	  nicer
+	  XML
+	  output
+
+2002-09-12 21:21  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  added
+	  manual
+	  implementation
+	  of
+	  AlternateSubst
+	  to
+	  get
+	  nicer
+	  XML
+	  output
+
+2002-09-12 20:51  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  added
+	  manual
+	  implementation
+	  of
+	  ClassDef
+	  to
+	  get
+	  nicer
+	  XML
+	  output
+	  as
+	  well
+	  as
+	  to
+	  get
+	  rid
+	  of
+	  GlyphID
+	  dependencies
+
+2002-09-12 20:05  jvr
+
+	* Lib/fontTools/ttx.py:
+	  doh!
+	  fixed
+	  wrong
+	  indentation,
+	  now
+	  does
+	  batch
+	  jobs
+	  again...
+
+2002-09-12 19:54  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  added
+	  manual
+	  implementation
+	  of
+	  SingleSubst
+	  to
+	  get
+	  nicer
+	  XML
+	  output
+	  as
+	  well
+	  as
+	  to
+	  get
+	  rid
+	  of
+	  GlyphID
+	  dependencies
+
+2002-09-12 19:14  jvr
+
+	* MetaTools/roundTrip.py:
+	  break
+	  out
+	  of
+	  loop
+	  when
+	  cancelled
+
+2002-09-12 19:07  jvr
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  don't
+	  barf
+	  on
+	  empty
+	  name
+	  tables
+	  (!)
+
+2002-09-12 18:53  jvr
+
+	* MetaTools/roundTrip.py:
+	  adapted
+	  doc
+	  string
+	  to
+	  reality;
+	  removed
+	  -v
+	  options
+
+2002-09-12 18:34  jvr
+
+	* MetaTools/roundTrip.py:
+	  brand
+	  new
+	  round
+	  trip
+	  tool
+
+2002-09-12 17:33  jvr
+
+	* Lib/fontTools/ttx.py,
+	  Tools/ttx:
+	  moved
+	  all
+	  ttx
+	  code
+	  to
+	  new
+	  fontTools.ttx
+	  module
+
+2002-09-12 17:22  jvr
+
+	* Tools/ttx:
+	  refactored
+	  slightly,
+	  preparing
+	  for
+	  miving
+	  most
+	  of
+	  this
+	  code
+	  to
+	  fontTools.ttx.py
+
+2002-09-12 17:09  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  renamed
+	  table
+	  to
+	  rawTable
+
+2002-09-12 17:02  jvr
+
+	* Tools/ttroundtrip:
+	  new
+	  version
+	  will
+	  appear
+	  in
+	  MetaTools
+
+2002-09-12 17:01  jvr
+
+	* Tools/ttcompile,
+	  Tools/ttdump,
+	  Tools/ttlist:
+	  these
+	  tools
+	  have
+	  been
+	  replaced
+	  by
+	  the
+	  multi-purpose
+	  ttx
+	  tool
+
+2002-09-12 16:47  jvr
+
+	* Lib/fontTools/ttLib/tables/otTables.py:
+	  added
+	  manual
+	  implementation
+	  for
+	  the
+	  Coverage
+	  subtable
+	  to
+	  get
+	  rid
+	  of
+	  GlyphID
+	  dependencies
+
+2002-09-12 16:45  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py,
+	  Lib/fontTools/ttLib/tables/otConverters.py:
+	  minor
+	  refactoring
+
+2002-09-10 20:47  jvr
+
+	* Doc/ChangeLog.txt:
+	  updating
+
+2002-09-10 20:43  jvr
+
+	* Windows/fonttools-win-setup.txt:
+	  improved
+	  readme
+
+2002-09-10 20:42  jvr
+
+	* MetaTools/buildTableList.py:
+	  also
+	  add
+	  tables
+	  to
+	  documentation.html
+
+2002-09-10 20:41  jvr
+
+	* Doc/documentation.html:
+	  added
+	  listing
+	  of
+	  all
+	  supported
+	  tables
+
+2002-09-10 20:35  jvr
+
+	* Doc/ChangeLog.txt,
+	  Doc/changes.txt,
+	  Doc/documentation.html:
+	  updating
+
+2002-09-10 20:23  jvr
+
+	* Tools/ttx:
+	  include
+	  version
+	  in
+	  help
+	  text
+
+2002-09-10 20:14  jvr
+
+	* Tools/ttx:
+	  catch
+	  SystemExit
+	  separately,
+	  factored
+	  out
+	  windows
+	  keypress
+	  stuff
+
+2002-09-10 19:42  jvr
+
+	* mktarball.py:
+	  moved
+	  to
+	  MetaTools
+
+2002-09-10 19:41  jvr
+
+	* MetaTools/makeTarball.py:
+	  new
+	  name
+	  and
+	  location
+	  of
+	  mktarball.py
+
+2002-09-10 19:26  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  refactored
+	  slightly
+	  to
+	  make
+	  later
+	  specializations
+	  easier
+
+2002-09-10 17:25  jvr
+
+	* Tools/ttx:
+	  trickery
+	  to
+	  keep
+	  the
+	  DOS
+	  window
+	  open
+	  if
+	  there
+	  was
+	  exception
+
+2002-09-10 15:37  jvr
+
+	* Windows/fonttools-win-setup.iss:
+	  adapt
+	  to
+	  renamed
+	  doco
+
+2002-09-10 14:10  jvr
+
+	* Doc/changes.txt:
+	  more
+	  notes
+	  about
+	  2.0b1
+
+2002-09-10 13:39  jvr
+
+	* Doc/ChangeLog.txt:
+	  mit
+	  freundlichen
+	  Gruessen
+	  an
+	  Werner
+	  Lemberg
+	  ;-)
+
+2002-09-10 13:25  jvr
+
+	* MetaTools/buildChangeLog.py,
+	  MetaTools/logmerge.py:
+	  2
+	  scripts
+	  to
+	  generate
+	  ChangeLog
+	  file,
+	  logmerge.py
+	  is
+	  stolen
+	  from
+	  the
+	  python
+	  distro
+
+2002-09-10 13:14  jvr
+
+	* Tools/ttx:
+	  mjmja
+
+2002-09-10 13:13  jvr
+
+	* Doc/documentation.html,
+	  Doc/install.txt,
+	  README.txt:
+	  updated
+	  documentation,
+	  split
+	  user
+	  and
+	  developer
+	  doco
+
+2002-09-10 13:09  jvr
+
+	* MetaTools/buildTableList.py:
+	  tool
+	  to
+	  generate
+	  fontTools/ttLib/tables/__init__.py
+
+2002-09-10 13:08  jvr
+
+	* Lib/fontTools/ttLib/tables/__init__.py:
+	  __init__.py
+	  is
+	  now
+	  generated
+	  my
+	  MetaTools/builtTableList.py
+
+2002-09-10 11:55  jvr
+
+	* Doc/documentation.html,
+	  Doc/index.html:
+	  renamed
+	  index.html
+	  to
+	  documentation.html
+
+2002-09-10 11:38  jvr
+
+	* Lib/fontTools/__init__.py:
+	  prepare
+	  for
+	  2.0b1
+
+2002-09-10 11:36  jvr
+
+	* MetaTools,
+	  MetaTools/build_otData.py,
+	  MetaTools/doco.diff:
+	  tool
+	  to
+	  generate
+	  the
+	  otData.py
+	  module
+
+2002-09-10 11:27  jvr
+
+	* Windows/README.TXT:
+	  minor
+	  nit,
+	  cleaner,
+	  and
+	  works
+	  for
+	  me
+
+2002-09-10 11:23  jvr
+
+	* Windows/README.TXT,
+	  Windows/fonttools-win-setup.iss,
+	  Windows/fonttools-win-setup.txt:
+	  adapted
+	  to
+	  new
+	  ttx
+	  app
+	  (not
+	  yet
+	  tested)
+
+2002-09-10 09:22  jvr
+
+	* setup.py:
+	  ttx
+	  it
+	  is,
+	  the
+	  other
+	  tools
+	  are
+	  now
+	  obsolete
+
+2002-09-10 09:16  jvr
+
+	* Tools/ttx:
+	  added
+	  doc
+	  string,
+	  fiddled
+	  with
+	  options,
+	  made
+	  file
+	  name
+	  creation
+	  a
+	  little
+	  more
+	  sensible
+
+2002-09-10 08:47  jvr
+
+	* Tools/ttx:
+	  new
+	  command
+	  line
+	  tool
+	  'ttx',
+	  replaces
+	  ttdump,
+	  ttcompile
+	  and
+	  ttlist
+
+2002-09-09 21:28  jvr
+
+	* Windows/README.TXT:
+	  changed
+	  py2exe
+	  recommended
+	  options:
+	  removed
+	  -O2,
+	  added
+	  encodings
+	  package
+	  (needed
+	  for
+	  compilation)
+
+2002-09-09 21:23  jvr
+
+	* Windows/README.TXT:
+	  more
+	  fonttools->TTX
+	  renaming
+
+2002-09-09 21:22  jvr
+
+	* Windows/fonttools-win-setup.iss,
+	  Windows/fonttools.ico,
+	  Windows/ttx.ico:
+	  some
+	  fonttools->TTX
+	  renaming
+
+2002-09-09 21:12  jvr
+
+	* Windows/README.TXT:
+	  fixed
+	  item
+	  numbering
+
+2002-09-09 21:12  jvr
+
+	* Windows/README.TXT:
+	  fixed
+	  naming
+	  of
+	  the
+	  Win
+	  folder
+
+2002-09-09 20:38  uid55619
+
+	* ttx_shellext_win32.py:
+	  obsolete,
+	  see
+	  Windows
+	  subdirectory
+
+2002-09-09 20:09  uid55619
+
+	* Windows/fonttools-win-setup.txt:
+	  another
+	  dummy
+	  checkin
+
+2002-09-09 20:05  uid55619
+
+	* Windows/fonttools-win-setup.txt:
+	  dummy
+	  checkin
+
+2002-09-09 19:58  uid55619
+
+	* Windows,
+	  Windows/README.TXT,
+	  Windows/fonttools-win-setup.iss,
+	  Windows/fonttools-win-setup.txt,
+	  Windows/fonttools.ico:
+	  Adam's
+	  new
+	  windows
+	  installer
+	  stuff.
+
+2002-09-09 18:17  jvr
+
+	* Lib/xmlWriter.py:
+	  by
+	  default,
+	  specify
+	  an
+	  encoding
+	  when
+	  creating
+	  XML
+	  files
+
+2002-09-09 14:19  jvr
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  use
+	  latin-1
+	  as
+	  the
+	  default
+	  encoding
+	  when
+	  parsing
+	  XML
+	  files
+
+2002-09-09 14:18  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  make
+	  8-bit
+	  chars
+	  work
+	  in
+	  CFF
+	  Notice
+	  and
+	  Copyright
+	  fields
+
+2002-09-05 19:46  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  align
+	  glyphs
+	  on
+	  4-byte
+	  boundaries,
+	  seems
+	  the
+	  current
+	  recommendation
+	  by
+	  MS
+
+2002-09-05 19:35  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  allow
+	  4-byte
+	  alignment
+	  of
+	  glyph
+	  data
+
+2002-08-30 17:52  jvr
+
+	* Lib/fontTools/ttLib/tables/otData.py:
+	  fixed
+	  spelling
+	  consistency
+	  bug.
+	  Note
+	  to
+	  self:
+	  report
+	  as
+	  bug
+	  in
+	  OT
+	  doco.
+
+2002-07-29 21:39  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  break
+	  before
+	  adding
+	  the
+	  data..
+
+2002-07-29 21:33  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  added
+	  only-read-the-header
+	  feature
+	  to
+	  readLWFN(),
+	  similar
+	  to
+	  readPFB()
+
+2002-07-23 17:56  jvr
+
+	* Tools/ttroundtrip:
+	  added
+	  -v
+	  (verbose)
+	  option
+	  to
+	  ttroundtrip,
+	  causing
+	  stdout
+	  of
+	  ttdump
+	  and
+	  ttcompile
+	  not
+	  to
+	  be
+	  tossed.
+	  not
+	  all
+	  that
+	  useful
+	  due
+	  to
+	  buffering.
+
+2002-07-23 16:44  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/macUtils.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/xmlImport.py:
+	  some
+	  (modified)
+	  progress
+	  bar
+	  support
+
+2002-07-23 16:42  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  some
+	  progress
+	  bar
+	  support
+
+2002-07-23 16:41  jvr
+
+	* Lib/xmlWriter.py:
+	  some
+	  preliminary
+	  progress
+	  bar
+	  support
+
+2002-07-23 14:54  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  back
+	  out
+	  pfa
+	  'fix';
+	  it
+	  reverses
+	  a
+	  bug
+	  fix
+	  from
+	  last
+	  year...
+
+2002-07-23 09:26  jvr
+
+	* Lib/fontTools/misc/eexec.py:
+	  'python'
+	  implementation
+	  of
+	  hex
+	  functions
+
+2002-07-23 09:25  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  fixed
+	  handling
+	  of
+	  PFA
+	  files
+	  by
+	  being
+	  less
+	  smart
+	  about
+	  figuring
+	  out
+	  the
+	  end
+	  of
+	  the
+	  eexec
+	  part
+
+2002-07-23 08:43  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  reordered/regrouped
+	  some
+	  methods
+	  for
+	  clarity
+
+2002-07-23 08:19  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  don't
+	  use
+	  __len__
+	  for
+	  arbitrary
+	  length
+	  method
+
+2002-07-23 07:51  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  clarified
+	  cmap4
+	  optimization
+	  strategy
+
+2002-07-22 22:39  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  duh,
+	  I
+	  don't
+	  even
+	  _need_
+	  to
+	  track
+	  referers
+	  with
+	  the
+	  current
+	  scheme
+
+2002-07-22 22:22  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  minor
+	  changes
+
+2002-07-22 22:13  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py:
+	  completely
+	  revamped
+	  optimization
+	  strategy:
+	  now
+	  even
+	  _shrinks_
+	  certain
+	  Adobe
+	  and
+	  MS
+	  OTL
+	  tables.
+
+2002-07-21 20:05  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  Wow,
+	  the
+	  master
+	  checksum
+	  in
+	  the
+	  'head'
+	  table
+	  was
+	  never
+	  written
+	  to
+	  file
+	  correctly
+	  on
+	  little-endian
+	  platforms
+	  :-(.
+	  Fixed.
+
+2002-07-20 21:57  jvr
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  Optimized
+	  cmap
+	  format
+	  4
+	  compile
+	  function:
+	  now
+	  creates
+	  more
+	  compact
+	  binary.
+	  The
+	  code
+	  is
+	  horrible,
+	  but
+	  then
+	  again
+	  cmap
+	  format
+	  4
+	  is
+	  beyond
+	  horrible...
+
+2002-07-13 08:15  jvr
+
+	* setup.py:
+	  oops.
+
+2002-07-12 19:20  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  don't
+	  test
+	  for
+	  os.name,
+	  as
+	  the
+	  mac
+	  stuff
+	  now
+	  all
+	  works
+	  under
+	  darwin/posix
+	  as
+	  well
+
+2002-07-11 18:19  jvr
+
+	* setup.py:
+	  added
+	  py2exe
+	  support
+	  (yes,
+	  that
+	  was
+	  basically
+	  all
+	  there
+	  was
+	  to
+	  it...)
+
+2002-07-11 18:17  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  make
+	  dynamic
+	  table
+	  import
+	  work
+	  when
+	  importing
+	  from
+	  a
+	  zip
+	  file
+	  (for
+	  py2exe)
+
+2002-07-04 17:17  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  repair
+	  ttcompile
+	  -b
+
+2002-07-04 17:17  jvr
+
+	* Lib/fontTools/ttLib/tables,
+	  Lib/fontTools/ttLib/tables/.cvsignore:
+	  ignore
+	  .pyc
+	  files
+
+2002-07-01 09:11  jvr
+
+	* setup.py:
+	  gracefully
+	  skip
+	  C
+	  extension
+	  if
+	  it
+	  can't
+	  be
+	  built
+
+2002-06-06 19:59  jvr
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  increment
+	  progress
+	  less
+	  frequently,
+	  it
+	  was
+	  too
+	  costly...
+
+2002-06-06 19:58  jvr
+
+	* Lib/fontTools/ttLib/macUtils.py:
+	  MacPython
+	  2.2
+	  compat
+
+2002-06-04 19:11  jvr
+
+	* Lib/fontTools/misc/psLib.py:
+	  finally
+	  upgraded
+	  psLib
+	  to
+	  use
+	  re
+	  instead
+	  of
+	  the
+	  long
+	  obsolete
+	  regex
+	  module.
+
+2002-06-04 19:10  jvr
+
+	* Lib/fontTools/misc/psOperators.py:
+	  nits
+
+2002-06-04 19:08  jvr
+
+	* Lib/fontTools/ttLib/tables/__init__.py:
+	  add
+	  dummy
+	  import
+	  function,
+	  so
+	  modulefinder
+	  can
+	  find
+	  our
+	  tables.
+
+2002-05-25 16:08  jvr
+
+	* Tools/ttcompile,
+	  Tools/ttdump:
+	  hm,
+	  forgot
+	  to
+	  remove
+	  the
+	  -d
+	  option
+	  from
+	  the
+	  getopt
+	  format
+	  string
+
+2002-05-25 16:08  jvr
+
+	* Tools/ttroundtrip:
+	  mucking
+	  with
+	  the
+	  usage
+	  string
+
+2002-05-25 16:04  jvr
+
+	* Tools/ttroundtrip:
+	  allow
+	  some
+	  ttdump
+	  options;
+	  not
+	  -s
+	  as
+	  that
+	  makes
+	  diffing
+	  that
+	  much
+	  harder
+
+2002-05-25 15:28  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/xmlImport.py:
+	  It
+	  still
+	  wasn't
+	  right;
+	  I
+	  think
+	  the
+	  glyph
+	  order
+	  mess
+	  is
+	  now
+	  sufficiently
+	  cleaned
+	  up;
+	  at
+	  least
+	  compiling
+	  the
+	  result
+	  of
+	  ttdump
+	  -x
+	  glyf
+	  works
+	  again.
+
+2002-05-25 14:56  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  make
+	  sure
+	  the
+	  glyph
+	  order
+	  is
+	  loaded
+	  when
+	  importing
+	  XML
+	  as
+	  the
+	  TTX
+	  file
+	  may
+	  not
+	  contain
+	  it
+	  (ttdump
+	  -t/ttcompile
+	  -i).
+
+2002-05-25 08:22  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  whoops,
+	  the
+	  new
+	  GlyphOrder
+	  table
+	  stuff
+	  broke
+	  ttdump
+	  -s
+
+2002-05-24 18:44  jvr
+
+	* Tools/ttroundtrip:
+	  slight
+	  doc
+	  rewording
+
+2002-05-24 18:36  jvr
+
+	* Tools/ttroundtrip:
+	  test
+	  script:
+	  batch
+	  roundtripper
+
+2002-05-24 17:42  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_d_m_x.py:
+	  gross
+	  hack
+	  to
+	  allow
+	  ;
+	  in
+	  glyph
+	  names
+	  (I
+	  don't
+	  think
+	  it
+	  _is_
+	  allowed,
+	  but
+	  hey,
+	  I've
+	  got
+	  this
+	  font
+	  here...)
+
+2002-05-24 16:52  jvr
+
+	* Lib/fontTools/ttLib/tables/T_S_I__0.py:
+	  don't
+	  blow
+	  up
+	  on
+	  orphaned
+	  VTT
+	  index
+	  tables
+
+2002-05-24 14:42  jvr
+
+	* Lib/fontTools/ttLib/tables/ttProgram.py:
+	  fixed
+	  ttdump
+	  -i
+	  mode
+
+2002-05-24 11:55  jvr
+
+	* Lib/fontTools/cffLib.py,
+	  Lib/fontTools/misc/psCharStrings.py:
+	  added
+	  support
+	  for
+	  raw
+	  bytecode:
+	  this
+	  happens
+	  unintentionally
+	  for
+	  subrs
+	  that
+	  aren't
+	  referenced,
+	  but
+	  it's
+	  good
+	  to
+	  have
+	  anyway,
+	  in
+	  case
+	  we
+	  want
+	  to
+	  switch
+	  T2
+	  decompilation
+	  off.
+
+2002-05-24 10:38  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  whoops,
+	  make
+	  charset
+	  format
+	  2
+	  work
+	  also..
+
+2002-05-24 10:35  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  implemented
+	  compiling
+	  charset
+	  format
+	  1
+	  and
+	  2
+
+2002-05-24 09:58  jvr
+
+	* Lib/fontTools/cffLib.py,
+	  Lib/fontTools/misc/psCharStrings.py,
+	  Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/C_F_F_.py:
+	  CFF/T2
+	  <->
+	  XML
+	  roundtripping
+	  has
+	  begun!
+
+2002-05-23 21:50  jvr
+
+	* Lib/fontTools/cffLib.py,
+	  Lib/fontTools/misc/psCharStrings.py:
+	  first
+	  working
+	  version
+	  of
+	  CFF/T2
+	  compiler;
+	  needs
+	  cleanup/refactoring,
+	  and
+	  doesn't
+	  import
+	  from
+	  XML
+	  yet;
+	  hardly
+	  tested.
+
+2002-05-23 09:42  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/xmlImport.py:
+	  big
+	  change:
+	  the
+	  glyph
+	  order
+	  is
+	  now
+	  dumped
+	  as
+	  a
+	  separate
+	  table
+	  and
+	  not
+	  as
+	  part
+	  of
+	  glyf
+	  (which
+	  didn't
+	  make
+	  much
+	  sense
+	  to
+	  begin
+	  with,
+	  but
+	  can't
+	  work
+	  at
+	  all
+	  in
+	  the
+	  case
+	  of
+	  CFF...)
+
+2002-05-22 20:15  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  refactored
+	  saveXML()
+	  method
+
+2002-05-18 20:07  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  remove
+	  format
+	  3
+	  charset
+	  switch;
+	  add
+	  newline
+	  after
+	  ROS
+
+2002-05-17 20:04  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  renaming,
+	  refactoring.
+
+2002-05-17 19:58  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  tweaked
+	  the
+	  XML
+	  output
+	  somewhat,
+	  reorder
+	  the
+	  topdict
+	  fields,
+	  etc.
+
+2002-05-17 18:37  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  fixed
+	  ctnrmask
+	  problem:
+	  hints
+	  weren't
+	  counted
+	  correctly
+
+2002-05-17 18:36  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  more
+	  CID
+	  support,
+	  some
+	  refactoring,
+	  stuff.
+
+2002-05-17 07:08  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  only
+	  debug
+	  if
+	  DEBUG...
+
+2002-05-17 07:07  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  first
+	  stab
+	  at
+	  compiling
+	  T2
+	  CharStrings
+
+2002-05-17 07:06  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  tweaking,
+	  added
+	  some
+	  debug
+	  info
+
+2002-05-16 18:38  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  make
+	  decompiling
+	  charstrings
+	  work
+	  again
+
+2002-05-16 18:17  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  major
+	  refactoring,
+	  now
+	  evaluates
+	  everything
+	  lazily,
+	  so
+	  it
+	  should
+	  be
+	  really
+	  fast
+	  if
+	  you
+	  only
+	  need
+	  (say)
+	  the
+	  glyph
+	  order.
+
+2002-05-16 18:15  jvr
+
+	* Lib/fontTools/ttLib/tables/C_F_F_.py:
+	  some
+	  changes
+	  to
+	  adapt
+	  to
+	  new
+	  cffLib.py
+
+2002-05-16 18:13  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  (nit)
+
+2002-05-16 18:12  jvr
+
+	* Lib/fontTools/ttLib/tables/otConverters.py:
+	  whoops,
+	  compile
+	  was
+	  broken
+	  due
+	  to
+	  Fixed
+	  'fix'
+
+2002-05-15 07:50  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  ignore
+	  tables
+	  we
+	  don't
+	  have
+	  upon
+	  saving
+	  as
+	  XML:
+	  this
+	  is
+	  indispensible
+	  for
+	  batch
+	  processing
+
+2002-05-15 07:41  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  more
+	  work
+	  in
+	  progress
+
+2002-05-15 07:40  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  added
+	  delta
+	  array
+	  support
+	  to
+	  DictDecompiler
+
+2002-05-14 13:51  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  more
+	  CID
+	  hackery
+
+2002-05-14 13:49  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  fix
+	  argument
+	  type
+	  order
+
+2002-05-14 12:37  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  more
+	  rearranging,
+	  some
+	  fixes
+	  of
+	  the
+	  previous
+	  version
+
+2002-05-14 12:22  jvr
+
+	* Lib/fontTools/cffLib.py:
+	  resturcturing,
+	  reformatting
+
+2002-05-14 12:09  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  fixed
+	  typo
+	  in
+	  comment
+
+2002-05-13 18:13  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_h_e_a.py:
+	  this
+	  wasn't
+	  meant
+	  te
+	  be
+	  checked
+	  in
+	  yet.
+
+2002-05-13 18:10  jvr
+
+	* Lib/fontTools/ttLib/tables/otConverters.py:
+	  added
+	  Fixed
+	  type
+
+2002-05-13 18:08  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_h_e_a.py,
+	  Lib/fontTools/ttLib/tables/otBase.py:
+	  more
+	  cosmetics
+
+2002-05-13 16:21  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/table_API_readme.txt,
+	  Lib/fontTools/ttLib/xmlImport.py:
+	  a
+	  whole
+	  bunch
+	  of
+	  renames,
+	  purely
+	  stylistic
+
+2002-05-13 16:19  jvr
+
+	* Lib/fontTools/cffLib.py,
+	  Lib/fontTools/misc/psCharStrings.py:
+	  moved
+	  some
+	  stuff
+	  to
+	  cffLib
+
+2002-05-13 11:26  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  don't
+	  get
+	  glyph
+	  names
+	  from
+	  CFF
+	  it
+	  it's
+	  a
+	  CID-keyed
+	  font;
+	  invent
+	  glyph
+	  name
+	  on
+	  the
+	  spot
+	  if
+	  glyphID
+	  is
+	  too
+	  high
+	  (dubious
+	  change..).
+
+2002-05-13 11:25  jvr
+
+	* Lib/fontTools/cffLib.py,
+	  Lib/fontTools/ttLib/tables/C_F_F_.py:
+	  use
+	  a
+	  StringIO
+	  stream
+	  instead
+	  slicing
+	  strings
+	  all
+	  the
+	  time;
+	  don't
+	  barf
+	  on
+	  CID-keyed
+	  fonts
+	  (but
+	  CID
+	  support
+	  is
+	  by
+	  no
+	  means
+	  there
+	  yet!)
+
+2002-05-13 11:21  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  use
+	  spaces
+	  for
+	  alignment
+
+2002-05-12 18:46  jvr
+
+	* Tools/ttcompile,
+	  Tools/ttdump:
+	  test
+	  whether
+	  final
+	  argument
+	  is
+	  a
+	  directory
+
+2002-05-12 17:14  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/sfnt.py,
+	  Lib/fontTools/ttLib/tables/_c_m_a_p.py,
+	  Lib/fontTools/ttLib/tables/_k_e_r_n.py:
+	  renamed
+	  several
+	  items
+	  to
+	  use
+	  camelCase
+
+2002-05-12 17:02  jvr
+
+	* Lib/fontTools/ttLib/sfnt.py:
+	  Applied
+	  patch
+	  from
+	  Owen
+	  Taylor
+	  that
+	  allows
+	  zero-length
+	  tables
+	  to
+	  be
+	  ignored.
+	  Added
+	  comment
+	  why.
+
+2002-05-12 12:58  jvr
+
+	* Doc/index.html:
+	  note
+	  about
+	  PyXML
+
+2002-05-12 12:48  jvr
+
+	* Doc/index.html:
+	  reworded
+	  glyph
+	  name
+	  section
+
+2002-05-12 12:24  jvr
+
+	* Doc/changes.txt:
+	  notes
+	  about
+	  recent
+	  changes
+
+2002-05-11 21:52  jvr
+
+	* Tools/ttcompile:
+	  case
+	  typo
+
+2002-05-11 21:44  jvr
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  minor
+	  restructuring
+
+2002-05-11 21:38  jvr
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  added
+	  support
+	  for
+	  the
+	  new
+	  ttdump
+	  -s
+	  output:
+	  read
+	  file
+	  references
+	  from
+	  mini-ttx
+	  file
+
+2002-05-11 21:18  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  change
+	  how
+	  saveXML
+	  with
+	  splitTable=True
+	  works:
+	  it
+	  no
+	  longer
+	  creates
+	  a
+	  directory,
+	  and
+	  outputs
+	  a
+	  small
+	  file
+	  that
+	  references
+	  the
+	  individual
+	  table
+	  files
+
+2002-05-11 21:16  jvr
+
+	* Tools/ttcompile,
+	  Tools/ttdump:
+	  changed
+	  the
+	  command
+	  line
+	  interface
+	  of
+	  ttdump
+	  and
+	  ttcompile
+	  ***incompatibly***;
+	  changed
+	  ttdump
+	  -s
+	  considerably:
+	  now
+	  outputs
+	  a
+	  small
+	  file
+	  containing
+	  references
+	  to
+	  the
+	  individual
+	  table
+	  file;
+	  -d
+	  is
+	  gone;
+	  etc.
+
+2002-05-11 10:21  jvr
+
+	* Lib/fontTools/ttLib/tables/otBase.py,
+	  Lib/fontTools/ttLib/tables/otConverters.py,
+	  Lib/fontTools/ttLib/tables/otTables.py:
+	  results
+	  of
+	  morning-after
+	  code
+	  review,
+	  added
+	  some
+	  doc
+	  strings,
+	  etc.
+
+2002-05-11 01:03  jvr
+
+	* Lib/fontTools/ttLib/tables/otCommon.py:
+	  removed
+	  non-functioning
+	  lame-ass
+	  previous
+	  attempt
+
+2002-05-11 00:59  jvr
+
+	* Lib/fontTools/ttLib/tables/B_A_S_E_.py,
+	  Lib/fontTools/ttLib/tables/G_D_E_F_.py,
+	  Lib/fontTools/ttLib/tables/G_P_O_S_.py,
+	  Lib/fontTools/ttLib/tables/G_S_U_B_.py,
+	  Lib/fontTools/ttLib/tables/J_S_T_F_.py,
+	  Lib/fontTools/ttLib/tables/otBase.py,
+	  Lib/fontTools/ttLib/tables/otConverters.py,
+	  Lib/fontTools/ttLib/tables/otData.py,
+	  Lib/fontTools/ttLib/tables/otTables.py:
+	  Completely
+	  revamped
+	  OT
+	  support;
+	  this
+	  time
+	  it
+	  works
+	  and
+	  is
+	  complete.
+	  XML
+	  output
+	  is
+	  not
+	  yet
+	  as
+	  pretty
+	  as
+	  can
+	  be.
+
+2002-05-10 19:52  jvr
+
+	* Lib/fontTools/ttLib/tables/_k_e_r_n.py:
+	  fix
+	  unknown
+	  subtable
+	  format
+	  and
+	  handling
+	  of
+	  Apple
+	  fonts
+
+2002-05-10 19:03  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/O_S_2f_2.py,
+	  Lib/fontTools/ttLib/tables/_c_m_a_p.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/tables/_k_e_r_n.py,
+	  Lib/fontTools/ttLib/tables/_p_o_s_t.py:
+	  a
+	  few
+	  cosmetic/style
+	  changes
+
+2002-05-10 19:02  jvr
+
+	* Lib/fontTools/ttLib/tables/G_S_U_B_.py,
+	  Lib/fontTools/ttLib/tables/otCommon.py:
+	  checking
+	  in
+	  last
+	  edits
+	  to
+	  the
+	  old
+	  OT
+	  support;
+	  this
+	  stuff
+	  will
+	  be
+	  replaced
+	  by
+	  brand
+	  new
+	  code
+	  soon.
+
+2002-05-05 11:29  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  Work
+	  around
+	  bootstrapping
+	  problem
+	  in
+	  TTFont._getGlyphNamesFromCmap():
+	  
+	  If
+	  the
+	  cmap
+	  parser
+	  was
+	  the
+	  one
+	  to
+	  cause
+	  _getGlyphNamesFromCmap()
+	  to
+	  be
+	  
+	  called,
+	  no
+	  unicode
+	  cmap
+	  was
+	  found
+	  as
+	  it
+	  was
+	  just
+	  starting
+	  to
+	  get
+	  
+	  loaded.
+	  This
+	  resulted
+	  in
+	  different
+	  glyph
+	  names,
+	  depending
+	  on
+	  when
+	  
+	  the
+	  cmap
+	  parser
+	  was
+	  invoked. Also
+	  added
+	  a
+	  bunch
+	  of
+	  comment
+	  describing
+	  what
+	  this
+	  method
+	  does.
+
+2002-05-05 09:55  jvr
+
+	* Tools/ttlist:
+	  cosmetic
+	  change:
+	  I
+	  forgot
+	  I
+	  dislike
+	  backticks...
+
+2002-05-05 09:48  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  renamed
+	  _getTableData()
+	  to
+	  getTableData();
+	  optimized
+	  getGlyphOrder()
+	  somewhat.
+
+2002-05-04 22:04  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/sfnt.py:
+	  added
+	  support
+	  for
+	  deleting
+	  tables:
+	  del
+	  f[tag]
+
+2002-05-04 22:03  jvr
+
+	* Lib/fontTools/ttLib/tables/_p_o_s_t.py:
+	  use
+	  dict
+	  for
+	  extraNames
+	  lookups,
+	  getting
+	  rid
+	  of
+	  quadratic
+	  behavior
+
+2002-05-03 19:38  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  MacPython
+	  2.2
+	  compatibility
+	  fix.
+
+2002-05-03 19:35  jvr
+
+	* Tools/ttcompile,
+	  Tools/ttdump:
+	  some
+	  reformatting
+	  of
+	  the
+	  usage
+	  msg.
+
+2002-05-03 19:10  jvr
+
+	* Doc/index.html:
+	  more
+	  TTX...
+
+2002-05-03 19:03  jvr
+
+	* LICENSE.txt,
+	  Lib/fontTools/__init__.py,
+	  README.txt:
+	  typos,
+	  version
+	  update,
+	  date
+	  update
+
+2002-05-03 19:02  jvr
+
+	* Doc/index.html:
+	  cleaned
+	  up
+	  command
+	  line
+	  tool
+	  section,
+	  updated
+	  to
+	  current
+	  state.
+
+2002-05-03 18:58  jvr
+
+	* ttCompile.py,
+	  ttDump.py,
+	  ttList.py:
+	  these
+	  moved
+	  to
+	  Tools/
+
+2002-05-03 18:57  jvr
+
+	* setup.py:
+	  install
+	  the
+	  scripts
+	  from
+	  Tools/
+
+2002-05-03 18:55  jvr
+
+	* Tools,
+	  Tools/ttcompile,
+	  Tools/ttdump,
+	  Tools/ttlist:
+	  new
+	  place
+	  and
+	  names
+	  for
+	  scripts/tools
+
+2002-05-03 17:05  jvr
+
+	* ttCompile.py,
+	  ttDump.py:
+	  minor
+	  fiddling
+	  with
+	  usage.
+
+2002-05-03 17:05  jvr
+
+	* ttList.py:
+	  minimal
+	  table
+	  lister
+	  tool
+
+2002-05-03 17:01  jvr
+
+	* Lib/fontTools/ttLib/tables/C_F_F_.py,
+	  Lib/fontTools/ttLib/tables/G_P_O_S_.py,
+	  Lib/fontTools/ttLib/tables/G_S_U_B_.py,
+	  Lib/fontTools/ttLib/tables/otCommon.py:
+	  Work
+	  in
+	  progress
+	  on
+	  CFF,
+	  GPOS
+	  and
+	  GSUB.
+	  Since
+	  it's
+	  only
+	  partly
+	  working,
+	  it's
+	  diasabled
+	  by
+	  default.
+
+2002-05-03 14:33  jvr
+
+	* Lib/fontTools/ttLib/tables/C_F_F_.py:
+	  use
+	  composition
+	  rather
+	  than
+	  inheritance;
+	  \
+
+2002-05-03 08:59  jvr
+
+	* setup.py:
+	  import
+	  expat
+	  instead
+	  of
+	  xmlproc,
+	  as
+	  that's
+	  what
+	  we're
+	  using
+	  now
+
+2002-05-02 20:54  jvr
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  only
+	  keep
+	  the
+	  orginal
+	  table
+	  around
+	  in
+	  two
+	  special
+	  cases.\n
+	  this
+	  fixes
+	  a
+	  problem
+	  with
+	  importing
+	  individual
+	  tables.
+
+2002-05-02 15:26  jvr
+
+	* Lib/fontTools/misc/eexec.py:
+	  eexecOp
+	  may
+	  be
+	  a
+	  global
+	  module
+	  or
+	  a
+	  submodule.
+
+2002-05-02 15:23  jvr
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  use
+	  version
+	  from
+	  fontTools.__init__.py
+
+2002-05-02 15:16  jvr
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  re-added
+	  progress
+	  support,
+	  to
+	  be
+	  tested
+
+2002-05-02 10:53  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_m_t_x.py:
+	  whoops,
+	  lastIndex
+	  can't
+	  be
+	  smaller
+	  than
+	  1
+
+2002-05-02 08:11  jvr
+
+	* Doc/changes.txt,
+	  Doc/index.html:
+	  updated
+	  installation
+	  instructions
+	  and
+	  changes.txt
+
+2002-05-01 21:32  jvr
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  rearranged
+	  a
+	  bit,
+	  removed
+	  redundant
+	  imports
+
+2002-05-01 21:06  jvr
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/tables/_h_d_m_x.py,
+	  Lib/fontTools/ttLib/tables/_h_m_t_x.py,
+	  Lib/fontTools/ttLib/tables/_n_a_m_e.py,
+	  Lib/fontTools/ttLib/xmlImport.py:
+	  Complety
+	  revised
+	  the
+	  XML
+	  import
+	  code: -
+	  use
+	  expat
+	  instead
+	  of
+	  xmlproc -
+	  minor
+	  fixes
+	  here
+	  and
+	  there Fixed
+	  bug
+	  in
+	  hmtx/vmtx
+	  code
+	  that
+	  only
+	  occured
+	  if
+	  all
+	  advances
+	  were
+	  equal. FontTools
+	  now
+	  officially
+	  requires
+	  Python
+	  2.0
+	  or
+	  up,
+	  due
+	  to
+	  exapt
+	  and
+	  unicode.
+
+2002-03-12 14:34  jvr
+
+	* Lib/fontTools/afmLib.py:
+	  Charnames
+	  can
+	  contain
+	  a
+	  period
+	  anywhere,
+	  not
+	  just
+	  at
+	  the
+	  start.
+
+2002-01-17 09:36  jvr
+
+	* Lib/fontTools/ttLib/tables/_p_o_s_t.py:
+	  another
+	  buggy
+	  font
+	  workaround;
+	  sped
+	  up
+	  unpackPStrings
+	  somewhat
+
+2002-01-07 08:44  jvr
+
+	* Lib/fontTools/ttLib/tables/ttProgram.py:
+	  Hm,
+	  these
+	  instructions
+	  had
+	  their
+	  stack
+	  pop-count
+	  reversed. Thanks
+	  to
+	  L.
+	  Peter
+	  Deutsch
+	  for
+	  finding
+	  this.
+
+2001-11-28 12:22  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  At
+	  the
+	  expense
+	  of
+	  some
+	  speed,
+	  find
+	  the
+	  end
+	  of
+	  an
+	  excrypted
+	  portion more
+	  acurately.
+	  This
+	  fixes
+	  an
+	  obscure
+	  problem
+	  with
+	  Fog
+	  4
+	  fonts.
+
+2001-11-05 19:32  jvr
+
+	* Lib/fontTools/ttLib/tables/_p_o_s_t.py:
+	  fixed
+	  post
+	  table
+	  format
+	  1
+	  error:
+	  even
+	  though
+	  the
+	  glyph
+	  order
+	  is
+	  fixed, that
+	  doesn't
+	  mean
+	  all
+	  glyphs
+	  in
+	  the
+	  standard
+	  order
+	  are
+	  there.
+
+2001-08-16 18:14  jvr
+
+	* Src/eexecOp/eexecOpmodule.c:
+	  Ugh.
+	  The
+	  previous
+	  change
+	  broke
+	  under
+	  1.5.2.
+	  Work
+	  around
+	  it,
+	  and
+	  clean up
+	  some
+	  more
+	  hwile
+	  we're
+	  at
+	  it.
+
+2001-08-16 16:34  jvr
+
+	* Src/eexecOp/eexecOpmodule.c:
+	  Hm,
+	  using
+	  "h"
+	  format
+	  strings
+	  for
+	  unsigned
+	  shorts
+	  broke
+	  in
+	  Python
+	  2.1
+
+2001-08-16 11:02  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  behave
+	  nicely
+	  when
+	  *any*
+	  subpath
+	  doesn't
+	  start
+	  with
+	  a
+	  moveto.
+
+2001-08-16 10:35  jvr
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  behave
+	  nicely
+	  when
+	  the
+	  font
+	  doesn't
+	  do
+	  an
+	  initial
+	  moveto.
+
+2001-08-16 10:34  jvr
+
+	* Lib/fontTools/t1Lib.py:
+	  fixed
+	  saveAs()
+
+2001-08-15 09:26  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  style
+	  constency
+
+2001-08-15 07:01  jvr
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py:
+	  spec
+	  changed:
+	  three
+	  fields
+	  are
+	  now
+	  unsigned
+	  instead
+	  of
+	  signed, and
+	  due
+	  to
+	  the
+	  the
+	  wonderful
+	  <snort>
+	  hungarian
+	  notation
+	  the
+	  field names
+	  changed
+	  as
+	  well...
+	  (So
+	  this
+	  change
+	  is
+	  not
+	  b/w
+	  compatible)
+
+2001-08-15 07:00  jvr
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  dump
+	  macStyle
+	  as
+	  binary
+
+2001-08-14 06:43  jvr
+
+	* Src/eexecOp/eexecOpmodule.c:
+	  copyright
+	  notice
+	  updated
+	  (but
+	  mostly
+	  to
+	  test
+	  the
+	  CVS
+	  log
+	  msg
+	  mail)
+
+2001-08-10 22:17  jvr
+
+	* Lib/fontTools/ttLib/macUtils.py:
+	  work
+	  around
+	  MacPython
+	  2.1
+	  incompatibility
+
+2001-08-10 22:16  jvr
+
+	* Mac/TTX.py:
+	  grab
+	  version
+	  from
+	  fontTools.__init__
+
+2001-08-10 20:28  jvr
+
+	* Doc/changes.txt:
+	  1.0b1
+	  release
+	  notes
+
+2001-08-10 20:27  jvr
+
+	* Doc/index.html:
+	  added
+	  note
+	  about
+	  distutils
+	  needed
+	  for
+	  Python
+	  <
+	  2.0
+
+2001-08-10 16:49  jvr
+
+	* Lib/fontTools/__init__.py:
+	  added
+	  version
+	  variable
+
+2001-08-10 16:49  jvr
+
+	* mktarball.py:
+	  add
+	  version
+	  to
+	  tarball
+	  filename
+
+2001-08-10 08:58  jvr
+
+	* LICENSE.txt:
+	  Let's
+	  be
+	  vague
+	  about
+	  where
+	  I
+	  live(d)...
+
+2001-08-10 08:55  jvr
+
+	* LEGAL.txt,
+	  LICENSE.txt:
+	  renamed
+	  LEGAL.txt
+	  to
+	  LICENSE.txt,
+	  to
+	  match
+	  the
+	  doco...
+
+2001-08-10 08:54  jvr
+
+	* Doc/index.html:
+	  updated
+	  to
+	  the
+	  current
+	  state
+	  of
+	  affairs.
+
+2001-08-10 00:04  jvr
+
+	* ttx_shellext_win32.py:
+	  cleaned
+	  up
+	  regtext
+	  for
+	  clarity.
+	  Should
+	  be
+	  a
+	  100%
+	  cosmetic
+	  change, but
+	  I
+	  was
+	  unable
+	  to
+	  test
+	  it
+	  (Hi
+	  Adam
+	  ;-)
+
+2001-08-09 23:45  jvr
+
+	* ttCompile.py:
+	  print
+	  a
+	  banner
+	  for
+	  each
+	  output
+	  file
+
+2001-08-09 23:39  jvr
+
+	* ttCompile.py:
+	  reworked
+	  command
+	  line
+	  options
+
+2001-08-09 23:03  jvr
+
+	* setup.py:
+	  added
+	  warning
+	  about
+	  dependency
+	  on
+	  NumPy
+	  and
+	  PyXML
+
+2001-08-09 21:39  jvr
+
+	* ttDump.py:
+	  -
+	  fixed
+	  -d
+	  (forgot
+	  to
+	  add
+	  it
+	  to
+	  the
+	  getopt
+	  arg) -
+	  added
+	  comment
+	  that
+	  -s
+	  implies
+	  -f
+
+2001-08-09 21:31  jvr
+
+	* ttDump.py:
+	  implemented
+	  -d
+	  (specify
+	  output
+	  dir)
+	  option
+
+2001-08-09 21:06  jvr
+
+	* ttDump.py:
+	  first
+	  step
+	  of
+	  changing
+	  the
+	  command
+	  line
+	  usage
+	  to
+	  something
+	  more sensible:
+	  it
+	  is
+	  now
+	  possible
+	  to
+	  do
+	  batches,
+	  as
+	  in
+	  
+	  ./ttDump.py
+	  *.ttf This
+	  is
+	  not
+	  b/w
+	  compatible.
+	  (The
+	  new
+	  -d
+	  option
+	  is
+	  not
+	  yet
+	  implemented)
+
+2001-08-09 19:39  jvr
+
+	* Src/eexecOp/eexecOpmodule.c:
+	  And
+	  one
+	  more...
+
+2001-08-09 19:36  jvr
+
+	* Src/eexecOp/eexecOpmodule.c:
+	  Hm,
+	  made
+	  func
+	  defs
+	  ANSI
+	  compliant.
+
+2001-08-09 19:18  jvr
+
+	* setup.py:
+	  eexecOp.{so|pyd|slb}
+	  goes
+	  into
+	  fontTools/misc/
+
+2001-08-09 19:13  jvr
+
+	* Lib/interfaceChecker.py:
+	  old
+	  cruft
+
+2001-08-09 19:09  jvr
+
+	* LEGAL.txt,
+	  README.txt:
+	  minor
+	  things:
+	  the
+	  real
+	  doco
+	  needs
+	  real
+	  work...
+
+2001-08-09 19:06  jvr
+
+	* Src/eexecOp/Makefile,
+	  Src/eexecOp/Makefile.pre.in,
+	  Src/eexecOp/README.txt,
+	  Src/eexecOp/Setup.in,
+	  Src/eexecOp/eexecOp.ppc.prj,
+	  Src/eexecOp/eexecOp.ppc.prj.exp:
+	  removed
+	  obsolete
+	  unix
+	  makefile
+	  support:
+	  distutils
+	  takes
+	  care of
+	  that
+	  now
+	  (see
+	  setup.py
+	  in
+	  fonttools/).
+
+2001-08-09 19:00  jvr
+
+	* Lib/fontTools/misc/eexec.py:
+	  eexecOp
+	  may
+	  also
+	  be
+	  a
+	  global
+	  module.
+
+2001-08-09 18:47  jvr
+
+	* install.py,
+	  setup.py:
+	  Removed
+	  obsolete
+	  install.py
+	  script,
+	  and
+	  replaced
+	  it
+	  with
+	  a proper
+	  setup.py,
+	  offering
+	  full
+	  distutils
+	  support.
+	  So
+	  far
+	  only tested
+	  under
+	  MacOS.
+
+2001-07-30 19:05  Just
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  removed
+	  dependency
+	  on
+	  old
+	  transformation
+	  class
+
+2001-07-30 19:04  Just
+
+	* Lib/fontTools/t1Lib.py:
+	  updated
+	  OpenResFile()
+	  to
+	  FSpOpenResFile()
+	  and
+	  CreateResFile()
+	  to FSpCreateResFile()
+	  for
+	  carbon
+	  compatiblilty.
+
+2001-06-27 23:09  Just
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  Don't
+	  take
+	  month
+	  and
+	  day
+	  names
+	  from
+	  calendar.py:
+	  a
+	  buggy
+	  Metrowerks
+	  strftime()
+	  made
+	  this
+	  crash
+	  hard
+	  in
+	  Python
+	  2.2.
+
+2001-06-24 15:14  Just
+
+	* Lib/fontTools/misc/psCharStrings.py,
+	  Lib/fontTools/misc/psLib.py:
+	  don't
+	  print
+	  extra
+	  error
+	  info
+	  to
+	  stdout
+
+2001-06-24 15:12  Just
+
+	* Lib/fontTools/t1Lib.py:
+	  renamed
+	  a
+	  bunch
+	  of
+	  things
+	  to
+	  use
+	  CamelCase
+
+2001-06-24 15:11  Just
+
+	* Lib/fontTools/afmLib.py:
+	  improved
+	  API
+	  for
+	  creating
+	  AFM
+	  files
+	  from
+	  scratch
+
+2001-06-24 15:10  Just
+
+	* Lib/fontTools/fondLib.py:
+	  fixed
+	  style
+	  strings
+	  bug,
+	  as
+	  triggered
+	  by
+	  the
+	  Thorndale
+	  font.
+
+2001-04-30 14:40  Just
+
+	* Lib/fontTools/afmLib.py:
+	  -
+	  added
+	  support
+	  for
+	  composite
+	  info -
+	  write
+	  attributes
+	  in
+	  a
+	  decent
+	  order
+
+2001-04-20 18:39  Just
+
+	* Lib/fontTools/misc/eexec.py,
+	  Lib/fontTools/misc/psLib.py:
+	  minor
+	  cleanups
+
+2001-03-09 12:42  Just
+
+	* Lib/fontTools/nfntLib.py:
+	  New
+	  &
+	  improved,
+	  but
+	  dead
+	  slow.
+	  Reads
+	  and
+	  writes.
+
+2001-02-23 21:58  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  don't
+	  allow
+	  duplicate
+	  glyph
+	  names
+	  when
+	  building
+	  names
+	  from
+	  cmap/agl
+
+2001-01-13 13:48  Just
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  workaround
+	  for
+	  currupt
+	  (?)
+	  cmap
+	  subtable
+
+2000-11-03 10:29  Just
+
+	* Lib/fontTools/ttLib/tables/_h_m_t_x.py,
+	  Lib/fontTools/ttLib/tables/_l_o_c_a.py:
+	  don't
+	  complain
+	  as
+	  loudly
+	  with
+	  fonts
+	  that
+	  don't
+	  completely
+	  adhere
+	  to
+	  the
+	  spec
+
+2000-10-23 14:36  Just
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  workaround
+	  for
+	  odd-length
+	  unicode
+	  strings
+	  (!)
+
+2000-10-18 22:27  Petr
+
+	* Lib/fontTools/ttLib/tables/_m_a_x_p.py:
+	  doh!
+	  font
+	  bounding
+	  box
+	  goes
+	  to
+	  the
+	  head
+	  table,
+	  not
+	  maxp
+	  itself.
+
+2000-10-13 14:19  Just
+
+	* Mac/TTX.rsrc.hqx:
+	  updated
+	  version
+	  &
+	  copyright
+
+2000-10-13 14:18  Just
+
+	* Mac/TTX.py,
+	  Mac/TTXMain.py:
+	  what
+	  was
+	  I
+	  thinking
+
+2000-10-13 13:51  Just
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py:
+	  added
+	  workaround
+	  for
+	  buggy
+	  Apple
+	  fonts
+
+2000-10-11 18:04  Just
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  added
+	  workaround
+	  for
+	  Py
+	  1.5.1
+	  compatibility
+
+2000-10-03 10:34  Just
+
+	* Lib/fontTools/fondLib.py:
+	  initialize
+	  styleStrings
+	  with
+	  empty
+	  string
+	  instead
+	  of
+	  None's:
+	  this
+	  allows
+	  certain
+	  Apple
+	  fonts
+	  to
+	  be
+	  handled
+	  correctly.
+
+2000-10-02 07:51  Just
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/sfnt.py:
+	  improved
+	  support
+	  for
+	  writing
+	  to
+	  (in
+	  memory)
+	  streams
+
+2000-08-23 12:34  Just
+
+	* Lib/fontTools/ttLib/sfnt.py,
+	  Lib/fontTools/ttLib/tables/_p_o_s_t.py:
+	  minor
+	  fix
+
+2000-08-23 12:34  Just
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  made
+	  calculating
+	  bounding
+	  box
+	  handle
+	  empty
+	  coordinate
+	  arrays
+	  gracefully
+
+2000-08-23 12:33  Just
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  removed
+	  an
+	  assert
+	  that
+	  was
+	  too
+	  strict
+
+2000-08-23 12:31  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  minor
+	  changes
+
+2000-07-03 18:45  Just
+
+	* Lib/fontTools/misc/homeResFile.py:
+	  module
+	  to
+	  find
+	  the
+	  home
+	  file
+	  of
+	  a
+	  resource
+	  (handy
+	  for
+	  finding
+	  suitcase
+	  files
+	  when
+	  all
+	  you
+	  have
+	  is
+	  a
+	  resource)
+
+2000-06-29 18:35  Just
+
+	* Lib/fontTools/ttLib/tables/T_S_I_J_.py:
+	  another
+	  OT
+	  source
+	  table
+
+2000-06-08 18:38  Just
+
+	* Lib/fontTools/ttLib/tables/O_S_2f_2.py:
+	  formatting
+
+2000-06-07 19:13  Just
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  Allow
+	  long-aligned
+	  glyph
+	  records
+	  (as
+	  is
+	  in
+	  fact
+	  recommended
+	  by
+	  the
+	  latest
+	  MS
+	  spec,
+	  but
+	  almost
+	  nobody
+	  seems
+	  to
+	  do
+	  it...)
+
+2000-06-07 18:25  Just
+
+	* Lib/fontTools/ttLib/tables/_c_m_a_p.py:
+	  Fixed
+	  cmap
+	  optimizer
+	  bug:
+	  needs
+	  more
+	  testing!
+
+2000-06-07 18:08  Just
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  Fixed
+	  getCoordinates()
+	  so
+	  it
+	  works
+	  correctly
+	  with
+	  "empty"
+	  components.
+
+2000-06-07 18:07  Just
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  The
+	  "flags"
+	  field
+	  is
+	  an
+	  unsigned
+	  short,
+	  not
+	  a
+	  byte
+
+2000-05-26 13:08  Just
+
+	* Lib/fontTools/agl.py:
+	  Roozbeh
+	  Pournader
+	  found
+	  a
+	  working
+	  version
+	  to
+	  one
+	  of
+	  the
+	  broken
+	  URLs
+	  in
+	  the
+	  Adobe
+	  document.
+
+2000-04-29 08:13  Just
+
+	* ttx_shellext_win32.py:
+	  updated
+	  to
+	  conform
+	  to
+	  the
+	  latest
+	  configuration
+	  (Adam
+	  Twardoch)
+
+2000-04-01 21:44  just
+
+	* Src/eexecOp/Makefile,
+	  Src/eexecOp/Makefile.pre.in,
+	  Src/eexecOp/Setup.in:
+	  unix
+	  Makefile
+	  and
+	  Setup
+
+2000-03-28 10:38  Just
+
+	* Lib/fontTools/t1Lib.py:
+	  some
+	  minor
+	  improvements
+
+2000-03-28 10:37  Just
+
+	* Lib/fontTools/cffLib.py:
+	  don't
+	  barf
+	  if
+	  there
+	  are
+	  no
+	  subroutines
+
+2000-03-28 10:33  Just
+
+	* Lib/fontTools/unicode.py:
+	  updated
+	  to
+	  Unicode
+	  3.0
+	  by
+	  Antoine
+	  Leca.
+
+2000-03-15 20:57  Just
+
+	* Mac/README.txt:
+	  mac
+	  readme
+	  file
+
+2000-03-15 20:56  Just
+
+	* Doc/bugs.txt,
+	  Doc/changes.txt:
+	  known
+	  bugs
+	  and
+	  last
+	  changes
+
+2000-03-15 20:56  Just
+
+	* Doc/index.html:
+	  finally
+	  written
+	  some
+	  more
+	  doco
+
+2000-03-15 20:55  Just
+
+	* LEGAL.txt:
+	  updated
+	  license
+
+2000-03-15 20:55  Just
+
+	* README.txt:
+	  new
+	  minimal
+	  readme
+	  file
+
+2000-03-14 23:21  Just
+
+	* Lib/fontTools/ttLib/test/__init__.py:
+	  added
+	  doc
+	  strings
+	  to
+	  empty
+	  __init__.py
+	  files:
+	  WinZip
+	  apparently
+	  skips
+	  empty
+	  files.
+	  Doh!
+
+2000-03-14 23:21  Just
+
+	* Lib/fontTools/ttLib/test/ttBrowser.py:
+	  fixed
+	  multi-arg
+	  .append()
+	  call,
+	  for
+	  Python
+	  1.6
+	  compatibility.
+
+2000-03-14 23:03  Just
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  -
+	  some
+	  method
+	  name
+	  changes -
+	  check
+	  for
+	  3,0
+	  platform/encoding
+	  wide
+	  strings
+
+2000-03-14 23:02  Just
+
+	* Lib/fontTools/ttLib/tables/_k_e_r_n.py:
+	  minor
+	  fixes.
+	  Note:
+	  format2
+	  is
+	  not
+	  implemented
+	  correctly!
+
+2000-03-14 23:01  Just
+
+	* Lib/fontTools/__init__.py,
+	  Lib/fontTools/encodings/__init__.py,
+	  Lib/fontTools/misc/__init__.py,
+	  Lib/fontTools/ttLib/tables/__init__.py:
+	  added
+	  doc
+	  strings
+	  to
+	  empty
+	  __init__.py
+	  files:
+	  WinZip
+	  apparently
+	  skips
+	  empty
+	  files.
+	  Doh!
+
+2000-03-14 23:00  Just
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  fixed
+	  multi-arg
+	  .append()
+	  call,
+	  for
+	  Python
+	  1.6
+	  compatibility.
+
+2000-03-14 22:59  Just
+
+	* Lib/fontTools/ttLib/macUtils.py:
+	  changes
+	  reflecting
+	  a
+	  method
+	  name
+	  change
+	  in
+	  the
+	  kern
+	  table.
+
+2000-02-21 21:30  Just
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  be
+	  relaxed
+	  about
+	  zero
+	  padding
+	  the
+	  input
+	  data
+	  to
+	  4-byte
+	  boundaries
+
+2000-02-21 21:14  Just
+
+	* Lib/fontTools/ttLib/tables/_h_e_a_d.py:
+	  another
+	  64-bit
+	  fix
+
+2000-02-16 14:59  Just
+
+	* ttffile.reg,
+	  ttx_shellext_win32.py:
+	  New
+	  Windows
+	  shell
+	  extension
+	  by
+	  Adam
+	  Twardoch.
+
+2000-02-13 17:36  just
+
+	* mktarball.py:
+	  some
+	  improvements;
+	  can
+	  optionally
+	  specify
+	  dest
+	  dir
+
+2000-02-13 17:00  Just
+
+	* Lib/fontTools/ttLib/tables/_l_o_c_a.py:
+	  first
+	  patch
+	  to
+	  make
+	  ttLib
+	  64-bit
+	  clean
+
+2000-02-13 16:23  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  disable
+	  decompilation
+	  exception
+	  catching:
+	  it
+	  causes
+	  too
+	  many
+	  debugging
+	  nightmares.
+
+2000-02-04 19:19  Just
+
+	* Lib/fontTools/agl.py:
+	  Added
+	  note
+	  about
+	  the
+	  incorrect
+	  old
+	  URL
+	  in
+	  the
+	  Adobe
+	  text,
+	  and
+	  reverted
+	  the
+	  text
+	  to
+	  what
+	  it
+	  was:
+	  it
+	  still
+	  is
+	  the
+	  latest
+	  officially
+	  released
+	  document,
+	  and
+	  I'd
+	  rather
+	  include
+	  it
+	  as-is.
+
+2000-02-04 18:58  Erik
+
+	* Lib/fontTools/agl.py:
+	  new
+	  URL
+	  for
+	  adobe's
+	  glyphlist
+	  doco
+
+2000-02-01 15:54  Just
+
+	* Lib/fontTools/ttLib/tables/ttProgram.py:
+	  reinstated
+	  accidentally
+	  deleted
+	  regex.
+
+2000-02-01 15:53  Just
+
+	* ttDump.py:
+	  added
+	  -i
+	  option.
+	  This
+	  will
+	  enable
+	  TT
+	  instruction
+	  disassembly.
+
+2000-02-01 15:32  Just
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  added
+	  an
+	  assert,
+	  plus
+	  some
+	  (commented
+	  out)
+	  test
+	  code
+	  for
+	  bad
+	  unicode
+	  strings
+
+2000-02-01 15:31  Just
+
+	* Lib/fontTools/ttLib/tables/_f_p_g_m.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/tables/_p_r_e_p.py:
+	  added
+	  support
+	  for
+	  instruction
+	  disassembly
+
+2000-02-01 15:30  Just
+
+	* Lib/fontTools/ttLib/tables/ttProgram.py:
+	  -
+	  added
+	  assembler:
+	  we've
+	  got
+	  a
+	  full
+	  round
+	  trip
+	  now! -
+	  added
+	  toXML()
+	  and
+	  fromXML()
+	  methods
+
+2000-02-01 15:29  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  added
+	  support
+	  for
+	  instruction
+	  disassembly
+	  in
+	  saveXML()
+
+2000-02-01 15:28  Just
+
+	* Lib/fontTools/misc/textTools.py:
+	  fixed
+	  buglet
+	  in
+	  num2binary()
+
+2000-01-31 14:33  Just
+
+	* Lib/fontTools/misc/psCharStrings.py:
+	  fixed
+	  broken
+	  import
+
+2000-01-31 14:31  Just
+
+	* Lib/interfaceChecker.py:
+	  minor
+	  doc
+	  string
+	  change
+
+2000-01-26 19:32  Just
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  Two
+	  new
+	  functions: -
+	  vectorLength(vector):
+	  calculate
+	  the
+	  length
+	  of
+	  a
+	  vector -
+	  asInt16():
+	  round
+	  and
+	  cast
+	  any
+	  array
+	  (or
+	  number)
+	  to
+	  16
+	  bit
+	  ints
+
+2000-01-26 19:20  Just
+
+	* Lib/interfaceChecker.py:
+	  Support
+	  for
+	  interface
+	  checking.
+	  Experimental.
+
+2000-01-23 19:10  Just
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  new
+	  functions:
+	  unionRect()
+	  and
+	  rectCenter()
+
+2000-01-22 00:26  Just
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  added
+	  intRect()
+	  function.
+	  Turn
+	  any
+	  rect
+	  into
+	  a
+	  rect
+	  using
+	  ints
+	  only.
+
+2000-01-20 11:08  Just
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  -
+	  added
+	  methods
+	  to
+	  get
+	  composite
+	  component
+	  info
+	  conveniently
+
+2000-01-19 20:44  Just
+
+	* Lib/fontTools/cffLib.py:
+	  various
+	  changes: -
+	  the
+	  Transformation
+	  class
+	  is
+	  now
+	  a
+	  little
+	  cleaner
+	  &
+	  smarter -
+	  pens
+	  now
+	  have
+	  a
+	  reference
+	  to
+	  a
+	  font -
+	  pens
+	  have
+	  a
+	  new
+	  method
+	  called
+	  drawGlyph(),
+	  which
+	  is
+	  needed
+	  for
+	  composites.
+
+2000-01-19 12:37  Just
+
+	* Mac/TTXMain.py:
+	  use
+	  ".ttx"
+	  extension
+	  instead
+	  of
+	  ".xml".
+	  TTX
+	  is
+	  now
+	  the
+	  name
+	  of
+	  the
+	  format,
+	  not
+	  just
+	  the
+	  app.
+	  Still
+	  needs
+	  work,
+	  though.
+
+2000-01-18 22:29  Just
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  added
+	  a
+	  bunch
+	  of
+	  rectangle
+	  tools
+	  that
+	  mimic
+	  some
+	  Qd.*Rect
+	  functions,
+	  like
+	  Qd.InsetRect.
+
+2000-01-17 18:58  Just
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/table_API_readme.txt,
+	  Lib/fontTools/ttLib/test/ttBrowser.py:
+	  use
+	  ".ttx"
+	  extension
+	  instead
+	  of
+	  ".xml".
+	  TTX
+	  is
+	  not
+	  the
+	  name
+	  of
+	  the
+	  format,
+	  not
+	  the
+	  app...
+
+2000-01-17 18:49  Just
+
+	* tt2xml.py,
+	  ttCompile.py,
+	  ttDump.py,
+	  ttffile.reg,
+	  xml2tt.py:
+	  renamed
+	  tt2xml.pt
+	  to
+	  ttDump.py
+	  and
+	  xml2tt.py
+	  to
+	  ttCompile.py
+
+2000-01-16 22:14  Just
+
+	* Lib/fontTools/cffLib.py,
+	  Lib/fontTools/misc/psCharStrings.py,
+	  Lib/fontTools/misc/psLib.py,
+	  Lib/fontTools/misc/psOperators.py,
+	  Lib/fontTools/psCharStrings.py,
+	  Lib/fontTools/psLib.py,
+	  Lib/fontTools/psOperators.py,
+	  Lib/fontTools/t1Lib.py:
+	  Moved
+	  psCharStrings.py,
+	  psLib.py
+	  and
+	  psOperators.py
+	  to
+	  fontTools.misc,
+	  since
+	  they're
+	  not
+	  "toplevel"
+	  font
+	  tools.
+
+2000-01-16 20:37  Just
+
+	* Lib/fontTools/misc/arrayTools.py:
+	  yet
+	  another
+	  reorganization
+	  round...
+
+2000-01-12 19:15  Just
+
+	* Lib/fontTools/psLib.py,
+	  Lib/fontTools/t1Lib.py:
+	  Changes
+	  to
+	  use
+	  the
+	  new
+	  fontTools.misc.eexec
+	  module
+	  instead
+	  of
+	  the
+	  old
+	  eexec
+	  module.
+
+2000-01-12 19:15  Just
+
+	* Lib/fontTools/misc/eexec.py:
+	  added
+	  fontTools.misc.eexec
+	  and
+	  a
+	  MacOS/PPC
+	  shared
+	  lib
+	  (eexecOp)
+	  that
+	  provides
+	  the
+	  C
+	  implementation.
+
+2000-01-12 19:13  Just
+
+	* Src,
+	  Src/eexecOp,
+	  Src/eexecOp/README.txt,
+	  Src/eexecOp/eexecOp.ppc.prj,
+	  Src/eexecOp/eexecOp.ppc.prj.exp,
+	  Src/eexecOp/eexecOpmodule.c:
+	  added
+	  eexecOp,
+	  C
+	  implementation
+	  of
+	  the
+	  new
+	  fontTools.misc.eexec
+	  module.
+
+2000-01-05 20:45  Just
+
+	* Lib/fontTools/ttLib/tables/asciiTable.py:
+	  Remove
+	  null
+	  bytes
+	  before
+	  dumping
+	  to
+	  XML.
+	  This
+	  seems
+	  neccesary,
+	  but
+	  I'm
+	  not
+	  sure
+	  if
+	  this
+	  breaks
+	  compilation.
+
+2000-01-05 20:44  Just
+
+	* Lib/fontTools/ttLib/tables/T_S_I_V_.py:
+	  added
+	  TSIV
+	  table
+
+2000-01-05 20:43  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  -
+	  Added
+	  skiptTables
+	  argument
+	  to
+	  TTFont.saveXML(),
+	  to
+	  support
+	  -x
+	  option
+	  of
+	  tt2xml.py -
+	  Fixed
+	  typo
+
+2000-01-05 20:41  Just
+
+	* tt2xml.py,
+	  ttDump.py:
+	  added
+	  -x
+	  <table>
+	  option,
+	  to
+	  exclude
+	  a
+	  specific
+	  table.
+
+2000-01-04 14:03  Just
+
+	* Lib/fontTools/ttLib/tables/T_S_I_B_.py,
+	  Lib/fontTools/ttLib/tables/T_S_I_D_.py,
+	  Lib/fontTools/ttLib/tables/T_S_I_P_.py,
+	  Lib/fontTools/ttLib/tables/T_S_I_S_.py,
+	  Lib/fontTools/ttLib/tables/asciiTable.py:
+	  Added
+	  private
+	  VOLT
+	  (?)
+	  tables:
+	  TSIB,
+	  TSID,
+	  TSIP,
+	  TSIS.
+	  Easy,
+	  since
+	  they're
+	  plain
+	  ascii
+	  tables.
+
+2000-01-04 14:02  Just
+
+	* Lib/fontTools/ttLib/tables/T_S_I__1.py:
+	  added
+	  some
+	  initializer
+	  in
+	  case
+	  the
+	  table
+	  is
+	  empty.
+
+2000-01-04 14:01  Just
+
+	* Lib/fontTools/ttLib/tables/otCommon.py:
+	  while
+	  the
+	  OT
+	  modules
+	  are
+	  in
+	  progress,
+	  disable
+	  decompilation
+	  and
+	  fall
+	  back
+	  to
+	  hex
+	  dumps.
+
+2000-01-04 13:51  Just
+
+	* Lib/xmlWriter.py:
+	  set
+	  XML
+	  file
+	  type
+	  to
+	  BBEdit
+	  when
+	  on
+	  MacOS
+
+2000-01-03 23:01  Just
+
+	* Lib/fontTools/ttLib/tables/otCommon.py:
+	  cleaned
+	  up
+	  error
+	  message
+	  for
+	  failing
+	  version
+	  test
+
+2000-01-03 23:00  Just
+
+	* Lib/fontTools/ttLib/tables/L_T_S_H_.py:
+	  added
+	  error
+	  messages
+	  to
+	  the
+	  assert
+	  statements
+
+2000-01-03 23:00  Just
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/DefaultTable.py,
+	  Lib/fontTools/ttLib/xmlImport.py:
+	  Added
+	  code
+	  to
+	  fall
+	  back
+	  to
+	  the
+	  DefaultTable
+	  (and
+	  therefore
+	  to
+	  hex
+	  XML
+	  dumps)
+	  when
+	  an
+	  exception
+	  occurs
+	  during
+	  decompilation.
+
+1999-12-29 13:10  Just
+
+	* tt2xml.py,
+	  ttDump.py:
+	  When
+	  using
+	  -s
+	  (splitting
+	  files),
+	  save
+	  the
+	  xml
+	  files
+	  in
+	  a
+	  separate
+	  directory
+	  instead
+	  of
+	  in
+	  the
+	  same
+	  dir
+	  as
+	  the
+	  font
+	  file.
+
+1999-12-29 13:09  Just
+
+	* ttCompile.py,
+	  xml2tt.py:
+	  Revert
+	  current
+	  directory
+	  after
+	  glob'ing
+	  for
+	  *.xml
+	  files
+
+1999-12-29 13:07  Just
+
+	* Lib/fontTools/ttLib/tables/_n_a_m_e.py:
+	  Treat
+	  platformID=3,
+	  platEncID=0
+	  also
+	  as
+	  Unicode
+	  strings.
+
+1999-12-29 13:06  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  -
+	  fixed
+	  broken
+	  agl
+	  import -
+	  changed
+	  TTFOnt.saveXML
+	  +
+	  splitTables<>0
+	  behavior:
+	  now
+	  expects
+	  a
+	  path
+	  to
+	  a
+	  directory
+
+1999-12-27 20:02  Just
+
+	* Lib/fontTools/ttLib/xmlImport.py:
+	  XMLApplication:
+	  don't
+	  create
+	  a
+	  new
+	  table
+	  when
+	  a
+	  table
+	  with
+	  that
+	  tag
+	  already
+	  exist
+	  in
+	  the
+	  TTFont
+	  object.
+
+1999-12-27 19:52  Just
+
+	* ttCompile.py,
+	  xml2tt.py:
+	  Added
+	  support
+	  to
+	  merge
+	  multiple
+	  XML
+	  files
+	  into
+	  one
+	  font
+	  (the
+	  opposite
+	  of
+	  tt2xml.py's
+	  -s
+	  option).
+	  Improved
+	  doc
+	  string.
+
+1999-12-27 19:49  Just
+
+	* tt2xml.py,
+	  ttDump.py:
+	  Added
+	  -s
+	  option
+	  to
+	  split
+	  each
+	  table
+	  into
+	  a
+	  separate
+	  XML
+	  file.
+
+1999-12-27 19:48  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  Added
+	  optional
+	  splitTables
+	  argument
+	  to
+	  TTFont.saveXML().
+	  Set
+	  to
+	  non-zero,
+	  this
+	  will
+	  cause
+	  each
+	  table
+	  to
+	  be
+	  dumped
+	  to
+	  an
+	  idividual
+	  XML
+	  file.
+
+1999-12-27 15:40  Just
+
+	* ttCompile.py,
+	  xml2tt.py:
+	  print
+	  final
+	  (timing)
+	  message
+	  when
+	  in
+	  verbose
+	  mode
+
+1999-12-27 15:39  Just
+
+	* Lib/fontTools/nfntLib.py:
+	  slight
+	  cleanup.
+
+1999-12-23 15:16  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  edited
+	  TTFont.__init__
+	  doc
+	  string,
+	  the
+	  recalcBBoxes
+	  explanation
+	  should
+	  now
+	  be
+	  clearer
+	  and
+	  more
+	  complete.
+
+1999-12-23 14:44  Just
+
+	* Lib/fontTools/ttLib/test/ttBrowser.py:
+	  added
+	  browseTTFont()
+	  function.
+
+1999-12-23 14:44  Just
+
+	* Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/tables/_h_h_e_a.py,
+	  Lib/fontTools/ttLib/tables/_m_a_x_p.py:
+	  don't
+	  recalc
+	  a
+	  number
+	  of
+	  things
+	  then
+	  TTFont().recalcBBoxes
+	  is
+	  off.
+	  This
+	  allows
+	  us
+	  to
+	  compact
+	  glyphs
+	  right
+	  after
+	  they've
+	  been
+	  parsed
+	  from
+	  XML,
+	  which
+	  should
+	  greatly
+	  reduce
+	  memory
+	  usage,
+	  and
+	  therefore
+	  should
+	  speedup
+	  compiling
+	  large
+	  fonts.
+
+1999-12-23 12:32  Just
+
+	* Lib/fontTools/ttLib/tables/_h_d_m_x.py:
+	  oops:
+	  header
+	  struct
+	  is
+	  big
+	  endian
+	  of
+	  course!
+	  noted
+	  by
+	  Werner
+	  Lemberg.
+
+1999-12-23 12:31  Just
+
+	* ttCompile.py,
+	  xml2tt.py:
+	  fixed
+	  dumb
+	  error:
+	  recalcBBoxes
+	  goes
+	  into
+	  the
+	  TTFont
+	  constructor,
+	  not
+	  int
+	  TTFont.save.
+
+1999-12-20 23:37  Just
+
+	* Mac,
+	  Mac/TTX.py,
+	  Mac/TTX.rsrc.hqx,
+	  Mac/TTXMain.py:
+	  populating
+	  Mac
+	  subdirectory
+
+1999-12-20 23:36  Just
+
+	* TTX.py,
+	  TTX.rsrc:
+	  moved
+	  Mac
+	  subdirectory
+
+1999-12-20 22:02  Just
+
+	* Lib/fontTools/cffLib.py:
+	  dummy
+	  checkin
+	  --
+	  testing
+
+1999-12-20 21:59  Just
+
+	* Lib/fontTools/cffLib.py:
+	  added
+	  $Id$
+	  tag.
+
+1999-12-18 23:56  just
+
+	* mktarball.py:
+	  fixed
+	  dir
+	  dependency
+
+1999-12-18 23:28  Just
+
+	* mktarball.py:
+	  doco
+	  and
+	  cleanup
+
+1999-12-18 23:25  just
+
+	* mktarball.py:
+	  working
+	  version
+
+1999-12-18 23:10  Just
+
+	* mktarball.py:
+	  oops,
+	  syntax
+	  error
+
+1999-12-18 23:09  Just
+
+	* mktarball.py:
+	  debugging...
+
+1999-12-18 23:05  Just
+
+	* mktarball.py:
+	  added
+	  distribution
+	  script
+
+1999-12-18 22:56  Just
+
+	* Lib/fontTools/encodings/MacRoman.py:
+	  dummy
+	  commit,
+	  testing
+
+1999-12-18 21:32  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  moved
+	  an
+	  import
+	  statement
+
+1999-12-18 21:30  Just
+
+	* Lib/fontTools/psOperators.py:
+	  now
+	  uses
+	  fontTools.encodings.StandardEncoding
+	  instead
+	  of
+	  defining
+	  its
+	  own
+
+1999-12-18 21:29  Just
+
+	* Lib/fontTools/encodings,
+	  Lib/fontTools/encodings/MacRoman.py,
+	  Lib/fontTools/encodings/StandardEncoding.py,
+	  Lib/fontTools/encodings/__init__.py:
+	  added
+	  some
+	  encoding
+	  files
+	  in
+	  a
+	  new
+	  subpackage:
+	  fontTools.encodings
+
+1999-12-18 18:18  Just
+
+	* Doc,
+	  Doc/index.html:
+	  added
+	  Doc
+	  directory
+	  and
+	  initial
+	  hmtl
+	  doc
+	  file.
+	  Still
+	  pretty
+	  much
+	  empty...
+
+1999-12-18 18:12  Just
+
+	* ttCompile.py,
+	  xml2tt.py:
+	  -
+	  changed
+	  some
+	  variable
+	  names -
+	  added
+	  -b
+	  command
+	  line
+	  argument:
+	  sets
+	  recalcBBoxes
+	  to
+	  false
+
+1999-12-18 18:11  Just
+
+	* tt2xml.py,
+	  ttDump.py:
+	  changed
+	  some
+	  variable
+	  names.
+
+1999-12-18 18:08  Just
+
+	* Lib/fontTools/ttLib/tables/_g_l_y_f.py:
+	  added
+	  recalcBBoxes
+	  argument
+	  to
+	  Glyph.compile()
+
+1999-12-18 18:06  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  added
+	  recalcBBoxes
+	  argument
+	  to
+	  TTFont.__init__()
+
+1999-12-17 12:54  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  minor
+	  cleanup
+	  of
+	  some
+	  doc
+	  strings
+
+1999-12-17 12:51  Just
+
+	* Lib/fontTools/ttLib/__init__.py:
+	  added
+	  __release__
+	  symbol,
+	  changed
+	  __version__
+	  to
+	  $Id$.
+
+1999-12-17 12:42  Just
+
+	* install.py:
+	  changed
+	  the
+	  name
+	  of
+	  the
+	  .pth
+	  file
+	  to
+	  FontTools.pth
+
+1999-12-17 12:37  Just
+
+	* Lib/fontTools/ttLib/test/ttBrowser.py:
+	  added
+	  doc
+	  string
+	  saying
+	  that
+	  this
+	  module
+	  is
+	  Mac-only.
+
+1999-12-17 12:36  Just
+
+	* Lib/fontTools/ttLib/test/__init__.py:
+	  forgot
+	  to
+	  check
+	  in
+	  the
+	  __init__.py
+	  file
+	  for
+	  fontTools.ttLib.test
+
+1999-12-17 11:57  Just
+
+	* Lib/fontTools/ttLib/tables/_k_e_r_n.py:
+	  fixed
+	  broken
+	  ttLib.sfnt
+	  import
+	  statement
+
+1999-12-16 22:04  Just
+
+	* LEGAL.txt,
+	  README.txt,
+	  TTX.py,
+	  TTX.rsrc,
+	  install.py,
+	  tt2xml.py,
+	  ttCompile.py,
+	  ttDump.py,
+	  ttffile.reg,
+	  xml2tt.py:
+	  Added
+	  the
+	  TTX
+	  main
+	  program,
+	  the
+	  command
+	  line
+	  programs
+	  and
+	  additional
+	  files.
+
+1999-12-16 21:34  Just
+
+	* Lib,
+	  Lib/fontTools,
+	  Lib/fontTools/__init__.py,
+	  Lib/fontTools/afmLib.py,
+	  Lib/fontTools/agl.py,
+	  Lib/fontTools/cffLib.py,
+	  Lib/fontTools/fondLib.py,
+	  Lib/fontTools/misc,
+	  Lib/fontTools/misc/__init__.py,
+	  Lib/fontTools/misc/textTools.py,
+	  Lib/fontTools/nfntLib.py,
+	  Lib/fontTools/psCharStrings.py,
+	  Lib/fontTools/psLib.py,
+	  Lib/fontTools/psOperators.py,
+	  Lib/fontTools/t1Lib.py,
+	  Lib/fontTools/ttLib,
+	  Lib/fontTools/ttLib/__init__.py,
+	  Lib/fontTools/ttLib/macUtils.py,
+	  Lib/fontTools/ttLib/sfnt.py,
+	  Lib/fontTools/ttLib/standardGlyphOrder.py,
+	  Lib/fontTools/ttLib/tables,
+	  Lib/fontTools/ttLib/tables/C_F_F_.py,
+	  Lib/fontTools/ttLib/tables/D_S_I_G_.py,
+	  Lib/fontTools/ttLib/tables/DefaultTable.py,
+	  Lib/fontTools/ttLib/tables/G_P_O_S_.py,
+	  Lib/fontTools/ttLib/tables/G_S_U_B_.py,
+	  Lib/fontTools/ttLib/tables/L_T_S_H_.py,
+	  Lib/fontTools/ttLib/tables/O_S_2f_2.py,
+	  Lib/fontTools/ttLib/tables/T_S_I__0.py,
+	  Lib/fontTools/ttLib/tables/T_S_I__1.py,
+	  Lib/fontTools/ttLib/tables/T_S_I__2.py,
+	  Lib/fontTools/ttLib/tables/T_S_I__3.py,
+	  Lib/fontTools/ttLib/tables/T_S_I__5.py,
+	  Lib/fontTools/ttLib/tables/__init__.py,
+	  Lib/fontTools/ttLib/tables/_c_m_a_p.py,
+	  Lib/fontTools/ttLib/tables/_c_v_t.py,
+	  Lib/fontTools/ttLib/tables/_f_p_g_m.py,
+	  Lib/fontTools/ttLib/tables/_g_a_s_p.py,
+	  Lib/fontTools/ttLib/tables/_g_l_y_f.py,
+	  Lib/fontTools/ttLib/tables/_h_d_m_x.py,
+	  Lib/fontTools/ttLib/tables/_h_e_a_d.py,
+	  Lib/fontTools/ttLib/tables/_h_h_e_a.py,
+	  Lib/fontTools/ttLib/tables/_h_m_t_x.py,
+	  Lib/fontTools/ttLib/tables/_k_e_r_n.py,
+	  Lib/fontTools/ttLib/tables/_l_o_c_a.py,
+	  Lib/fontTools/ttLib/tables/_m_a_x_p.py,
+	  Lib/fontTools/ttLib/tables/_n_a_m_e.py,
+	  Lib/fontTools/ttLib/tables/_p_o_s_t.py,
+	  Lib/fontTools/ttLib/tables/_p_r_e_p.py,
+	  Lib/fontTools/ttLib/tables/_v_h_e_a.py,
+	  Lib/fontTools/ttLib/tables/_v_m_t_x.py,
+	  Lib/fontTools/ttLib/tables/otCommon.py,
+	  Lib/fontTools/ttLib/tables/table_API_readme.txt,
+	  Lib/fontTools/ttLib/tables/ttProgram.py,
+	  Lib/fontTools/ttLib/test,
+	  Lib/fontTools/ttLib/test/ttBrowser.py,
+	  Lib/fontTools/ttLib/xmlImport.py,
+	  Lib/fontTools/unicode.py,
+	  Lib/sstruct.py,
+	  Lib/xmlWriter.py,
+	  fonttools:
+	  Created
+	  a
+	  new
+	  library
+	  directory
+	  called
+	  "FreeLib".
+	  All
+	  OpenSource
+	  RFMKII
+	  components
+	  will
+	  reside
+	  there,
+	  fontTools
+	  being
+	  the
+	  flagship.
+
+1999-12-16 21:34  
+
+	* .:
+	  Create
+	  standard
+	  layout
+

@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cocos.director.Director</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.director-module.html">director</a>&nbsp;.&nbsp;Director
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class cocos.director.Director</h1>
+<pre class="base-tree">
+pyglet.event.EventDispatcher --+
+                               |
+                              <strong class="uidshort">Director</strong>
+</pre>
+
+<p>Class that creates and handle the main Window and manages how
+and when to execute the Scenes</p>
+<p>You should not directly instantiate the class, instead you do:</p>
+<pre class="py-doctest">
+<span class="py-keyword">from</span> cocos.director <span class="py-keyword">import</span> director</pre>
+<p>to access the only one Director instance.</p>
+
+<!-- ==================== METHODS ==================== -->
+<a name="section-Methods"></a>
+        <h2>Methods</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">pyglet.window.Window</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#init" class="summary-sig-name">init</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span>
+<div class="summary-description">Initializes the Director creating the main window.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_show_FPS"></a><span class="summary-sig-name">set_show_FPS</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#run" class="summary-sig-name">run</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scene</span>)</span>
+<div class="summary-description">Runs a scene, entering in the Director's main loop.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#set_recorder" class="summary-sig-name">set_recorder</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">framerate</span>,
+        <span class="summary-sig-arg">template</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">frame-%d.png</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">duration</span>=<span class="summary-sig-default">None</span>)</span>
+<div class="summary-description">Will replace the app clock so that now we can ensure a steady
+frame rate and save one image per frame</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#on_draw" class="summary-sig-name">on_draw</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Handles the event 'on_draw' from the pyglet.window.Window</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#push" class="summary-sig-name">push</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scene</span>)</span>
+<div class="summary-description">Suspends the execution of the running scene, pushing it
+on the stack of suspended scenes.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="on_push"></a><span class="summary-sig-name">on_push</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scene</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#pop" class="summary-sig-name">pop</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">If the scene stack is empty the appication is terminated.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="on_pop"></a><span class="summary-sig-name">on_pop</span>(<span class="summary-sig-arg">self</span>)</span>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#replace" class="summary-sig-name">replace</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scene</span>)</span>
+<div class="summary-description">Replaces the running scene with a new one.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(x,y)</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#get_window_size" class="summary-sig-name">get_window_size</a>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Returns the size of the window when it was created, and not the
+actual size of the window.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">(x,y)</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#get_virtual_coordinates" class="summary-sig-name">get_virtual_coordinates</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+<div class="summary-description">Transforms coordinates that belongs the <em>real</em> window size, to the
+coordinates that belongs to the <em>virtual</em> window.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#scaled_resize_window" class="summary-sig-name">scaled_resize_window</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">width</span>,
+        <span class="summary-sig-arg">height</span>)</span>
+<div class="summary-description">One of two possible methods that are called when the main window is resized.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#unscaled_resize_window" class="summary-sig-name">unscaled_resize_window</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">width</span>,
+        <span class="summary-sig-arg">height</span>)</span>
+<div class="summary-description">One of two possible methods that are called when the main window is resized.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_projection"></a><span class="summary-sig-name">set_projection</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">placeholder, will be set to one of set_projection2D or set_projection3D
+when director.init is called</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_projection3D"></a><span class="summary-sig-name">set_projection3D</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Sets a 3D projection mantaining the aspect ratio of the original window size</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a name="set_projection2D"></a><span class="summary-sig-name">set_projection2D</span>(<span class="summary-sig-arg">self</span>)</span>
+<div class="summary-description">Sets a 2D projection (ortho) covering all the window</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#set_alpha_blending" class="summary-sig-name">set_alpha_blending</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">on</span>=<span class="summary-sig-default">True</span>)</span>
+<div class="summary-description">Enables/Disables alpha blending in OpenGL
+using the GL_ONE_MINUS_SRC_ALPHA algorithm.</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <span class="summary-sig"><a href="cocos.director.Director-class.html#set_depth_test" class="summary-sig-name">set_depth_test</a>(<span class="summary-sig-arg">sefl</span>,
+        <span class="summary-sig-arg">on</span>=<span class="summary-sig-default">True</span>)</span>
+<div class="summary-description">Enables z test.</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+<b>Inherited from <code>pyglet.event.EventDispatcher</code></b>:
+      <code>dispatch_event</code>,
+      <code>event</code>,
+      <code>pop_handlers</code>,
+      <code>push_handlers</code>,
+      <code>register_event_type</code>,
+      <code>remove_handler</code>,
+      <code>remove_handlers</code>,
+      <code>set_handler</code>,
+      <code>set_handlers</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+        <h2>Properties</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.director.Director-class.html#show_FPS" class="summary-name">show_FPS</a>
+<div class="summary-description">whether or not the FPS are displayed</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+        <h2>Instance Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scene_stack"></a><span class="summary-name">scene_stack</span>
+<div class="summary-description">stack of scenes</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scene"></a><span class="summary-name">scene</span>
+<div class="summary-description">scene that is being run</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="next_scene"></a><span class="summary-name">next_scene</span>
+<div class="summary-description">this is the next scene that will be shown</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="show_interpreter"></a><span class="summary-name">show_interpreter</span>
+<div class="summary-description">whether or not to show the python interpreter</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="terminate_app"></a><span class="summary-name">terminate_app</span>
+<div class="summary-description">flag requesting app termination</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="window"></a><span class="summary-name">window</span>
+<div class="summary-description">pyglet's window object</div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+        <h2>Class Variables</h2>
+<table class="summary">
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.director.Director-class.html#interpreter_locals" class="summary-name">interpreter_locals</a> = <code title="{'cocos': &lt;module 'cocos' from 'D:\cocos_pristine\cocos_trunk\cocos\__\
+init__.py'&gt;,
+ 'director': &lt;cocos.director.Director object at 0x01C91DD0&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">cocos</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;module 'cocos' from 'D:\cocos_<code class="variable-ellipsis">...</code></code>
+<div class="summary-description">a dict with locals for the interactive python interpreter (fill with what you need)</div>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="fps_display"></a><span class="summary-name">fps_display</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cocos.director.Director-class.html#event_types" class="summary-name">event_types</a> = <code title="['on_push', 'on_pop', 'on_resize', 'on_cocos_resize']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">on_push</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">on_pop</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">on_resize</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">on_cocos_res</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+        <h2>Method Details</h2>
+<table class="details">
+</table>
+<a name="init"></a>
+<div class=" detail">
+  <h3>init</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">init</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Initializes the Director creating the main window.</p>
+<p>There are a few cocos exclusive parameters, the rest are the
+standard pyglet parameters for pyglet.window.Window.__init__
+This docstring only partially list the pyglet parameteres; a full
+list is available at pyglet Window API Reference at
+<a class="rst-reference external" href="http://pyglet.org/doc/api/pyglet.window.Window-class.html" target="_top">http://pyglet.org/doc/api/pyglet.window.Window-class.html</a></p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">do_not_scale</span> : <span class='ptype'>bool</span></dt>
+        <dd>False: on window resizes, cocos will scale the view so that your
+app don't need to handle resizes.
+True: your app must include logic to deal with diferent window
+sizes along the session.
+Defaults to False</dd>
+        <dt><span class="pname">audio_backend</span> : <span class='ptype'>string</span></dt>
+        <dd>one in ['pyglet','sdl']. Defaults to 'pyglet' for legacy support.</dd>
+        <dt><span class="pname">audio</span> : <span class='ptype'>dict or None</span></dt>
+        <dd>None or a dict providing parameters for the sdl audio backend.
+None: in this case a &quot;null&quot; audio system will be used, where all the
+sdl sound operations will be no-ops. This may be useful if you do not
+want to depend on SDL_mixer
+A dictionary with string keys; these are the arguments for setting up
+the audio output (sample rate and bit-width, channels, buffer size).
+The key names/values should match the positional arguments of
+<a class="rst-reference external" href="http://www.pygame.org/docs/ref/mixer.html#pygame.mixer.init" target="_top">http://www.pygame.org/docs/ref/mixer.html#pygame.mixer.init</a>
+The default value is {}, which means sound enabled with default
+settings</dd>
+        <dt><span class="pname">fullscreen</span> : <span class='ptype'>bool</span></dt>
+        <dd>Window is created in fullscreen. Default is False</dd>
+        <dt><span class="pname">resizable</span> : <span class='ptype'>bool</span></dt>
+        <dd>Window is resizable. Default is False</dd>
+        <dt><span class="pname">vsync</span> : <span class='ptype'>bool</span></dt>
+        <dd>Sync with the vertical retrace. Default is True</dd>
+        <dt><span class="pname">width</span> : <span class='ptype'>int</span></dt>
+        <dd>Window width size. Default is 640</dd>
+        <dt><span class="pname">height</span> : <span class='ptype'>int</span></dt>
+        <dd>Window height size. Default is 480</dd>
+        <dt><span class="pname">caption</span> : <span class='ptype'>string</span></dt>
+        <dd>Window title.</dd>
+        <dt><span class="pname">visible</span> : <span class='ptype'>bool</span></dt>
+        <dd>Window is visible or not. Default is True.</dd>
+    </dl></dd>
+    <dt>Returns:</dt>
+        <dd><span class="rtype">pyglet.window.Window</span>: The main window, an instance of pyglet.window.Window class.</dd>
+  </dl>
+  </div>
+</div>
+<a name="run"></a>
+<div class=" detail">
+  <h3>run</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">run</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">scene</span>)</span>
+    </div>
+  <div class="detail-description">
+  Runs a scene, entering in the Director's main loop.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">scene</span> : <span class='ptype'><a href="cocos.scene.Scene-class.html" class="link">Scene</a></span></dt>
+        <dd>The scene that will be run.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="set_recorder"></a>
+<div class=" detail">
+  <h3>set_recorder</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">set_recorder</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">framerate</span>,
+        <span class="sig-arg">template</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">frame-%d.png</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">duration</span>=<span class="sig-default">None</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Will replace the app clock so that now we can ensure a steady
+frame rate and save one image per frame</p>
+<dl class="rst-docutils">
+<dt>:Parameters</dt>
+<dd><dl class="rst-first rst-last rst-docutils">
+<dt><code class="link">framerate</code>: int</dt>
+<dd>the number of frames per second</dd>
+<dt><code class="link">template</code>: str</dt>
+<dd>the template that will be completed with an in for the name of the files</dd>
+<dt><code class="link">duration</code>: float</dt>
+<dd>the amount of seconds to record, or 0 for infinite</dd>
+</dl>
+</dd>
+</dl>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="on_draw"></a>
+<div class=" detail">
+  <h3>on_draw</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">on_draw</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Handles the event 'on_draw' from the pyglet.window.Window</p>
+<p>Realizes switch to other scene and app termination if needed
+Clears the window area
+The windows is painted as:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>Render the current scene by calling it's visit method</li>
+<li>Eventualy draw the fps metter</li>
+<li>Eventually draw the interpreter</li>
+</ul>
+</blockquote>
+<p>When the window is minimized any pending switch to scene will be
+delayed to the next de-minimizing time.</p>
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="push"></a>
+<div class=" detail">
+  <h3>push</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">push</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">scene</span>)</span>
+    </div>
+  <div class="detail-description">
+  Suspends the execution of the running scene, pushing it
+on the stack of suspended scenes. The new scene will be executed.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">scene</span> : <span class='ptype'><a href="cocos.scene.Scene-class.html" class="link">Scene</a></span></dt>
+        <dd>It is the scene that will be run.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="pop"></a>
+<div class=" detail">
+  <h3>pop</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">pop</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  If the scene stack is empty the appication is terminated.
+Else pops out a scene from the stack and sets as the running one.
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="replace"></a>
+<div class=" detail">
+  <h3>replace</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">replace</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">scene</span>)</span>
+    </div>
+  <div class="detail-description">
+  Replaces the running scene with a new one. The running scene is terminated.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">scene</span> : <span class='ptype'><a href="cocos.scene.Scene-class.html" class="link">Scene</a></span></dt>
+        <dd>It is the scene that will be run.</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="get_window_size"></a>
+<div class=" detail">
+  <h3>get_window_size</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_window_size</span>(<span class="sig-arg">self</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Returns the size of the window when it was created, and not the
+actual size of the window.</p>
+<p>Usually you don't want to know the current window size, because the
+Director() hides the complexity of rescaling your objects when
+the Window is resized or if the window is made fullscreen.</p>
+<p>If you created a window of 640x480, the you should continue to place
+your objects in a 640x480 world, no matter if your window is resized or not.
+Director will do the magic for you.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">(x,y)</span>: The size of the window when it was created</dd>
+  </dl>
+  </div>
+</div>
+<a name="get_virtual_coordinates"></a>
+<div class=" detail">
+  <h3>get_virtual_coordinates</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">get_virtual_coordinates</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>Transforms coordinates that belongs the <em>real</em> window size, to the
+coordinates that belongs to the <em>virtual</em> window.</p>
+<p>For example, if you created a window of 640x480, and it was resized
+to 640x1000, then if you move your mouse over that window,
+it will return the coordinates that belongs to the newly resized window.
+Probably you are not interested in those coordinates, but in the coordinates
+that belongs to your <em>virtual</em> window.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><span class="rtype">(x,y)</span>: Transformed coordinates from the <em>real</em> window to the <em>virtual</em> window</dd>
+  </dl>
+  </div>
+</div>
+<a name="scaled_resize_window"></a>
+<div class=" detail">
+  <h3>scaled_resize_window</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">scaled_resize_window</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">width</span>,
+        <span class="sig-arg">height</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>One of two possible methods that are called when the main window is resized.</p>
+<p>This implementation scales the display such that the initial resolution
+requested by the programmer (the &quot;logical&quot; resolution) is always retained
+and the content scaled to fit the physical display.</p>
+<p>This implementation also sets up a 3D projection for compatibility with the
+largest set of Cocos transforms.</p>
+<p>The other implementation is <a href="cocos.director.Director-class.html#unscaled_resize_window" class="link">unscaled_resize_window</a>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">width</span> : <span class='ptype'>Integer</span></dt>
+        <dd>New width</dd>
+        <dt><span class="pname">height</span> : <span class='ptype'>Integer</span></dt>
+        <dd>New height</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="unscaled_resize_window"></a>
+<div class=" detail">
+  <h3>unscaled_resize_window</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">unscaled_resize_window</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">width</span>,
+        <span class="sig-arg">height</span>)</span>
+    </div>
+  <div class="detail-description">
+  <p>One of two possible methods that are called when the main window is resized.</p>
+<p>This implementation does not scale the display but rather forces the logical
+resolution to match the physical one.</p>
+<p>This implementation sets up a 2D projection, resulting in the best pixel
+alignment possible. This is good for text and other detailed 2d graphics
+rendering.</p>
+<p>The other implementation is <a href="cocos.director.Director-class.html#scaled_resize_window" class="link">scaled_resize_window</a>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><dl class="parameters">
+        <dt><span class="pname">width</span> : <span class='ptype'>Integer</span></dt>
+        <dd>New width</dd>
+        <dt><span class="pname">height</span> : <span class='ptype'>Integer</span></dt>
+        <dd>New height</dd>
+    </dl></dd>
+  </dl>
+  </div>
+</div>
+<a name="set_alpha_blending"></a>
+<div class=" detail">
+  <h3>set_alpha_blending</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">set_alpha_blending</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">on</span>=<span class="sig-default">True</span>)</span>
+    </div>
+  <div class="detail-description">
+  Enables/Disables alpha blending in OpenGL
+using the GL_ONE_MINUS_SRC_ALPHA algorithm.
+On by default.
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<a name="set_depth_test"></a>
+<div class=" detail">
+  <h3>set_depth_test</h3>
+  <div class="detail-signature">
+    <span class="sig"><span class="sig-name">set_depth_test</span>(<span class="sig-arg">sefl</span>,
+        <span class="sig-arg">on</span>=<span class="sig-default">True</span>)</span>
+    </div>
+  <div class="detail-description">
+  Enables z test. On by default
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+        <h2>Property Details</h2>
+<table class="details">
+</table>
+<a name="show_FPS"></a>
+<div class=" detail">
+  <h3>show_FPS</h3>
+  <div class="detail-description">
+  whether or not the FPS are displayed
+  <dl class="fields">
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+        <h2>Class Variable Details</h2>
+<table class="details">
+</table>
+<a name="interpreter_locals"></a>
+<div class=" detail">
+  <h3>interpreter_locals</h3>
+  <div class="detail-description">
+  a dict with locals for the interactive python interpreter (fill with what you need)
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">cocos</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;module 'cocos' from 'D:\cocos_pristine\cocos_trunk\cocos\__<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+init__.py'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">director</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;cocos.director.Director object at 0x01C91DD0&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<a name="event_types"></a>
+<div class=" detail">
+  <h3>event_types</h3>
+  <div class="detail-description">
+  
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">on_push</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">on_pop</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">on_resize</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">on_cocos_resize</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+  </div>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar">
+  <tr valign="middle">
+  <!-- Project homepage -->
+      <!--<th class="navbar" 
+            ><a class="navbar" target="_top" href="http://www.cocos2d.org/">cocos2d API reference</a></th>-->
+
+  <!-- Tree link -->
+      <th><a
+        href="module-tree.html">Trees</a></th>
+
+  <!-- Index link -->
+      <th><a
+        href="identifier-index.html">Indices</a></th>
+
+  <!-- Breadcrumbs -->
+      <th class="navbar-breadcrumbs">
+        <span class="breadcrumbs">
+          <a href="cocos-module.html">cocos</a>&nbsp;.&nbsp;<a href="cocos.director-module.html">director</a>&nbsp;.&nbsp;Director
+        </span>
+      </th>
+
+      <th class="navbar last">
+        <a href="javascript:toggleFrames()">Toggle&nbsp;frames</a>
+      </th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Sun Aug 12 20:39:19 2012
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>
