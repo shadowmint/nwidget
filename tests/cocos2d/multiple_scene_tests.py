@@ -1,4 +1,7 @@
-import src.bootstrap
+try:
+  import bootstrap
+except:
+  pass
 import sys
 import os
 import cocos

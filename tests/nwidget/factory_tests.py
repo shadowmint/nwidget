@@ -1,11 +1,14 @@
 #!/usr/bin/env python
-import src.bootstrap
+try:
+  import bootstrap
+except:
+  pass
 import unittest
 import nwidget
 import time
 from nwidget.factory import Factory
 from nwidget.helpers import *
-_ = src.bootstrap
+
 
 class Tests(unittest.TestCase):
 

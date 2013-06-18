@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 
 from datetime import timedelta
-import src.bootstrap
+try:
+  import bootstrap
+except:
+  pass
 import unittest
 import time
 import nwidget
 from nwidget.helpers import *
-_ = src.bootstrap
+
 
 class TestType():
   def __init__(self):

@@ -196,7 +196,7 @@ Well...
 - virtualenv is broken on macs, because it doesn't install pythonw correctly.
 
 So, the easiest way to handle this is just to bundle everything up into the lib
-directory and invoke it via custom bootstrap. Look in src/bootstrap.py for this
+directory and invoke it via custom bootstrap. Look in bootstrap.py for this
 mess.
 
 It's vile, but, it works, and it'll *always* work.

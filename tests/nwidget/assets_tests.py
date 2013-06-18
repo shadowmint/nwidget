@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 
-import src.bootstrap
+try:
+  import bootstrap
+except:
+  pass
 import unittest
 import os.path
 from nwidget.assets import Assets
 from nwidget.helpers import *
-_ = src.bootstrap
+
 
 
 class Tests(unittest.TestCase):

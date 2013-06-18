@@ -1,9 +1,12 @@
 #!/usr/bin/env python
-import src.bootstrap
+try:
+  import bootstrap
+except:
+  pass
 import unittest
 import nwidget
 from nwidget.helpers import *
-_ = src.bootstrap
+
 
 
 class FakeWindow():

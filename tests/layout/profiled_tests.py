@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
 from datetime import timedelta
-import src.bootstrap
+try:
+  import bootstrap
+except:
+  pass
 import unittest
 import time
 import nwidget
@@ -9,7 +12,7 @@ import cProfile
 import io
 import pstats
 from nwidget.helpers import *
-_ = src.bootstrap
+
 
 
 class Tests(PygletTestBase):
